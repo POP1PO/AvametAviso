@@ -65,6 +65,9 @@ class MainActivity : Activity() {
         return b
     }
 
+    /** En los datos de AVAMET el municipio y el lugar vienen pegados ("MoncofaRiu Belcaire"): se separan solo al mostrarlos. */
+    private fun bonito(n: Any?): String = n.toString().replace(Regex("([a-zà-ÿ])([A-ZÀ-Ý])"), "$1 · $2")
+
     private fun desplazable(contenido: View): ScrollView {
         val s = ScrollView(this)
         s.addView(contenido)
@@ -281,7 +284,7 @@ class MainActivity : Activity() {
         if (aviso.isNotEmpty()) sb.append("\n").append(aviso).append("\n")
         val ref = a["referencia"] as? Map<*, *>
         if (ref != null) {
-            sb.append("\nEstación de referencia: ${ref["nombre"]} (${ref["distancia_km"]} km)\n")
+            sb.append("\nEstación de referencia: ${bonito(ref["nombre"])} (${ref["distancia_km"]} km)\n")
             @Suppress("UNCHECKED_CAST")
             val d = ref["datos"] as? Map<String, Any?>
             if (d != null) sb.append("  ${d["Temperatura"] ?: "?"} · humedad ${d["Humedad"] ?: "?"} · viento ${d["Viento"] ?: "?"} (máx ${d["Viento máximo"] ?: "?"}) · lluvia hoy ${d["Lluvia hoy"] ?: "?"}\n")
@@ -310,7 +313,7 @@ class MainActivity : Activity() {
                 e["estado"] == "CONGELADA" -> "sensor parado"
                 else -> e["estado"].toString()
             }
-            se.append("• ${e["nombre"]} — ${e["distancia_km"]} km — $estado")
+            se.append("• ${bonito(e["nombre"])} — ${e["distancia_km"]} km — $estado")
             if (e["lluvia_hoy"] != null) se.append(" · hoy ${e["lluvia_hoy"]} mm")
             if (e["viento"] != null) se.append(" · ${e["viento"]}")
             se.append("\n")

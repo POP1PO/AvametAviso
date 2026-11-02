@@ -18,13 +18,22 @@ private val RE_SCRIPT = Regex("<(script|style)\\b[^>]*>.*?</\\1[\\s\\u00a0]*>", 
 private val RE_ETIQUETA = Regex("<[A-Za-z/!?][^>]*>")
 private val RE_ENTIDAD = Regex("&(#[0-9]+|#[xX][0-9a-fA-F]+|[A-Za-z]+);")
 
+private val ENTIDADES: Map<String, Int> = run {
+    val m = HashMap<String, Int>()
+    val latin1 = "nbsp iexcl cent pound curren yen brvbar sect uml copy ordf laquo not shy reg macr deg plusmn sup2 sup3 acute micro para middot cedil sup1 ordm raquo frac14 frac12 frac34 iquest Agrave Aacute Acirc Atilde Auml Aring AElig Ccedil Egrave Eacute Ecirc Euml Igrave Iacute Icirc Iuml ETH Ntilde Ograve Oacute Ocirc Otilde Ouml times Oslash Ugrave Uacute Ucirc Uuml Yacute THORN szlig agrave aacute acirc atilde auml aring aelig ccedil egrave eacute ecirc euml igrave iacute icirc iuml eth ntilde ograve oacute ocirc otilde ouml divide oslash ugrave uacute ucirc uuml yacute thorn yuml".split(" ")          // códigos 160..255 en este orden
+    latin1.forEachIndexed { i, n -> m[n] = 160 + i }
+    m["ndash"] = 8211; m["mdash"] = 8212; m["lsquo"] = 8216; m["rsquo"] = 8217; m["ldquo"] = 8220; m["rdquo"] = 8221
+    m["bull"] = 8226; m["hellip"] = 8230; m["euro"] = 8364; m["trade"] = 8482
+    m["amp"] = 38; m["lt"] = 60; m["gt"] = 62; m["quot"] = 34; m["apos"] = 39
+    m
+}
+
 private fun desescapar(t: String): String = RE_ENTIDAD.replace(t) { m ->
     val e = m.groupValues[1]
     when {
         e.startsWith("#x") || e.startsWith("#X") -> String(Character.toChars(e.substring(2).toInt(16)))
         e.startsWith("#") -> String(Character.toChars(e.substring(1).toInt()))
-        e == "amp" -> "&"; e == "lt" -> "<"; e == "gt" -> ">"; e == "quot" -> "\""; e == "apos" -> "'"; e == "nbsp" -> " "
-        else -> m.value
+        else -> ENTIDADES[e]?.let { String(Character.toChars(it)) } ?: m.value
     }
 }
 

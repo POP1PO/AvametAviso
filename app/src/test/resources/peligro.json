@@ -1,6 +1,111 @@
 [
  {
   "esperado": {
+   "motivos": [
+    "Lluvia a 23.0 km en E0"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 23.0,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "18 km/h N",
+     "Viento máximo": "21 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento fuerte: 30 km/h (máx 53)"
+   ],
+   "nivel": "VIGILANCIA"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "30 km/h N",
+     "Viento máximo": "53 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia en X a 5 km. Llegada en ~15 min."
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~15 min."
+   ],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento fuerte: 42 km/h (máx 34)"
+   ],
+   "nivel": "VIGILANCIA"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "42 km/h N",
+     "Viento máximo": "34 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
    "motivos": [],
    "nivel": "SEGURO"
   },
@@ -9,8 +114,29 @@
    "lluvia_ahora": [],
    "referencia": {
     "datos": {
-     "Viento": "53 km/h N",
-     "Viento máximo": "69 km/h"
+     "Viento": "28 km/h N",
+     "Viento máximo": "15 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~57 min."
+   ],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "17 km/h N",
+     "Viento máximo": "36 km/h"
     },
     "estado": {
      "estado": "CONGELADA"
@@ -20,21 +146,39 @@
  },
  {
   "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~72 min."
+   ],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "26 km/h N",
+     "Viento máximo": "30 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
    "motivos": [
-    "Lluvia en X a 5 km. Llegada en ~25 min."
+    "Lluvia en X a 5 km. Llegada en ~18 min."
    ],
    "nivel": "PELIGRO"
   },
   "res": {
    "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~25 min."
+    "Lluvia en X a 5 km. Llegada en ~18 min."
    ],
    "lluvia_ahora": [],
    "referencia": {
-    "datos": {
-     "Viento": "24 km/h N",
-     "Viento máximo": "23 km/h"
-    },
+    "datos": null,
     "estado": {
      "estado": "CONGELADA"
     }
@@ -43,9 +187,25 @@
  },
  {
   "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
    "motivos": [
-    "Viento muy fuerte: 18 km/h (racha 57)",
-    "Lluvia a 3.9 km en E0"
+    "Lluvia a 11.1 km en E0",
+    "Lluvia en tu estación de referencia (E1)"
    ],
    "nivel": "PELIGRO"
   },
@@ -53,20 +213,450 @@
    "alertas_predictivas": [],
    "lluvia_ahora": [
     {
-     "distancia_km": 3.9,
+     "distancia_km": 11.1,
      "es_referencia": false,
      "nombre": "E0"
     },
     {
-     "distancia_km": 32.4,
+     "distancia_km": 24.1,
+     "es_referencia": true,
+     "nombre": "E1"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia en X a 5 km. Llegada en ~19 min."
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~19 min."
+   ],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento muy fuerte: 49 km/h (racha 26)"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "49 km/h N",
+     "Viento máximo": "26 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "2 km/h N",
+     "Viento máximo": "40 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento fuerte: 44 km/h (máx 21)"
+   ],
+   "nivel": "VIGILANCIA"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "44 km/h N",
+     "Viento máximo": "21 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia a 19.3 km en E0",
+    "Lluvia a 23.3 km en E1"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 19.3,
+     "es_referencia": false,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 23.3,
      "es_referencia": false,
      "nombre": "E1"
     }
    ],
    "referencia": {
     "datos": {
-     "Viento": "18 km/h N",
-     "Viento máximo": "57 km/h"
+     "Viento": "42 km/h N",
+     "Viento máximo": "44 km/h"
+    },
+    "estado": {
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento muy fuerte: 16 km/h (racha 62)"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "16 km/h N",
+     "Viento máximo": "62 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "39 km/h N",
+     "Viento máximo": "9 km/h"
+    },
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia a 7.5 km en E0"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 7.5,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "6 km/h N",
+     "Viento máximo": "67 km/h"
+    },
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia en tu estación de referencia (E0)",
+    "Lluvia a 16.8 km en E1"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 6.9,
+     "es_referencia": true,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 16.8,
+     "es_referencia": false,
+     "nombre": "E1"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "33 km/h N",
+     "Viento máximo": "29 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "6 km/h N",
+     "Viento máximo": "30 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "8 km/h N",
+     "Viento máximo": "13 km/h"
+    },
+    "estado": {
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 32.5,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia a 11.7 km en E0",
+    "Lluvia a 21.4 km en E1"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 11.7,
+     "es_referencia": false,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 21.4,
+     "es_referencia": false,
+     "nombre": "E1"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "38 km/h N",
+     "Viento máximo": "25 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia en tu estación de referencia (E0)"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~40 min."
+   ],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 37.1,
+     "es_referencia": true,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "41 km/h N",
+     "Viento máximo": "3 km/h"
+    },
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia a 10.0 km en E0",
+    "Lluvia a 14.0 km en E1"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 10.0,
+     "es_referencia": false,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 14.0,
+     "es_referencia": false,
+     "nombre": "E1"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "19 km/h N",
+     "Viento máximo": "31 km/h"
     },
     "estado": {
      "estado": "ACTIVA"
@@ -93,69 +683,29 @@
  {
   "esperado": {
    "motivos": [
-    "Viento muy fuerte: 59 km/h (racha 33)",
-    "Lluvia a 2.2 km en E0"
+    "Lluvia en tu estación de referencia (E1)"
    ],
    "nivel": "PELIGRO"
   },
   "res": {
    "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~89 min."
+    "Lluvia en X a 5 km. Llegada en ~59 min."
    ],
    "lluvia_ahora": [
     {
-     "distancia_km": 2.2,
+     "distancia_km": 25.7,
      "es_referencia": false,
      "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "59 km/h N",
-     "Viento máximo": "33 km/h"
     },
-    "estado": {
-     "estado": "ACTIVA"
+    {
+     "distancia_km": 7.2,
+     "es_referencia": true,
+     "nombre": "E1"
     }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia en X a 5 km. Llegada en ~22 min."
    ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~22 min."
-   ],
-   "lluvia_ahora": [],
    "referencia": {
     "datos": {
-     "Viento": "24 km/h N",
-     "Viento máximo": "57 km/h"
-    },
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Viento fuerte: 43 km/h (máx 25)"
-   ],
-   "nivel": "VIGILANCIA"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "43 km/h N",
+     "Viento": "19 km/h N",
      "Viento máximo": "25 km/h"
     },
     "estado": {
@@ -182,49 +732,26 @@
  },
  {
   "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~63 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
    "motivos": [
-    "Lluvia en tu estación de referencia (E1)"
+    "Lluvia a 17.6 km en E0"
    ],
    "nivel": "PELIGRO"
   },
   "res": {
    "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~85 min."
+    "Lluvia en X a 5 km. Llegada en ~35 min."
    ],
    "lluvia_ahora": [
     {
-     "distancia_km": 25.9,
+     "distancia_km": 17.6,
      "es_referencia": false,
      "nombre": "E0"
-    },
-    {
-     "distancia_km": 32.3,
-     "es_referencia": true,
-     "nombre": "E1"
     }
    ],
    "referencia": {
     "datos": {
-     "Viento": "9 km/h N",
-     "Viento máximo": "28 km/h"
+     "Viento": "30 km/h N",
+     "Viento máximo": "0 km/h"
     },
     "estado": {
      "estado": "SIN_LECTURA"
@@ -243,108 +770,6 @@
    "referencia": {
     "datos": null,
     "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia en tu estación de referencia (E0)"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 38.6,
-     "es_referencia": true,
-     "nombre": "E0"
-    },
-    {
-     "distancia_km": 26.2,
-     "es_referencia": false,
-     "nombre": "E1"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "3 km/h N",
-     "Viento máximo": "46 km/h"
-    },
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "60 km/h N",
-     "Viento máximo": "48 km/h"
-    },
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 14.0 km en E0",
-    "Lluvia a 16.7 km en E1"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 14.0,
-     "es_referencia": false,
-     "nombre": "E0"
-    },
-    {
-     "distancia_km": 16.7,
-     "es_referencia": false,
-     "nombre": "E1"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Viento muy fuerte: 55 km/h (racha 24)"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "55 km/h N",
-     "Viento máximo": "24 km/h"
-    },
-    "estado": {
      "estado": "ACTIVA"
     }
    }
@@ -353,209 +778,34 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 11.0 km en E1"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 26.8,
-     "es_referencia": false,
-     "nombre": "E0"
-    },
-    {
-     "distancia_km": 11.0,
-     "es_referencia": false,
-     "nombre": "E1"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~80 min."
-   ],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 25.7,
-     "es_referencia": false,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "19 km/h N",
-     "Viento máximo": "31 km/h"
-    },
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~68 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 21.7 km en E0",
-    "Lluvia a 8.5 km en E1"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 21.7,
-     "es_referencia": false,
-     "nombre": "E0"
-    },
-    {
-     "distancia_km": 8.5,
-     "es_referencia": false,
-     "nombre": "E1"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia en tu estación de referencia (E0)"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 4.9,
-     "es_referencia": true,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 4.3 km en E0"
+    "Viento muy fuerte: 46 km/h (racha 35)",
+    "Lluvia en X a 5 km. Llegada en ~6 min."
    ],
    "nivel": "PELIGRO"
   },
   "res": {
    "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~55 min."
+    "Lluvia en X a 5 km. Llegada en ~6 min."
    ],
    "lluvia_ahora": [
     {
-     "distancia_km": 4.3,
+     "distancia_km": 29.7,
      "es_referencia": false,
      "nombre": "E0"
+    },
+    {
+     "distancia_km": 31.1,
+     "es_referencia": false,
+     "nombre": "E1"
     }
    ],
    "referencia": {
     "datos": {
-     "Viento": "17 km/h N",
-     "Viento máximo": "61 km/h"
+     "Viento": "46 km/h N",
+     "Viento máximo": "35 km/h"
     },
     "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~43 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "28 km/h N",
-     "Viento máximo": "17 km/h"
-    },
-    "estado": {
-     "estado": "CONGELADA"
+     "estado": "ACTIVA"
     }
    }
   }
@@ -563,33 +813,7 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 5.2 km en E0"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~36 min."
-   ],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 5.2,
-     "es_referencia": false,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia en tu estación de referencia (E0)"
+    "Lluvia a 17.9 km en E0"
    ],
    "nivel": "PELIGRO"
   },
@@ -597,12 +821,36 @@
    "alertas_predictivas": [],
    "lluvia_ahora": [
     {
-     "distancia_km": 38.4,
-     "es_referencia": true,
+     "distancia_km": 17.9,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia a 22.5 km en E1"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 28.4,
+     "es_referencia": false,
      "nombre": "E0"
     },
     {
-     "distancia_km": 30.7,
+     "distancia_km": 22.5,
      "es_referencia": false,
      "nombre": "E1"
     }
@@ -626,265 +874,7 @@
    "referencia": {
     "datos": null,
     "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 19.5 km en E0",
-    "Lluvia en tu estación de referencia (E1)"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 19.5,
-     "es_referencia": false,
-     "nombre": "E0"
-    },
-    {
-     "distancia_km": 38.3,
-     "es_referencia": true,
-     "nombre": "E1"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "37 km/h N",
-     "Viento máximo": "1 km/h"
-    },
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia en tu estación de referencia (E1)"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 37.6,
-     "es_referencia": false,
-     "nombre": "E0"
-    },
-    {
-     "distancia_km": 29.1,
-     "es_referencia": true,
-     "nombre": "E1"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
      "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "25 km/h N",
-     "Viento máximo": "33 km/h"
-    },
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 25.4,
-     "es_referencia": false,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "31 km/h N",
-     "Viento máximo": "3 km/h"
-    },
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Viento muy fuerte: 16 km/h (racha 69)"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "16 km/h N",
-     "Viento máximo": "69 km/h"
-    },
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Viento muy fuerte: 47 km/h (racha 60)",
-    "Lluvia a 13.8 km en E0"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 13.8,
-     "es_referencia": false,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "47 km/h N",
-     "Viento máximo": "60 km/h"
-    },
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~42 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~67 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "22 km/h N",
-     "Viento máximo": "12 km/h"
-    },
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 13.9 km en E0"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 13.9,
-     "es_referencia": false,
-     "nombre": "E0"
-    },
-    {
-     "distancia_km": 30.2,
-     "es_referencia": false,
-     "nombre": "E1"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "14 km/h N",
-     "Viento máximo": "31 km/h"
-    },
-    "estado": {
-     "estado": "CONGELADA"
     }
    }
   }
@@ -900,34 +890,10 @@
    "referencia": {
     "datos": {
      "Viento": "30 km/h N",
-     "Viento máximo": "1 km/h"
+     "Viento máximo": "2 km/h"
     },
     "estado": {
      "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 2.3 km en E0"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 2.3,
-     "es_referencia": false,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "CONGELADA"
     }
    }
   }
@@ -941,15 +907,18 @@
    "alertas_predictivas": [],
    "lluvia_ahora": [
     {
-     "distancia_km": 30.5,
+     "distancia_km": 36.7,
      "es_referencia": false,
      "nombre": "E0"
     }
    ],
    "referencia": {
-    "datos": null,
+    "datos": {
+     "Viento": "37 km/h N",
+     "Viento máximo": "33 km/h"
+    },
     "estado": {
-     "estado": "CONGELADA"
+     "estado": "SIN_LECTURA"
     }
    }
   }
@@ -957,8 +926,7 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 1.9 km en E0",
-    "Lluvia en tu estación de referencia (E1)"
+    "Lluvia a 15.6 km en E0"
    ],
    "nivel": "PELIGRO"
   },
@@ -966,23 +934,73 @@
    "alertas_predictivas": [],
    "lluvia_ahora": [
     {
-     "distancia_km": 1.9,
+     "distancia_km": 15.6,
      "es_referencia": false,
      "nombre": "E0"
     },
     {
-     "distancia_km": 11.8,
-     "es_referencia": true,
+     "distancia_km": 32.7,
+     "es_referencia": false,
      "nombre": "E1"
     }
    ],
    "referencia": {
     "datos": {
-     "Viento": "10 km/h N",
-     "Viento máximo": "58 km/h"
+     "Viento": "15 km/h N",
+     "Viento máximo": "37 km/h"
     },
     "estado": {
      "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia a 21.1 km en E0"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 21.1,
+     "es_referencia": false,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 39.4,
+     "es_referencia": false,
+     "nombre": "E1"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento muy fuerte: 55 km/h (racha 67)"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "55 km/h N",
+     "Viento máximo": "67 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
     }
    }
   }
@@ -993,15 +1011,43 @@
    "nivel": "SEGURO"
   },
   "res": {
-   "alertas_predictivas": [],
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~74 min."
+   ],
    "lluvia_ahora": [],
    "referencia": {
-    "datos": {
-     "Viento": "33 km/h N",
-     "Viento máximo": "10 km/h"
-    },
+    "datos": null,
     "estado": {
-     "estado": "CONGELADA"
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia a 7.9 km en E1"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 39.9,
+     "es_referencia": false,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 7.9,
+     "es_referencia": false,
+     "nombre": "E1"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "ACTIVA"
     }
    }
   }
@@ -1017,6 +1063,123 @@
    "referencia": {
     "datos": null,
     "estado": {
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia en X a 5 km. Llegada en ~25 min."
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~25 min."
+   ],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento muy fuerte: 40 km/h (racha 68)",
+    "Lluvia en X a 5 km. Llegada en ~10 min."
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~10 min."
+   ],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 34.0,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "40 km/h N",
+     "Viento máximo": "68 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "16 km/h N",
+     "Viento máximo": "29 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~67 min."
+   ],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 29.0,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento muy fuerte: 50 km/h (racha 69)",
+    "Lluvia en X a 5 km. Llegada en ~12 min."
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~12 min."
+   ],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "50 km/h N",
+     "Viento máximo": "69 km/h"
+    },
+    "estado": {
      "estado": "ACTIVA"
     }
    }
@@ -1025,20 +1188,49 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 10.2 km en E0",
-    "Lluvia en X a 5 km. Llegada en ~26 min."
+    "Lluvia a 3.1 km en E0"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 3.1,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia a 4.0 km en E0",
+    "Lluvia a 16.5 km en E1"
    ],
    "nivel": "PELIGRO"
   },
   "res": {
    "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~26 min."
+    "Lluvia en X a 5 km. Llegada en ~43 min."
    ],
    "lluvia_ahora": [
     {
-     "distancia_km": 10.2,
+     "distancia_km": 4.0,
      "es_referencia": false,
      "nombre": "E0"
+    },
+    {
+     "distancia_km": 16.5,
+     "es_referencia": false,
+     "nombre": "E1"
     }
    ],
    "referencia": {
@@ -1055,8 +1247,40 @@
    "nivel": "SEGURO"
   },
   "res": {
-   "alertas_predictivas": [],
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~46 min."
+   ],
    "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia a 24.2 km en E0",
+    "Lluvia a 12.7 km en E1"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 24.2,
+     "es_referencia": false,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 12.7,
+     "es_referencia": false,
+     "nombre": "E1"
+    }
+   ],
    "referencia": {
     "datos": null,
     "estado": {
@@ -1068,19 +1292,52 @@
  {
   "esperado": {
    "motivos": [
-    "Viento muy fuerte: 53 km/h (racha 7)"
+    "Lluvia a 21.3 km en E0",
+    "Lluvia a 12.5 km en E1"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 21.3,
+     "es_referencia": false,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 12.5,
+     "es_referencia": false,
+     "nombre": "E1"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "14 km/h N",
+     "Viento máximo": "38 km/h"
+    },
+    "estado": {
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia en X a 5 km. Llegada en ~23 min."
    ],
    "nivel": "PELIGRO"
   },
   "res": {
    "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~36 min."
+    "Lluvia en X a 5 km. Llegada en ~23 min."
    ],
    "lluvia_ahora": [],
    "referencia": {
     "datos": {
-     "Viento": "53 km/h N",
-     "Viento máximo": "7 km/h"
+     "Viento": "7 km/h N",
+     "Viento máximo": "34 km/h"
     },
     "estado": {
      "estado": "ACTIVA"
@@ -1095,68 +1352,12 @@
   },
   "res": {
    "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~43 min."
+    "Lluvia en X a 5 km. Llegada en ~84 min."
    ],
    "lluvia_ahora": [],
    "referencia": {
     "datos": {
-     "Viento": "56 km/h N",
-     "Viento máximo": "22 km/h"
-    },
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~72 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "27 km/h N",
-     "Viento máximo": "53 km/h"
-    },
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "36 km/h N",
+     "Viento": "58 km/h N",
      "Viento máximo": "52 km/h"
     },
     "estado": {
@@ -1176,7 +1377,7 @@
    "referencia": {
     "datos": null,
     "estado": {
-     "estado": "ACTIVA"
+     "estado": "SIN_LECTURA"
     }
    }
   }
@@ -1191,64 +1392,8 @@
    "lluvia_ahora": [],
    "referencia": {
     "datos": {
-     "Viento": "32 km/h N",
-     "Viento máximo": "33 km/h"
-    },
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~40 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "27 km/h N",
-     "Viento máximo": "44 km/h"
-    },
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "55 km/h N",
-     "Viento máximo": "49 km/h"
+     "Viento": "0 km/h N",
+     "Viento máximo": "13 km/h"
     },
     "estado": {
      "estado": "SIN_LECTURA"
@@ -1262,12 +1407,19 @@
    "nivel": "SEGURO"
   },
   "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~53 min."
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 35.7,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
    ],
-   "lluvia_ahora": [],
    "referencia": {
-    "datos": null,
+    "datos": {
+     "Viento": "11 km/h N",
+     "Viento máximo": "27 km/h"
+    },
     "estado": {
      "estado": "CONGELADA"
     }
@@ -1277,7 +1429,41 @@
  {
   "esperado": {
    "motivos": [
-    "Viento muy fuerte: 53 km/h (racha 4)"
+    "Viento fuerte: 13 km/h (máx 52)",
+    "Lluvia en tu estación de referencia (E0)",
+    "Lluvia en tu estación de referencia (E1)"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 7.7,
+     "es_referencia": true,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 25.6,
+     "es_referencia": true,
+     "nombre": "E1"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "13 km/h N",
+     "Viento máximo": "52 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento muy fuerte: 47 km/h (racha 27)"
    ],
    "nivel": "PELIGRO"
   },
@@ -1286,8 +1472,89 @@
    "lluvia_ahora": [],
    "referencia": {
     "datos": {
-     "Viento": "53 km/h N",
-     "Viento máximo": "4 km/h"
+     "Viento": "47 km/h N",
+     "Viento máximo": "27 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Lluvia en tu estación de referencia (E1)",
+    "Lluvia en X a 5 km. Llegada en ~14 min."
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~14 min."
+   ],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 37.6,
+     "es_referencia": false,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 4.0,
+     "es_referencia": true,
+     "nombre": "E1"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 33.6,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento fuerte: 39 km/h (máx 49)"
+   ],
+   "nivel": "VIGILANCIA"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 35.4,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "39 km/h N",
+     "Viento máximo": "49 km/h"
     },
     "estado": {
      "estado": "ACTIVA"
@@ -1305,8 +1572,8 @@
    "lluvia_ahora": [],
    "referencia": {
     "datos": {
-     "Viento": "8 km/h N",
-     "Viento máximo": "51 km/h"
+     "Viento": "9 km/h N",
+     "Viento máximo": "47 km/h"
     },
     "estado": {
      "estado": "CONGELADA"
@@ -1316,24 +1583,49 @@
  },
  {
   "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
    "motivos": [
-    "Viento muy fuerte: 31 km/h (racha 63)",
-    "Lluvia en X a 5 km. Llegada en ~14 min."
+    "Lluvia a 13.3 km en E0",
+    "Lluvia a 23.1 km en E1"
    ],
    "nivel": "PELIGRO"
   },
   "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~14 min."
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 13.3,
+     "es_referencia": false,
+     "nombre": "E0"
+    },
+    {
+     "distancia_km": 23.1,
+     "es_referencia": false,
+     "nombre": "E1"
+    }
    ],
-   "lluvia_ahora": [],
    "referencia": {
     "datos": {
-     "Viento": "31 km/h N",
-     "Viento máximo": "63 km/h"
+     "Viento": "22 km/h N",
+     "Viento máximo": "68 km/h"
     },
     "estado": {
-     "estado": "ACTIVA"
+     "estado": "SIN_LECTURA"
     }
    }
   }
@@ -1349,54 +1641,18 @@
    "alertas_predictivas": [],
    "lluvia_ahora": [
     {
-     "distancia_km": 9.0,
+     "distancia_km": 32.1,
      "es_referencia": true,
      "nombre": "E0"
     }
    ],
    "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~30 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~67 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
     "datos": {
-     "Viento": "13 km/h N",
-     "Viento máximo": "41 km/h"
+     "Viento": "16 km/h N",
+     "Viento máximo": "7 km/h"
     },
     "estado": {
-     "estado": "CONGELADA"
+     "estado": "ACTIVA"
     }
    }
   }
@@ -1408,13 +1664,55 @@
   },
   "res": {
    "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~45 min."
+    "Lluvia en X a 5 km. Llegada en ~78 min."
+   ],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "SIN_LECTURA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~46 min."
    ],
    "lluvia_ahora": [],
    "referencia": {
     "datos": null,
     "estado": {
      "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~82 min."
+   ],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 32.1,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
     }
    }
   }
@@ -1422,99 +1720,25 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia en X a 5 km. Llegada en ~1 min."
+    "Lluvia a 6.1 km en E0"
    ],
    "nivel": "PELIGRO"
   },
   "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~1 min."
-   ],
+   "alertas_predictivas": [],
    "lluvia_ahora": [
     {
-     "distancia_km": 27.4,
+     "distancia_km": 6.1,
      "es_referencia": false,
      "nombre": "E0"
     },
     {
-     "distancia_km": 29.6,
+     "distancia_km": 35.1,
      "es_referencia": false,
      "nombre": "E1"
     }
    ],
    "referencia": {
-    "datos": {
-     "Viento": "2 km/h N",
-     "Viento máximo": "64 km/h"
-    },
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Viento muy fuerte: 4 km/h (racha 56)"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~87 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "4 km/h N",
-     "Viento máximo": "56 km/h"
-    },
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 22.3 km en E0",
-    "Lluvia en X a 5 km. Llegada en ~11 min."
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~11 min."
-   ],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 22.3,
-     "es_referencia": false,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "26 km/h N",
-     "Viento máximo": "69 km/h"
-    },
-    "estado": {
-     "estado": "CONGELADA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
     "datos": null,
     "estado": {
      "estado": "ACTIVA"
@@ -1525,7 +1749,7 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 10.3 km en E0"
+    "Lluvia a 22.7 km en E1"
    ],
    "nivel": "PELIGRO"
   },
@@ -1533,167 +1757,84 @@
    "alertas_predictivas": [],
    "lluvia_ahora": [
     {
-     "distancia_km": 10.3,
-     "es_referencia": false,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "46 km/h N",
-     "Viento máximo": "29 km/h"
-    },
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "34 km/h N",
-     "Viento máximo": "26 km/h"
-    },
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "17 km/h N",
-     "Viento máximo": "66 km/h"
-    },
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~32 min."
-   ],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 7.4 km en E0"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 7.4,
-     "es_referencia": false,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Viento muy fuerte: 49 km/h (racha 21)"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
-   "referencia": {
-    "datos": {
-     "Viento": "49 km/h N",
-     "Viento máximo": "21 km/h"
-    },
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 11.3 km en E0",
-    "Lluvia a 15.2 km en E1"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 11.3,
+     "distancia_km": 31.1,
      "es_referencia": false,
      "nombre": "E0"
     },
     {
-     "distancia_km": 15.2,
+     "distancia_km": 22.7,
      "es_referencia": false,
      "nombre": "E1"
     }
    ],
-   "referencia": {
-    "datos": {
-     "Viento": "42 km/h N",
-     "Viento máximo": "46 km/h"
-    },
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [],
-   "nivel": "SEGURO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [],
    "referencia": {
     "datos": {
      "Viento": "32 km/h N",
+     "Viento máximo": "24 km/h"
+    },
+    "estado": {
+     "estado": "ACTIVA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [
+    "Lluvia en X a 5 km. Llegada en ~84 min."
+   ],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": {
+     "Viento": "16 km/h N",
+     "Viento máximo": "1 km/h"
+    },
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [],
+   "nivel": "SEGURO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [],
+   "referencia": {
+    "datos": null,
+    "estado": {
+     "estado": "CONGELADA"
+    }
+   }
+  }
+ },
+ {
+  "esperado": {
+   "motivos": [
+    "Viento fuerte: 41 km/h (máx 9)",
+    "Lluvia a 1.3 km en E0"
+   ],
+   "nivel": "PELIGRO"
+  },
+  "res": {
+   "alertas_predictivas": [],
+   "lluvia_ahora": [
+    {
+     "distancia_km": 1.3,
+     "es_referencia": false,
+     "nombre": "E0"
+    }
+   ],
+   "referencia": {
+    "datos": {
+     "Viento": "41 km/h N",
      "Viento máximo": "9 km/h"
     },
     "estado": {
@@ -1704,110 +1845,14 @@
  },
  {
   "esperado": {
-   "motivos": [
-    "Lluvia en tu estación de referencia (E0)"
-   ],
-   "nivel": "PELIGRO"
+   "motivos": [],
+   "nivel": "SEGURO"
   },
   "res": {
    "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 20.6,
-     "es_referencia": true,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "54 km/h N",
-     "Viento máximo": "0 km/h"
-    },
-    "estado": {
-     "estado": "SIN_LECTURA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia en tu estación de referencia (E0)"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~30 min."
-   ],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 18.0,
-     "es_referencia": true,
-     "nombre": "E0"
-    }
-   ],
+   "lluvia_ahora": [],
    "referencia": {
     "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Lluvia a 2.7 km en E0"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 2.7,
-     "es_referencia": false,
-     "nombre": "E0"
-    }
-   ],
-   "referencia": {
-    "datos": null,
-    "estado": {
-     "estado": "ACTIVA"
-    }
-   }
-  }
- },
- {
-  "esperado": {
-   "motivos": [
-    "Viento muy fuerte: 49 km/h (racha 5)",
-    "Lluvia a 4.3 km en E0"
-   ],
-   "nivel": "PELIGRO"
-  },
-  "res": {
-   "alertas_predictivas": [
-    "Lluvia en X a 5 km. Llegada en ~66 min."
-   ],
-   "lluvia_ahora": [
-    {
-     "distancia_km": 4.3,
-     "es_referencia": false,
-     "nombre": "E0"
-    },
-    {
-     "distancia_km": 32.4,
-     "es_referencia": false,
-     "nombre": "E1"
-    }
-   ],
-   "referencia": {
-    "datos": {
-     "Viento": "49 km/h N",
-     "Viento máximo": "5 km/h"
-    },
     "estado": {
      "estado": "ACTIVA"
     }

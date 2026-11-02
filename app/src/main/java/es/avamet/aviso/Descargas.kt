@@ -14,7 +14,24 @@ object Descargas {
     private const val AVAMET = "https://www.avamet.org/mxo_i.php?id="
     private const val METAR = "https://aviationweather.gov/api/data/metar?format=json&ids="
 
+    private val hilos = java.util.concurrent.Executors.newCachedThreadPool { r -> Thread(r).also { it.isDaemon = true } }
+
+    /** Cada descarga tiene un tope DURO de 25 s (un DNS o un TLS colgado no respeta los timeouts de la conexión). */
     private fun descargar(url: String): String {
+        val f = hilos.submit(java.util.concurrent.Callable { descargarDirecto(url) })
+        try {
+            return f.get(25, java.util.concurrent.TimeUnit.SECONDS)
+        } catch (e: java.util.concurrent.TimeoutException) {
+            f.cancel(true)
+            throw java.net.SocketTimeoutException("Sin respuesta tras 25 s")
+        } catch (e: java.util.concurrent.ExecutionException) {
+            val c = e.cause
+            if (c is Exception) throw c
+            throw java.io.IOException("${c?.javaClass?.simpleName}: ${c?.message}")
+        }
+    }
+
+    private fun descargarDirecto(url: String): String {
         val c = URL(url).openConnection() as HttpURLConnection
         try {
             c.connectTimeout = 8_000

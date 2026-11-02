@@ -31,6 +31,9 @@ object Descargas {
         }
     }
 
+    /** Descarga genérica de texto (la usa Cielo para 7Timer). */
+    fun texto(url: String): String = descargar(url, 15_000)
+
     private fun descargarDirecto(url: String, lecturaMs: Int): String {
         val c = URL(url).openConnection() as HttpURLConnection
         try {

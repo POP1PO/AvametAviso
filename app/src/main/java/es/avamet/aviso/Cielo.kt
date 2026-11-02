@@ -2,6 +2,7 @@ package es.avamet.aviso
 
 import es.avamet.aviso.core.*
 import java.util.Locale
+import org.json.JSONObject
 import kotlin.math.ln
 import kotlin.math.roundToInt
 
@@ -41,6 +42,49 @@ object Cielo {
         if (h >= 21 || h < 6) return Pair(ahoraMs, true)
         c.set(java.util.Calendar.HOUR_OF_DAY, 22); c.set(java.util.Calendar.MINUTE, 0); c.set(java.util.Calendar.SECOND, 0)
         return Pair(c.timeInMillis, false)
+    }
+
+
+    /** Seeing y transparencia del pronóstico de 7Timer (producto "astro"). Es un dato EXTERNO, no de las estaciones de la app. */
+    class Seeing(val lineas: List<String>)
+
+    /**
+     * Pronóstico de 7Timer! para la noche: seeing (1 = menos de 0,5″ … 8 = más de 2,5″), transparencia (1 = menos de 0,3 … 8 = más de 1
+     * magnitud por masa de aire) y nubosidad (1–9). Formato según la wiki de 7Timer; no he podido probar la respuesta real desde aquí.
+     */
+    fun seeing(lat: Double, lon: Double, ahoraMs: Long): Seeing {
+        val url = "https://www.7timer.info/bin/api.pl?lon=${"%.3f".format(Locale.US, lon)}&lat=${"%.3f".format(Locale.US, lat)}&product=astro&output=json&ac=0&unit=metric&tzshift=0"
+        return interpretarSeeing(Descargas.texto(url), ahoraMs)
+    }
+
+    fun interpretarSeeing(texto: String, ahoraMs: Long): Seeing {
+        val j = JSONObject(texto)
+        val init = j.getString("init")   // AAAAMMDDHH en UTC
+        val fmt = java.text.SimpleDateFormat("yyyyMMddHH", Locale.US)
+        fmt.timeZone = java.util.TimeZone.getTimeZone("UTC")
+        val t0 = fmt.parse(init)?.time ?: throw java.io.IOException("init ilegible")
+        val serie = j.getJSONArray("dataseries")
+        val cal = java.util.Calendar.getInstance()
+        val see = ArrayList<Int>(); val tra = ArrayList<Int>(); val nub = ArrayList<Int>()
+        for (i in 0 until serie.length()) {
+            val o = serie.getJSONObject(i)
+            val ms = t0 + o.getLong("timepoint") * 3_600_000L
+            cal.timeInMillis = ms
+            val h = cal.get(java.util.Calendar.HOUR_OF_DAY)
+            if (ms < ahoraMs - 3_600_000L || !(h >= 21 || h <= 5) || see.size >= 9) continue
+            val s1 = o.optInt("seeing", -9999); val t1 = o.optInt("transparency", -9999); val c1 = o.optInt("cloudcover", -9999)
+            if (s1 in 1..8) see.add(s1)
+            if (t1 in 1..8) tra.add(t1)
+            if (c1 in 1..9) nub.add(c1)
+        }
+        if (see.isEmpty()) throw java.io.IOException("7Timer no devuelve horas de noche con seeing")
+        val edadH = (ahoraMs - t0) / 3_600_000
+        val l = ArrayList<String>()
+        l.add("Seeing: ${"%.1f".format(Locale.US, see.average())}/8 de media (peor ${see.max()}/8) · 1 = <0,5″ · 8 = >2,5″ · cuanto menor, mejor")
+        if (tra.isNotEmpty()) l.add("Transparencia: ${"%.1f".format(Locale.US, tra.average())}/8 (peor ${tra.max()}/8) · 1 = <0,3 · 8 = >1 mag/masa de aire")
+        if (nub.isNotEmpty()) l.add("Nubosidad 7Timer: ${"%.1f".format(Locale.US, nub.average())}/9 · 1 = 0–6 % · 9 = 94–100 %")
+        l.add("Pronóstico externo de 7Timer (emitido hace $edadH h), no de nuestras estaciones; no entra en el veredicto.")
+        return Seeing(l)
     }
 
     private fun numero(v: Any?): Double? =

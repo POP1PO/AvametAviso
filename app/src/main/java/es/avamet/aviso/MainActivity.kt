@@ -267,7 +267,8 @@ class MainActivity : Activity() {
         val sb = StringBuilder()
         if (Estado.mensaje.isNotEmpty()) sb.append("⚠️ ").append(Estado.mensaje).append("\n\n")
         if (r == null) {
-            sb.append(if (Estado.ubicacion == null) "Sin posición todavía. Activa el GPS y pulsa «Iniciar vigilancia»." else "Calculando…")
+            sb.append(if (Estado.ubicacion == null) "Sin posición todavía. Activa el GPS y pulsa «Iniciar vigilancia»." else "Posición obtenida. Descargando datos…")
+            sb.append("\n\nRegistro:\n").append(Estado.registro())
             txtResumen.text = sb.toString()
             txtEstaciones.text = ""; txtAeropuertos.text = ""
             return
@@ -295,6 +296,7 @@ class MainActivity : Activity() {
         if (alt.isNotEmpty()) sb.append("\nEstaciones cercanas con datos recientes:\n").append(alt.joinToString("\n") { x ->
             val m = x.d(); "• ${m["nombre"]} (${m["distancia_km"]} km, hace ${m["edad_min"]} min)" }).append("\n")
         sb.append("\nPeticiones en este ciclo: ${r.descargas}")
+        sb.append("\n\nRegistro:\n").append(Estado.registro())
         txtResumen.text = sb.toString()
 
         // Estaciones

@@ -1,0 +1,177 @@
+{
+ "LECO": {
+  "nombre": "A Coruña",
+  "lat": 43.3021,
+  "lon": -8.3773
+ },
+ "LEAB": {
+  "nombre": "Albacete",
+  "lat": 38.9485,
+  "lon": -1.8635
+ },
+ "LEAL": {
+  "nombre": "Alicante-Elche",
+  "lat": 38.2822,
+  "lon": -0.5581
+ },
+ "LEAM": {
+  "nombre": "Almería",
+  "lat": 36.8439,
+  "lon": -2.3701
+ },
+ "LEAS": {
+  "nombre": "Asturias",
+  "lat": 43.5636,
+  "lon": -6.0346
+ },
+ "LEBZ": {
+  "nombre": "Badajoz",
+  "lat": 38.8913,
+  "lon": -6.8213
+ },
+ "LEBL": {
+  "nombre": "Barcelona-El Prat",
+  "lat": 41.2971,
+  "lon": 2.0785
+ },
+ "LEBB": {
+  "nombre": "Bilbao",
+  "lat": 43.3011,
+  "lon": -2.9106
+ },
+ "LEBG": {
+  "nombre": "Burgos",
+  "lat": 42.3576,
+  "lon": -3.6208
+ },
+ "LECH": {
+  "nombre": "Castellón",
+  "lat": 40.2139,
+  "lon": 0.0736
+ },
+ "LEBA": {
+  "nombre": "Córdoba",
+  "lat": 37.842,
+  "lon": -4.8489
+ },
+ "LEGE": {
+  "nombre": "Girona",
+  "lat": 41.901,
+  "lon": 2.7605
+ },
+ "LEGR": {
+  "nombre": "Granada-Jaén",
+  "lat": 37.1887,
+  "lon": -3.7774
+ },
+ "LEIB": {
+  "nombre": "Ibiza",
+  "lat": 38.8729,
+  "lon": 1.3731
+ },
+ "LEJR": {
+  "nombre": "Jerez",
+  "lat": 36.7446,
+  "lon": -6.0601
+ },
+ "LELN": {
+  "nombre": "León",
+  "lat": 42.589,
+  "lon": -5.6556
+ },
+ "LEDA": {
+  "nombre": "Lleida-Alguaire",
+  "lat": 41.7281,
+  "lon": 0.5353
+ },
+ "LERJ": {
+  "nombre": "Logroño",
+  "lat": 42.461,
+  "lon": -2.3206
+ },
+ "LEMD": {
+  "nombre": "Madrid-Barajas",
+  "lat": 40.4719,
+  "lon": -3.5626
+ },
+ "LEMG": {
+  "nombre": "Málaga-Costa del Sol",
+  "lat": 36.6749,
+  "lon": -4.4991
+ },
+ "LEMH": {
+  "nombre": "Menorca",
+  "lat": 39.8626,
+  "lon": 4.2186
+ },
+ "LEML": {
+  "nombre": "Melilla",
+  "lat": 35.2798,
+  "lon": -2.9563
+ },
+ "LEPA": {
+  "nombre": "Palma de Mallorca",
+  "lat": 39.5517,
+  "lon": 2.7388
+ },
+ "LEPP": {
+  "nombre": "Pamplona",
+  "lat": 42.77,
+  "lon": -1.6463
+ },
+ "LERS": {
+  "nombre": "Reus",
+  "lat": 41.1474,
+  "lon": 1.1672
+ },
+ "LESO": {
+  "nombre": "San Sebastián",
+  "lat": 43.3564,
+  "lon": -1.7906
+ },
+ "LEZL": {
+  "nombre": "Sevilla",
+  "lat": 37.418,
+  "lon": -5.8987
+ },
+ "LEST": {
+  "nombre": "Santiago",
+  "lat": 42.8963,
+  "lon": -8.4151
+ },
+ "LETL": {
+  "nombre": "Teruel",
+  "lat": 40.4111,
+  "lon": -1.2183
+ },
+ "LEVC": {
+  "nombre": "Valencia",
+  "lat": 39.4893,
+  "lon": -0.4816
+ },
+ "LEVT": {
+  "nombre": "Vitoria",
+  "lat": 42.8828,
+  "lon": -2.7244
+ },
+ "LEZG": {
+  "nombre": "Zaragoza",
+  "lat": 41.6662,
+  "lon": -1.0415
+ },
+ "GCLP": {
+  "nombre": "Gran Canaria",
+  "lat": 27.9319,
+  "lon": -15.3866
+ },
+ "GCTS": {
+  "nombre": "Tenerife Sur",
+  "lat": 28.0445,
+  "lon": -16.5725
+ },
+ "GCXO": {
+  "nombre": "Tenerife Norte",
+  "lat": 28.4827,
+  "lon": -16.3415
+ }
+}

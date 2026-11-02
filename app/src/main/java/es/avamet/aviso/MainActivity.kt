@@ -6,7 +6,9 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.Path
 import android.graphics.Paint
 import android.graphics.drawable.GradientDrawable
 import android.net.Uri
@@ -44,25 +46,97 @@ class MainActivity : Activity() {
     private lateinit var btnSilenciar: Button
     private val oyente: () -> Unit = { refrescar() }
     private var centrado = false
+    private lateinit var contResumen: LinearLayout
+    private var registroAbierto = false
 
     private fun dp(v: Int) = (v * resources.displayMetrics.density).toInt()
 
-    private fun texto(t: String, tam: Float = 15f, negrita: Boolean = false): TextView {
+    // Paleta del programa de escritorio (tema oscuro)
+    private val BG = 0xFF0D1117.toInt()
+    private val PANEL = 0xFF161B22.toInt()
+    private val PANEL2 = 0xFF1C2128.toInt()
+    private val BORDE = 0xFF30363D.toInt()
+    private val TEXTO = 0xFFE6EDF3.toInt()
+    private val APAGADO = 0xFF8B949E.toInt()
+    private val VERDE = 0xFF2EA043.toInt()
+    private val AMBAR = 0xFFD29922.toInt()
+    private val ROJO = 0xFFDA3633.toInt()
+    private val AZUL = 0xFF58A6FF.toInt()
+    private val MORADO = 0xFFA371F7.toInt()
+
+    private fun texto(t: String, tam: Float = 15f, negrita: Boolean = false, color: Int = TEXTO): TextView {
         val v = TextView(this)
         v.text = t
         v.textSize = tam
-        v.setTextColor(Color.BLACK)
+        v.setTextColor(color)
         if (negrita) v.paint.isFakeBoldText = true
-        v.setPadding(dp(4), dp(4), dp(4), dp(4))
+        v.setPadding(dp(4), dp(2), dp(4), dp(2))
         return v
     }
 
-    private fun boton(t: String, f: () -> Unit): Button {
+    private fun fondo(color: Int, borde: Int, radio: Int = 10): GradientDrawable {
+        val g = GradientDrawable()
+        g.setColor(color)
+        g.cornerRadius = dp(radio).toFloat()
+        g.setStroke(dp(1), borde)
+        return g
+    }
+
+    private fun boton(t: String, acento: Int? = null, f: () -> Unit): Button {
         val b = Button(this)
         b.text = t
         b.isAllCaps = false
+        b.setTextColor(if (acento != null) Color.WHITE else TEXTO)
+        b.background = fondo(acento ?: PANEL2, acento ?: BORDE)
         b.setOnClickListener { f() }
         return b
+    }
+
+    private fun margenes(v: View, l: Int, t: Int, r: Int, b: Int): View {
+        v.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).also { it.setMargins(dp(l), dp(t), dp(r), dp(b)) }
+        return v
+    }
+
+    /** Tarjeta con título en minúsculas pequeñas, como en el programa de escritorio. */
+    private fun tarjeta(titulo: String, borde: Int = BORDE, fondoColor: Int = PANEL): LinearLayout {
+        val c = LinearLayout(this)
+        c.orientation = LinearLayout.VERTICAL
+        c.setPadding(dp(14), dp(12), dp(14), dp(12))
+        c.background = fondo(fondoColor, borde)
+        margenes(c, 10, 8, 10, 0)
+        c.addView(texto(titulo.uppercase(), 11f, true, APAGADO))
+        return c
+    }
+
+    /** Cuadrícula de azulejos (etiqueta, valor, color del valor), 3 por fila. */
+    private fun azulejos(items: List<Triple<String, String, Int>>): View {
+        val col = LinearLayout(this)
+        col.orientation = LinearLayout.VERTICAL
+        for (grupo in items.chunked(3)) {
+            val fila = LinearLayout(this)
+            fila.orientation = LinearLayout.HORIZONTAL
+            for ((et, valor, color) in grupo) {
+                val t = LinearLayout(this)
+                t.orientation = LinearLayout.VERTICAL
+                t.setPadding(dp(10), dp(8), dp(10), dp(8))
+                t.background = fondo(PANEL2, BORDE, 8)
+                t.addView(texto(et.uppercase(), 10f, false, APAGADO))
+                t.addView(texto(valor, 17f, true, color))
+                val lp = LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f)
+                lp.setMargins(dp(3), dp(3), dp(3), dp(3))
+                fila.addView(t, lp)
+            }
+            for (i in grupo.size until 3) fila.addView(View(this), LinearLayout.LayoutParams(0, 1, 1f))
+            col.addView(fila)
+        }
+        return col
+    }
+
+    private fun etiqueta(t: String, color: Int): TextView {
+        val v = texto(t, 12f, true, Color.WHITE)
+        v.background = fondo(color, color, 12)
+        v.setPadding(dp(10), dp(3), dp(10), dp(3))
+        return v
     }
 
     /** En los datos de AVAMET el municipio y el lugar vienen pegados ("MoncofaRiu Belcaire"): se separan solo al mostrarlos. */
@@ -70,6 +144,7 @@ class MainActivity : Activity() {
 
     private fun desplazable(contenido: View): ScrollView {
         val s = ScrollView(this)
+        s.setBackgroundColor(BG)
         s.addView(contenido)
         return s
     }
@@ -84,11 +159,11 @@ class MainActivity : Activity() {
 
         val raiz = LinearLayout(this)
         raiz.orientation = LinearLayout.VERTICAL
-        raiz.setBackgroundColor(Color.WHITE)
+        raiz.setBackgroundColor(BG)
 
         cabecera = texto("AVAMET Aviso", 18f, true)
         cabecera.setTextColor(Color.WHITE)
-        cabecera.setBackgroundColor(Color.GRAY)
+        cabecera.setBackgroundColor(APAGADO)
         cabecera.setPadding(dp(12), dp(28), dp(12), dp(12))
         raiz.addView(cabecera, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
 
@@ -98,13 +173,15 @@ class MainActivity : Activity() {
         // --- Resumen ---
         val colRes = LinearLayout(this)
         colRes.orientation = LinearLayout.VERTICAL
-        colRes.setPadding(dp(8), dp(8), dp(8), dp(8))
-        btnVigilancia = boton("Iniciar vigilancia") { alternarVigilancia() }
-        colRes.addView(btnVigilancia)
-        btnSilenciar = boton("Silenciar sonido") { Alarma.silenciar() }
-        colRes.addView(btnSilenciar)
+        colRes.setPadding(0, 0, 0, dp(16))
+        btnVigilancia = boton("Iniciar vigilancia", VERDE) { alternarVigilancia() }
+        colRes.addView(margenes(btnVigilancia, 10, 10, 10, 0))
+        btnSilenciar = boton("🔇 Silenciar sonido", ROJO) { Alarma.silenciar() }
+        colRes.addView(margenes(btnSilenciar, 10, 6, 10, 0))
+        contResumen = LinearLayout(this)
+        contResumen.orientation = LinearLayout.VERTICAL
+        colRes.addView(contResumen)
         txtResumen = texto("")
-        colRes.addView(txtResumen)
         paginas.add(desplazable(colRes))
 
         // --- Mapa ---
@@ -117,8 +194,10 @@ class MainActivity : Activity() {
 
         // --- Estaciones / Aeropuertos ---
         txtEstaciones = texto("")
+        txtEstaciones.setPadding(dp(12), dp(10), dp(12), dp(10))
         paginas.add(desplazable(txtEstaciones))
         txtAeropuertos = texto("")
+        txtAeropuertos.setPadding(dp(12), dp(10), dp(12), dp(10))
         paginas.add(desplazable(txtAeropuertos))
 
         // --- Ajustes ---
@@ -134,6 +213,7 @@ class MainActivity : Activity() {
         val nombres = listOf("Resumen", "Mapa", "Estaciones", "Aeropuertos", "Ajustes")
         nombres.forEachIndexed { i, n ->
             val b = boton(n) { mostrar(i) }
+            b.setTextColor(TEXTO)
             b.textSize = 11f
             b.setPadding(0, 0, 0, 0)
             barra.addView(b, LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f))
@@ -176,8 +256,9 @@ class MainActivity : Activity() {
         val intervalo = EditText(this)
         intervalo.inputType = InputType.TYPE_CLASS_NUMBER
         intervalo.setText(Config.intervaloMin(this).toString())
+        intervalo.setTextColor(TEXTO)
         col.addView(intervalo)
-        col.addView(boton("Guardar intervalo") {
+        col.addView(boton("Guardar intervalo", null) {
             val v = intervalo.text.toString().toIntOrNull()
             if (v == null) Toast.makeText(this, "Número no válido", Toast.LENGTH_SHORT).show()
             else {
@@ -189,14 +270,16 @@ class MainActivity : Activity() {
         val sonido = CheckBox(this)
         sonido.text = "Alarma con sonido (se puede silenciar)"
         sonido.isChecked = Config.alarmaSonido(this)
+        sonido.setTextColor(TEXTO)
         sonido.setOnCheckedChangeListener { _, v -> Config.setAlarmaSonido(this, v) }
         col.addView(sonido)
         val pantalla = CheckBox(this)
         pantalla.text = "Encender la pantalla en caso de peligro"
         pantalla.isChecked = Config.alarmaPantalla(this)
+        pantalla.setTextColor(TEXTO)
         pantalla.setOnCheckedChangeListener { _, v -> Config.setAlarmaPantalla(this, v) }
         col.addView(pantalla)
-        col.addView(boton("Probar la alarma") {
+        col.addView(boton("Probar la alarma", AMBAR) {
             Alarma.crearCanales(this)
             Alarma.disparar(this, listOf("Prueba de alarma"))
         })
@@ -252,55 +335,138 @@ class MainActivity : Activity() {
     // ---------------------------------------------------------------- Pantallas
     private fun hora(ms: Long) = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date(ms))
 
+    private fun colorNivel(n: String) = when (n) { "PELIGRO" -> ROJO; "VIGILANCIA" -> AMBAR; else -> VERDE }
+
+    private fun registroTarjeta(): View {
+        val c = tarjeta("Registro (toca para ${if (registroAbierto) "ocultar" else "mostrar"})")
+        c.setOnClickListener { registroAbierto = !registroAbierto; refrescar() }
+        if (registroAbierto) c.addView(texto(Estado.registro(), 11f, false, APAGADO))
+        return c
+    }
+
     private fun refrescar() {
         val r = Estado.resultado
         btnVigilancia.text = if (Estado.activo) "Detener vigilancia" else "Iniciar vigilancia"
+        btnVigilancia.background = fondo(if (Estado.activo) ROJO else VERDE, if (Estado.activo) ROJO else VERDE)
         btnSilenciar.visibility = if (Estado.sonando) View.VISIBLE else View.GONE
         val (color, titulo) = when {
-            !Estado.activo -> Pair(Color.GRAY, "Vigilancia detenida")
-            r == null -> Pair(Color.GRAY, "Vigilando… (esperando primer resultado)")
-            r.nivel == "PELIGRO" -> Pair(Color.parseColor("#C62828"), "⚠️ PELIGRO")
-            !r.datosFiables -> Pair(Color.parseColor("#EF6C00"), "⚠️ SIN DATOS FIABLES")
-            r.nivel == "VIGILANCIA" -> Pair(Color.parseColor("#F9A825"), "VIGILANCIA")
-            else -> Pair(Color.parseColor("#2E7D32"), "SEGURO")
+            !Estado.activo -> Pair(APAGADO, "Vigilancia detenida")
+            r == null -> Pair(APAGADO, "Vigilando… (esperando primer resultado)")
+            r.nivel == "PELIGRO" -> Pair(ROJO, "⚠️ PELIGRO")
+            !r.datosFiables -> Pair(0xFFEF6C00.toInt(), "⚠️ SIN DATOS FIABLES")
+            r.nivel == "VIGILANCIA" -> Pair(AMBAR, "VIGILANCIA")
+            else -> Pair(VERDE, "SEGURO")
         }
         cabecera.setBackgroundColor(color)
         cabecera.text = titulo
 
-        val sb = StringBuilder()
-        if (Estado.mensaje.isNotEmpty()) sb.append("⚠️ ").append(Estado.mensaje).append("\n\n")
+        contResumen.removeAllViews()
+        if (Estado.mensaje.isNotEmpty()) {
+            val c = tarjeta("Aviso", AMBAR)
+            c.addView(texto(Estado.mensaje, 14f))
+            contResumen.addView(c)
+        }
         if (r == null) {
-            sb.append(if (Estado.ubicacion == null) "Sin posición todavía. Activa el GPS y pulsa «Iniciar vigilancia»." else "Posición obtenida. Descargando datos…")
-            sb.append("\n\nRegistro:\n").append(Estado.registro())
-            txtResumen.text = sb.toString()
+            val c = tarjeta("Estado")
+            c.addView(texto(if (Estado.ubicacion == null) "Sin posición todavía. Activa el GPS y pulsa «Iniciar vigilancia»." else "Posición obtenida. Descargando datos…", 14f))
+            contResumen.addView(c)
+            contResumen.addView(registroTarjeta())
             txtEstaciones.text = ""; txtAeropuertos.text = ""
             return
         }
-        sb.append("Actualizado a las ${hora(r.ahoraMs)} · posición ${fmt(r.lat, 4)}, ${fmt(r.lon, 4)}\n")
-        if (r.errores.isNotEmpty()) sb.append("\n⚠️ Problemas de red:\n").append(r.errores.joinToString("\n") { "• $it" }).append("\n")
-        if (r.motivos.isNotEmpty()) sb.append("\nMotivos:\n").append(r.motivos.joinToString("\n") { "• $it" }).append("\n")
         val a = r.analisis
+        val nivelFinal = if (!r.datosFiables) "SIN DATOS" else r.nivel
+
+        // Tarjeta de estado general
+        val cEstado = tarjeta("Estado actual", color)
+        val fila = LinearLayout(this)
+        fila.orientation = LinearLayout.HORIZONTAL
+        fila.gravity = Gravity.CENTER_VERTICAL
+        fila.addView(etiqueta(nivelFinal, if (!r.datosFiables) 0xFFEF6C00.toInt() else colorNivel(r.nivel)))
+        fila.addView(texto("Actualizado ${hora(r.ahoraMs)}", 12f, false, APAGADO))
+        cEstado.addView(fila)
+        cEstado.addView(texto("Posición ${fmt(r.lat, 4)}, ${fmt(r.lon, 4)}", 12f, false, APAGADO))
+        for (m in r.motivos) cEstado.addView(texto("• $m", 14f, false, if (r.nivel == "PELIGRO") 0xFFFF7B72.toInt() else TEXTO))
         val aviso = a["aviso_estacion"] as String
-        if (aviso.isNotEmpty()) sb.append("\n").append(aviso).append("\n")
+        if (aviso.isNotEmpty()) cEstado.addView(texto(aviso, 13f, false, AMBAR))
+        contResumen.addView(cEstado)
+
+        // Estación de referencia: azulejos
         val ref = a["referencia"] as? Map<*, *>
         if (ref != null) {
-            sb.append("\nEstación de referencia: ${bonito(ref["nombre"])} (${ref["distancia_km"]} km)\n")
+            val c = tarjeta("Estación de referencia · ${bonito(ref["nombre"])} (${ref["distancia_km"]} km)")
             @Suppress("UNCHECKED_CAST")
             val d = ref["datos"] as? Map<String, Any?>
-            if (d != null) sb.append("  ${d["Temperatura"] ?: "?"} · humedad ${d["Humedad"] ?: "?"} · viento ${d["Viento"] ?: "?"} (máx ${d["Viento máximo"] ?: "?"}) · lluvia hoy ${d["Lluvia hoy"] ?: "?"}\n")
             val est = ref["estado"] as Map<*, *>
-            sb.append("  Lectura: ${est["estado"]}${if (est["edad_min"] != null) " (hace ${est["edad_min"]} min)" else ""}\n")
+            if (d != null) {
+                fun v(k: String) = (d[k] ?: "?").toString()
+                c.addView(azulejos(listOf(
+                    Triple("Temperatura", v("Temperatura"), 0xFFFFA657.toInt()),
+                    Triple("Humedad", v("Humedad"), AZUL),
+                    Triple("Presión", v("Presión"), TEXTO),
+                    Triple("Viento", v("Viento"), VERDE),
+                    Triple("Racha máx.", v("Viento máximo"), AMBAR),
+                    Triple("Lluvia hoy", v("Lluvia hoy"), MORADO),
+                )))
+            }
+            val ok = est["estado"] == "ACTIVA"
+            c.addView(etiqueta("Lectura: ${est["estado"]}${if (est["edad_min"] != null) " · hace ${est["edad_min"]} min" else ""}", if (ok) VERDE else 0xFFEF6C00.toInt()))
+            contResumen.addView(c)
         }
+
+        // Movimiento de las nubes: brújula
         val mov = a["movimiento"] as Map<*, *>
-        sb.append("\nNubes: hacia ${mov["direccion_destino"]} (${mov["grados_destino"]}°) a ${mov["velocidad_kmh"]} km/h · ${mov["categoria"]}\n")
+        val cMov = tarjeta("Movimiento de las nubes")
+        val filaMov = LinearLayout(this)
+        filaMov.orientation = LinearLayout.HORIZONTAL
+        filaMov.gravity = Gravity.CENTER_VERTICAL
+        val grados = (mov["grados_destino"] as? Number)?.toDouble()
+        val brujula = BrujulaView(this, grados, color)
+        filaMov.addView(brujula, LinearLayout.LayoutParams(dp(110), dp(110)))
+        val col = LinearLayout(this)
+        col.orientation = LinearLayout.VERTICAL
+        col.addView(texto("${mov["direccion_destino"] ?: "—"} · ${grados?.let { fmt(it, 0) + "°" } ?: "?"}", 22f, true))
+        col.addView(texto("${mov["velocidad_kmh"] ?: "?"} km/h · ${mov["categoria"] ?: "?"}", 14f, false, APAGADO))
+        col.addView(texto("Hacia dónde se desplazan", 11f, false, APAGADO))
+        filaMov.addView(col)
+        cMov.addView(filaMov)
+        contResumen.addView(cMov)
+
+        // Radar: solo si hay avisos predictivos
         val pred = a["alertas_predictivas"].l()
-        if (pred.isNotEmpty()) sb.append("\nAvisos predictivos:\n").append(pred.joinToString("\n") { "• $it" }).append("\n")
+        if (pred.isNotEmpty()) {
+            val c = tarjeta("Radar · nubes en camino", ROJO, 0xFF2A1215.toInt())
+            for (x in pred) c.addView(texto("⚠️ $x", 14f, true, 0xFFFF7B72.toInt()))
+            contResumen.addView(c)
+        }
+
+        // Estaciones cercanas con datos recientes
         val alt = a["alternativas"].l()
-        if (alt.isNotEmpty()) sb.append("\nEstaciones cercanas con datos recientes:\n").append(alt.joinToString("\n") { x ->
-            val m = x.d(); "• ${m["nombre"]} (${m["distancia_km"]} km, hace ${m["edad_min"]} min)" }).append("\n")
-        sb.append("\nPeticiones en este ciclo: ${r.descargas}")
-        sb.append("\n\nRegistro:\n").append(Estado.registro())
-        txtResumen.text = sb.toString()
+        if (alt.isNotEmpty()) {
+            val c = tarjeta("Estaciones cercanas con datos recientes")
+            for (x in alt) { val m = x.d(); c.addView(texto("• ${m["nombre"]} · ${m["distancia_km"]} km · hace ${m["edad_min"]} min", 13f)) }
+            contResumen.addView(c)
+        }
+
+        // Aeropuertos (compacto)
+        val aerosR = a["aeropuertos"].l().map { it.d() }
+        if (aerosR.isNotEmpty()) {
+            val c = tarjeta("Aeropuertos (METAR)")
+            for (ap in aerosR) {
+                val m = r.metarMostrar[ap["icao"] as String]?.second
+                val txt = if (m == null) "sin METAR" else "${m["temperatura"] ?: "?"} °C · ${m["viento_nudos"] ?: "?"} kt · ${m["fenomenos"]}"
+                c.addView(texto("${ap["icao"]} · ${ap["distancia_km"]} km — $txt", 13f))
+            }
+            contResumen.addView(c)
+        }
+
+        if (r.errores.isNotEmpty()) {
+            val c = tarjeta("Problemas de red", AMBAR)
+            for (e in r.errores) c.addView(texto("• $e", 13f, false, AMBAR))
+            contResumen.addView(c)
+        }
+        contResumen.addView(texto("Peticiones en este ciclo: ${r.descargas}", 11f, false, APAGADO))
+        contResumen.addView(registroTarjeta())
 
         // Estaciones
         val radio = a["radio"].l().map { it.d() }
@@ -436,4 +602,37 @@ class MainActivity : Activity() {
 
     override fun onResume() { super.onResume(); mapa.onResume(); Estado.escuchar(oyente); refrescar() }
     override fun onPause() { Estado.dejarDeEscuchar(oyente); mapa.onPause(); super.onPause() }
+}
+
+
+/** Brújula: flecha hacia donde se mueven las nubes (0° = norte). */
+class BrujulaView(ctx: Context, private val grados: Double?, private val acento: Int) : View(ctx) {
+    private val p = Paint(Paint.ANTI_ALIAS_FLAG)
+    override fun onDraw(c: Canvas) {
+        val w = width.toFloat(); val h = height.toFloat()
+        val cx = w / 2; val cy = h / 2; val r = minOf(w, h) / 2 - 6f
+        p.style = Paint.Style.FILL; p.color = 0xFF1C2128.toInt(); c.drawCircle(cx, cy, r, p)
+        p.style = Paint.Style.STROKE; p.strokeWidth = 3f; p.color = 0xFF30363D.toInt(); c.drawCircle(cx, cy, r, p)
+        p.style = Paint.Style.FILL; p.color = 0xFF8B949E.toInt(); p.textSize = r * 0.28f; p.textAlign = Paint.Align.CENTER
+        c.drawText("N", cx, cy - r + p.textSize + 2f, p)
+        c.drawText("S", cx, cy + r - 6f, p)
+        c.drawText("E", cx + r - p.textSize * 0.5f, cy + p.textSize * 0.35f, p)
+        c.drawText("O", cx - r + p.textSize * 0.5f, cy + p.textSize * 0.35f, p)
+        if (grados == null) return
+        c.save()
+        c.rotate(grados.toFloat(), cx, cy)
+        val flecha = Path()
+        val largo = r * 0.62f; val ancho = r * 0.22f
+        flecha.moveTo(cx, cy - largo)
+        flecha.lineTo(cx + ancho, cy)
+        flecha.lineTo(cx + ancho * 0.35f, cy)
+        flecha.lineTo(cx + ancho * 0.35f, cy + largo * 0.7f)
+        flecha.lineTo(cx - ancho * 0.35f, cy + largo * 0.7f)
+        flecha.lineTo(cx - ancho * 0.35f, cy)
+        flecha.lineTo(cx - ancho, cy)
+        flecha.close()
+        p.style = Paint.Style.FILL; p.color = if (acento == 0xFF8B949E.toInt()) 0xFF58A6FF.toInt() else acento
+        c.drawPath(flecha, p)
+        c.restore()
+    }
 }

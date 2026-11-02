@@ -15,6 +15,9 @@ import kotlin.math.roundToInt
  * Es el estado de AHORA, no un pronóstico. Los umbrales son un criterio propio, NO un estudio validado.
  */
 object Cielo {
+    /** Radio máximo de aeropuertos, desde la posición GPS (el mismo que usa el análisis: 120 km). */
+    const val RADIO_AEROPUERTOS_KM = 120.0
+
     class Informe(val veredicto: String, val lineas: List<String>)
 
     /** Fracción iluminada de la Luna (mes sinódico medio desde la luna nueva del 2000-01-06 18:14 UTC); error de horas. */
@@ -53,6 +56,7 @@ object Cielo {
         var peor: Double? = null; var detalle = ""
         var fenomeno = false
         for (ap in a["aeropuertos"].l().map { it.d() }) {
+            if (ap["distancia_km"].dbl() > RADIO_AEROPUERTOS_KM) continue   // medido desde la posición GPS
             val g = r.metarMostrar[ap["icao"] as String] ?: continue
             val edad = (r.ahoraMs - g.first) / 60_000
             if (edad > 60) continue
@@ -64,10 +68,10 @@ object Cielo {
             if (fen != "Ninguno") { fenomeno = true; l.add("Fenómeno en ${ap["icao"]}: $fen") }
         }
         if (peor == null) {
-            l.add("Nubes: sin METAR reciente (≤ 60 min); no se puede valorar la nubosidad")
+            l.add("Nubes: sin METAR reciente (≤ 60 min) en 120 km; no se puede valorar la nubosidad")
             puntos += 1
         } else {
-            l.add("Nubes (METAR, peor aeropuerto): ${(peor * 100).roundToInt()} % aprox. · $detalle")
+            l.add("Nubes (METAR a ≤ 120 km de tu posición, peor aeropuerto): ${(peor * 100).roundToInt()} % aprox. · $detalle")
             puntos += when { peor < 0.3 -> 0; peor < 0.6 -> 1; peor < 0.9 -> 2; else -> 3 }
         }
         if (fenomeno) puntos += 2

@@ -148,9 +148,9 @@ class MonitorServicio : Service() {
                 if (r.nivel != "PELIGRO" && nivelPrevio == "PELIGRO") Alarma.quitarAlarma(this)
                 nivelPrevio = r.nivel
             }
-        } catch (e: Exception) {
+        } catch (e: Throwable) {          // también Error: si no, el planificador se para en silencio
             Estado.mensaje = "Error en el ciclo: ${e.javaClass.simpleName}: ${e.message}"
-            Estado.log("ERROR: ${e.javaClass.simpleName}: ${e.message}")
+            Estado.log("ERROR: ${e.javaClass.simpleName}: ${e.message} @ ${e.stackTrace.take(3).joinToString(" < ") { it.className.substringAfterLast('.') + "." + it.methodName + ":" + it.lineNumber }}")
         }
         comprobarSinDatos()
         Estado.notificar()

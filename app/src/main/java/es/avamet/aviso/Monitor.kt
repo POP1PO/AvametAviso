@@ -35,6 +35,7 @@ class Monitor(ctx: Context) {
         Estado.log("Ciclo en ${fmt(lat, 4)}, ${fmt(lon, 4)}")
 
         val plan = planificar(lat, lon, coords, aeropuertos, referenciaId)
+        Estado.log("Plan: ${(plan["radio"] as List<*>).size} estaciones en radio, ${(plan["aeropuertos"] as List<*>).size} aeropuertos")
         val ref = plan["referencia"] as? Map<String, Any?>
         if (ref != null) referenciaId = ref["id"] as String
 
@@ -43,6 +44,7 @@ class Monitor(ctx: Context) {
         if (icaos.isNotEmpty()) {
             descargas++
             val t0 = System.nanoTime()
+            Estado.log("METAR: descargando ${icaos.size} aeropuertos…")
             try {
                 val m = Descargas.metars(icaos)
                 for ((icao, datos) in m) cacheMetar[icao] = Pair(ahoraMs, datos.d())
@@ -60,6 +62,7 @@ class Monitor(ctx: Context) {
         if (ref != null) {
             descargas++
             val t0 = System.nanoTime()
+            Estado.log("Referencia ${ref["nombre"]}: descargando…")
             val d = Descargas.estacion(ref["id"] as String)
             lecturas[ref["id"] as String] = d
             val err = d["Error"] as? String

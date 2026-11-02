@@ -10,7 +10,7 @@ private val DIR_A_GRADOS: Map<String, Double> = run {
     m["W"] = 270.0; m["WNW"] = 292.5; m["NW"] = 315.0; m["NNW"] = 337.5; m["WSW"] = 247.5; m["SW"] = 225.0; m["SSW"] = 202.5
     m
 }
-private val RE_VIENTO = Regex("(?U)^\\s*(\\d+(?:[.,]\\d+)?)\\s*km/h\\s*([A-Za-zÑñ]+)?\\s*$")
+private val RE_VIENTO = Regex("^[\\s\\u00a0]*(\\d+(?:[.,]\\d+)?)[\\s\\u00a0]*km/h[\\s\\u00a0]*([A-Za-zÑñ]+)?[\\s\\u00a0]*$")
 
 fun direccionAGrados(texto: String?): Double? = if (texto == null) null else DIR_A_GRADOS[texto.trim().uppercase()]
 

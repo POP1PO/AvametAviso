@@ -15,7 +15,9 @@ android {
         versionName = "0.1.0"
     }
 
-    // Firma: si en CI existen las variables KEYSTORE_* se firma "release" con tu clave; si no, se usa la clave de depuración.
+    // Firma. Con secretos KEYSTORE_* en GitHub se usa tu clave privada. Si no, se usa la clave PÚBLICA de app/firma/aviso.jks:
+    // sirve para que las actualizaciones se instalen encima sin desinstalar, pero cualquiera podría firmar una app con ella.
+    // Para repartir a más gente, define los secretos (ver README).
     val ksFile = System.getenv("KEYSTORE_FILE")
     signingConfigs {
         if (ksFile != null && file(ksFile).exists()) {
@@ -25,12 +27,19 @@ android {
                 keyAlias = System.getenv("KEY_ALIAS")
                 keyPassword = System.getenv("KEY_PASSWORD")
             }
+        } else {
+            create("publica") {
+                storeFile = file("firma/aviso.jks")
+                storePassword = "NdvI-UJeNbzsNA6Z0ozcaqry"
+                keyAlias = "aviso"
+                keyPassword = "NdvI-UJeNbzsNA6Z0ozcaqry"
+            }
         }
     }
     buildTypes {
         release {
             isMinifyEnabled = false
-            signingConfig = signingConfigs.findByName("propia") ?: signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.findByName("propia") ?: signingConfigs.getByName("publica")
         }
     }
     compileOptions {

@@ -17,13 +17,13 @@ object Descargas {
     private val hilos = java.util.concurrent.Executors.newCachedThreadPool { r -> Thread(r).also { it.isDaemon = true } }
 
     /** Cada descarga tiene un tope DURO de 25 s (un DNS o un TLS colgado no respeta los timeouts de la conexión). */
-    private fun descargar(url: String): String {
-        val f = hilos.submit(java.util.concurrent.Callable { descargarDirecto(url) })
+    private fun descargar(url: String, lecturaMs: Int = 12_000): String {
+        val f = hilos.submit(java.util.concurrent.Callable { descargarDirecto(url, lecturaMs) })
         try {
-            return f.get(25, java.util.concurrent.TimeUnit.SECONDS)
+            return f.get(lecturaMs / 1000L + 15, java.util.concurrent.TimeUnit.SECONDS)
         } catch (e: java.util.concurrent.TimeoutException) {
             f.cancel(true)
-            throw java.net.SocketTimeoutException("Sin respuesta tras 25 s")
+            throw java.net.SocketTimeoutException("Tiempo de espera agotado")
         } catch (e: java.util.concurrent.ExecutionException) {
             val c = e.cause
             if (c is Exception) throw c
@@ -31,11 +31,11 @@ object Descargas {
         }
     }
 
-    private fun descargarDirecto(url: String): String {
+    private fun descargarDirecto(url: String, lecturaMs: Int): String {
         val c = URL(url).openConnection() as HttpURLConnection
         try {
             c.connectTimeout = 8_000
-            c.readTimeout = 12_000
+            c.readTimeout = lecturaMs
             c.setRequestProperty("User-Agent", USER_AGENT)
             val code = c.responseCode
             if (code == 204) return ""
@@ -77,7 +77,9 @@ object Descargas {
     /** METAR parseados {icao: datos}, o lanza IOException. */
     fun metars(icaos: List<String>): Dict {
         if (icaos.isEmpty()) return dict()
-        val txt = descargar(METAR + icaos.joinToString(","))
+        // aviationweather.gov a veces tarda: 20 s de espera y un reintento
+        val txt = try { descargar(METAR + icaos.joinToString(","), 20_000) }
+        catch (e: java.net.SocketTimeoutException) { descargar(METAR + icaos.joinToString(","), 20_000) }
         if (txt.isBlank()) return dict()
         @Suppress("UNCHECKED_CAST")
         return parsearMetars(MiniJson.parse(txt) as? List<Any?>)

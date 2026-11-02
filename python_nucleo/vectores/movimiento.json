@@ -2,53 +2,12 @@
  {
   "aeropuertos": [
    {
-    "distancia_km": 30.2,
-    "icao": "LEGE"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "SSE",
-   "grados_destino": 153,
-   "velocidad_kmh": 20.0
-  },
-  "metars": {
-   "LEGE": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 334.0,
-    "viento_nudos": 30.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "15.6 km/h SSE"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 86.5,
-    "icao": "LEAS"
-   },
-   {
-    "distancia_km": 7.8,
+    "distancia_km": 87.7,
     "icao": "LEML"
    },
    {
-    "distancia_km": 74.3,
-    "icao": "GCTS"
-   },
-   {
-    "distancia_km": 0.7,
-    "icao": "LEBZ"
+    "distancia_km": 116.3,
+    "icao": "LEPA"
    }
   ],
   "esperado": {
@@ -58,295 +17,11 @@
    "velocidad_kmh": 0
   },
   "metars": {
-   "GCTS": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 187.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEBZ": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
    "LEML": {
     "actualizado": "t",
     "fenomenos": "Lluvia",
     "nubosidad": {
      "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 318.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 111.5,
-    "icao": "LEMH"
-   },
-   {
-    "distancia_km": 6.6,
-    "icao": "LEBG"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "ONO",
-   "grados_destino": 290,
-   "velocidad_kmh": 13.0
-  },
-  "metars": {
-   "LEBG": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 282.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEMH": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 110.0,
-    "viento_nudos": 7.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 67.0,
-    "icao": "LELN"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "ONO",
-   "grados_destino": 292,
-   "velocidad_kmh": 27.6
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "27.6 km/h ESE"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 116.5,
-    "icao": "LEBA"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "ENE",
-   "grados_destino": 65,
-   "velocidad_kmh": 37.0
-  },
-  "metars": {
-   "LEBA": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 245.0,
-    "viento_nudos": 20.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 99.1,
-    "icao": "LEBZ"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEBZ": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 108.7,
-    "icao": "LEMD"
-   },
-   {
-    "distancia_km": 79.3,
-    "icao": "LEZL"
-   },
-   {
-    "distancia_km": 104.7,
-    "icao": "GCTS"
-   },
-   {
-    "distancia_km": 37.4,
-    "icao": "LEGR"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "SO",
-   "grados_destino": 219,
-   "velocidad_kmh": 22.2
-  },
-  "metars": {
-   "GCTS": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 39.0,
-    "viento_nudos": 12.0,
-    "visibilidad": "9999"
-   },
-   "LEMD": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 214.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEZL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 34.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 102.8,
-    "icao": "LEZL"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEZL": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
      "baja": [
       "Nublado a 1500 ft"
      ],
@@ -354,30 +29,11 @@
     },
     "punto_rocio": null,
     "temperatura": 15.0,
-    "viento_dir": 27.0,
+    "viento_dir": null,
     "viento_nudos": null,
     "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 106.1,
-    "icao": "LEGR"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEGR": {
+   },
+   "LEPA": {
     "actualizado": "t",
     "fenomenos": "Lluvia",
     "nubosidad": {
@@ -386,510 +42,43 @@
      "media": []
     },
     "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 9.0,
+    "temperatura": null,
+    "viento_dir": 77.0,
+    "viento_nudos": null,
     "visibilidad": "9999"
    }
   },
   "referencia": {
-   "Viento": ""
+   "Viento": "calma"
   }
  },
  {
   "aeropuertos": [
    {
-    "distancia_km": 62.4,
+    "distancia_km": 101.9,
     "icao": "LEIB"
    },
    {
-    "distancia_km": 22.6,
-    "icao": "LEMG"
+    "distancia_km": 13.3,
+    "icao": "GCLP"
    },
    {
-    "distancia_km": 111.9,
-    "icao": "LEAM"
-   },
-   {
-    "distancia_km": 15.8,
-    "icao": "LEVC"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEAM": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 326.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEIB": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 188.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEMG": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 13.0,
-    "visibilidad": "9999"
-   },
-   "LEVC": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "NNE",
-   "grados_destino": 22,
-   "velocidad_kmh": 31.1
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "31.1 km/h SSO"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 97.7,
-    "icao": "LEZL"
-   },
-   {
-    "distancia_km": 31.3,
-    "icao": "LEML"
-   },
-   {
-    "distancia_km": 68.6,
-    "icao": "LEAL"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEML": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 27.0,
-    "visibilidad": "9999"
-   },
-   "LEZL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 81.5,
-    "icao": "LEPA"
-   },
-   {
-    "distancia_km": 92.6,
-    "icao": "GCTS"
-   },
-   {
-    "distancia_km": 113.0,
-    "icao": "LEMD"
-   },
-   {
-    "distancia_km": 52.2,
-    "icao": "LEZG"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "NE",
-   "grados_destino": 43,
-   "velocidad_kmh": 12.1
-  },
-  "metars": {
-   "LEMD": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 231.0,
-    "viento_nudos": 11.0,
-    "visibilidad": "9999"
-   },
-   "LEPA": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 251.0,
-    "viento_nudos": 23.0,
-    "visibilidad": "9999"
-   },
-   "LEZG": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 90.0,
-    "viento_nudos": 17.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 14.1,
-    "icao": "LEJR"
-   },
-   {
-    "distancia_km": 83.5,
-    "icao": "LECH"
-   },
-   {
-    "distancia_km": 92.0,
-    "icao": "LEZL"
-   },
-   {
-    "distancia_km": 41.8,
-    "icao": "LEPA"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "N",
-   "grados_destino": 355,
-   "velocidad_kmh": 51.9
-  },
-  "metars": {
-   "LECH": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 12.0,
-    "visibilidad": "9999"
-   },
-   "LEPA": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 175.0,
-    "viento_nudos": 28.0,
-    "visibilidad": "9999"
-   },
-   "LEZL": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 19.5,
-    "icao": "LEVC"
-   },
-   {
-    "distancia_km": 93.6,
-    "icao": "LEBA"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "OSO",
-   "grados_destino": 254,
-   "velocidad_kmh": 23.7
-  },
-  "metars": {
-   "LEBA": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 53.0,
-    "viento_nudos": 12.0,
-    "visibilidad": "9999"
-   },
-   "LEVC": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 66.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "27.7 km/h E"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 39.6,
-    "icao": "LETL"
-   },
-   {
-    "distancia_km": 76.2,
-    "icao": "LEMD"
-   },
-   {
-    "distancia_km": 3.1,
-    "icao": "LEPP"
-   },
-   {
-    "distancia_km": 10.0,
-    "icao": "LERS"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "E",
-   "grados_destino": 93,
-   "velocidad_kmh": 11.1
-  },
-  "metars": {
-   "LEMD": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 5.0,
-    "visibilidad": "9999"
-   },
-   "LEPP": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 273.0,
-    "viento_nudos": 6.0,
-    "visibilidad": "9999"
-   },
-   "LERS": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 24.0,
-    "visibilidad": "9999"
-   },
-   "LETL": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 98.6,
-    "icao": "LEML"
-   },
-   {
-    "distancia_km": 82.2,
+    "distancia_km": 13.0,
     "icao": "LEBZ"
+   },
+   {
+    "distancia_km": 60.3,
+    "icao": "LEZG"
    }
   ],
   "esperado": {
    "categoria": "Rápido",
    "direccion_destino": "S",
-   "grados_destino": 188,
-   "velocidad_kmh": 55.6
+   "grados_destino": 170,
+   "velocidad_kmh": 46.3
   },
   "metars": {
    "LEBZ": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 8.0,
-    "viento_nudos": 30.0,
-    "visibilidad": "9999"
-   },
-   "LEML": {
     "actualizado": "t",
     "fenomenos": "Tormenta, Chubascos",
     "nubosidad": {
@@ -898,59 +87,12 @@
      "media": []
     },
     "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 169.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 24.7,
-    "icao": "LEBG"
-   },
-   {
-    "distancia_km": 58.9,
-    "icao": "LEMH"
-   },
-   {
-    "distancia_km": 28.3,
-    "icao": "LETL"
-   },
-   {
-    "distancia_km": 17.9,
-    "icao": "LECH"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "SSE",
-   "grados_destino": 164,
-   "velocidad_kmh": 18.9
-  },
-  "metars": {
-   "LEBG": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 250.0,
-    "viento_nudos": 18.0,
+    "temperatura": 15.0,
+    "viento_dir": 350.0,
+    "viento_nudos": 25.0,
     "visibilidad": "9999"
    },
-   "LECH": {
+   "LEIB": {
     "actualizado": "t",
     "fenomenos": "Lluvia",
     "nubosidad": {
@@ -960,11 +102,155 @@
     },
     "punto_rocio": null,
     "temperatura": 15.0,
-    "viento_dir": 184.0,
+    "viento_dir": null,
+    "viento_nudos": 15.0,
+    "visibilidad": "9999"
+   },
+   "LEZG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 93.9,
+    "icao": "LEBA"
+   },
+   {
+    "distancia_km": 8.4,
+    "icao": "LEAM"
+   },
+   {
+    "distancia_km": 105.7,
+    "icao": "LEBG"
+   },
+   {
+    "distancia_km": 87.6,
+    "icao": "LEAB"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEAB": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
     "viento_nudos": null,
     "visibilidad": "9999"
    },
-   "LEMH": {
+   "LEBA": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 77.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEBG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 49.5,
+    "icao": "LEAB"
+   },
+   {
+    "distancia_km": 111.9,
+    "icao": "LEZL"
+   },
+   {
+    "distancia_km": 36.9,
+    "icao": "LERS"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEAB": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 1.0,
+    "visibilidad": "9999"
+   },
+   "LERS": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 285.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEZL": {
     "actualizado": "t",
     "fenomenos": "Tormenta, Chubascos",
     "nubosidad": {
@@ -975,12 +261,177 @@
      "media": []
     },
     "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 23.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 95.1,
+    "icao": "LEVC"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEVC": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 11.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 20.8,
+    "icao": "LEDA"
+   },
+   {
+    "distancia_km": 87.7,
+    "icao": "LEIB"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "NNO",
+   "grados_destino": 342,
+   "velocidad_kmh": 40.7
+  },
+  "metars": {
+   "LEDA": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
     "temperatura": 15.0,
-    "viento_dir": 30.0,
-    "viento_nudos": 17.0,
+    "viento_dir": 162.0,
+    "viento_nudos": 22.0,
     "visibilidad": "9999"
    },
-   "LETL": {
+   "LEIB": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 59.0,
+    "icao": "LEMH"
+   },
+   {
+    "distancia_km": 115.4,
+    "icao": "LEBL"
+   },
+   {
+    "distancia_km": 10.5,
+    "icao": "LEBZ"
+   },
+   {
+    "distancia_km": 19.3,
+    "icao": "GCLP"
+   }
+  ],
+  "esperado": {
+   "categoria": "Lento",
+   "direccion_destino": "NE",
+   "grados_destino": 51,
+   "velocidad_kmh": 3.9
+  },
+  "metars": {
+   "GCLP": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 249.0,
+    "viento_nudos": 16.0,
+    "visibilidad": "9999"
+   },
+   "LEBL": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 29.0,
+    "visibilidad": "9999"
+   },
+   "LEBZ": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 342.0,
+    "viento_nudos": 11.0,
+    "visibilidad": "9999"
+   },
+   "LEMH": {
     "actualizado": "t",
     "fenomenos": "Ninguno",
     "nubosidad": {
@@ -989,14 +440,14 @@
      "media": []
     },
     "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 29.0,
+    "temperatura": null,
+    "viento_dir": 123.0,
+    "viento_nudos": 16.0,
     "visibilidad": "9999"
    }
   },
   "referencia": {
-   "Viento": "38.6 km/h N"
+   "Viento": "5 km/h VRB"
   }
  },
  {
@@ -1009,103 +460,28 @@
   },
   "metars": {},
   "referencia": {
-   "Viento": ""
+   "Viento": "calma"
   }
  },
  {
   "aeropuertos": [
    {
-    "distancia_km": 14.7,
-    "icao": "LETL"
+    "distancia_km": 103.3,
+    "icao": "GCXO"
    },
    {
-    "distancia_km": 97.5,
-    "icao": "LEGE"
+    "distancia_km": 15.0,
+    "icao": "LEAS"
    }
   ],
   "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "SSO",
-   "grados_destino": 196,
-   "velocidad_kmh": 24.1
+   "categoria": "Rápido",
+   "direccion_destino": "ENE",
+   "grados_destino": 61,
+   "velocidad_kmh": 48.2
   },
   "metars": {
-   "LEGE": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 19.0,
-    "visibilidad": "9999"
-   },
-   "LETL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 16.0,
-    "viento_nudos": 13.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 18.3,
-    "icao": "LECO"
-   },
-   {
-    "distancia_km": 76.4,
-    "icao": "LEIB"
-   },
-   {
-    "distancia_km": 45.7,
-    "icao": "LEZG"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LECO": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEIB": {
+   "GCXO": {
     "actualizado": "t",
     "fenomenos": "Ninguno",
     "nubosidad": {
@@ -1115,127 +491,30 @@
     },
     "punto_rocio": null,
     "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 8.0,
-    "visibilidad": "9999"
-   },
-   "LEZG": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
+    "viento_dir": 241.0,
+    "viento_nudos": 26.0,
     "visibilidad": "9999"
    }
   },
   "referencia": {
-   "Viento": "5 km/h VRB"
+   "Viento": "calma"
   }
  },
  {
   "aeropuertos": [
    {
-    "distancia_km": 1.9,
-    "icao": "GCLP"
-   },
-   {
-    "distancia_km": 1.6,
-    "icao": "LELN"
-   },
-   {
-    "distancia_km": 75.7,
-    "icao": "LEBG"
+    "distancia_km": 14.3,
+    "icao": "LEAS"
    }
   ],
   "esperado": {
    "categoria": "Lento",
-   "direccion_destino": "O",
-   "grados_destino": 262,
-   "velocidad_kmh": 3.0
+   "direccion_destino": "ONO",
+   "grados_destino": 292,
+   "velocidad_kmh": 4.9
   },
   "metars": {
-   "LEBG": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 75.0,
-    "viento_nudos": 6.0,
-    "visibilidad": "9999"
-   },
-   "LELN": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5.2 km/h OSO"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 12.8,
-    "icao": "LELN"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 16.6,
-    "icao": "LEJR"
-   },
-   {
-    "distancia_km": 47.7,
-    "icao": "LEZG"
-   },
-   {
-    "distancia_km": 52.6,
-    "icao": "LERJ"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "ENE",
-   "grados_destino": 71,
-   "velocidad_kmh": 16.8
-  },
-  "metars": {
-   "LEJR": {
+   "LEAS": {
     "actualizado": "t",
     "fenomenos": "Lluvia",
     "nubosidad": {
@@ -1246,86 +525,29 @@
      "media": []
     },
     "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 49.0,
-    "viento_nudos": 2.0,
-    "visibilidad": "9999"
-   },
-   "LEZG": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
     "temperatura": null,
-    "viento_dir": 249.0,
-    "viento_nudos": 20.0,
+    "viento_dir": null,
+    "viento_nudos": null,
     "visibilidad": "9999"
    }
   },
   "referencia": {
-   "Viento": "5 km/h VRB"
+   "Viento": "4.9 km/h ESE"
   }
  },
  {
   "aeropuertos": [
    {
-    "distancia_km": 17.8,
-    "icao": "LEPA"
+    "distancia_km": 32.1,
+    "icao": "GCXO"
    },
    {
-    "distancia_km": 85.6,
-    "icao": "LEBL"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "E",
-   "grados_destino": 86,
-   "velocidad_kmh": 35.7
-  },
-  "metars": {
-   "LEBL": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 247.0,
-    "viento_nudos": 30.0,
-    "visibilidad": "9999"
-   },
-   "LEPA": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 309.0,
-    "viento_nudos": 14.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 47.5,
+    "distancia_km": 95.9,
     "icao": "LEAM"
+   },
+   {
+    "distancia_km": 49.1,
+    "icao": "LEJR"
    }
   ],
   "esperado": {
@@ -1335,194 +557,23 @@
    "velocidad_kmh": 0
   },
   "metars": {
+   "GCXO": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 17.0,
+    "visibilidad": "9999"
+   },
    "LEAM": {
     "actualizado": "t",
     "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 88.0,
-    "icao": "LEPA"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEPA": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 7.5,
-    "icao": "LEIB"
-   },
-   {
-    "distancia_km": 92.1,
-    "icao": "LELN"
-   },
-   {
-    "distancia_km": 91.6,
-    "icao": "LEBG"
-   },
-   {
-    "distancia_km": 4.4,
-    "icao": "LEJR"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "N",
-   "grados_destino": 0,
-   "velocidad_kmh": 41.4
-  },
-  "metars": {
-   "LEBG": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 281.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEJR": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 3.0,
-    "visibilidad": "9999"
-   },
-   "LELN": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 84.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "41.4 km/h S"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 74.5,
-    "icao": "LEVC"
-   },
-   {
-    "distancia_km": 6.0,
-    "icao": "LEBG"
-   },
-   {
-    "distancia_km": 72.8,
-    "icao": "GCTS"
-   },
-   {
-    "distancia_km": 116.1,
-    "icao": "LEVT"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "SSO",
-   "grados_destino": 201,
-   "velocidad_kmh": 20.5
-  },
-  "metars": {
-   "GCTS": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 221.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEBG": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEVC": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
     "nubosidad": {
      "alta": [],
      "baja": [],
@@ -1531,3081 +582,10 @@
     "punto_rocio": null,
     "temperatura": null,
     "viento_dir": 61.0,
-    "viento_nudos": 21.0,
-    "visibilidad": "9999"
-   },
-   "LEVT": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 103.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "27.5 km/h NO"
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "N",
-   "grados_destino": 0,
-   "velocidad_kmh": 34.0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "34.0 km/h S"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 16.6,
-    "icao": "LEJR"
-   },
-   {
-    "distancia_km": 105.9,
-    "icao": "LEBG"
-   },
-   {
-    "distancia_km": 90.1,
-    "icao": "LEMH"
-   },
-   {
-    "distancia_km": 10.8,
-    "icao": "GCTS"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "SSE",
-   "grados_destino": 154,
-   "velocidad_kmh": 16.7
-  },
-  "metars": {
-   "LEBG": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 334.0,
-    "viento_nudos": 9.0,
-    "visibilidad": "9999"
-   },
-   "LEMH": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 13.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 43.8,
-    "icao": "LEBB"
-   },
-   {
-    "distancia_km": 49.1,
-    "icao": "LEBL"
-   },
-   {
-    "distancia_km": 43.1,
-    "icao": "LEML"
-   },
-   {
-    "distancia_km": 109.3,
-    "icao": "GCTS"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "ESE",
-   "grados_destino": 123,
-   "velocidad_kmh": 18.6
-  },
-  "metars": {
-   "GCTS": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 238.0,
-    "viento_nudos": 28.0,
-    "visibilidad": "9999"
-   },
-   "LEBB": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 348.0,
-    "viento_nudos": 9.0,
-    "visibilidad": "9999"
-   },
-   "LEBL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 2.0,
-    "viento_nudos": 19.0,
-    "visibilidad": "9999"
-   },
-   "LEML": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "23.2 km/h NO"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 18.6,
-    "icao": "LEBB"
-   },
-   {
-    "distancia_km": 58.4,
-    "icao": "LEBG"
-   },
-   {
-    "distancia_km": 99.8,
-    "icao": "LEIB"
-   },
-   {
-    "distancia_km": 112.6,
-    "icao": "LEPA"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "NE",
-   "grados_destino": 54,
-   "velocidad_kmh": 27.8
-  },
-  "metars": {
-   "LEBB": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 328.0,
-    "viento_nudos": 6.0,
-    "visibilidad": "9999"
-   },
-   "LEIB": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 223.0,
-    "viento_nudos": 31.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 13.0,
-    "icao": "LERJ"
-   },
-   {
-    "distancia_km": 5.1,
-    "icao": "LEAB"
-   },
-   {
-    "distancia_km": 10.6,
-    "icao": "LEVT"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "NO",
-   "grados_destino": 321,
-   "velocidad_kmh": 21.9
-  },
-  "metars": {
-   "LEAB": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LERJ": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 125.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEVT": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 136.0,
-    "viento_nudos": 18.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "11.0 km/h SSE"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 106.0,
-    "icao": "LEST"
-   },
-   {
-    "distancia_km": 19.6,
-    "icao": "LEAM"
-   },
-   {
-    "distancia_km": 86.8,
-    "icao": "LEDA"
-   },
-   {
-    "distancia_km": 19.1,
-    "icao": "LESO"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "SO",
-   "grados_destino": 223,
-   "velocidad_kmh": 49.5
-  },
-  "metars": {
-   "LEAM": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 27.0,
-    "viento_nudos": 23.0,
-    "visibilidad": "9999"
-   },
-   "LEDA": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 11.0,
-    "visibilidad": "9999"
-   },
-   "LESO": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 10.0,
-    "visibilidad": "9999"
-   },
-   "LEST": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 55.0,
-    "viento_nudos": 32.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 79.0,
-    "icao": "LEPA"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "ONO",
-   "grados_destino": 292,
-   "velocidad_kmh": 50.0
-  },
-  "metars": {
-   "LEPA": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 17.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "50.0 km/h ESE"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 67.2,
-    "icao": "LERS"
-   },
-   {
-    "distancia_km": 97.5,
-    "icao": "LEML"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "NO",
-   "grados_destino": 326,
-   "velocidad_kmh": 15.4
-  },
-  "metars": {
-   "LEML": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 174.0,
-    "viento_nudos": 16.0,
-    "visibilidad": "9999"
-   },
-   "LERS": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 74.0,
-    "viento_nudos": 8.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 64.0,
-    "icao": "LEAL"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "ESE",
-   "grados_destino": 112,
-   "velocidad_kmh": 37.9
-  },
-  "metars": {
-   "LEAL": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "37.9 km/h ONO"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 49.3,
-    "icao": "GCTS"
-   },
-   {
-    "distancia_km": 81.8,
-    "icao": "LEBL"
-   },
-   {
-    "distancia_km": 32.4,
-    "icao": "LEGR"
-   },
-   {
-    "distancia_km": 14.4,
-    "icao": "GCXO"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "S",
-   "grados_destino": 170,
-   "velocidad_kmh": 34.5
-  },
-  "metars": {
-   "GCTS": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 0.0,
-    "visibilidad": "9999"
-   },
-   "GCXO": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 354.0,
-    "viento_nudos": 16.0,
-    "visibilidad": "9999"
-   },
-   "LEBL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 0.0,
-    "viento_nudos": 21.0,
-    "visibilidad": "9999"
-   },
-   "LEGR": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 335.0,
-    "viento_nudos": 20.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 66.1,
-    "icao": "LEPA"
-   },
-   {
-    "distancia_km": 96.2,
-    "icao": "GCXO"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "NNE",
-   "grados_destino": 17,
-   "velocidad_kmh": 37.5
-  },
-  "metars": {
-   "GCXO": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 177.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEPA": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 166.0,
-    "viento_nudos": 22.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "45.3 km/h SO"
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "SO",
-   "grados_destino": 225,
-   "velocidad_kmh": 16.2
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "16.2 km/h NE"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 13.6,
-    "icao": "LEGE"
-   },
-   {
-    "distancia_km": 79.0,
-    "icao": "LEZG"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "ENE",
-   "grados_destino": 64,
-   "velocidad_kmh": 40.7
-  },
-  "metars": {
-   "LEGE": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 244.0,
-    "viento_nudos": 22.0,
-    "visibilidad": "9999"
-   },
-   "LEZG": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 219.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 66.2,
-    "icao": "LERS"
-   },
-   {
-    "distancia_km": 7.2,
-    "icao": "LECO"
-   },
-   {
-    "distancia_km": 35.2,
-    "icao": "LEPA"
-   },
-   {
-    "distancia_km": 26.1,
-    "icao": "LEBG"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "SSO",
-   "grados_destino": 197,
-   "velocidad_kmh": 15.8
-  },
-  "metars": {
-   "LEBG": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 22.0,
-    "visibilidad": "9999"
-   },
-   "LECO": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 253.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEPA": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 133.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LERS": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 18.0,
-    "viento_nudos": 21.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "7.4 km/h SSO"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 15.7,
-    "icao": "LEBL"
-   },
-   {
-    "distancia_km": 101.2,
-    "icao": "LEAL"
-   },
-   {
-    "distancia_km": 13.2,
-    "icao": "LEVT"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "SO",
-   "grados_destino": 225,
-   "velocidad_kmh": 48.1
-  },
-  "metars": {
-   "LEAL": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEBL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 5.0,
-    "visibilidad": "9999"
-   },
-   "LEVT": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "48.1 km/h NE"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 71.5,
-    "icao": "LEAB"
-   },
-   {
-    "distancia_km": 97.2,
-    "icao": "LEAM"
-   },
-   {
-    "distancia_km": 53.2,
-    "icao": "LEMD"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "NNE",
-   "grados_destino": 19,
-   "velocidad_kmh": 34.8
-  },
-  "metars": {
-   "LEAB": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEAM": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 25.0,
-    "visibilidad": "9999"
-   },
-   "LEMD": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 188.0,
-    "viento_nudos": 27.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "22.9 km/h SO"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 31.0,
-    "icao": "LEPP"
-   },
-   {
-    "distancia_km": 34.3,
-    "icao": "GCXO"
-   },
-   {
-    "distancia_km": 114.1,
-    "icao": "LEBB"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "GCXO": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEBB": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 227.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 111.8,
-    "icao": "LEBL"
-   },
-   {
-    "distancia_km": 29.6,
-    "icao": "LEMG"
-   },
-   {
-    "distancia_km": 21.3,
-    "icao": "GCXO"
-   },
-   {
-    "distancia_km": 111.0,
-    "icao": "LECO"
-   }
-  ],
-  "esperado": {
-   "categoria": "Lento",
-   "direccion_destino": "ESE",
-   "grados_destino": 111,
-   "velocidad_kmh": 5.6
-  },
-  "metars": {
-   "GCXO": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 291.0,
-    "viento_nudos": 3.0,
-    "visibilidad": "9999"
-   },
-   "LEBL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 62.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LECO": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 28.0,
-    "visibilidad": "9999"
-   },
-   "LEMG": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 10.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 77.1,
-    "icao": "LEBA"
-   },
-   {
-    "distancia_km": 48.0,
-    "icao": "LEGE"
-   },
-   {
-    "distancia_km": 94.7,
-    "icao": "LECO"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEBA": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 139.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LECO": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 5.0,
-    "visibilidad": "9999"
-   },
-   "LEGE": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 14.0,
-    "icao": "LEZG"
-   },
-   {
-    "distancia_km": 63.9,
-    "icao": "LEZL"
-   },
-   {
-    "distancia_km": 118.0,
-    "icao": "LEPP"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEPP": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 269.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEZL": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 145.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 33.8,
-    "icao": "LELN"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LELN": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 88.1,
-    "icao": "GCLP"
-   },
-   {
-    "distancia_km": 22.1,
-    "icao": "LEMH"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 71.2,
-    "icao": "LECO"
-   },
-   {
-    "distancia_km": 105.2,
-    "icao": "LEJR"
-   },
-   {
-    "distancia_km": 97.2,
-    "icao": "LEAB"
-   },
-   {
-    "distancia_km": 5.0,
-    "icao": "LEBZ"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEAB": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 26.0,
-    "visibilidad": "9999"
-   },
-   "LEBZ": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 8.0,
-    "visibilidad": "9999"
-   },
-   "LECO": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
     "viento_nudos": null,
     "visibilidad": "9999"
    },
    "LEJR": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 30.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 86.8,
-    "icao": "GCTS"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "GCTS": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 17.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 118.9,
-    "icao": "LEZL"
-   },
-   {
-    "distancia_km": 80.6,
-    "icao": "LEBG"
-   },
-   {
-    "distancia_km": 44.8,
-    "icao": "GCLP"
-   },
-   {
-    "distancia_km": 64.8,
-    "icao": "LERS"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "GCLP": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 12.0,
-    "visibilidad": "9999"
-   },
-   "LERS": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 128.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEZL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 71.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 108.9,
-    "icao": "LEAL"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEAL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 37.9,
-    "icao": "LEML"
-   },
-   {
-    "distancia_km": 45.4,
-    "icao": "LETL"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEML": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 3.0,
-    "visibilidad": "9999"
-   },
-   "LETL": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 18.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 93.5,
-    "icao": "LEAM"
-   },
-   {
-    "distancia_km": 62.8,
-    "icao": "LEBA"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEAM": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEBA": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 51.2,
-    "icao": "LEAB"
-   },
-   {
-    "distancia_km": 88.3,
-    "icao": "LEDA"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEDA": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 210.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 42.2,
-    "icao": "LEDA"
-   },
-   {
-    "distancia_km": 35.0,
-    "icao": "GCTS"
-   },
-   {
-    "distancia_km": 115.2,
-    "icao": "LEMH"
-   },
-   {
-    "distancia_km": 111.4,
-    "icao": "LEVT"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "NNO",
-   "grados_destino": 329,
-   "velocidad_kmh": 15.7
-  },
-  "metars": {
-   "GCTS": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 161.0,
-    "viento_nudos": 3.0,
-    "visibilidad": "9999"
-   },
-   "LEDA": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEMH": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 22.0,
-    "visibilidad": "9999"
-   },
-   "LEVT": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 146.0,
-    "viento_nudos": 14.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 111.6,
-    "icao": "LELN"
-   },
-   {
-    "distancia_km": 100.8,
-    "icao": "GCLP"
-   },
-   {
-    "distancia_km": 74.3,
-    "icao": "LEAB"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEAB": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 223.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LELN": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 111.6,
-    "icao": "LEMD"
-   },
-   {
-    "distancia_km": 75.7,
-    "icao": "LEBL"
-   },
-   {
-    "distancia_km": 24.7,
-    "icao": "LETL"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "NE",
-   "grados_destino": 55,
-   "velocidad_kmh": 33.3
-  },
-  "metars": {
-   "LEBL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 235.0,
-    "viento_nudos": 18.0,
-    "visibilidad": "9999"
-   },
-   "LETL": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 48.3,
-    "icao": "GCXO"
-   },
-   {
-    "distancia_km": 93.9,
-    "icao": "LEGE"
-   },
-   {
-    "distancia_km": 100.8,
-    "icao": "LERS"
-   },
-   {
-    "distancia_km": 100.4,
-    "icao": "LEZL"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "SSO",
-   "grados_destino": 197,
-   "velocidad_kmh": 35.2
-  },
-  "metars": {
-   "GCXO": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEGE": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LERS": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 17.0,
-    "viento_nudos": 19.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 17.4,
-    "icao": "LECO"
-   },
-   {
-    "distancia_km": 41.0,
-    "icao": "LEGR"
-   },
-   {
-    "distancia_km": 32.9,
-    "icao": "GCTS"
-   },
-   {
-    "distancia_km": 71.1,
-    "icao": "LEPA"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "NO",
-   "grados_destino": 315,
-   "velocidad_kmh": 19.2
-  },
-  "metars": {
-   "GCTS": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LECO": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 11.0,
-    "visibilidad": "9999"
-   },
-   "LEGR": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 29.0,
-    "visibilidad": "9999"
-   },
-   "LEPA": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 248.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "19.2 km/h SE"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 56.6,
-    "icao": "LEGR"
-   },
-   {
-    "distancia_km": 106.1,
-    "icao": "LEMH"
-   },
-   {
-    "distancia_km": 14.3,
-    "icao": "LETL"
-   }
-  ],
-  "esperado": {
-   "categoria": "Lento",
-   "direccion_destino": "SE",
-   "grados_destino": 133,
-   "velocidad_kmh": 1.9
-  },
-  "metars": {
-   "LEGR": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEMH": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 16.0,
-    "visibilidad": "9999"
-   },
-   "LETL": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 313.0,
-    "viento_nudos": 1.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 79.5,
-    "icao": "LEZL"
-   },
-   {
-    "distancia_km": 1.0,
-    "icao": "LECH"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "SO",
-   "grados_destino": 225,
-   "velocidad_kmh": 46.5
-  },
-  "metars": {
-   "LECH": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 13.0,
-    "visibilidad": "9999"
-   },
-   "LEZL": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "46.5 km/h NE"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 44.5,
-    "icao": "LECH"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LECH": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 7.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 11.6,
-    "icao": "LEDA"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEDA": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 18.7,
-    "icao": "LEBA"
-   },
-   {
-    "distancia_km": 42.6,
-    "icao": "LERJ"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEBA": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 2.0,
-    "visibilidad": "9999"
-   },
-   "LERJ": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 131.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 60.7,
-    "icao": "LEIB"
-   },
-   {
-    "distancia_km": 94.3,
-    "icao": "LEMG"
-   },
-   {
-    "distancia_km": 19.8,
-    "icao": "LEJR"
-   }
-  ],
-  "esperado": {
-   "categoria": "Lento",
-   "direccion_destino": "S",
-   "grados_destino": 177,
-   "velocidad_kmh": 5.6
-  },
-  "metars": {
-   "LEIB": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 357.0,
-    "viento_nudos": 3.0,
-    "visibilidad": "9999"
-   },
-   "LEMG": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 32.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 116.5,
-    "icao": "LEBB"
-   },
-   {
-    "distancia_km": 59.8,
-    "icao": "LEMH"
-   },
-   {
-    "distancia_km": 91.1,
-    "icao": "LEML"
-   },
-   {
-    "distancia_km": 46.3,
-    "icao": "LECO"
-   }
-  ],
-  "esperado": {
-   "categoria": "Lento",
-   "direccion_destino": "SSO",
-   "grados_destino": 211,
-   "velocidad_kmh": 4.2
-  },
-  "metars": {
-   "LEBB": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 133.0,
-    "viento_nudos": 23.0,
-    "visibilidad": "9999"
-   },
-   "LECO": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 58.0,
-    "viento_nudos": 6.0,
-    "visibilidad": "9999"
-   },
-   "LEMH": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 28.0,
-    "visibilidad": "9999"
-   },
-   "LEML": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 9.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "48.2 km/h NO"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 38.3,
-    "icao": "LEZL"
-   },
-   {
-    "distancia_km": 24.3,
-    "icao": "LEST"
-   },
-   {
-    "distancia_km": 24.4,
-    "icao": "LELN"
-   },
-   {
-    "distancia_km": 112.2,
-    "icao": "GCLP"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "ONO",
-   "grados_destino": 301,
-   "velocidad_kmh": 20.4
-  },
-  "metars": {
-   "GCLP": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 121.0,
-    "viento_nudos": 11.0,
-    "visibilidad": "9999"
-   },
-   "LELN": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEST": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEZL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 1.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 101.5,
-    "icao": "LEML"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEML": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 88.4,
-    "icao": "LEGE"
-   },
-   {
-    "distancia_km": 69.7,
-    "icao": "LEMG"
-   },
-   {
-    "distancia_km": 111.3,
-    "icao": "LEAM"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEAM": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 1.0,
-    "visibilidad": "9999"
-   },
-   "LEMG": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 169.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 69.5,
-    "icao": "LEBZ"
-   },
-   {
-    "distancia_km": 62.4,
-    "icao": "LEPP"
-   },
-   {
-    "distancia_km": 34.0,
-    "icao": "LEBL"
-   },
-   {
-    "distancia_km": 57.3,
-    "icao": "LEAL"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "NO",
-   "grados_destino": 305,
-   "velocidad_kmh": 11.7
-  },
-  "metars": {
-   "LEAL": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 165.0,
-    "viento_nudos": 35.0,
-    "visibilidad": "9999"
-   },
-   "LEBL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 337.0,
-    "viento_nudos": 4.0,
-    "visibilidad": "9999"
-   },
-   "LEBZ": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 0.0,
-    "visibilidad": "9999"
-   },
-   "LEPP": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "38.4 km/h NNE"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 103.6,
-    "icao": "LEVT"
-   },
-   {
-    "distancia_km": 89.0,
-    "icao": "LECH"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LECH": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 1.0,
-    "visibilidad": "9999"
-   },
-   "LEVT": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 19.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 34.4,
-    "icao": "LEDA"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "SE",
-   "grados_destino": 125,
-   "velocidad_kmh": 14.8
-  },
-  "metars": {
-   "LEDA": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 305.0,
-    "viento_nudos": 8.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 45.6,
-    "icao": "LEPP"
-   },
-   {
-    "distancia_km": 80.4,
-    "icao": "LEAL"
-   },
-   {
-    "distancia_km": 72.5,
-    "icao": "LEGE"
-   }
-  ],
-  "esperado": {
-   "categoria": "Rápido",
-   "direccion_destino": "NE",
-   "grados_destino": 37,
-   "velocidad_kmh": 57.4
-  },
-  "metars": {
-   "LEAL": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 22.0,
-    "visibilidad": "9999"
-   },
-   "LEGE": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 85.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEPP": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": 217.0,
-    "viento_nudos": 31.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 7.9,
-    "icao": "LEJR"
-   },
-   {
-    "distancia_km": 13.0,
-    "icao": "LEBZ"
-   },
-   {
-    "distancia_km": 68.2,
-    "icao": "LECH"
-   }
-  ],
-  "esperado": {
-   "categoria": "Moderado",
-   "direccion_destino": "ONO",
-   "grados_destino": 294,
-   "velocidad_kmh": 25.9
-  },
-  "metars": {
-   "LEBZ": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 114.0,
-    "viento_nudos": 14.0,
-    "visibilidad": "9999"
-   },
-   "LECH": {
-    "actualizado": "t",
-    "fenomenos": "Tormenta, Chubascos",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEJR": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": ""
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 33.8,
-    "icao": "LEAS"
-   },
-   {
-    "distancia_km": 83.7,
-    "icao": "LEBG"
-   },
-   {
-    "distancia_km": 116.4,
-    "icao": "LEBB"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEAS": {
     "actualizado": "t",
     "fenomenos": "Lluvia",
     "nubosidad": {
@@ -4618,22 +598,6 @@
     "viento_dir": 72.0,
     "viento_nudos": null,
     "visibilidad": "9999"
-   },
-   "LEBG": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": 15.0,
-    "viento_dir": null,
-    "viento_nudos": 13.0,
-    "visibilidad": "9999"
    }
   },
   "referencia": {
@@ -4643,22 +607,26 @@
  {
   "aeropuertos": [
    {
-    "distancia_km": 30.6,
-    "icao": "LEIB"
+    "distancia_km": 25.1,
+    "icao": "LEBA"
    },
    {
-    "distancia_km": 49.3,
+    "distancia_km": 47.8,
+    "icao": "GCTS"
+   },
+   {
+    "distancia_km": 53.7,
     "icao": "LEML"
    }
   ],
   "esperado": {
-   "categoria": "Lento",
-   "direccion_destino": "SSE",
-   "grados_destino": 158,
-   "velocidad_kmh": 7.4
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
   },
   "metars": {
-   "LEIB": {
+   "GCTS": {
     "actualizado": "t",
     "fenomenos": "Ninguno",
     "nubosidad": {
@@ -4670,7 +638,7 @@
     },
     "punto_rocio": null,
     "temperatura": 15.0,
-    "viento_dir": null,
+    "viento_dir": 60.0,
     "viento_nudos": null,
     "visibilidad": "9999"
    },
@@ -4687,54 +655,6 @@
     "punto_rocio": null,
     "temperatura": 15.0,
     "viento_dir": null,
-    "viento_nudos": 4.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "7.4 km/h NNO"
-  }
- },
- {
-  "aeropuertos": [],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {},
-  "referencia": {
-   "Viento": "5 km/h VRB"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 74.7,
-    "icao": "LEML"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEML": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
     "viento_nudos": null,
     "visibilidad": "9999"
    }
@@ -4746,115 +666,27 @@
  {
   "aeropuertos": [
    {
-    "distancia_km": 114.2,
-    "icao": "LEBL"
-   },
-   {
-    "distancia_km": 84.4,
-    "icao": "LEZG"
-   },
-   {
-    "distancia_km": 100.8,
-    "icao": "LEST"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEBL": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 17.0,
-    "visibilidad": "9999"
-   },
-   "LEZG": {
-    "actualizado": "t",
-    "fenomenos": "Ninguno",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 24.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 73.1,
-    "icao": "LEAS"
-   }
-  ],
-  "esperado": {
-   "categoria": "No estimable",
-   "direccion_destino": "Desconocida",
-   "grados_destino": 0,
-   "velocidad_kmh": 0
-  },
-  "metars": {
-   "LEAS": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": 17.0,
-    "visibilidad": "9999"
-   }
-  },
-  "referencia": {
-   "Viento": "calma"
-  }
- },
- {
-  "aeropuertos": [
-   {
-    "distancia_km": 67.3,
-    "icao": "LEVC"
-   },
-   {
-    "distancia_km": 67.5,
+    "distancia_km": 76.7,
     "icao": "GCLP"
    },
    {
-    "distancia_km": 108.6,
+    "distancia_km": 40.6,
     "icao": "LEVT"
    },
    {
-    "distancia_km": 0.7,
-    "icao": "LESO"
+    "distancia_km": 12.6,
+    "icao": "LEAS"
+   },
+   {
+    "distancia_km": 76.2,
+    "icao": "LERJ"
    }
   ],
   "esperado": {
-   "categoria": "Lento",
-   "direccion_destino": "E",
-   "grados_destino": 90,
-   "velocidad_kmh": 3.3
+   "categoria": "Moderado",
+   "direccion_destino": "S",
+   "grados_destino": 175,
+   "velocidad_kmh": 14.8
   },
   "metars": {
    "GCLP": {
@@ -4867,11 +699,196 @@
     },
     "punto_rocio": null,
     "temperatura": 15.0,
-    "viento_dir": 22.0,
-    "viento_nudos": 0.0,
+    "viento_dir": null,
+    "viento_nudos": 3.0,
     "visibilidad": "9999"
    },
-   "LESO": {
+   "LERJ": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 355.0,
+    "viento_nudos": 8.0,
+    "visibilidad": "9999"
+   },
+   "LEVT": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 28.0,
+    "icao": "LEPA"
+   },
+   {
+    "distancia_km": 110.4,
+    "icao": "LEBL"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEBL": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 17.0,
+    "visibilidad": "9999"
+   },
+   "LEPA": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 106.0,
+    "icao": "LEPA"
+   },
+   {
+    "distancia_km": 106.8,
+    "icao": "LEJR"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEPA": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 50.7,
+    "icao": "GCLP"
+   },
+   {
+    "distancia_km": 46.4,
+    "icao": "LERS"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "GCLP": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 349.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LERS": {
     "actualizado": "t",
     "fenomenos": "Tormenta, Chubascos",
     "nubosidad": {
@@ -4886,42 +903,10 @@
     "viento_dir": 346.0,
     "viento_nudos": null,
     "visibilidad": "9999"
-   },
-   "LEVC": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": null,
-    "viento_nudos": null,
-    "visibilidad": "9999"
-   },
-   "LEVT": {
-    "actualizado": "t",
-    "fenomenos": "Lluvia",
-    "nubosidad": {
-     "alta": [],
-     "baja": [
-      "Nublado a 1500 ft"
-     ],
-     "media": []
-    },
-    "punto_rocio": null,
-    "temperatura": null,
-    "viento_dir": 28.0,
-    "viento_nudos": null,
-    "visibilidad": "9999"
    }
   },
   "referencia": {
-   "Viento": "6.6 km/h O"
+   "Viento": "5 km/h VRB"
   }
  },
  {
@@ -6116,6 +2101,3926 @@
   "metars": {},
   "referencia": {
    "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 77.3,
+    "icao": "LERJ"
+   },
+   {
+    "distancia_km": 92.6,
+    "icao": "LEVC"
+   },
+   {
+    "distancia_km": 36.1,
+    "icao": "LEZL"
+   }
+  ],
+  "esperado": {
+   "categoria": "Lento",
+   "direccion_destino": "NO",
+   "grados_destino": 320,
+   "velocidad_kmh": 7.4
+  },
+  "metars": {
+   "LEVC": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 140.0,
+    "viento_nudos": 4.0,
+    "visibilidad": "9999"
+   },
+   "LEZL": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 28.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 34.0,
+    "icao": "LEPP"
+   },
+   {
+    "distancia_km": 45.7,
+    "icao": "LELN"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LELN": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 276.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEPP": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 2.4,
+    "icao": "LEMG"
+   },
+   {
+    "distancia_km": 111.2,
+    "icao": "LEVC"
+   },
+   {
+    "distancia_km": 24.7,
+    "icao": "LEBA"
+   },
+   {
+    "distancia_km": 52.2,
+    "icao": "LEGE"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "SSE",
+   "grados_destino": 164,
+   "velocidad_kmh": 57.4
+  },
+  "metars": {
+   "LEBA": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 344.0,
+    "viento_nudos": 31.0,
+    "visibilidad": "9999"
+   },
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 25.0,
+    "visibilidad": "9999"
+   },
+   "LEMG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEVC": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 206.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 47.9,
+    "icao": "LEMD"
+   },
+   {
+    "distancia_km": 85.6,
+    "icao": "LERS"
+   },
+   {
+    "distancia_km": 102.6,
+    "icao": "LEBA"
+   },
+   {
+    "distancia_km": 16.5,
+    "icao": "LEAL"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "SO",
+   "grados_destino": 225,
+   "velocidad_kmh": 16.8
+  },
+  "metars": {
+   "LEAL": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 100.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEBA": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEMD": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 18.0,
+    "visibilidad": "9999"
+   },
+   "LERS": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 28.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "16.8 km/h NE"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 29.6,
+    "icao": "LEZL"
+   },
+   {
+    "distancia_km": 63.1,
+    "icao": "LEVT"
+   },
+   {
+    "distancia_km": 47.3,
+    "icao": "GCXO"
+   },
+   {
+    "distancia_km": 72.8,
+    "icao": "LEMD"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "ESE",
+   "grados_destino": 109,
+   "velocidad_kmh": 18.5
+  },
+  "metars": {
+   "LEMD": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 4.0,
+    "visibilidad": "9999"
+   },
+   "LEVT": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 289.0,
+    "viento_nudos": 10.0,
+    "visibilidad": "9999"
+   },
+   "LEZL": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 27.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 116.2,
+    "icao": "GCTS"
+   },
+   {
+    "distancia_km": 69.4,
+    "icao": "LEGE"
+   },
+   {
+    "distancia_km": 5.1,
+    "icao": "LEBZ"
+   },
+   {
+    "distancia_km": 101.9,
+    "icao": "LEDA"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "SO",
+   "grados_destino": 217,
+   "velocidad_kmh": 41.6
+  },
+  "metars": {
+   "GCTS": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 10.0,
+    "viento_nudos": 27.0,
+    "visibilidad": "9999"
+   },
+   "LEBZ": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 5.0,
+    "visibilidad": "9999"
+   },
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "44.8 km/h ENE"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 30.2,
+    "icao": "GCLP"
+   },
+   {
+    "distancia_km": 42.5,
+    "icao": "LEJR"
+   },
+   {
+    "distancia_km": 75.5,
+    "icao": "LEBA"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "SSO",
+   "grados_destino": 203,
+   "velocidad_kmh": 57.4
+  },
+  "metars": {
+   "GCLP": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 23.0,
+    "viento_nudos": 31.0,
+    "visibilidad": "9999"
+   },
+   "LEBA": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 25.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 77.9,
+    "icao": "LEVT"
+   },
+   {
+    "distancia_km": 23.9,
+    "icao": "LECO"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEVT": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 57.1,
+    "icao": "GCXO"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "N",
+   "grados_destino": 0,
+   "velocidad_kmh": 50.0
+  },
+  "metars": {
+   "GCXO": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 200.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "50.0 km/h S"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 109.2,
+    "icao": "GCTS"
+   },
+   {
+    "distancia_km": 11.8,
+    "icao": "LEZL"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "SE",
+   "grados_destino": 127,
+   "velocidad_kmh": 18.7
+  },
+  "metars": {
+   "GCTS": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 1.0,
+    "viento_nudos": 19.0,
+    "visibilidad": "9999"
+   },
+   "LEZL": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 115.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "33.1 km/h OSO"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 100.1,
+    "icao": "LESO"
+   }
+  ],
+  "esperado": {
+   "categoria": "Lento",
+   "direccion_destino": "ONO",
+   "grados_destino": 299,
+   "velocidad_kmh": 7.4
+  },
+  "metars": {
+   "LESO": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 119.0,
+    "viento_nudos": 4.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "NNE",
+   "grados_destino": 22,
+   "velocidad_kmh": 39.5
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "39.5 km/h SSO"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 21.8,
+    "icao": "LEGE"
+   },
+   {
+    "distancia_km": 58.2,
+    "icao": "LETL"
+   },
+   {
+    "distancia_km": 55.0,
+    "icao": "LECO"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LECO": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 21.0,
+    "visibilidad": "9999"
+   },
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 35.0,
+    "visibilidad": "9999"
+   },
+   "LETL": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 93.8,
+    "icao": "LEBG"
+   },
+   {
+    "distancia_km": 92.5,
+    "icao": "LEMG"
+   },
+   {
+    "distancia_km": 46.6,
+    "icao": "LEMD"
+   },
+   {
+    "distancia_km": 4.1,
+    "icao": "LEST"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEBG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 111.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEMD": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 5.0,
+    "visibilidad": "9999"
+   },
+   "LEST": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 109.3,
+    "icao": "LERJ"
+   },
+   {
+    "distancia_km": 96.3,
+    "icao": "LEPA"
+   },
+   {
+    "distancia_km": 90.2,
+    "icao": "LEZL"
+   },
+   {
+    "distancia_km": 26.8,
+    "icao": "GCTS"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "ONO",
+   "grados_destino": 287,
+   "velocidad_kmh": 61.1
+  },
+  "metars": {
+   "GCTS": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 4.0,
+    "visibilidad": "9999"
+   },
+   "LEPA": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 31.0,
+    "visibilidad": "9999"
+   },
+   "LERJ": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 107.0,
+    "viento_nudos": 33.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 74.2,
+    "icao": "LEMH"
+   },
+   {
+    "distancia_km": 3.9,
+    "icao": "LEVT"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEVT": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 43.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 73.0,
+    "icao": "LEGR"
+   },
+   {
+    "distancia_km": 60.2,
+    "icao": "LEIB"
+   },
+   {
+    "distancia_km": 76.0,
+    "icao": "GCTS"
+   },
+   {
+    "distancia_km": 4.6,
+    "icao": "LEAL"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "GCTS": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 20.0,
+    "visibilidad": "9999"
+   },
+   "LEGR": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 22.0,
+    "visibilidad": "9999"
+   },
+   "LEIB": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 8.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 91.5,
+    "icao": "LEBG"
+   },
+   {
+    "distancia_km": 84.1,
+    "icao": "LEMG"
+   },
+   {
+    "distancia_km": 19.5,
+    "icao": "LEGR"
+   },
+   {
+    "distancia_km": 97.2,
+    "icao": "LERJ"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "ONO",
+   "grados_destino": 284,
+   "velocidad_kmh": 55.6
+  },
+  "metars": {
+   "LEBG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 104.0,
+    "viento_nudos": 30.0,
+    "visibilidad": "9999"
+   },
+   "LEGR": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEMG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LERJ": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 90.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 74.0,
+    "icao": "LESO"
+   },
+   {
+    "distancia_km": 16.5,
+    "icao": "LEBL"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEBL": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 29.0,
+    "visibilidad": "9999"
+   },
+   "LESO": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 1.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 87.9,
+    "icao": "LEBG"
+   },
+   {
+    "distancia_km": 38.5,
+    "icao": "LEIB"
+   },
+   {
+    "distancia_km": 20.4,
+    "icao": "LETL"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "SO",
+   "grados_destino": 220,
+   "velocidad_kmh": 33.6
+  },
+  "metars": {
+   "LEBG": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 29.0,
+    "viento_nudos": 11.0,
+    "visibilidad": "9999"
+   },
+   "LETL": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 30.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "47.3 km/h NE"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 53.4,
+    "icao": "LECH"
+   },
+   {
+    "distancia_km": 23.9,
+    "icao": "LEZL"
+   },
+   {
+    "distancia_km": 78.0,
+    "icao": "LETL"
+   },
+   {
+    "distancia_km": 118.6,
+    "icao": "LEMD"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "SE",
+   "grados_destino": 135,
+   "velocidad_kmh": 64.8
+  },
+  "metars": {
+   "LETL": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 315.0,
+    "viento_nudos": 35.0,
+    "visibilidad": "9999"
+   },
+   "LEZL": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 151.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 33.6,
+    "icao": "LEST"
+   },
+   {
+    "distancia_km": 47.9,
+    "icao": "LESO"
+   },
+   {
+    "distancia_km": 68.0,
+    "icao": "LEDA"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LESO": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 23.0,
+    "visibilidad": "9999"
+   },
+   "LEST": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 239.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "NNO",
+   "grados_destino": 338,
+   "velocidad_kmh": 16.7
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "16.7 km/h SSE"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 60.8,
+    "icao": "LEGR"
+   },
+   {
+    "distancia_km": 65.4,
+    "icao": "LERS"
+   },
+   {
+    "distancia_km": 17.3,
+    "icao": "LESO"
+   },
+   {
+    "distancia_km": 110.5,
+    "icao": "LEPA"
+   }
+  ],
+  "esperado": {
+   "categoria": "Lento",
+   "direccion_destino": "ESE",
+   "grados_destino": 112,
+   "velocidad_kmh": 2.7
+  },
+  "metars": {
+   "LEGR": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 227.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEPA": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LESO": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 210.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "2.7 km/h ONO"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 70.5,
+    "icao": "LEGE"
+   },
+   {
+    "distancia_km": 101.4,
+    "icao": "LECO"
+   },
+   {
+    "distancia_km": 67.6,
+    "icao": "LEBZ"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "NE",
+   "grados_destino": 41,
+   "velocidad_kmh": 26.7
+  },
+  "metars": {
+   "LEBZ": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LECO": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 145.0,
+    "viento_nudos": 5.0,
+    "visibilidad": "9999"
+   },
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 231.0,
+    "viento_nudos": 28.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 116.8,
+    "icao": "LEJR"
+   },
+   {
+    "distancia_km": 47.1,
+    "icao": "LEPP"
+   },
+   {
+    "distancia_km": 29.9,
+    "icao": "LEGR"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEPP": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 5.3,
+    "icao": "LEMH"
+   },
+   {
+    "distancia_km": 36.3,
+    "icao": "LEAS"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "SSO",
+   "grados_destino": 202,
+   "velocidad_kmh": 41.6
+  },
+  "metars": {
+   "LEAS": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEMH": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "41.6 km/h NNE"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 119.2,
+    "icao": "LEMD"
+   },
+   {
+    "distancia_km": 28.8,
+    "icao": "GCXO"
+   },
+   {
+    "distancia_km": 88.0,
+    "icao": "LEPA"
+   },
+   {
+    "distancia_km": 75.5,
+    "icao": "LEIB"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "GCXO": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 217.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEIB": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 183.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEMD": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 18.0,
+    "visibilidad": "9999"
+   },
+   "LEPA": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 87.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 110.3,
+    "icao": "LEBL"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "SSO",
+   "grados_destino": 212,
+   "velocidad_kmh": 42.6
+  },
+  "metars": {
+   "LEBL": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 32.0,
+    "viento_nudos": 23.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 44.1,
+    "icao": "LEMD"
+   },
+   {
+    "distancia_km": 2.7,
+    "icao": "LEJR"
+   },
+   {
+    "distancia_km": 10.8,
+    "icao": "LEDA"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEDA": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 32.0,
+    "visibilidad": "9999"
+   },
+   "LEJR": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 141.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEMD": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 16.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 35.6,
+    "icao": "LEJR"
+   },
+   {
+    "distancia_km": 41.0,
+    "icao": "LESO"
+   },
+   {
+    "distancia_km": 71.0,
+    "icao": "LEAM"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEJR": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LESO": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 20.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 25.9,
+    "icao": "LEPP"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "ENE",
+   "grados_destino": 68,
+   "velocidad_kmh": 28.4
+  },
+  "metars": {
+   "LEPP": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "28.4 km/h OSO"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 38.7,
+    "icao": "LEML"
+   },
+   {
+    "distancia_km": 3.4,
+    "icao": "LEAB"
+   },
+   {
+    "distancia_km": 93.5,
+    "icao": "LEST"
+   },
+   {
+    "distancia_km": 14.1,
+    "icao": "LEPA"
+   }
+  ],
+  "esperado": {
+   "categoria": "Lento",
+   "direccion_destino": "S",
+   "grados_destino": 171,
+   "velocidad_kmh": 2.5
+  },
+  "metars": {
+   "LEAB": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 222.0,
+    "viento_nudos": 35.0,
+    "visibilidad": "9999"
+   },
+   "LEML": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 358.0,
+    "viento_nudos": 15.0,
+    "visibilidad": "9999"
+   },
+   "LEPA": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 21.0,
+    "viento_nudos": 24.0,
+    "visibilidad": "9999"
+   },
+   "LEST": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 132.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "29.0 km/h ESE"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 111.9,
+    "icao": "GCLP"
+   },
+   {
+    "distancia_km": 26.7,
+    "icao": "LECO"
+   },
+   {
+    "distancia_km": 97.9,
+    "icao": "LEIB"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "SO",
+   "grados_destino": 224,
+   "velocidad_kmh": 23.6
+  },
+  "metars": {
+   "GCLP": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 64.0,
+    "viento_nudos": 27.0,
+    "visibilidad": "9999"
+   },
+   "LECO": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEIB": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 338.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "16.7 km/h NO"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 93.6,
+    "icao": "LEBL"
+   },
+   {
+    "distancia_km": 54.4,
+    "icao": "LEDA"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "SSO",
+   "grados_destino": 197,
+   "velocidad_kmh": 27.0
+  },
+  "metars": {
+   "LEBL": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEDA": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 350.0,
+    "viento_nudos": 5.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "46.0 km/h NNE"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 96.9,
+    "icao": "LEIB"
+   },
+   {
+    "distancia_km": 11.3,
+    "icao": "LEVC"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "SSO",
+   "grados_destino": 210,
+   "velocidad_kmh": 18.5
+  },
+  "metars": {
+   "LEIB": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 30.0,
+    "viento_nudos": 10.0,
+    "visibilidad": "9999"
+   },
+   "LEVC": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 346.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 60.1,
+    "icao": "LELN"
+   },
+   {
+    "distancia_km": 12.2,
+    "icao": "LEZL"
+   },
+   {
+    "distancia_km": 33.9,
+    "icao": "LEZG"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "ONO",
+   "grados_destino": 300,
+   "velocidad_kmh": 13.0
+  },
+  "metars": {
+   "LELN": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 12.0,
+    "visibilidad": "9999"
+   },
+   "LEZG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 11.0,
+    "visibilidad": "9999"
+   },
+   "LEZL": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 120.0,
+    "viento_nudos": 7.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 54.8,
+    "icao": "LEMG"
+   },
+   {
+    "distancia_km": 106.5,
+    "icao": "LEAB"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEAB": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 324.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEMG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 306.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 59.0,
+    "icao": "LEZG"
+   },
+   {
+    "distancia_km": 86.3,
+    "icao": "LERJ"
+   },
+   {
+    "distancia_km": 19.2,
+    "icao": "LEMD"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEMD": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEZG": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 257.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 119.4,
+    "icao": "LEAM"
+   },
+   {
+    "distancia_km": 72.4,
+    "icao": "LEMD"
+   },
+   {
+    "distancia_km": 111.6,
+    "icao": "LESO"
+   },
+   {
+    "distancia_km": 107.2,
+    "icao": "GCTS"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "SE",
+   "grados_destino": 145,
+   "velocidad_kmh": 20.4
+  },
+  "metars": {
+   "GCTS": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 34.0,
+    "visibilidad": "9999"
+   },
+   "LEAM": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 325.0,
+    "viento_nudos": 11.0,
+    "visibilidad": "9999"
+   },
+   "LEMD": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 124.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LESO": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 0.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 15.0,
+    "icao": "LECH"
+   },
+   {
+    "distancia_km": 64.9,
+    "icao": "LEBA"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEBA": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 0.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LECH": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 154.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "SSE",
+   "grados_destino": 158,
+   "velocidad_kmh": 49.3
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "49.3 km/h NNO"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 50.2,
+    "icao": "LEST"
+   },
+   {
+    "distancia_km": 92.8,
+    "icao": "LEGE"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "NNE",
+   "grados_destino": 19,
+   "velocidad_kmh": 13.0
+  },
+  "metars": {
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 199.0,
+    "viento_nudos": 7.0,
+    "visibilidad": "9999"
+   },
+   "LEST": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 262.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 88.8,
+    "icao": "LELN"
+   },
+   {
+    "distancia_km": 63.8,
+    "icao": "LEAL"
+   },
+   {
+    "distancia_km": 37.0,
+    "icao": "LEDA"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "ENE",
+   "grados_destino": 72,
+   "velocidad_kmh": 18.3
+  },
+  "metars": {
+   "LEAL": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 253.0,
+    "viento_nudos": 16.0,
+    "visibilidad": "9999"
+   },
+   "LEDA": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 256.0,
+    "viento_nudos": 19.0,
+    "visibilidad": "9999"
+   },
+   "LELN": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 5.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "10.3 km/h E"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 6.2,
+    "icao": "LEAM"
+   },
+   {
+    "distancia_km": 10.7,
+    "icao": "LEGE"
+   },
+   {
+    "distancia_km": 59.4,
+    "icao": "LEVT"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEAM": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 12.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 33.0,
+    "visibilidad": "9999"
+   },
+   "LEVT": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 306.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 39.1,
+    "icao": "LERJ"
+   },
+   {
+    "distancia_km": 53.6,
+    "icao": "LEMD"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "S",
+   "grados_destino": 180,
+   "velocidad_kmh": 25.9
+  },
+  "metars": {
+   "LEMD": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 0.0,
+    "viento_nudos": 14.0,
+    "visibilidad": "9999"
+   },
+   "LERJ": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 97.3,
+    "icao": "LEBA"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 66.0,
+    "icao": "LEBB"
+   },
+   {
+    "distancia_km": 83.2,
+    "icao": "LEML"
+   },
+   {
+    "distancia_km": 109.6,
+    "icao": "LETL"
+   },
+   {
+    "distancia_km": 36.1,
+    "icao": "LEBG"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "N",
+   "grados_destino": 353,
+   "velocidad_kmh": 35.2
+  },
+  "metars": {
+   "LEBB": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 275.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEBG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 173.0,
+    "viento_nudos": 19.0,
+    "visibilidad": "9999"
+   },
+   "LEML": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LETL": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 35.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 28.4,
+    "icao": "LEBZ"
+   },
+   {
+    "distancia_km": 50.9,
+    "icao": "LEZG"
+   },
+   {
+    "distancia_km": 10.4,
+    "icao": "LEAM"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "NO",
+   "grados_destino": 315,
+   "velocidad_kmh": 49.3
+  },
+  "metars": {
+   "LEAM": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 16.0,
+    "visibilidad": "9999"
+   },
+   "LEBZ": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEZG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 1.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "49.3 km/h SE"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 5.9,
+    "icao": "LEGE"
+   },
+   {
+    "distancia_km": 52.4,
+    "icao": "LEPP"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "ONO",
+   "grados_destino": 292,
+   "velocidad_kmh": 28.5
+  },
+  "metars": {
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 129.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEPP": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 18.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "28.5 km/h ESE"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 93.1,
+    "icao": "LEAB"
+   },
+   {
+    "distancia_km": 77.4,
+    "icao": "LECO"
+   },
+   {
+    "distancia_km": 29.9,
+    "icao": "LEAS"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEAS": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 344.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LECO": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 75.1,
+    "icao": "LELN"
+   },
+   {
+    "distancia_km": 84.1,
+    "icao": "LERJ"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "ENE",
+   "grados_destino": 65,
+   "velocidad_kmh": 57.4
+  },
+  "metars": {
+   "LELN": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LERJ": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 245.0,
+    "viento_nudos": 31.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 84.8,
+    "icao": "LEZG"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 8.0,
+    "icao": "LECH"
+   },
+   {
+    "distancia_km": 105.5,
+    "icao": "LEVT"
+   },
+   {
+    "distancia_km": 3.5,
+    "icao": "LESO"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LECH": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LESO": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEVT": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 8.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 85.8,
+    "icao": "LERJ"
+   },
+   {
+    "distancia_km": 56.2,
+    "icao": "GCXO"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "GCXO": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 335.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LERJ": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 345.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 26.8,
+    "icao": "LEDA"
+   },
+   {
+    "distancia_km": 104.1,
+    "icao": "LESO"
+   },
+   {
+    "distancia_km": 18.3,
+    "icao": "LEZG"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEDA": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LESO": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 26.3,
+    "icao": "GCLP"
+   },
+   {
+    "distancia_km": 87.2,
+    "icao": "LEBL"
+   },
+   {
+    "distancia_km": 57.5,
+    "icao": "LEGE"
+   },
+   {
+    "distancia_km": 79.2,
+    "icao": "LEBZ"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "OSO",
+   "grados_destino": 244,
+   "velocidad_kmh": 14.5
+  },
+  "metars": {
+   "GCLP": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 155.0,
+    "viento_nudos": 3.0,
+    "visibilidad": "9999"
+   },
+   "LEBL": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEBZ": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 107.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 53.0,
+    "viento_nudos": 16.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 28.7,
+    "icao": "LEGE"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {},
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 17.8,
+    "icao": "LEAM"
+   },
+   {
+    "distancia_km": 97.3,
+    "icao": "LEBB"
+   },
+   {
+    "distancia_km": 38.8,
+    "icao": "LEZG"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEAM": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 11.0,
+    "visibilidad": "9999"
+   },
+   "LEBB": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 152.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 23.2,
+    "icao": "LEVC"
+   },
+   {
+    "distancia_km": 60.5,
+    "icao": "LETL"
+   },
+   {
+    "distancia_km": 24.5,
+    "icao": "LESO"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "SE",
+   "grados_destino": 135,
+   "velocidad_kmh": 12.5
+  },
+  "metars": {
+   "LESO": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 177.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LETL": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 24.0,
+    "visibilidad": "9999"
+   },
+   "LEVC": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": 12.0,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "12.5 km/h NO"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 38.2,
+    "icao": "LEMG"
+   }
+  ],
+  "esperado": {
+   "categoria": "Rápido",
+   "direccion_destino": "NE",
+   "grados_destino": 45,
+   "velocidad_kmh": 35.0
+  },
+  "metars": {
+   "LEMG": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "35.0 km/h SO"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 61.9,
+    "icao": "GCTS"
+   },
+   {
+    "distancia_km": 24.5,
+    "icao": "LEBZ"
+   },
+   {
+    "distancia_km": 99.5,
+    "icao": "LEAS"
+   }
+  ],
+  "esperado": {
+   "categoria": "Lento",
+   "direccion_destino": "O",
+   "grados_destino": 280,
+   "velocidad_kmh": 3.7
+  },
+  "metars": {
+   "GCTS": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 10.0,
+    "visibilidad": "9999"
+   },
+   "LEAS": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 100.0,
+    "viento_nudos": 2.0,
+    "visibilidad": "9999"
+   },
+   "LEBZ": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 126.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "calma"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 33.5,
+    "icao": "LEVT"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEVT": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 238.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "5 km/h VRB"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 3.6,
+    "icao": "LEDA"
+   }
+  ],
+  "esperado": {
+   "categoria": "No estimable",
+   "direccion_destino": "Desconocida",
+   "grados_destino": 0,
+   "velocidad_kmh": 0
+  },
+  "metars": {
+   "LEDA": {
+    "actualizado": "t",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 72.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": ""
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 118.8,
+    "icao": "LEGE"
+   },
+   {
+    "distancia_km": 65.1,
+    "icao": "LEST"
+   },
+   {
+    "distancia_km": 118.7,
+    "icao": "LEBA"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "NO",
+   "grados_destino": 315,
+   "velocidad_kmh": 16.3
+  },
+  "metars": {
+   "LEGE": {
+    "actualizado": "t",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   },
+   "LEST": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado a 1500 ft"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 210.0,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "16.3 km/h SE"
+  }
+ },
+ {
+  "aeropuertos": [
+   {
+    "distancia_km": 46.6,
+    "icao": "GCLP"
+   }
+  ],
+  "esperado": {
+   "categoria": "Moderado",
+   "direccion_destino": "NNO",
+   "grados_destino": 338,
+   "velocidad_kmh": 28.3
+  },
+  "metars": {
+   "GCLP": {
+    "actualizado": "t",
+    "fenomenos": "Tormenta, Chubascos",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "9999"
+   }
+  },
+  "referencia": {
+   "Viento": "28.3 km/h SSE"
   }
  }
 ]

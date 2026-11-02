@@ -20,6 +20,11 @@ casos = []
 for _ in range(60):
     t = T._texto_aleatorio(rnd)
     casos.append({"html": f"<html><body><p>{t}</p></body></html>", "esperado": parseo.parsear_estacion(t)})
+# misma página con los acentos y el grado escritos como entidades HTML (así llega la página real de AVAMET)
+for _ in range(40):
+    t = T._texto_aleatorio(rnd)
+    h = t.replace("°", "&deg;").replace("í", "&iacute;").replace("à", "&agrave;").replace("ó", "&oacute;").replace("&", "&amp;", 0)
+    casos.append({"html": f"<html><body><p>{h}</p></body></html>", "esperado": parseo.parsear_estacion(parseo.texto_de_html(f"<html><body><p>{h}</p></body></html>"))})
 guardar("estacion_parseo.json", casos)
 
 # 2) METAR

@@ -1,109 +1,107 @@
 package es.avamet.aviso
 
-import org.json.JSONObject
-import java.text.SimpleDateFormat
+import es.avamet.aviso.core.*
 import java.util.Locale
-import java.util.TimeZone
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.floor
+import kotlin.math.ln
 import kotlin.math.roundToInt
 
 /**
- * Estimación de "¿buen cielo para observar esta noche?".
- * Datos: pronóstico de Open-Meteo.com (licencia CC BY 4.0, uso gratuito solo no comercial).
- * IMPORTANTE: los umbrales de abajo son un criterio propio y sencillo, NO proceden de un estudio científico validado.
- * La corriente en chorro (250 hPa) como indicador de turbulencia (seeing) es una regla práctica habitual entre aficionados;
- * aquí no se ha verificado su fiabilidad.
+ * "¿Cielo bueno para observar?" calculado SOLO con los datos que ya recoge la app:
+ * METAR de aeropuertos cercanos (nubes, fenómenos), estación de referencia AVAMET (temperatura, humedad, racha, lluvia),
+ * avisos de nubes de lluvia en camino y fase de la Luna (calculada).
+ * Es el estado de AHORA, no un pronóstico. Los umbrales son un criterio propio, NO un estudio validado.
  */
 object Cielo {
-    class Informe(
-        val veredicto: String,            // BUENO / REGULAR / MALO
-        val lineas: List<String>,
-        val horas: Int,
-        val actualizadoMs: Long,
-    )
+    class Informe(val veredicto: String, val lineas: List<String>)
 
-    private const val BASE = "https://api.open-meteo.com/v1/forecast?"
-    private const val VARS = "cloud_cover,cloud_cover_low,cloud_cover_mid,cloud_cover_high,temperature_2m,dew_point_2m,relative_humidity_2m,wind_speed_10m,wind_gusts_10m"
-
-    /** Edad de la Luna (días) y fracción iluminada, con el mes sinódico medio. Aproximado (error de horas). */
-    fun luna(ahoraMs: Long): Pair<Double, Double> {
-        val nuevaRef = 947_182_440_000L   // luna nueva del 2000-01-06 18:14 UTC
-        val periodo = 29.530588853
-        val dias = (ahoraMs - nuevaRef) / 86_400_000.0
-        val edad = dias - floor(dias / periodo) * periodo
-        val ilum = (1 - cos(2 * PI * edad / periodo)) / 2
-        return Pair(edad, ilum)
+    /** Fracción iluminada de la Luna (mes sinódico medio desde la luna nueva del 2000-01-06 18:14 UTC); error de horas. */
+    fun lunaIluminada(ahoraMs: Long): Double {
+        val p = 29.530588853
+        val d = (ahoraMs - 947_182_440_000L) / 86_400_000.0
+        val edad = d - floor(d / p) * p
+        return (1 - cos(2 * PI * edad / p)) / 2
     }
 
-    private fun consulta(lat: Double, lon: Double, chorro: Boolean): JSONObject {
-        val v = if (chorro) "$VARS,wind_speed_250hPa" else VARS
-        val url = "${BASE}latitude=${"%.3f".format(Locale.US, lat)}&longitude=${"%.3f".format(Locale.US, lon)}&hourly=$v&timezone=auto&forecast_days=2"
-        return JSONObject(Descargas.texto(url))
+    private fun numero(v: Any?): Double? =
+        Regex("-?\\d+(\\.\\d+)?").find(v?.toString() ?: "")?.value?.toDoubleOrNull()
+
+    /** Fracción de cielo cubierto según la capa más cubierta (FEW 1-2, SCT 3-4, BKN 5-7, OVC 8 octas; punto medio de cada rango). */
+    private fun fraccion(txt: String): Double = when {
+        txt.startsWith("Cielo Cubierto") -> 1.0
+        txt.startsWith("Nublado") -> 0.75
+        txt.startsWith("Nubes dispersas") -> 0.44
+        txt.startsWith("Pocas nubes") -> 0.19
+        else -> 0.5
     }
 
-    fun obtener(lat: Double, lon: Double, ahoraMs: Long): Informe {
-        var tieneChorro = true
-        val j = try { consulta(lat, lon, true) } catch (e: Exception) { tieneChorro = false; consulta(lat, lon, false) }
-        val h = j.getJSONObject("hourly")
-        val tiempos = h.getJSONArray("time")
-        val fmt = SimpleDateFormat("yyyy-MM-dd'T'HH:mm", Locale.US)
-        fmt.timeZone = TimeZone.getTimeZone(j.optString("timezone", "UTC"))
-        // Horas de noche (21:00–05:59 locales) que aún no han pasado
-        val idx = ArrayList<Int>()
-        for (i in 0 until tiempos.length()) {
-            val t = tiempos.getString(i)
-            val hora = t.substring(11, 13).toInt()
-            val ms = fmt.parse(t)?.time ?: continue
-            if ((hora >= 21 || hora <= 5) && ms >= ahoraMs - 3_600_000L && idx.size < 9) idx.add(i)
-        }
-        if (idx.isEmpty()) throw java.io.IOException("El pronóstico no cubre la próxima noche")
-        fun media(k: String): Double? {
-            val a = h.optJSONArray(k) ?: return null
-            val xs = idx.mapNotNull { if (a.isNull(it)) null else a.getDouble(it) }
-            return if (xs.isEmpty()) null else xs.average()
-        }
-        fun maximo(k: String): Double? {
-            val a = h.optJSONArray(k) ?: return null
-            return idx.mapNotNull { if (a.isNull(it)) null else a.getDouble(it) }.maxOrNull()
-        }
-        val nub = media("cloud_cover") ?: throw java.io.IOException("Sin dato de nubosidad")
-        val baja = media("cloud_cover_low")
-        val media_ = media("cloud_cover_mid")
-        val alta = media("cloud_cover_high")
-        val t = media("temperature_2m")
-        val td = media("dew_point_2m")
-        val hr = media("relative_humidity_2m")
-        val racha = maximo("wind_gusts_10m")
-        val chorro = if (tieneChorro) media("wind_speed_250hPa") else null
-        val (_, ilum) = luna(ahoraMs)
+    /** Punto de rocío con la fórmula de Magnus (constantes de Sonntag 1990: a=17.62, b=243.12). */
+    private fun rocio(t: Double, hr: Double): Double {
+        val a = 17.62; val b = 243.12
+        val g = ln(hr.coerceIn(1.0, 100.0) / 100.0) + a * t / (b + t)
+        return b * g / (a - g)
+    }
 
-        var puntos = 0   // 0 = bueno; más = peor
+    fun evaluar(r: Resultado): Informe {
+        var malo = false; var puntos = 0
         val l = ArrayList<String>()
-        l.add("Nubosidad (media de la noche): ${nub.roundToInt()} %" +
-            (if (baja != null && media_ != null && alta != null) " · baja ${baja.roundToInt()} / media ${media_.roundToInt()} / alta ${alta.roundToInt()}" else ""))
-        puntos += when { nub < 20 -> 0; nub < 50 -> 1; nub < 80 -> 2; else -> 3 }
-        if (t != null && td != null) {
-            val dif = t - td
-            l.add("Rocío: temperatura − punto de rocío = ${"%.1f".format(Locale.US, dif)} °C" + (if (hr != null) " · humedad ${hr.roundToInt()} %" else ""))
-            if (dif < 2.0) { puntos += 1; l.add("⚠️ Riesgo de rocío o niebla (usa calefactor de óptica)") }
+        val a = r.analisis
+
+        // 1) Nubes: METAR recientes (≤ 60 min) de los aeropuertos que da el análisis
+        var peor: Double? = null; var detalle = ""
+        var fenomeno = false
+        for (ap in a["aeropuertos"].l().map { it.d() }) {
+            val g = r.metarMostrar[ap["icao"] as String] ?: continue
+            val edad = (r.ahoraMs - g.first) / 60_000
+            if (edad > 60) continue
+            val nub = g.second["nubosidad"].d()
+            val capas = listOf("baja", "media", "alta").flatMap { k -> nub[k].l().map { it.toString() } }
+            val f = capas.maxOfOrNull { fraccion(it) } ?: 0.0
+            if (peor == null || f > peor) { peor = f; detalle = "${ap["icao"]} (${ap["distancia_km"]} km): " + (if (capas.isEmpty()) "sin nubes significativas" else capas.joinToString("; ")) }
+            val fen = g.second["fenomenos"]?.toString() ?: "Ninguno"
+            if (fen != "Ninguno") { fenomeno = true; l.add("Fenómeno en ${ap["icao"]}: $fen") }
         }
-        if (racha != null) {
-            l.add("Racha máxima: ${racha.roundToInt()} km/h")
-            if (racha > 30) { puntos += 1; l.add("⚠️ Viento fuerte para fotografía de larga exposición") }
+        if (peor == null) {
+            l.add("Nubes: sin METAR reciente (≤ 60 min); no se puede valorar la nubosidad")
+            puntos += 1
+        } else {
+            l.add("Nubes (METAR, peor aeropuerto): ${(peor * 100).roundToInt()} % aprox. · $detalle")
+            puntos += when { peor < 0.3 -> 0; peor < 0.6 -> 1; peor < 0.9 -> 2; else -> 3 }
         }
-        if (chorro != null) {
-            l.add("Viento a 250 hPa (corriente en chorro): ${chorro.roundToInt()} km/h")
-            if (chorro > 150) { puntos += 1; l.add("⚠️ Chorro intenso: es probable turbulencia (mal seeing) en alta resolución") }
-        } else l.add("Corriente en chorro: no disponible")
+        if (fenomeno) puntos += 2
+
+        // 2) Nubes de lluvia en camino (radar de la app)
+        val pred = a["alertas_predictivas"].l()
+        if (pred.isNotEmpty()) { malo = true; l.add("⚠️ Aviso de lluvia en camino: ${pred.first()}") }
+
+        // 3) Estación de referencia: rocío, viento, lluvia
+        val ref = a["referencia"] as? Map<*, *>
+        @Suppress("UNCHECKED_CAST")
+        val d = ref?.get("datos") as? Map<String, Any?>
+        if (d != null && r.datosFiables) {
+            val t = numero(d["Temperatura"]); val hr = numero(d["Humedad"])
+            if (t != null && hr != null) {
+                val dif = t - rocio(t, hr)
+                l.add("Rocío (estación): temperatura − punto de rocío ≈ ${"%.1f".format(Locale.US, dif)} °C · humedad ${hr.roundToInt()} %")
+                if (dif < 2.0) { puntos += 1; l.add("⚠️ Riesgo de rocío o niebla: calefactor de óptica") }
+            }
+            val racha = numero(d["Viento máximo"])
+            if (racha != null) {
+                l.add("Racha máxima: ${racha.roundToInt()} km/h")
+                if (racha > 30) { puntos += 1; l.add("⚠️ Viento fuerte para exposiciones largas") }
+            }
+            if ((numero(d["Lluvia hoy"]) ?: 0.0) > 0.0) l.add("Ha llovido hoy: ${d["Lluvia hoy"]}")
+        } else l.add("Estación de referencia sin lectura fiable: no se valoran rocío ni viento")
+
+        // 4) Luna
+        val ilum = lunaIluminada(r.ahoraMs)
         l.add("Luna iluminada: ${(ilum * 100).roundToInt()} %" + (if (ilum > 0.6) " · molesta para cielo profundo" else ""))
-        val veredicto = when {
-            nub >= 80 || puntos >= 4 -> "MALO"
-            puntos <= 1 -> "BUENO"
-            else -> "REGULAR"
-        }
-        l.add("Datos: Open-Meteo.com (CC BY 4.0). Criterio propio y aproximado, no un estudio validado.")
-        return Informe(veredicto, l, idx.size, ahoraMs)
+        l.add("Seeing (turbulencia): no se puede valorar con los datos de la app")
+        l.add("Estado de ahora, no pronóstico. Criterio propio y aproximado, no un estudio validado.")
+
+        val v = when { malo || puntos >= 4 -> "MALO"; puntos <= 1 -> "BUENO"; else -> "REGULAR" }
+        return Informe(v, l)
     }
 }

@@ -48,9 +48,6 @@ class MainActivity : Activity() {
     private var centrado = false
     private lateinit var contResumen: LinearLayout
     private var registroAbierto = false
-    @Volatile private var cielo: Cielo.Informe? = null
-    @Volatile private var cieloError: String? = null
-    @Volatile private var cieloIntentoMs = 0L
 
     private fun dp(v: Int) = (v * resources.displayMetrics.density).toInt()
 
@@ -435,23 +432,13 @@ class MainActivity : Activity() {
         cMov.addView(filaMov)
         contResumen.addView(cMov)
 
-        // Cielo para observar (pronóstico de la noche)
-        val ahora = System.currentTimeMillis()
-        if (ahora - cieloIntentoMs > 30 * 60_000L) {
-            cieloIntentoMs = ahora
-            val la = r.lat; val lo = r.lon
-            Thread {
-                try { cielo = Cielo.obtener(la, lo, System.currentTimeMillis()); cieloError = null }
-                catch (e: Throwable) { cieloError = "${e.javaClass.simpleName}: ${e.message}"; cieloIntentoMs = System.currentTimeMillis() - 25 * 60_000L }
-                runOnUiThread { try { refrescar() } catch (_: Throwable) { } }
-            }.also { it.isDaemon = true }.start()
-        }
-        val ci = cielo
-        val cCielo = tarjeta("Cielo para observar esta noche", if (ci != null) colorNivel(when (ci.veredicto) { "MALO" -> "PELIGRO"; "REGULAR" -> "VIGILANCIA"; else -> "SEGURO" }) else BORDE)
+        // Cielo para observar (solo con datos de la app)
+        val ci = try { Cielo.evaluar(r) } catch (e: Throwable) { null }
+        val cCielo = tarjeta("Cielo para observar (ahora)", if (ci != null) colorNivel(when (ci.veredicto) { "MALO" -> "PELIGRO"; "REGULAR" -> "VIGILANCIA"; else -> "SEGURO" }) else BORDE)
         if (ci != null) {
             cCielo.addView(etiqueta(ci.veredicto, when (ci.veredicto) { "MALO" -> ROJO; "REGULAR" -> AMBAR; else -> VERDE }))
-            for (x in ci.lineas) cCielo.addView(texto(x, 13f, false, if (x.startsWith("Datos:")) APAGADO else TEXTO))
-        } else cCielo.addView(texto(cieloError?.let { "No se pudo obtener el pronóstico ($it)" } ?: "Consultando el pronóstico…", 13f, false, APAGADO))
+            for (x in ci.lineas) cCielo.addView(texto(x, 13f, false, if (x.startsWith("Estado de ahora") || x.startsWith("Seeing")) APAGADO else TEXTO))
+        } else cCielo.addView(texto("No se pudo valorar el cielo", 13f, false, APAGADO))
         contResumen.addView(cCielo)
 
         // Radar: solo si hay avisos predictivos

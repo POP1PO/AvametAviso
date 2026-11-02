@@ -1,0 +1,857 @@
+[
+ {
+  "esperado": {
+   "Fecha lectura": "17-09-2026 20:55",
+   "Humedad": "87 %",
+   "Lluvia anual": "25.8 mm",
+   "Lluvia hoy": "1.5 mm",
+   "Lluvia mensual": "35.7 mm",
+   "Presión": "1021 hPa",
+   "Temp máx": "0.9 °C",
+   "Temp mín": "36.8 °C",
+   "Temperatura": "-38.9 °C",
+   "Viento": "32 km/h NE",
+   "Viento máximo": "34.4 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 17-09-2026 20:55 -38.9° mín 36,8° màx 0,9° Humitat 87 % Pressió al nivell de la mar 1.021 hPa Vent 32 km/h NE Vent màx 34.4 km/h Pluja hui 1.5 mm Pluja mensual 35.7 mm Pluja anual 25.8 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "16-09-2026 16:51",
+   "Lluvia anual": "31.5 mm",
+   "Lluvia hoy": "12.4 mm",
+   "Temp máx": "30 °C",
+   "Temp mín": "33.1 °C",
+   "Temperatura": "-3 °C",
+   "Viento": "32 km/h NNO"
+  },
+  "html": "<html><body><p>Estación de prueba 16-09-2026 16:51 -3° mín 33,1° màx 30° Vent 32 km/h NNO Pluja hui 12,4 mm Pluja anual 31.5 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "15-09-2026 15:51",
+   "Humedad": "95 %",
+   "Temp máx": "4.4 °C",
+   "Temp mín": "6.7 °C",
+   "Temperatura": "-2.4 °C",
+   "Viento": "37 km/h NE",
+   "Viento máximo": "2 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 15-09-2026 15:51 -2.4° mín 6,7° màx 4.4° Humitat 95 % Vent 37 km/h NE Vent màx 2 km/h</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "11-11-2026 18:36",
+   "Humedad": "19 %",
+   "Lluvia anual": "9 mm",
+   "Lluvia mensual": "30.5 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "37.4 °C",
+   "Temp mín": "32.4 °C",
+   "Temperatura": "-30 °C",
+   "Viento": "22 km/h OSO"
+  },
+  "html": "<html><body><p>Estación de prueba 11-11-2026 18:36 -30° mín 32.4° màx 37.4° Humitat 19 % Pressió al nivell de la mar 1021,3 hPa Vent 22 km/h OSO Pluja mensual 30,5 mm Pluja anual 9 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "14-10-2026 10:29",
+   "Humedad": "66 %",
+   "Lluvia anual": "11.5 mm",
+   "Temp máx": "12.7 °C",
+   "Temp mín": "2.8 °C",
+   "Temperatura": "-38.3 °C",
+   "Viento": "17.6 km/h NE",
+   "Viento máximo": "11.4 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 14-10-2026 10:29 -38,3° mín 2.8° màx 12,7° Humitat 66 % Vent 17.6 km/h NE Vent màx 11.4 km/h Pluja anual 11,5 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "17-05-2026 03:54",
+   "Humedad": "91 %",
+   "Lluvia anual": "26.4 mm",
+   "Lluvia hoy": "40.1 mm",
+   "Lluvia mensual": "20.2 mm",
+   "Temp máx": "10.5 °C",
+   "Temp mín": "34.2 °C",
+   "Temperatura": "-29 °C",
+   "Viento": "17 km/h W",
+   "Viento máximo": "6 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 17-05-2026 03:54 -29° mín 34.2° màx 10,5° Humitat 91 % Pressió al nivell de la mar x1.2 hPa Vent 17 km/h W Vent màx 6 km/h Pluja hui 40.1 mm Pluja mensual 20.2 mm Pluja anual 26,4 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "10-02-2026 03:43",
+   "Humedad": "64 %",
+   "Lluvia anual": "8.8 mm",
+   "Lluvia hoy": "21.3 mm",
+   "Presión": "1021 hPa",
+   "Temp máx": "7 °C",
+   "Temp mín": "20 °C",
+   "Temperatura": "-29 °C",
+   "Viento": "18 km/h SO",
+   "Viento máximo": "7.4 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 10-02-2026 03:43 -29° mín 20° màx 7° Humitat 64 % Pressió al nivell de la mar 1.021 hPa Vent 18 km/h SO Vent màx 7,4 km/h Pluja hui 21,3 mm Pluja anual 8,8 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "05-06-2026 13:24",
+   "Humedad": "33 %",
+   "Lluvia anual": "12.5 mm",
+   "Lluvia hoy": "33.5 mm",
+   "Lluvia mensual": "14.8 mm",
+   "Temp máx": "17 °C",
+   "Temp mín": "34.8 °C",
+   "Temperatura": "-24.3 °C",
+   "Viento": "40.9 km/h VRB"
+  },
+  "html": "<html><body><p>Estación de prueba 05-06-2026 13:24 -24,3° mín 34.8° màx 17° Humitat 33 % Vent 40,9 km/h VRB Pluja hui 33,5 mm Pluja mensual 14,8 mm Pluja anual 12.5 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "18-08-2026 21:37",
+   "Humedad": "91 %",
+   "Lluvia hoy": "9 mm",
+   "Lluvia mensual": "37 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "34 °C",
+   "Temp mín": "2 °C",
+   "Temperatura": "-10.6 °C",
+   "Viento": "36.0 km/h W"
+  },
+  "html": "<html><body><p>Estación de prueba 18-08-2026 21:37 -10.6° mín 2° màx 34° Humitat 91 % Pressió al nivell de la mar 1.021,3 hPa Vent 36.0 km/h W Pluja hui 9 mm Pluja mensual 37 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "10-05-2026 17:18",
+   "Humedad": "14 %",
+   "Lluvia hoy": "19 mm",
+   "Lluvia mensual": "30.7 mm",
+   "Presión descartada": "300 hPa",
+   "Temp máx": "33.0 °C",
+   "Temp mín": "38.7 °C",
+   "Temperatura": "-22.2 °C",
+   "Viento": "0.5 km/h W",
+   "Viento máximo": "8.1 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 10-05-2026 17:18 -22,2° mín 38,7° màx 33,0° Humitat 14 % Pressió al nivell de la mar 300 hPa Vent 0,5 km/h W Vent màx 8.1 km/h Pluja hui 19 mm Pluja mensual 30,7 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "15-10-2026 11:05",
+   "Humedad": "59 %",
+   "Lluvia anual": "18 mm",
+   "Lluvia hoy": "36.2 mm",
+   "Lluvia mensual": "9.8 mm",
+   "Presión descartada": "300 hPa",
+   "Temp máx": "21.5 °C",
+   "Temp mín": "32 °C",
+   "Temperatura": "-16 °C",
+   "Viento máximo": "22.6 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 15-10-2026 11:05 -16° mín 32° màx 21,5° Humitat 59 % Pressió al nivell de la mar 300 hPa Vent màx 22,6 km/h Pluja hui 36,2 mm Pluja mensual 9.8 mm Pluja anual 18 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "13-07-2026 00:35",
+   "Humedad": "32 %",
+   "Lluvia hoy": "12 mm",
+   "Presión descartada": "5000 hPa",
+   "Temp máx": "25.2 °C",
+   "Temp mín": "33.3 °C",
+   "Temperatura": "-31 °C",
+   "Viento": "26.7 km/h SSE",
+   "Viento máximo": "29 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 13-07-2026 00:35 -31° mín 33.3° màx 25.2° Humitat 32 % Pressió al nivell de la mar 5000 hPa Vent 26,7 km/h SSE Vent màx 29 km/h Pluja hui 12 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "08-08-2026 06:38",
+   "Humedad": "29 %",
+   "Lluvia anual": "13.9 mm",
+   "Lluvia hoy": "20.4 mm",
+   "Lluvia mensual": "29.3 mm",
+   "Temp máx": "35 °C",
+   "Temp mín": "33.9 °C",
+   "Temperatura": "-26 °C",
+   "Viento máximo": "22.5 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 08-08-2026 06:38 -26° mín 33,9° màx 35° Humitat 29 % Vent màx 22.5 km/h Pluja hui 20,4 mm Pluja mensual 29.3 mm Pluja anual 13.9 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "24-12-2026 20:42",
+   "Humedad": "67 %",
+   "Lluvia anual": "8 mm",
+   "Lluvia hoy": "34 mm",
+   "Presión": "1013 hPa",
+   "Temp máx": "21.5 °C",
+   "Temp mín": "38.5 °C",
+   "Temperatura": "-32.8 °C",
+   "Viento": "38.3 km/h ONO",
+   "Viento máximo": "17 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 24-12-2026 20:42 -32,8° mín 38.5° màx 21,5° Humitat 67 % Pressió al nivell de la mar 1013 hPa Vent 38,3 km/h ONO Vent màx 17 km/h Pluja hui 34 mm Pluja anual 8 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "26-11-2026 01:17",
+   "Lluvia anual": "23.2 mm",
+   "Lluvia hoy": "22.9 mm",
+   "Lluvia mensual": "5.6 mm",
+   "Temp máx": "9.6 °C",
+   "Temp mín": "11 °C",
+   "Temperatura": "-34 °C",
+   "Viento": "29 km/h ONO",
+   "Viento máximo": "20.2 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 26-11-2026 01:17 -34° mín 11° màx 9.6° Vent 29 km/h ONO Vent màx 20,2 km/h Pluja hui 22,9 mm Pluja mensual 5,6 mm Pluja anual 23.2 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "15-06-2026 22:13",
+   "Humedad": "54 %",
+   "Lluvia anual": "33.8 mm",
+   "Lluvia hoy": "40 mm",
+   "Lluvia mensual": "16.1 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "13 °C",
+   "Temp mín": "22 °C",
+   "Temperatura": "-19.7 °C",
+   "Viento": "40.4 km/h NNO",
+   "Viento máximo": "17.5 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 15-06-2026 22:13 -19,7° mín 22° màx 13° Humitat 54 % Pressió al nivell de la mar 1021,3 hPa Vent 40,4 km/h NNO Vent màx 17,5 km/h Pluja hui 40 mm Pluja mensual 16.1 mm Pluja anual 33,8 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "02-02-2026 16:59",
+   "Humedad": "32 %",
+   "Lluvia anual": "2 mm",
+   "Lluvia hoy": "15 mm",
+   "Lluvia mensual": "37.7 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "8.0 °C",
+   "Temp mín": "34.0 °C",
+   "Temperatura": "-6.6 °C",
+   "Viento": "21 km/h E",
+   "Viento máximo": "20.7 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 02-02-2026 16:59 -6.6° mín 34.0° màx 8,0° Humitat 32 % Pressió al nivell de la mar 1.021,3 hPa Vent 21 km/h E Vent màx 20.7 km/h Pluja hui 15 mm Pluja mensual 37.7 mm Pluja anual 2 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "05-05-2026 07:55",
+   "Humedad": "51 %",
+   "Lluvia hoy": "40.8 mm",
+   "Lluvia mensual": "2.5 mm",
+   "Temp máx": "4 °C",
+   "Temp mín": "22.9 °C",
+   "Temperatura": "-33.5 °C",
+   "Viento": "26.6 km/h S",
+   "Viento máximo": "17.5 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 05-05-2026 07:55 -33,5° mín 22,9° màx 4° Humitat 51 % Vent 26,6 km/h S Vent màx 17.5 km/h Pluja hui 40.8 mm Pluja mensual 2,5 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Humedad": "61 %",
+   "Lluvia anual": "35.1 mm",
+   "Lluvia hoy": "31.0 mm",
+   "Lluvia mensual": "25.7 mm",
+   "Presión": "1021.3 hPa",
+   "Viento": "18 km/h NNE",
+   "Viento máximo": "35 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba Humitat 61 % Pressió al nivell de la mar 1.021,3 hPa Vent 18 km/h NNE Vent màx 35 km/h Pluja hui 31.0 mm Pluja mensual 25,7 mm Pluja anual 35,1 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "18-04-2026 16:48",
+   "Humedad": "17 %",
+   "Lluvia anual": "1.5 mm",
+   "Lluvia hoy": "36.9 mm",
+   "Presión": "1013 hPa",
+   "Temp máx": "9.5 °C",
+   "Temp mín": "36 °C",
+   "Temperatura": "-21.6 °C",
+   "Viento": "36.5 km/h NE",
+   "Viento máximo": "16.3 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 18-04-2026 16:48 -21,6° mín 36° màx 9.5° Humitat 17 % Pressió al nivell de la mar 1013 hPa Vent 36.5 km/h NE Vent màx 16.3 km/h Pluja hui 36.9 mm Pluja anual 1,5 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "16-03-2026 19:32",
+   "Humedad": "56 %",
+   "Lluvia anual": "8.9 mm",
+   "Lluvia hoy": "20.2 mm",
+   "Lluvia mensual": "18.6 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "24 °C",
+   "Temp mín": "33.4 °C",
+   "Temperatura": "-0 °C",
+   "Viento": "4.6 km/h NO",
+   "Viento máximo": "28.9 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 16-03-2026 19:32 -0° mín 33,4° màx 24° Humitat 56 % Pressió al nivell de la mar 1.021,3 hPa Vent 4.6 km/h NO Vent màx 28.9 km/h Pluja hui 20,2 mm Pluja mensual 18,6 mm Pluja anual 8,9 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "10-09-2026 17:24",
+   "Humedad": "7 %",
+   "Lluvia anual": "26 mm",
+   "Lluvia hoy": "18.9 mm",
+   "Presión descartada": "300 hPa",
+   "Temp máx": "24 °C",
+   "Temp mín": "19.0 °C",
+   "Temperatura": "-11 °C",
+   "Viento": "21.8 km/h SSE"
+  },
+  "html": "<html><body><p>Estación de prueba 10-09-2026 17:24 -11° mín 19,0° màx 24° Humitat 7 % Pressió al nivell de la mar 300 hPa Vent 21.8 km/h SSE Pluja hui 18.9 mm Pluja anual 26 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "20-06-2026 07:35",
+   "Humedad": "12 %",
+   "Lluvia anual": "11.1 mm",
+   "Lluvia hoy": "12 mm",
+   "Presión": "1013 hPa",
+   "Temp máx": "10.6 °C",
+   "Temp mín": "31.9 °C",
+   "Temperatura": "-37.6 °C",
+   "Viento": "38.5 km/h ONO",
+   "Viento máximo": "21 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 20-06-2026 07:35 -37,6° mín 31.9° màx 10,6° Humitat 12 % Pressió al nivell de la mar 1013 hPa Vent 38,5 km/h ONO Vent màx 21 km/h Pluja hui 12 mm Pluja anual 11,1 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "28-02-2026 17:50",
+   "Humedad": "32 %",
+   "Lluvia hoy": "39.4 mm",
+   "Presión descartada": "5000 hPa",
+   "Temp máx": "3.6 °C",
+   "Temp mín": "31.0 °C",
+   "Temperatura": "-5.0 °C",
+   "Viento": "9 km/h SSO",
+   "Viento máximo": "14.5 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 28-02-2026 17:50 -5.0° mín 31.0° màx 3.6° Humitat 32 % Pressió al nivell de la mar 5000 hPa Vent 9 km/h SSO Vent màx 14.5 km/h Pluja hui 39.4 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "24-10-2026 16:11",
+   "Humedad": "39 %",
+   "Lluvia anual": "0.5 mm",
+   "Lluvia hoy": "28 mm",
+   "Lluvia mensual": "24 mm",
+   "Temp máx": "37.7 °C",
+   "Temp mín": "26 °C",
+   "Temperatura": "-35 °C",
+   "Viento": "38 km/h SO",
+   "Viento máximo": "27 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 24-10-2026 16:11 -35° mín 26° màx 37.7° Humitat 39 % Vent 38 km/h SO Vent màx 27 km/h Pluja hui 28 mm Pluja mensual 24 mm Pluja anual 0.5 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "01-12-2026 09:34",
+   "Humedad": "79 %",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "3 °C",
+   "Temp mín": "24.4 °C",
+   "Temperatura": "-7.5 °C",
+   "Viento": "40.9 km/h E",
+   "Viento máximo": "26.3 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 01-12-2026 09:34 -7.5° mín 24,4° màx 3° Humitat 79 % Pressió al nivell de la mar 1.021,3 hPa Vent 40.9 km/h E Vent màx 26,3 km/h</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "15-09-2026 23:01",
+   "Humedad": "73 %",
+   "Lluvia anual": "35.3 mm",
+   "Lluvia hoy": "6.3 mm",
+   "Lluvia mensual": "36 mm",
+   "Presión": "1013 hPa",
+   "Temp máx": "34.2 °C",
+   "Temp mín": "17 °C",
+   "Temperatura": "-18.6 °C",
+   "Viento": "40.2 km/h ONO",
+   "Viento máximo": "39.2 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 15-09-2026 23:01 -18,6° mín 17° màx 34,2° Humitat 73 % Pressió al nivell de la mar 1013 hPa Vent 40,2 km/h ONO Vent màx 39.2 km/h Pluja hui 6.3 mm Pluja mensual 36 mm Pluja anual 35,3 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "18-02-2026 17:04",
+   "Humedad": "46 %",
+   "Lluvia anual": "20.4 mm",
+   "Lluvia hoy": "16 mm",
+   "Presión descartada": "300 hPa",
+   "Temp máx": "16.9 °C",
+   "Temp mín": "35.4 °C",
+   "Temperatura": "-14.7 °C",
+   "Viento": "34.0 km/h SSE",
+   "Viento máximo": "19.2 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 18-02-2026 17:04 -14,7° mín 35.4° màx 16,9° Humitat 46 % Pressió al nivell de la mar 300 hPa Vent 34.0 km/h SSE Vent màx 19.2 km/h Pluja hui 16 mm Pluja anual 20,4 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "14-02-2026 06:41",
+   "Humedad": "86 %",
+   "Lluvia anual": "7 mm",
+   "Lluvia hoy": "40.8 mm",
+   "Lluvia mensual": "3 mm",
+   "Presión": "1013 hPa",
+   "Temp máx": "26.5 °C",
+   "Temp mín": "31 °C",
+   "Temperatura": "-12.8 °C",
+   "Viento máximo": "27.0 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 14-02-2026 06:41 -12,8° mín 31° màx 26,5° Humitat 86 % Pressió al nivell de la mar 1013 hPa Vent màx 27,0 km/h Pluja hui 40.8 mm Pluja mensual 3 mm Pluja anual 7 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Lluvia anual": "38 mm",
+   "Lluvia hoy": "19.2 mm",
+   "Lluvia mensual": "27.3 mm",
+   "Presión": "1021.3 hPa",
+   "Viento": "13.4 km/h NNE",
+   "Viento máximo": "25 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba Pressió al nivell de la mar 1021,3 hPa Vent 13,4 km/h NNE Vent màx 25 km/h Pluja hui 19.2 mm Pluja mensual 27.3 mm Pluja anual 38 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "16-05-2026 10:45",
+   "Humedad": "35 %",
+   "Lluvia anual": "16 mm",
+   "Lluvia hoy": "3 mm",
+   "Temp máx": "39.6 °C",
+   "Temp mín": "17.2 °C",
+   "Temperatura": "-12 °C",
+   "Viento": "40.0 km/h SO",
+   "Viento máximo": "27 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 16-05-2026 10:45 -12° mín 17,2° màx 39.6° Humitat 35 % Vent 40.0 km/h SO Vent màx 27 km/h Pluja hui 3 mm Pluja anual 16 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "01-11-2026 09:58",
+   "Humedad": "96 %",
+   "Lluvia mensual": "3.3 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "5 °C",
+   "Temp mín": "35.2 °C",
+   "Temperatura": "-17.7 °C",
+   "Viento": "2 km/h SO",
+   "Viento máximo": "1 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 01-11-2026 09:58 -17.7° mín 35.2° màx 5° Humitat 96 % Pressió al nivell de la mar 1.021,3 hPa Vent 2 km/h SO Vent màx 1 km/h Pluja mensual 3,3 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "15-01-2026 06:02",
+   "Humedad": "3 %",
+   "Lluvia hoy": "28.1 mm",
+   "Lluvia mensual": "22.2 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "19.6 °C",
+   "Temp mín": "33.1 °C",
+   "Temperatura": "-28 °C",
+   "Viento máximo": "19.0 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 15-01-2026 06:02 -28° mín 33,1° màx 19,6° Humitat 3 % Pressió al nivell de la mar 1021,3 hPa Vent màx 19,0 km/h Pluja hui 28.1 mm Pluja mensual 22,2 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "15-01-2026 16:45",
+   "Humedad": "24 %",
+   "Lluvia hoy": "38.1 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "39.2 °C",
+   "Temp mín": "37 °C",
+   "Temperatura": "-5.2 °C",
+   "Viento": "32.6 km/h W"
+  },
+  "html": "<html><body><p>Estación de prueba 15-01-2026 16:45 -5,2° mín 37° màx 39,2° Humitat 24 % Pressió al nivell de la mar 1.021,3 hPa Vent 32.6 km/h W Pluja hui 38.1 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "11-06-2026 08:34",
+   "Humedad": "17 %",
+   "Lluvia hoy": "1 mm",
+   "Lluvia mensual": "29 mm",
+   "Presión": "1013 hPa",
+   "Temp máx": "16 °C",
+   "Temp mín": "6.6 °C",
+   "Temperatura": "-27.6 °C",
+   "Viento": "16.3 km/h E",
+   "Viento máximo": "10.9 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 11-06-2026 08:34 -27.6° mín 6,6° màx 16° Humitat 17 % Pressió al nivell de la mar 1013 hPa Vent 16.3 km/h E Vent màx 10,9 km/h Pluja hui 1 mm Pluja mensual 29 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "22-10-2026 20:44",
+   "Humedad": "29 %",
+   "Lluvia anual": "22.6 mm",
+   "Lluvia hoy": "8.7 mm",
+   "Lluvia mensual": "37.6 mm",
+   "Presión descartada": "300 hPa",
+   "Temp máx": "7.5 °C",
+   "Temp mín": "35.7 °C",
+   "Temperatura": "-7 °C",
+   "Viento": "27 km/h SE"
+  },
+  "html": "<html><body><p>Estación de prueba 22-10-2026 20:44 -7° mín 35.7° màx 7,5° Humitat 29 % Pressió al nivell de la mar 300 hPa Vent 27 km/h SE Pluja hui 8,7 mm Pluja mensual 37,6 mm Pluja anual 22,6 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "07-09-2026 12:48",
+   "Humedad": "90 %",
+   "Lluvia anual": "12.0 mm",
+   "Lluvia hoy": "26 mm",
+   "Lluvia mensual": "16.3 mm",
+   "Temp máx": "20.0 °C",
+   "Temp mín": "31.4 °C",
+   "Temperatura": "-38.5 °C",
+   "Viento": "4 km/h ENE",
+   "Viento máximo": "15.5 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 07-09-2026 12:48 -38.5° mín 31.4° màx 20,0° Humitat 90 % Vent 4 km/h ENE Vent màx 15.5 km/h Pluja hui 26 mm Pluja mensual 16.3 mm Pluja anual 12,0 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "12-03-2026 00:23",
+   "Humedad": "81 %",
+   "Lluvia anual": "9.4 mm",
+   "Lluvia hoy": "34.7 mm",
+   "Lluvia mensual": "19.2 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "13 °C",
+   "Temp mín": "16.1 °C",
+   "Temperatura": "-8 °C",
+   "Viento": "8.1 km/h VRB"
+  },
+  "html": "<html><body><p>Estación de prueba 12-03-2026 00:23 -8° mín 16,1° màx 13° Humitat 81 % Pressió al nivell de la mar 1021,3 hPa Vent 8,1 km/h VRB Pluja hui 34.7 mm Pluja mensual 19.2 mm Pluja anual 9.4 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "27-02-2026 20:45",
+   "Humedad": "84 %",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "14.9 °C",
+   "Temp mín": "25.6 °C",
+   "Temperatura": "-40.7 °C",
+   "Viento": "29.0 km/h NNE",
+   "Viento máximo": "14.3 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 27-02-2026 20:45 -40.7° mín 25.6° màx 14.9° Humitat 84 % Pressió al nivell de la mar 1.021,3 hPa Vent 29.0 km/h NNE Vent màx 14.3 km/h</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "28-08-2026 14:06",
+   "Humedad": "16 %",
+   "Lluvia anual": "39.7 mm",
+   "Lluvia hoy": "2.3 mm",
+   "Lluvia mensual": "28.6 mm",
+   "Temp máx": "26 °C",
+   "Temp mín": "18.6 °C",
+   "Temperatura": "-38.6 °C",
+   "Viento": "32 km/h O",
+   "Viento máximo": "31 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 28-08-2026 14:06 -38.6° mín 18,6° màx 26° Humitat 16 % Vent 32 km/h O Vent màx 31 km/h Pluja hui 2,3 mm Pluja mensual 28.6 mm Pluja anual 39,7 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "17-10-2026 15:26",
+   "Humedad": "63 %",
+   "Lluvia hoy": "30.7 mm",
+   "Lluvia mensual": "28 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "39.8 °C",
+   "Temp mín": "1.1 °C",
+   "Temperatura": "-1.0 °C",
+   "Viento": "17.3 km/h NO",
+   "Viento máximo": "24.4 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 17-10-2026 15:26 -1,0° mín 1.1° màx 39.8° Humitat 63 % Pressió al nivell de la mar 1.021,3 hPa Vent 17.3 km/h NO Vent màx 24,4 km/h Pluja hui 30,7 mm Pluja mensual 28 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Humedad": "26 %",
+   "Lluvia anual": "31 mm",
+   "Lluvia hoy": "1 mm",
+   "Lluvia mensual": "39.5 mm",
+   "Presión": "1021.3 hPa",
+   "Temperatura": "34 °C",
+   "Viento": "27.6 km/h ESE",
+   "Viento máximo": "5.3 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 34° mín Humitat 26 % Pressió al nivell de la mar 1.021,3 hPa Vent 27,6 km/h ESE Vent màx 5,3 km/h Pluja hui 1 mm Pluja mensual 39,5 mm Pluja anual 31 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "16-02-2026 15:44",
+   "Humedad": "73 %",
+   "Lluvia anual": "32.1 mm",
+   "Lluvia hoy": "23.6 mm",
+   "Presión": "1021 hPa",
+   "Temp máx": "23.9 °C",
+   "Temp mín": "2.6 °C",
+   "Temperatura": "-18.5 °C",
+   "Viento": "21.0 km/h S",
+   "Viento máximo": "20.1 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 16-02-2026 15:44 -18.5° mín 2,6° màx 23.9° Humitat 73 % Pressió al nivell de la mar 1.021 hPa Vent 21.0 km/h S Vent màx 20,1 km/h Pluja hui 23.6 mm Pluja anual 32.1 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "25-12-2026 19:26",
+   "Humedad": "79 %",
+   "Lluvia anual": "13.6 mm",
+   "Lluvia hoy": "39 mm",
+   "Lluvia mensual": "21.3 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "22 °C",
+   "Temp mín": "21.4 °C",
+   "Temperatura": "-7 °C",
+   "Viento": "36 km/h NNE"
+  },
+  "html": "<html><body><p>Estación de prueba 25-12-2026 19:26 -7° mín 21,4° màx 22° Humitat 79 % Pressió al nivell de la mar 1021,3 hPa Vent 36 km/h NNE Pluja hui 39 mm Pluja mensual 21.3 mm Pluja anual 13.6 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "28-02-2026 13:33",
+   "Humedad": "45 %",
+   "Lluvia hoy": "5.3 mm",
+   "Lluvia mensual": "39 mm",
+   "Temp máx": "2.6 °C",
+   "Temp mín": "0.5 °C",
+   "Temperatura": "-9.4 °C",
+   "Viento": "11.8 km/h ONO",
+   "Viento máximo": "1 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 28-02-2026 13:33 -9.4° mín 0.5° màx 2.6° Humitat 45 % Vent 11.8 km/h ONO Vent màx 1 km/h Pluja hui 5,3 mm Pluja mensual 39 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "22-04-2026 07:04",
+   "Humedad": "68 %",
+   "Lluvia anual": "9.4 mm",
+   "Lluvia hoy": "17 mm",
+   "Lluvia mensual": "3.7 mm",
+   "Presión descartada": "300 hPa",
+   "Temp máx": "25 °C",
+   "Temp mín": "17.7 °C",
+   "Temperatura": "-14 °C",
+   "Viento": "17.1 km/h S",
+   "Viento máximo": "27.9 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 22-04-2026 07:04 -14° mín 17.7° màx 25° Humitat 68 % Pressió al nivell de la mar 300 hPa Vent 17,1 km/h S Vent màx 27,9 km/h Pluja hui 17 mm Pluja mensual 3.7 mm Pluja anual 9.4 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "06-03-2026 00:11",
+   "Humedad": "65 %",
+   "Lluvia anual": "18.8 mm",
+   "Lluvia hoy": "20.7 mm",
+   "Presión": "1021 hPa",
+   "Temp máx": "28.8 °C",
+   "Temp mín": "23 °C",
+   "Temperatura": "-8 °C",
+   "Viento": "7.7 km/h W"
+  },
+  "html": "<html><body><p>Estación de prueba 06-03-2026 00:11 -8° mín 23° màx 28.8° Humitat 65 % Pressió al nivell de la mar 1.021 hPa Vent 7.7 km/h W Pluja hui 20,7 mm Pluja anual 18,8 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "24-08-2026 16:21",
+   "Humedad": "9 %",
+   "Presión": "1013 hPa",
+   "Temp máx": "33.3 °C",
+   "Temp mín": "4.7 °C",
+   "Temperatura": "-25.2 °C",
+   "Viento": "3.3 km/h SO",
+   "Viento máximo": "29 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 24-08-2026 16:21 -25.2° mín 4.7° màx 33,3° Humitat 9 % Pressió al nivell de la mar 1013 hPa Vent 3.3 km/h SO Vent màx 29 km/h</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "19-02-2026 00:07",
+   "Humedad": "15 %",
+   "Lluvia anual": "11 mm",
+   "Lluvia hoy": "8.8 mm",
+   "Lluvia mensual": "17.4 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "7.4 °C",
+   "Temp mín": "8.7 °C",
+   "Temperatura": "-24.9 °C",
+   "Viento": "12.6 km/h SSO",
+   "Viento máximo": "19.7 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 19-02-2026 00:07 -24,9° mín 8.7° màx 7.4° Humitat 15 % Pressió al nivell de la mar 1021,3 hPa Vent 12.6 km/h SSO Vent màx 19,7 km/h Pluja hui 8.8 mm Pluja mensual 17.4 mm Pluja anual 11 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "27-04-2026 03:19",
+   "Humedad": "21 %",
+   "Lluvia mensual": "39.0 mm",
+   "Temp máx": "20 °C",
+   "Temp mín": "6.4 °C",
+   "Temperatura": "-5 °C",
+   "Viento": "19 km/h E",
+   "Viento máximo": "25 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 27-04-2026 03:19 -5° mín 6.4° màx 20° Humitat 21 % Vent 19 km/h E Vent màx 25 km/h Pluja mensual 39.0 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "23-06-2026 04:34",
+   "Humedad": "46 %",
+   "Lluvia anual": "14.3 mm",
+   "Lluvia hoy": "16 mm",
+   "Temp máx": "28.1 °C",
+   "Temp mín": "20.5 °C",
+   "Temperatura": "-25.5 °C",
+   "Viento": "33 km/h VRB"
+  },
+  "html": "<html><body><p>Estación de prueba 23-06-2026 04:34 -25,5° mín 20,5° màx 28.1° Humitat 46 % Vent 33 km/h VRB Pluja hui 16 mm Pluja anual 14.3 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "26-06-2026 18:45",
+   "Humedad": "44 %",
+   "Lluvia hoy": "0.3 mm",
+   "Lluvia mensual": "31 mm",
+   "Presión descartada": "5000 hPa",
+   "Temp máx": "16.4 °C",
+   "Temp mín": "20.3 °C",
+   "Temperatura": "-0.6 °C",
+   "Viento": "23.9 km/h W",
+   "Viento máximo": "2.3 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 26-06-2026 18:45 -0,6° mín 20.3° màx 16.4° Humitat 44 % Pressió al nivell de la mar 5000 hPa Vent 23,9 km/h W Vent màx 2,3 km/h Pluja hui 0.3 mm Pluja mensual 31 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "24-02-2026 21:51",
+   "Humedad": "24 %",
+   "Lluvia hoy": "35.0 mm",
+   "Lluvia mensual": "10.6 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "2 °C",
+   "Temp mín": "37.8 °C",
+   "Temperatura": "-35.3 °C",
+   "Viento": "34.6 km/h E",
+   "Viento máximo": "17.5 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 24-02-2026 21:51 -35,3° mín 37.8° màx 2° Humitat 24 % Pressió al nivell de la mar 1.021,3 hPa Vent 34,6 km/h E Vent màx 17,5 km/h Pluja hui 35,0 mm Pluja mensual 10.6 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "11-02-2026 10:09",
+   "Humedad": "66 %",
+   "Lluvia anual": "32 mm",
+   "Lluvia hoy": "24.0 mm",
+   "Lluvia mensual": "28 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "34 °C",
+   "Temp mín": "23 °C",
+   "Temperatura": "-21.7 °C",
+   "Viento": "1.7 km/h SSE"
+  },
+  "html": "<html><body><p>Estación de prueba 11-02-2026 10:09 -21.7° mín 23° màx 34° Humitat 66 % Pressió al nivell de la mar 1021,3 hPa Vent 1,7 km/h SSE Pluja hui 24.0 mm Pluja mensual 28 mm Pluja anual 32 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "04-08-2026 23:29",
+   "Humedad": "58 %",
+   "Lluvia anual": "11.0 mm",
+   "Lluvia hoy": "24.3 mm",
+   "Lluvia mensual": "6.8 mm",
+   "Presión": "1021 hPa",
+   "Temp máx": "35.3 °C",
+   "Temp mín": "24.5 °C",
+   "Temperatura": "-27.0 °C",
+   "Viento máximo": "40.3 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 04-08-2026 23:29 -27,0° mín 24,5° màx 35.3° Humitat 58 % Pressió al nivell de la mar 1.021 hPa Vent màx 40.3 km/h Pluja hui 24.3 mm Pluja mensual 6,8 mm Pluja anual 11.0 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "24-11-2026 09:36",
+   "Humedad": "61 %",
+   "Lluvia anual": "26.7 mm",
+   "Lluvia hoy": "3.2 mm",
+   "Temp máx": "18.4 °C",
+   "Temp mín": "32 °C",
+   "Temperatura": "-13.2 °C",
+   "Viento": "23.5 km/h ONO",
+   "Viento máximo": "28.4 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 24-11-2026 09:36 -13.2° mín 32° màx 18,4° Humitat 61 % Pressió al nivell de la mar x1.2 hPa Vent 23.5 km/h ONO Vent màx 28,4 km/h Pluja hui 3.2 mm Pluja anual 26.7 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Humedad": "48 %",
+   "Lluvia anual": "39.0 mm",
+   "Lluvia mensual": "29.4 mm",
+   "Presión": "1013 hPa",
+   "Viento": "4.6 km/h XYZ",
+   "Viento máximo": "13 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba Humitat 48 % Pressió al nivell de la mar 1013 hPa Vent 4,6 km/h XYZ Vent màx 13 km/h Pluja mensual 29,4 mm Pluja anual 39,0 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Humedad": "94 %",
+   "Lluvia anual": "7 mm",
+   "Lluvia hoy": "27.0 mm",
+   "Viento": "26.9 km/h NNE",
+   "Viento máximo": "38.7 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba Humitat 94 % Vent 26.9 km/h NNE Vent màx 38,7 km/h Pluja hui 27.0 mm Pluja anual 7 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "02-05-2026 15:03",
+   "Humedad": "36 %",
+   "Lluvia anual": "28.2 mm",
+   "Lluvia hoy": "40.4 mm",
+   "Lluvia mensual": "36.7 mm",
+   "Presión": "1021.3 hPa",
+   "Temp máx": "25.2 °C",
+   "Temp mín": "16.9 °C",
+   "Temperatura": "-26.1 °C",
+   "Viento": "35.8 km/h SO",
+   "Viento máximo": "36.2 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 02-05-2026 15:03 -26.1° mín 16.9° màx 25.2° Humitat 36 % Pressió al nivell de la mar 1.021,3 hPa Vent 35.8 km/h SO Vent màx 36,2 km/h Pluja hui 40.4 mm Pluja mensual 36,7 mm Pluja anual 28.2 mm</p></body></html>"
+ },
+ {
+  "esperado": {
+   "Fecha lectura": "07-10-2026 19:50",
+   "Humedad": "25 %",
+   "Lluvia anual": "27.5 mm",
+   "Lluvia hoy": "2 mm",
+   "Presión": "1021 hPa",
+   "Temp máx": "30 °C",
+   "Temp mín": "4.0 °C",
+   "Temperatura": "-21.6 °C",
+   "Viento": "40.7 km/h SSO",
+   "Viento máximo": "30.8 km/h"
+  },
+  "html": "<html><body><p>Estación de prueba 07-10-2026 19:50 -21,6° mín 4,0° màx 30° Humitat 25 % Pressió al nivell de la mar 1.021 hPa Vent 40.7 km/h SSO Vent màx 30,8 km/h Pluja hui 2 mm Pluja anual 27,5 mm</p></body></html>"
+ }
+]

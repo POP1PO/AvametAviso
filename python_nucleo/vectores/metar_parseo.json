@@ -1,0 +1,3291 @@
+[
+ {
+  "esperado": {
+   "LELN": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas",
+      "Pocas nubes a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 26.0,
+    "viento_dir": null,
+    "viento_nudos": 34.0,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "SCT"
+     },
+     {
+      "base": 3000,
+      "cover": "FEW"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LELN",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 26,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": 34,
+    "wxString": "RA"
+   }
+  ]
+ },
+ {
+  "esperado": {},
+  "json": []
+ },
+ {
+  "esperado": {
+   "LEBL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 7.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEDA": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [
+      "Nubes dispersas a 25000 ft (7620 m)"
+     ],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 39.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": null
+   },
+   "LEGR": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": 128.0,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEMG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto a 500 ft (152 m)",
+      "Cielo Cubierto a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": 344.0,
+    "viento_nudos": 1.0,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": 10,
+    "icaoId": "LEBL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 7,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "CLR"
+     },
+     {
+      "base": 25000,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEDA",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 39,
+    "visib": null,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "OVC"
+     },
+     {
+      "base": 3000,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEMG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": 344,
+    "wspd": 1,
+    "wxString": ""
+   },
+   {
+    "clouds": [],
+    "dewp": 10,
+    "icaoId": "LEGR",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": 128,
+    "wspd": null,
+    "wxString": null
+   }
+  ]
+ },
+ {
+  "esperado": {},
+  "json": []
+ },
+ {
+  "esperado": {
+   "LEGE": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado) a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": null
+   },
+   "LERS": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": [
+      "Nubes dispersas a 9000 ft (2743 m)",
+      "Nubes dispersas a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "NSC"
+     },
+     {
+      "base": 9000,
+      "cover": "SCT"
+     },
+     {
+      "base": 9000,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LERS",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEGE",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": null,
+    "wspd": null,
+    "wxString": "FG"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEBB": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 241.0,
+    "viento_nudos": 14.0,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEBB",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": 241,
+    "wspd": 14,
+    "wxString": null
+   }
+  ]
+ },
+ {
+  "esperado": {},
+  "json": []
+ },
+ {
+  "esperado": {
+   "LELN": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 2.0,
+    "viento_dir": null,
+    "viento_nudos": 3.0,
+    "visibilidad": "6+"
+   },
+   "LEML": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto",
+      "Pocas nubes a 3000 ft (914 m)",
+      "Pocas nubes"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 2.0,
+    "viento_dir": null,
+    "viento_nudos": 8.0,
+    "visibilidad": "6+"
+   },
+   "LESO": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [
+      "Nubes dispersas a 25000 ft (7620 m)"
+     ],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 316.0,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LETL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 25.0,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LELN",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 2,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": 3,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "OVC"
+     },
+     {
+      "base": 3000,
+      "cover": "FEW"
+     },
+     {
+      "base": null,
+      "cover": "FEW"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEML",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 2,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": 8,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "NSC"
+     },
+     {
+      "base": 500,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LETL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": null,
+    "wspd": 25,
+    "wxString": "FG"
+   },
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "SCT"
+     },
+     {
+      "base": 500,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LESO",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": 316,
+    "wspd": null,
+    "wxString": "FG"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEAS": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": 301.0,
+    "viento_nudos": 30.0,
+    "visibilidad": null
+   },
+   "LEBL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": [
+      "Pocas nubes a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LECO": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas",
+      "Nubes dispersas a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 1.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": null
+   },
+   "LEZG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto",
+      "Nublado (Fragmentado)",
+      "Nubes dispersas a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": -3.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": 10,
+    "icaoId": "LEAS",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": 301,
+    "wspd": 30,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "NSC"
+     },
+     {
+      "base": 9000,
+      "cover": "FEW"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEBL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "CLR"
+     },
+     {
+      "base": null,
+      "cover": "SCT"
+     },
+     {
+      "base": 500,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LECO",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 1,
+    "visib": null,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "OVC"
+     },
+     {
+      "base": 0,
+      "cover": "BKN"
+     },
+     {
+      "base": 3000,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEZG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -3,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": "FG"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LECH": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 254.0,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LERS": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Pocas nubes a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 10.0,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 3000,
+      "cover": "FEW"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LERS",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": 10,
+    "wspd": null,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LECH",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": 254,
+    "wspd": null,
+    "wxString": ""
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEBB": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": 19.0,
+    "viento_nudos": 17.0,
+    "visibilidad": null
+   },
+   "LEBG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 298.0,
+    "viento_nudos": 19.0,
+    "visibilidad": 9999
+   },
+   "LEVT": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 12.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEBG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": 298,
+    "wspd": 19,
+    "wxString": "FG"
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEVT",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 12,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "CLR"
+     },
+     {
+      "base": 0,
+      "cover": "NSC"
+     },
+     {
+      "base": null,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEBB",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": 19,
+    "wspd": 17,
+    "wxString": ""
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEBB": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia, Neblina, Tormenta",
+    "nubosidad": {
+     "alta": [
+      "Nubes dispersas a 25000 ft (7620 m)"
+     ],
+     "baja": [
+      "Nublado (Fragmentado) a 3000 ft (914 m)",
+      "Nublado (Fragmentado) a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 12.0,
+    "viento_dir": 56.0,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEIB": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LESO": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia, Neblina, Tormenta",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": [
+      "Cielo Cubierto a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 6.0,
+    "viento_dir": null,
+    "viento_nudos": 40.0,
+    "visibilidad": null
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "NSC"
+     },
+     {
+      "base": 9000,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LESO",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 6,
+    "visib": null,
+    "wdir": null,
+    "wspd": 40,
+    "wxString": "-TSRA BR"
+   },
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "SCT"
+     },
+     {
+      "base": 3000,
+      "cover": "BKN"
+     },
+     {
+      "base": 500,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEBB",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 12,
+    "visib": "6+",
+    "wdir": 56,
+    "wspd": null,
+    "wxString": "-TSRA BR"
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "CLR"
+     },
+     {
+      "base": 0,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEIB",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": "RA"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEAL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [
+      "Nubes dispersas a 25000 ft (7620 m)"
+     ],
+     "baja": [
+      "Nublado (Fragmentado) a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": -4.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEML": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado)",
+      "Nubes dispersas"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 16.0,
+    "viento_dir": 96.0,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LETL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 24.0,
+    "viento_dir": null,
+    "viento_nudos": 37.0,
+    "visibilidad": 9999
+   },
+   "LEZG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto a 3000 ft (914 m)",
+      "Cielo Cubierto a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 21.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "NSC"
+     },
+     {
+      "base": null,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LETL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 24,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": 37,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "BKN"
+     },
+     {
+      "base": 0,
+      "cover": "SCT"
+     },
+     {
+      "base": 25000,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEML",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 16,
+    "visib": 9999,
+    "wdir": 96,
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 3000,
+      "cover": "BKN"
+     },
+     {
+      "base": 25000,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEAL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -4,
+    "visib": "6+",
+    "wdir": null,
+    "wspd": null,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "NSC"
+     },
+     {
+      "base": 3000,
+      "cover": "OVC"
+     },
+     {
+      "base": 500,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEZG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 21,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": ""
+   }
+  ]
+ },
+ {
+  "esperado": {},
+  "json": []
+ },
+ {
+  "esperado": {
+   "LECH": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia, Neblina, Tormenta",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado)"
+     ],
+     "media": [
+      "Nublado (Fragmentado) a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": 122.0,
+    "viento_nudos": null,
+    "visibilidad": null
+   },
+   "LEZL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": 278.0,
+    "viento_nudos": 27.0,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "BKN"
+     },
+     {
+      "base": 3000,
+      "cover": "CLR"
+     },
+     {
+      "base": 9000,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LECH",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": 122,
+    "wspd": null,
+    "wxString": "-TSRA BR"
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEZL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": 278,
+    "wspd": 27,
+    "wxString": "RA"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEAL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 30.0,
+    "visibilidad": "6+"
+   },
+   "LESO": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [
+      "Nubes dispersas a 25000 ft (7620 m)",
+      "Cielo Cubierto a 25000 ft (7620 m)"
+     ],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 37.0,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "SCT"
+     },
+     {
+      "base": 9000,
+      "cover": "NSC"
+     },
+     {
+      "base": 25000,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LESO",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": 37,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "SCT"
+     },
+     {
+      "base": null,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEAL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": null,
+    "wspd": 30,
+    "wxString": ""
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "GCLP": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 18.0,
+    "viento_dir": 96.0,
+    "viento_nudos": 8.0,
+    "visibilidad": 9999
+   },
+   "GCTS": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas",
+      "Nublado (Fragmentado) a 500 ft (152 m)"
+     ],
+     "media": [
+      "Nublado (Fragmentado) a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": null,
+    "temperatura": 9.0,
+    "viento_dir": null,
+    "viento_nudos": 39.0,
+    "visibilidad": 9999
+   },
+   "LERJ": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 3.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEZG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia, Neblina, Tormenta",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "NSC"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "GCLP",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 18,
+    "visib": 9999,
+    "wdir": 96,
+    "wspd": 8,
+    "wxString": "FG"
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "CLR"
+     },
+     {
+      "base": 0,
+      "cover": "NSC"
+     },
+     {
+      "base": 3000,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LERJ",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 3,
+    "visib": "6+",
+    "wdir": null,
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEZG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": null,
+    "wspd": null,
+    "wxString": "-TSRA BR"
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "SCT"
+     },
+     {
+      "base": 500,
+      "cover": "BKN"
+     },
+     {
+      "base": 9000,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "GCTS",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 9,
+    "visib": 9999,
+    "wdir": null,
+    "wspd": 39,
+    "wxString": "RA"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "GCLP": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": [
+      "Cielo Cubierto a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 19.0,
+    "viento_dir": null,
+    "viento_nudos": 0.0,
+    "visibilidad": 9999
+   },
+   "LEMH": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [
+      "Cielo Cubierto a 25000 ft (7620 m)"
+     ],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 14.0,
+    "visibilidad": null
+   },
+   "LERJ": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Pocas nubes a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 27.0,
+    "viento_dir": 346.0,
+    "viento_nudos": null,
+    "visibilidad": null
+   },
+   "LEZL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [
+      "Nubes dispersas a 25000 ft (7620 m)"
+     ],
+     "baja": [
+      "Cielo Cubierto a 500 ft (152 m)"
+     ],
+     "media": [
+      "Nublado (Fragmentado) a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 9000,
+      "cover": "CLR"
+     },
+     {
+      "base": 25000,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEMH",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": null,
+    "wspd": 14,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "CLR"
+     },
+     {
+      "base": 9000,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "GCLP",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 19,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": 0,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "SCT"
+     },
+     {
+      "base": 9000,
+      "cover": "BKN"
+     },
+     {
+      "base": 500,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEZL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": null,
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 3000,
+      "cover": "FEW"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LERJ",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 27,
+    "visib": null,
+    "wdir": 346,
+    "wspd": null,
+    "wxString": ""
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEAS": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 0.0,
+    "visibilidad": 9999
+   },
+   "LEVT": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": -3.0,
+    "viento_dir": 79.0,
+    "viento_nudos": 7.0,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEAS",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": 0,
+    "wxString": "FG"
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEVT",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -3,
+    "visib": "6+",
+    "wdir": 79,
+    "wspd": 7,
+    "wxString": ""
+   }
+  ]
+ },
+ {
+  "esperado": {},
+  "json": []
+ },
+ {
+  "esperado": {
+   "LEAM": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado) a 500 ft (152 m)"
+     ],
+     "media": [
+      "Nublado (Fragmentado) a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 240.0,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LECO": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado) a 3000 ft (914 m)",
+      "Nubes dispersas"
+     ],
+     "media": [
+      "Cielo Cubierto a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 26.0,
+    "viento_dir": null,
+    "viento_nudos": 18.0,
+    "visibilidad": "6+"
+   },
+   "LEMG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado) a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 28.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEMH": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia, Neblina, Tormenta",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Pocas nubes"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 3000,
+      "cover": "BKN"
+     },
+     {
+      "base": 9000,
+      "cover": "OVC"
+     },
+     {
+      "base": null,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LECO",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 26,
+    "visib": "6+",
+    "wdir": null,
+    "wspd": 18,
+    "wxString": "FG"
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEMG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 28,
+    "visib": "6+",
+    "wdir": null,
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "BKN"
+     },
+     {
+      "base": 9000,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEAM",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": 240,
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "CLR"
+     },
+     {
+      "base": null,
+      "cover": "FEW"
+     },
+     {
+      "base": null,
+      "cover": "NSC"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEMH",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": "-TSRA BR"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEMH": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado)",
+      "Nubes dispersas a 3000 ft (914 m)",
+      "Cielo Cubierto"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 1.0,
+    "viento_dir": 327.0,
+    "viento_nudos": 34.0,
+    "visibilidad": null
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "BKN"
+     },
+     {
+      "base": 3000,
+      "cover": "SCT"
+     },
+     {
+      "base": null,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEMH",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 1,
+    "visib": null,
+    "wdir": 327,
+    "wspd": 34,
+    "wxString": "RA"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEBZ": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 14.0,
+    "viento_dir": null,
+    "viento_nudos": 36.0,
+    "visibilidad": 9999
+   },
+   "LEDA": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": [
+      "Nublado (Fragmentado) a 9000 ft (2743 m)",
+      "Nublado (Fragmentado) a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 33.0,
+    "viento_dir": 11.0,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LEST": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas a 500 ft (152 m)",
+      "Cielo Cubierto a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": 102.0,
+    "viento_nudos": 33.0,
+    "visibilidad": "6+"
+   },
+   "LEZL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 28.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": 10,
+    "icaoId": "LEZL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 28,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": 9000,
+      "cover": "BKN"
+     },
+     {
+      "base": 3000,
+      "cover": "CLR"
+     },
+     {
+      "base": 9000,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEDA",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 33,
+    "visib": 9999,
+    "wdir": 11,
+    "wspd": null,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEBZ",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 14,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": 36,
+    "wxString": "FG"
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "SCT"
+     },
+     {
+      "base": 3000,
+      "cover": "OVC"
+     },
+     {
+      "base": 9000,
+      "cover": "NSC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEST",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": 102,
+    "wspd": 33,
+    "wxString": null
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEAB": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas a 500 ft (152 m)"
+     ],
+     "media": [
+      "Pocas nubes a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 18.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LEAM": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 28.0,
+    "viento_dir": 120.0,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LERJ": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [
+      "Nubes dispersas a 25000 ft (7620 m)"
+     ],
+     "baja": [],
+     "media": [
+      "Nubes dispersas a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LERS": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": 43.0,
+    "viento_nudos": 32.0,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": 10,
+    "icaoId": "LERS",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": 43,
+    "wspd": 32,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": 9000,
+      "cover": "CLR"
+     },
+     {
+      "base": 500,
+      "cover": "SCT"
+     },
+     {
+      "base": 9000,
+      "cover": "FEW"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEAB",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 18,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "SCT"
+     },
+     {
+      "base": 9000,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LERJ",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 3000,
+      "cover": "NSC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEAM",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 28,
+    "visib": 9999,
+    "wdir": 120,
+    "wspd": null,
+    "wxString": "RA"
+   }
+  ]
+ },
+ {
+  "esperado": {},
+  "json": []
+ },
+ {
+  "esperado": {
+   "LEMH": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": null
+   },
+   "LEZG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas"
+     ],
+     "media": [
+      "Nubes dispersas a 9000 ft (2743 m)",
+      "Nubes dispersas a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": null,
+    "temperatura": 15.0,
+    "viento_dir": 313.0,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 9000,
+      "cover": "SCT"
+     },
+     {
+      "base": 9000,
+      "cover": "SCT"
+     },
+     {
+      "base": 0,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEZG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 15,
+    "visib": 9999,
+    "wdir": 313,
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "OVC"
+     },
+     {
+      "base": 3000,
+      "cover": "NSC"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEMH",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": ""
+   }
+  ]
+ },
+ {
+  "esperado": {},
+  "json": []
+ },
+ {
+  "esperado": {
+   "LEBB": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia, Neblina, Tormenta",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 13.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LEGR": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": null
+   },
+   "LERJ": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Cielo Cubierto a 500 ft (152 m)",
+      "Pocas nubes"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": 243.0,
+    "viento_nudos": 5.0,
+    "visibilidad": null
+   },
+   "LEZL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 32.0,
+    "viento_dir": 130.0,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEZL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 32,
+    "visib": "6+",
+    "wdir": 130,
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "CLR"
+     },
+     {
+      "base": 25000,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEGR",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": null,
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEBB",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 13,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": "-TSRA BR"
+   },
+   {
+    "clouds": [
+     {
+      "base": 500,
+      "cover": "OVC"
+     },
+     {
+      "base": 0,
+      "cover": "FEW"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LERJ",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": 243,
+    "wspd": 5,
+    "wxString": "RA"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEBA": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 18.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEBA",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 18,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": null
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEBL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado)",
+      "Nublado (Fragmentado)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 39.0,
+    "viento_dir": null,
+    "viento_nudos": 26.0,
+    "visibilidad": 9999
+   },
+   "LEDA": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 11.0,
+    "viento_dir": 332.0,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEMH": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [
+      "Nubes dispersas a 25000 ft (7620 m)"
+     ],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 13.0,
+    "viento_dir": 98.0,
+    "viento_nudos": 25.0,
+    "visibilidad": "6+"
+   },
+   "LEML": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 7.0,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEDA",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 11,
+    "visib": "6+",
+    "wdir": 332,
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "BKN"
+     },
+     {
+      "base": 0,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEBL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 39,
+    "visib": 9999,
+    "wdir": null,
+    "wspd": 26,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "SCT"
+     },
+     {
+      "base": null,
+      "cover": "NSC"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEML",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": 7,
+    "wxString": "FG"
+   },
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEMH",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 13,
+    "visib": "6+",
+    "wdir": 98,
+    "wspd": 25,
+    "wxString": "FG"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "GCLP": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 9.0,
+    "viento_dir": null,
+    "viento_nudos": 19.0,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "GCLP",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 9,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": 19,
+    "wxString": null
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEAM": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": [
+      "Nubes dispersas a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 15.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LEIB": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado) a 3000 ft (914 m)",
+      "Pocas nubes a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 0.0,
+    "visibilidad": null
+   },
+   "LEMD": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": -4.0,
+    "viento_dir": 116.0,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEVC": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": 32.0,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "CLR"
+     },
+     {
+      "base": 500,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEMD",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -4,
+    "visib": "6+",
+    "wdir": 116,
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 9000,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEAM",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 15,
+    "visib": 9999,
+    "wdir": null,
+    "wspd": null,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEVC",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": null,
+    "wspd": 32,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": 3000,
+      "cover": "BKN"
+     },
+     {
+      "base": 500,
+      "cover": "FEW"
+     },
+     {
+      "base": 9000,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEIB",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": null,
+    "wspd": 0,
+    "wxString": null
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEBZ": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia, Neblina, Tormenta",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Pocas nubes a 500 ft (152 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 40.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEDA": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Pocas nubes a 3000 ft (914 m)",
+      "Nublado (Fragmentado) a 3000 ft (914 m)"
+     ],
+     "media": [
+      "Pocas nubes a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 11.0,
+    "viento_dir": 166.0,
+    "viento_nudos": 39.0,
+    "visibilidad": null
+   },
+   "LEVT": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": -2.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEZL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": -3.0,
+    "viento_dir": null,
+    "viento_nudos": 39.0,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 3000,
+      "cover": "SCT"
+     },
+     {
+      "base": null,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEZL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -3,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": 39,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "CLR"
+     },
+     {
+      "base": 500,
+      "cover": "FEW"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEBZ",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 40,
+    "visib": "6+",
+    "wdir": null,
+    "wspd": null,
+    "wxString": "-TSRA BR"
+   },
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEVT",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -2,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 9000,
+      "cover": "FEW"
+     },
+     {
+      "base": 3000,
+      "cover": "FEW"
+     },
+     {
+      "base": 3000,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEDA",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 11,
+    "visib": null,
+    "wdir": 166,
+    "wspd": 39,
+    "wxString": "FG"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEJR": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [
+      "Nublado (Fragmentado) a 25000 ft (7620 m)"
+     ],
+     "baja": [
+      "Nublado (Fragmentado) a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": -5.0,
+    "viento_dir": 303.0,
+    "viento_nudos": null,
+    "visibilidad": null
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 3000,
+      "cover": "BKN"
+     },
+     {
+      "base": 25000,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEJR",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -5,
+    "visib": null,
+    "wdir": 303,
+    "wspd": null,
+    "wxString": "RA"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEZG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": -5.0,
+    "viento_dir": null,
+    "viento_nudos": 0.0,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": null,
+    "icaoId": "LEZG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -5,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": 0,
+    "wxString": null
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEBG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 20.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": null
+   },
+   "LEBL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": 240.0,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "NSC"
+     },
+     {
+      "base": 0,
+      "cover": "SCT"
+     },
+     {
+      "base": 25000,
+      "cover": "NSC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEBL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": 240,
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEBG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 20,
+    "visib": null,
+    "wdir": null,
+    "wspd": null,
+    "wxString": ""
+   }
+  ]
+ },
+ {
+  "esperado": {},
+  "json": []
+ },
+ {
+  "esperado": {
+   "LEBB": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": -1.0,
+    "viento_dir": null,
+    "viento_nudos": 23.0,
+    "visibilidad": 9999
+   },
+   "LEDA": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [
+      "Nublado (Fragmentado) a 25000 ft (7620 m)"
+     ],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": null
+   },
+   "LETL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [
+      "Cielo Cubierto a 25000 ft (7620 m)",
+      "Cielo Cubierto a 25000 ft (7620 m)"
+     ],
+     "baja": [
+      "Cielo Cubierto a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 37.0,
+    "viento_dir": 66.0,
+    "viento_nudos": 20.0,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "OVC"
+     },
+     {
+      "base": 25000,
+      "cover": "OVC"
+     },
+     {
+      "base": 3000,
+      "cover": "OVC"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LETL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 37,
+    "visib": 9999,
+    "wdir": 66,
+    "wspd": 20,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEDA",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": null,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "SCT"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEBB",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -1,
+    "visib": 9999,
+    "wdir": null,
+    "wspd": 23,
+    "wxString": "RA"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEAB": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nublado (Fragmentado)"
+     ],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": 14.0,
+    "viento_dir": 213.0,
+    "viento_nudos": 33.0,
+    "visibilidad": 9999
+   },
+   "LEJR": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [
+      "Pocas nubes a 25000 ft (7620 m)"
+     ],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": 9999
+   },
+   "LELN": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Niebla",
+    "nubosidad": {
+     "alta": [],
+     "baja": [
+      "Nubes dispersas",
+      "Nublado (Fragmentado) a 3000 ft (914 m)"
+     ],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEMD": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": -2.0,
+    "viento_dir": null,
+    "viento_nudos": 7.0,
+    "visibilidad": 9999
+   }
+  },
+  "json": [
+   {
+    "clouds": [],
+    "dewp": 10,
+    "icaoId": "LEMD",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": -2,
+    "visib": 9999,
+    "wdir": null,
+    "wspd": 7,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 25000,
+      "cover": "FEW"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEJR",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": 9999,
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": 0,
+      "cover": "BKN"
+     },
+     {
+      "base": 25000,
+      "cover": "NSC"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEAB",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 14,
+    "visib": 9999,
+    "wdir": 213,
+    "wspd": 33,
+    "wxString": ""
+   },
+   {
+    "clouds": [
+     {
+      "base": null,
+      "cover": "SCT"
+     },
+     {
+      "base": 500,
+      "cover": "NSC"
+     },
+     {
+      "base": 3000,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LELN",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": null,
+    "wspd": null,
+    "wxString": "FG"
+   }
+  ]
+ },
+ {
+  "esperado": {
+   "LEBG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": null,
+    "temperatura": null,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEBL": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Ninguno",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": []
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 38.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": "6+"
+   },
+   "LEZG": {
+    "actualizado": "2026-11-02 04:00:00",
+    "fenomenos": "Lluvia",
+    "nubosidad": {
+     "alta": [],
+     "baja": [],
+     "media": [
+      "Nublado (Fragmentado) a 9000 ft (2743 m)"
+     ]
+    },
+    "punto_rocio": 10.0,
+    "temperatura": 38.0,
+    "viento_dir": null,
+    "viento_nudos": null,
+    "visibilidad": null
+   }
+  },
+  "json": [
+   {
+    "clouds": [
+     {
+      "base": 9000,
+      "cover": "CLR"
+     },
+     {
+      "base": 9000,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEBL",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 38,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": null
+   },
+   {
+    "clouds": [
+     {
+      "base": 9000,
+      "cover": "NSC"
+     },
+     {
+      "base": 0,
+      "cover": "CLR"
+     }
+    ],
+    "dewp": null,
+    "icaoId": "LEBG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": null,
+    "visib": "6+",
+    "wdir": "VRB",
+    "wspd": null,
+    "wxString": "RA"
+   },
+   {
+    "clouds": [
+     {
+      "base": 9000,
+      "cover": "BKN"
+     }
+    ],
+    "dewp": 10,
+    "icaoId": "LEZG",
+    "reportTime": "2026-11-02 04:00:00",
+    "temp": 38,
+    "visib": null,
+    "wdir": null,
+    "wspd": null,
+    "wxString": "RA"
+   }
+  ]
+ }
+]

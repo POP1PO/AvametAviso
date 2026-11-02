@@ -2,9 +2,6 @@ package es.avamet.aviso
 
 import es.avamet.aviso.core.*
 import java.util.Locale
-import kotlin.math.PI
-import kotlin.math.cos
-import kotlin.math.floor
 import kotlin.math.ln
 import kotlin.math.roundToInt
 
@@ -20,12 +17,30 @@ object Cielo {
 
     class Informe(val veredicto: String, val lineas: List<String>)
 
-    /** Fracción iluminada de la Luna (mes sinódico medio desde la luna nueva del 2000-01-06 18:14 UTC); error de horas. */
-    fun lunaIluminada(ahoraMs: Long): Double {
-        val p = 29.530588853
-        val d = (ahoraMs - 947_182_440_000L) / 86_400_000.0
-        val edad = d - floor(d / p) * p
-        return (1 - cos(2 * PI * edad / p)) / 2
+    /**
+     * Fracción iluminada de la Luna: ángulo de fase con la serie corta de Meeus (Astronomical Algorithms, cap. 48),
+     * k = (1 + cos i) / 2. Precisión esperada: décimas de punto porcentual a un punto (no verificada contra efemérides en el móvil).
+     */
+    fun lunaIluminada(ms: Long): Double {
+        val jd = ms / 86_400_000.0 + 2_440_587.5
+        val t = (jd - 2_451_545.0) / 36525.0
+        fun g(x: Double) = Math.toRadians(((x % 360.0) + 360.0) % 360.0)
+        val d = g(297.8501921 + 445267.1114034 * t - 0.0018819 * t * t)
+        val m = g(357.5291092 + 35999.0502909 * t - 0.0001536 * t * t)
+        val mp = g(134.9633964 + 477198.8675055 * t + 0.0087414 * t * t)
+        val i = Math.PI - d - Math.toRadians(6.289) * Math.sin(mp) + Math.toRadians(2.100) * Math.sin(m) -
+            Math.toRadians(1.274) * Math.sin(2 * d - mp) - Math.toRadians(0.658) * Math.sin(2 * d) -
+            Math.toRadians(0.214) * Math.sin(2 * mp) - Math.toRadians(0.110) * Math.sin(d)
+        return (1 + Math.cos(i)) / 2
+    }
+
+    /** Instante de observación: ahora si es de noche (21:00–06:00 locales); si no, las 22:00 locales de hoy. */
+    private fun instanteNoche(ahoraMs: Long): Pair<Long, Boolean> {
+        val c = java.util.Calendar.getInstance(); c.timeInMillis = ahoraMs
+        val h = c.get(java.util.Calendar.HOUR_OF_DAY)
+        if (h >= 21 || h < 6) return Pair(ahoraMs, true)
+        c.set(java.util.Calendar.HOUR_OF_DAY, 22); c.set(java.util.Calendar.MINUTE, 0); c.set(java.util.Calendar.SECOND, 0)
+        return Pair(c.timeInMillis, false)
     }
 
     private fun numero(v: Any?): Double? =
@@ -100,8 +115,9 @@ object Cielo {
         } else l.add("Estación de referencia sin lectura fiable: no se valoran rocío ni viento")
 
         // 4) Luna
-        val ilum = lunaIluminada(r.ahoraMs)
-        l.add("Luna iluminada: ${(ilum * 100).roundToInt()} %" + (if (ilum > 0.6) " · molesta para cielo profundo" else ""))
+        val (tObs, esAhora) = instanteNoche(r.ahoraMs)
+        val ilum = lunaIluminada(tObs)
+        l.add("Luna iluminada ${if (esAhora) "ahora" else "a las 22:00"}: ${(ilum * 100).roundToInt()} %" + (if (ilum > 0.6) " · molesta para cielo profundo" else ""))
         l.add("Seeing (turbulencia): no se puede valorar con los datos de la app")
         l.add("Estado de ahora, no pronóstico. Criterio propio y aproximado, no un estudio validado.")
 

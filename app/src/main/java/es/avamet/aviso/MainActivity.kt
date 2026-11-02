@@ -48,6 +48,9 @@ class MainActivity : Activity() {
     private var centrado = false
     private lateinit var contResumen: LinearLayout
     private var registroAbierto = false
+    @Volatile private var seeing: Cielo.Seeing? = null
+    @Volatile private var seeingError: String? = null
+    @Volatile private var seeingIntentoMs = 0L
 
     private fun dp(v: Int) = (v * resources.displayMetrics.density).toInt()
 
@@ -439,6 +442,21 @@ class MainActivity : Activity() {
             cCielo.addView(etiqueta(ci.veredicto, when (ci.veredicto) { "MALO" -> ROJO; "REGULAR" -> AMBAR; else -> VERDE }))
             for (x in ci.lineas) cCielo.addView(texto(x, 13f, false, if (x.startsWith("Estado de ahora") || x.startsWith("Seeing")) APAGADO else TEXTO))
         } else cCielo.addView(texto("No se pudo valorar el cielo", 13f, false, APAGADO))
+        // Seeing: pronóstico externo de 7Timer, cada 60 min como máximo (si falla, reintento a los 10 min)
+        val ahoraS = System.currentTimeMillis()
+        if (ahoraS - seeingIntentoMs > 60 * 60_000L) {
+            seeingIntentoMs = ahoraS
+            val la = r.lat; val lo = r.lon
+            Thread {
+                try { seeing = Cielo.seeing(la, lo, System.currentTimeMillis()); seeingError = null }
+                catch (e: Throwable) { seeingError = "${e.javaClass.simpleName}: ${e.message}"; seeingIntentoMs = System.currentTimeMillis() - 50 * 60_000L }
+                runOnUiThread { try { refrescar() } catch (_: Throwable) { } }
+            }.also { it.isDaemon = true }.start()
+        }
+        val sg = seeing
+        cCielo.addView(texto("SEEING Y TRANSPARENCIA (7TIMER)", 11f, true, APAGADO))
+        if (sg != null) for (x in sg.lineas) cCielo.addView(texto(x, 13f, false, if (x.startsWith("Pronóstico externo")) APAGADO else TEXTO))
+        else cCielo.addView(texto(seeingError?.let { "No disponible ($it)" } ?: "Consultando 7Timer…", 13f, false, APAGADO))
         contResumen.addView(cCielo)
 
         // Radar: solo si hay avisos predictivos

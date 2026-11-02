@@ -10,11 +10,11 @@ private const val NUM = "(\\d+(?:[.,]\\d+)?)"
 val CLAVES_MINIMAS = listOf("Temperatura", "Humedad", "Fecha lectura")
 
 private val RE_FECHA_TEMPS = Regex(
-    "(?U)(\\d{2}-\\d{2}-\\d{4})\\s+(\\d{2}:\\d{2})\\s+" +
-        "(-?\\d+(?:[.,]\\d+)?)\\s*°\\s*mín\\s+(-?\\d+(?:[.,]\\d+)?)\\s*°\\s*màx\\s+(-?\\d+(?:[.,]\\d+)?)\\s*°"
+    "(\\d{2}-\\d{2}-\\d{4})[\\s\\u00a0]+(\\d{2}:\\d{2})[\\s\\u00a0]+" +
+        "(-?\\d+(?:[.,]\\d+)?)[\\s\\u00a0]*°[\\s\\u00a0]*mín[\\s\\u00a0]+(-?\\d+(?:[.,]\\d+)?)[\\s\\u00a0]*°[\\s\\u00a0]*màx[\\s\\u00a0]+(-?\\d+(?:[.,]\\d+)?)[\\s\\u00a0]*°"
 )
 private val RE_COMENTARIO = Regex("<!--.*?-->", RegexOption.DOT_MATCHES_ALL)
-private val RE_SCRIPT = Regex("<(script|style)\\b[^>]*>.*?</\\1\\s*>", setOf(RegexOption.DOT_MATCHES_ALL, RegexOption.IGNORE_CASE))
+private val RE_SCRIPT = Regex("<(script|style)\\b[^>]*>.*?</\\1[\\s\\u00a0]*>", setOf(RegexOption.DOT_MATCHES_ALL, RegexOption.IGNORE_CASE))
 private val RE_ETIQUETA = Regex("<[A-Za-z/!?][^>]*>")
 private val RE_ENTIDAD = Regex("&(#[0-9]+|#[xX][0-9a-fA-F]+|[A-Za-z]+);")
 
@@ -47,7 +47,7 @@ fun aFloat(texto: String): Double? {
 
 /** '12.5 mm' -> 12.5 ; vacío o ilegible -> 0.0. */
 fun num(valor: Any?): Double {
-    val partes = valor.toString().trim().split(Regex("\\s+"))
+    val partes = valor.toString().trim().split(Regex("[\\s\\u00a0]+"))
     if (partes.isEmpty() || partes[0].isEmpty()) return 0.0
     return parseFloatEstricto(partes[0].replace(",", ".")) ?: 0.0
 }
@@ -61,16 +61,16 @@ fun parsearEstacion(texto: String, aj: Ajustes = Ajustes()): Dict {
         datos["Temp mín"] = punto(m.groupValues[4]) + " °C"
         datos["Temp máx"] = punto(m.groupValues[5]) + " °C"
     } else {
-        m = Regex("(?U)(-?\\d+(?:[.,]\\d+)?)\\s*°\\s*mín").find(texto)
+        m = Regex("(-?\\d+(?:[.,]\\d+)?)[\\s\\u00a0]*°[\\s\\u00a0]*mín").find(texto)
         if (m != null) datos["Temperatura"] = punto(m.groupValues[1]) + " °C"
     }
-    Regex("(?U)Humitat\\s+(\\d+)\\s*%").find(texto)?.let { datos["Humedad"] = it.groupValues[1] + " %" }
-    Regex("(?U)Vent\\s+$NUM\\s*km/h\\s+([A-Z]+)").find(texto)?.let { datos["Viento"] = "${punto(it.groupValues[1])} km/h ${it.groupValues[2]}" }
-    Regex("(?U)Vent\\s+màx\\s+$NUM\\s*km/h").find(texto)?.let { datos["Viento máximo"] = punto(it.groupValues[1]) + " km/h" }
-    Regex("(?U)Pluja\\s+hui\\s+$NUM\\s*mm").find(texto)?.let { datos["Lluvia hoy"] = punto(it.groupValues[1]) + " mm" }
-    Regex("(?U)Pluja\\s+mensual\\s+$NUM\\s*mm").find(texto)?.let { datos["Lluvia mensual"] = punto(it.groupValues[1]) + " mm" }
-    Regex("(?U)Pluja\\s+anual\\s+$NUM\\s*mm").find(texto)?.let { datos["Lluvia anual"] = punto(it.groupValues[1]) + " mm" }
-    Regex("(?U)Pressió\\s+al\\s+nivell\\s+de\\s+la\\s+mar\\s+([\\d.,]+)\\s*hPa").find(texto)?.let {
+    Regex("Humitat[\\s\\u00a0]+(\\d+)[\\s\\u00a0]*%").find(texto)?.let { datos["Humedad"] = it.groupValues[1] + " %" }
+    Regex("Vent[\\s\\u00a0]+$NUM[\\s\\u00a0]*km/h[\\s\\u00a0]+([A-Z]+)").find(texto)?.let { datos["Viento"] = "${punto(it.groupValues[1])} km/h ${it.groupValues[2]}" }
+    Regex("Vent[\\s\\u00a0]+màx[\\s\\u00a0]+$NUM[\\s\\u00a0]*km/h").find(texto)?.let { datos["Viento máximo"] = punto(it.groupValues[1]) + " km/h" }
+    Regex("Pluja[\\s\\u00a0]+hui[\\s\\u00a0]+$NUM[\\s\\u00a0]*mm").find(texto)?.let { datos["Lluvia hoy"] = punto(it.groupValues[1]) + " mm" }
+    Regex("Pluja[\\s\\u00a0]+mensual[\\s\\u00a0]+$NUM[\\s\\u00a0]*mm").find(texto)?.let { datos["Lluvia mensual"] = punto(it.groupValues[1]) + " mm" }
+    Regex("Pluja[\\s\\u00a0]+anual[\\s\\u00a0]+$NUM[\\s\\u00a0]*mm").find(texto)?.let { datos["Lluvia anual"] = punto(it.groupValues[1]) + " mm" }
+    Regex("Pressió[\\s\\u00a0]+al[\\s\\u00a0]+nivell[\\s\\u00a0]+de[\\s\\u00a0]+la[\\s\\u00a0]+mar[\\s\\u00a0]+([\\d.,]+)[\\s\\u00a0]*hPa").find(texto)?.let {
         val p = aFloat(it.groupValues[1])
         if (p != null && p >= aj.presionMinHpa && p <= aj.presionMaxHpa) datos["Presión"] = fmtG(p) + " hPa"
         else datos["Presión descartada"] = it.groupValues[1] + " hPa"

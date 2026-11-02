@@ -17,8 +17,8 @@ object Descargas {
     private fun descargar(url: String): String {
         val c = URL(url).openConnection() as HttpURLConnection
         try {
-            c.connectTimeout = 10_000
-            c.readTimeout = 15_000
+            c.connectTimeout = 8_000
+            c.readTimeout = 12_000
             c.setRequestProperty("User-Agent", USER_AGENT)
             val code = c.responseCode
             if (code == 204) return ""

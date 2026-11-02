@@ -23,12 +23,16 @@ class Monitor(ctx: Context) {
 
     fun cerrar() { pool.shutdownNow() }
 
+    private fun seg(t0: Long) = "${(System.nanoTime() - t0) / 1_000_000} ms"
+
     @Suppress("UNCHECKED_CAST")
-    fun ciclo(lat: Double, lon: Double): Resultado {
+    fun ciclo(lat: Double, lon: Double, parcial: (Resultado) -> Unit = {}): Resultado {
         val ahoraMs = System.currentTimeMillis()
         val ahora = ahoraMs / 1000.0
+        val limiteMs = ahoraMs + 100_000L                      // un ciclo no puede pasar de ~100 s
         val errores = ArrayList<String>()
         var descargas = 0
+        Estado.log("Ciclo en ${fmt(lat, 4)}, ${fmt(lon, 4)}")
 
         val plan = planificar(lat, lon, coords, aeropuertos, referenciaId)
         val ref = plan["referencia"] as? Map<String, Any?>
@@ -38,10 +42,14 @@ class Monitor(ctx: Context) {
         val icaos = plan["descargar_icaos"].l().map { it as String }
         if (icaos.isNotEmpty()) {
             descargas++
+            val t0 = System.nanoTime()
             try {
-                for ((icao, datos) in Descargas.metars(icaos)) cacheMetar[icao] = Pair(ahoraMs, datos.d())
+                val m = Descargas.metars(icaos)
+                for ((icao, datos) in m) cacheMetar[icao] = Pair(ahoraMs, datos.d())
+                Estado.log("METAR: ${m.size}/${icaos.size} aeropuertos (${seg(t0)})")
             } catch (e: Exception) {
                 errores.add("Aeropuertos (METAR): " + Descargas.textoError(e))
+                Estado.log("METAR: ERROR ${Descargas.textoError(e)} (${seg(t0)})")
             }
         }
         cacheMetar.entries.removeAll { ahoraMs - it.value.first > 3 * 3600_000L }
@@ -51,29 +59,49 @@ class Monitor(ctx: Context) {
         val lecturas = HashMap<String, Map<String, Any?>>()
         if (ref != null) {
             descargas++
+            val t0 = System.nanoTime()
             val d = Descargas.estacion(ref["id"] as String)
             lecturas[ref["id"] as String] = d
-            (d["Error"] as? String)?.let { errores.add("AVAMET (${ref["nombre"]}): $it") }
+            val err = d["Error"] as? String
+            if (err != null) errores.add("AVAMET (${ref["nombre"]}): $err")
+            Estado.log("Referencia ${ref["nombre"]}: " + (err?.let { "ERROR $it" } ?: "OK") + " (${seg(t0)})")
+        }
+
+        fun armar(res: Dict): Resultado {
+            val peligro = evaluarPeligro(res)
+            return Resultado(ahoraMs, lat, lon, res, peligro, HashMap(cacheMetar), ArrayList(errores), descargas)
         }
 
         var res = analizar(plan, lecturas, metarCalculo, seguimiento, ahora, coords)
+        if (res["faltan"].l().isNotEmpty()) parcial(armar(res))          // ya se puede mostrar algo mientras se descargan las demás
         var vueltas = 0
         while (res["faltan"].l().isNotEmpty() && vueltas < 3) {
             val ids = res["faltan"].l().map { it as String }.filter { !lecturas.containsKey(it) }
             if (ids.isEmpty()) break
-            descargas += ids.size
-            val tareas = ids.map { id -> Callable { Pair(id, Descargas.estacion(id)) } }
-            for (f in pool.invokeAll(tareas)) {
-                val (id, d) = f.get()
-                lecturas[id] = d
+            if (System.currentTimeMillis() > limiteMs) {
+                errores.add("Se agotó el tiempo del ciclo: faltan ${ids.size} estación(es) del camino de las nubes")
+                Estado.log("Tiempo agotado: faltan ${ids.size} estaciones")
+                break
             }
+            descargas += ids.size
+            val t0 = System.nanoTime()
+            val tareas = ids.map { id -> Callable { Pair(id, Descargas.estacion(id)) } }
+            val futuros = pool.invokeAll(tareas, 40, java.util.concurrent.TimeUnit.SECONDS)
+            var bien = 0
+            ids.forEachIndexed { i, id ->
+                val f = futuros[i]
+                if (f.isCancelled) lecturas[id] = dict("Error" to "Tiempo de espera agotado")
+                else { lecturas[id] = f.get().second; if (!lecturas[id]!!.containsKey("Error")) bien++ }
+            }
+            Estado.log("Estaciones del camino: $bien/${ids.size} OK (${seg(t0)})")
             res = analizar(plan, lecturas, metarCalculo, res["seguimiento"].d(), ahora, coords)
             vueltas++
         }
         val fallos = lecturas.filter { it.value.containsKey("Error") && it.key != referenciaId }.size
         if (fallos > 0) errores.add("AVAMET: $fallos estación(es) del camino de las nubes no respondieron")
         seguimiento = res["seguimiento"].d()
-        val peligro = evaluarPeligro(res)
-        return Resultado(ahoraMs, lat, lon, res, peligro, HashMap(cacheMetar), errores, descargas)
+        val r = armar(res)
+        Estado.log("Ciclo terminado: ${r.nivel}, ${descargas} peticiones")
+        return r
     }
 }

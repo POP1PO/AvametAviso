@@ -84,6 +84,7 @@ class MonitorServicio : Service() {
             return START_NOT_STICKY
         }
         Estado.activo = true
+        Estado.log("Servicio iniciado")
         ultimoOk = System.currentTimeMillis()
         Config.setVigilanciaDeseada(this, true)
         Config.setUltimoLatido(this, System.currentTimeMillis())
@@ -129,10 +130,12 @@ class MonitorServicio : Service() {
             Config.setUltimoLatido(this, System.currentTimeMillis())
             val loc = Estado.ubicacion
             if (loc == null) {
+                Estado.log("Sin posición todavía (¿GPS activado? ¿permiso de ubicación?)")
                 Estado.mensaje = "Esperando posición GPS…"
                 actualizarNotificacion("Esperando posición GPS…")
             } else {
-                val r = monitor!!.ciclo(loc.latitude, loc.longitude)
+                Estado.log("Posición: ${loc.provider} precisión ${if (loc.hasAccuracy()) loc.accuracy.toInt().toString() + " m" else "?"}")
+                val r = monitor!!.ciclo(loc.latitude, loc.longitude) { p -> Estado.resultado = p; Estado.notificar() }
                 Estado.resultado = r
                 Estado.mensaje = ""
                 val estadoRef = ((r.analisis["referencia"] as? Map<*, *>)?.get("estado") as? Map<*, *>)?.get("estado")
@@ -147,6 +150,7 @@ class MonitorServicio : Service() {
             }
         } catch (e: Exception) {
             Estado.mensaje = "Error en el ciclo: ${e.javaClass.simpleName}: ${e.message}"
+            Estado.log("ERROR: ${e.javaClass.simpleName}: ${e.message}")
         }
         comprobarSinDatos()
         Estado.notificar()

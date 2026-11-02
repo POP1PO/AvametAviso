@@ -33,6 +33,17 @@ object Estado {
     @Volatile var activo: Boolean = false
     @Volatile var sonando: Boolean = false
     @Volatile var mensaje: String = ""
+    private val lineas = ArrayList<String>()
+
+    /** Registro corto (últimas 40 líneas) visible en la pantalla Resumen: sirve para ver qué está haciendo la app y cuánto tarda. */
+    @Synchronized fun log(t: String) {
+        val h = java.text.SimpleDateFormat("HH:mm:ss", java.util.Locale.getDefault()).format(java.util.Date())
+        lineas.add("$h $t")
+        while (lineas.size > 40) lineas.removeAt(0)
+        notificar()
+    }
+    @Synchronized fun registro(): String = lineas.joinToString("\n")
+
     private val oyentes = CopyOnWriteArrayList<() -> Unit>()
     private val ui = Handler(Looper.getMainLooper())
 

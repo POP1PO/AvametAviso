@@ -18,9 +18,9 @@ from .geo import aeropuertos_en_radio, elegir_referencia, estaciones_en_radio
 
 
 def planificar(lat: float, lon: float, coords: dict, aeropuertos: dict, actual_id: str | None = None,
-               ajustes: dict | None = None) -> dict:
+               ajustes: dict | None = None, fija_id: str | None = None) -> dict:
     aj = ajustes or AJUSTES
-    ref = elegir_referencia(lat, lon, coords, actual_id, aj["HISTERESIS_REFERENCIA_KM"])
+    ref = elegir_referencia(lat, lon, coords, actual_id, aj["HISTERESIS_REFERENCIA_KM"], fija_id)
     if ref is None:
         return {"lat": lat, "lon": lon, "referencia": None, "radio": [], "aeropuertos": [],
                 "descargar_estaciones": [], "descargar_icaos": []}

@@ -53,3 +53,27 @@ class WmsTest {
         assertTrue(Wms.franjaCache(15 * 60_000L) == Wms.franjaCache(0) + 1)
     }
 }
+
+class ReferenciaManualTest {
+    private val coords = mapOf(
+        "a1" to mapOf<String, Any?>("lat" to 40.0, "lon" to 0.0, "nombre" to "Mas del Tonto", "municipio" to "les Coves de Vinromà"),
+        "a2" to mapOf<String, Any?>("lat" to 40.1, "lon" to 0.0, "nombre" to "Carrer Nou", "municipio" to "les Coves de Vinromà"),
+        "b1" to mapOf<String, Any?>("lat" to 39.9, "lon" to -0.1, "nombre" to "Vila-real", "municipio" to "Vila-real"))
+
+    @Test fun fijaManda_sobreLaMasCercana() {
+        val auto = es.avamet.aviso.core.elegirReferencia(40.1, 0.0, coords, null, 1.0)!!
+        org.junit.Assert.assertEquals("a2", auto.first)
+        val fija = es.avamet.aviso.core.elegirReferencia(40.1, 0.0, coords, "a2", 1.0, fijaId = "b1")!!
+        org.junit.Assert.assertEquals("b1", fija.first); org.junit.Assert.assertTrue(fija.second > 10.0)
+        org.junit.Assert.assertEquals("a2", es.avamet.aviso.core.elegirReferencia(40.1, 0.0, coords, null, 1.0, fijaId = "NO_EXISTE")!!.first)   // id desconocido: automática
+        org.junit.Assert.assertEquals("a2", es.avamet.aviso.core.elegirReferencia(40.1, 0.0, coords, null, 1.0, fijaId = "")!!.first)
+    }
+
+    @Test fun busquedaPorIdNombreYAcentos() {
+        val b = { q: String -> es.avamet.aviso.core.buscarEstaciones(coords, q).map { it.first } }
+        org.junit.Assert.assertEquals(listOf("a1"), b("A1"))
+        org.junit.Assert.assertEquals(listOf("a2", "a1"), b("coves de vinroma"))     // ordenadas por nombre: Carrer Nou, Mas del Tonto; sin acentos
+        org.junit.Assert.assertEquals(listOf("b1"), b("vila-real"))
+        org.junit.Assert.assertTrue(b("zzz").isEmpty() && b("  ").isEmpty())
+    }
+}

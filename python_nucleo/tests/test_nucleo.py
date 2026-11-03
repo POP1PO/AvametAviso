@@ -208,3 +208,11 @@ if __name__ == "__main__":
         if nombre.startswith("test_") and callable(f):
             f(); n += 1; print("OK", nombre)
     print(f"{n} pruebas OK")
+
+
+def test_referencia_fija_manda_sobre_la_mas_cercana():
+    from aviso_core.geo import elegir_referencia
+    coords = {"a2": {"lat": 40.1, "lon": 0.0}, "b1": {"lat": 39.9, "lon": -0.1}}
+    assert elegir_referencia(40.1, 0.0, coords)[0] == "a2"
+    assert elegir_referencia(40.1, 0.0, coords, "a2", 1.0, "b1")[0] == "b1"
+    assert elegir_referencia(40.1, 0.0, coords, None, 1.0, "NO_EXISTE")[0] == "a2"

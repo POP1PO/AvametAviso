@@ -16,7 +16,7 @@ import org.osmdroid.views.overlay.TilesOverlay
  */
 object MapaIr {
     private class Fuente(nombre: String, private val capa: String) :
-        OnlineTileSourceBase(nombre, 0, 8, 256, ".png", arrayOf(Wms.BASE)) {
+        OnlineTileSourceBase(nombre, 0, 19, 256, ".png", arrayOf(Wms.BASE)) {
         override fun getTileURLString(pMapTileIndex: Long): String =
             Wms.urlTesela(capa, MapTileIndex.getZoom(pMapTileIndex), MapTileIndex.getX(pMapTileIndex), MapTileIndex.getY(pMapTileIndex))
     }
@@ -36,6 +36,28 @@ object MapaIr {
         // sin red o servidor caído: se usa la última capa conocida (o la suposición por defecto)
         capaGuardada(c) to "No se pudo leer la lista de capas (${Descargas.textoError(e)}); uso ${capaGuardada(c)}"
     }
+
+    /** Pide UNA tesela (z5, sobre el Mediterráneo occidental) y cuenta qué llega: código HTTP, tipo, tamaño y % de píxeles no transparentes.
+     *  Hilo de fondo. Sirve para ver si EUMETSAT contesta algo útil (o un XML de error, p. ej. proyección no soportada). */
+    fun sonda(capa: String): String = try {
+        val url = Wms.urlTesela(capa, 5, 16, 12)
+        val c = java.net.URL(url).openConnection() as java.net.HttpURLConnection
+        c.connectTimeout = 8000; c.readTimeout = 20000; c.setRequestProperty("User-Agent", Descargas.USER_AGENT)
+        try {
+            val code = c.responseCode
+            val tipo = c.contentType ?: "?"
+            val bytes = (if (code in 200..299) c.inputStream else c.errorStream)?.use { it.readBytes() } ?: ByteArray(0)
+            if (code in 200..299 && tipo.startsWith("image/")) {
+                val bmp = android.graphics.BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                if (bmp == null) "Tesela de prueba: HTTP $code, $tipo, ${bytes.size} B, pero no se puede decodificar"
+                else {
+                    val px = IntArray(bmp.width * bmp.height); bmp.getPixels(px, 0, bmp.width, 0, 0, bmp.width, bmp.height)
+                    val visibles = px.count { (it ushr 24) > 0 } * 100 / px.size
+                    "Tesela de prueba: HTTP $code, $tipo, ${bytes.size} B, $visibles % de píxeles con imagen" + if (visibles == 0) " (¡vacía!)" else ""
+                }
+            } else "Tesela de prueba: HTTP $code, $tipo: " + String(bytes, Charsets.UTF_8).replace(Regex("\\s+"), " ").take(200)
+        } finally { c.disconnect() }
+    } catch (e: Exception) { "Tesela de prueba falló: ${Descargas.textoError(e)}" }
 
     /** Overlay de teselas. El nombre del origen lleva la franja de 15 min para que la caché de osmdroid se renueve con cada barrido. */
     fun crearOverlay(c: Context, capa: String, opacidad: Int): TilesOverlay {

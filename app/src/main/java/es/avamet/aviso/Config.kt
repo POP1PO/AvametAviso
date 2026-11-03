@@ -21,4 +21,8 @@ object Config {
 
     fun ultimoLatido(c: Context): Long = p(c).getLong("latido", 0L)
     fun setUltimoLatido(c: Context, ms: Long) = p(c).edit().putLong("latido", ms).apply()
+
+    /** Estación de referencia elegida a mano (id de AVAMET); null = automática (la más cercana a tu posición). */
+    fun estacionFija(c: Context): String? = p(c).getString("estacionFija", null)?.takeIf { it.isNotEmpty() }
+    fun setEstacionFija(c: Context, id: String?) = p(c).edit().putString("estacionFija", id ?: "").apply()
 }

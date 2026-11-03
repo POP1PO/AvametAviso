@@ -258,6 +258,29 @@ class MainActivity : Activity() {
         col.orientation = LinearLayout.VERTICAL
         col.setPadding(dp(8), dp(8), dp(8), dp(8))
 
+        col.addView(texto("Estación de referencia", 15f, true))
+        val refTxt = texto("", 13f, false, APAGADO)
+        fun refrescarRef() { refTxt.text = Config.estacionFija(this)?.let { "Manual: $it (no cambia sola aunque te muevas)" } ?: "Automática: la más cercana a tu posición" }
+        refrescarRef()
+        col.addView(refTxt)
+        val refId = EditText(this)
+        refId.hint = "Identificador o nombre (p. ej. c05m050e03)"
+        refId.setTextColor(TEXTO); refId.setHintTextColor(APAGADO)
+        col.addView(refId)
+        col.addView(boton("Usar esta estación como referencia", null) {
+            val q = refId.text.toString().trim()
+            val r = Estaciones.buscar(this, q)
+            when {
+                q.isEmpty() -> Toast.makeText(this, "Escribe un identificador o parte del nombre", Toast.LENGTH_SHORT).show()
+                r.size == 1 -> { Config.setEstacionFija(this, r[0].first); refrescarRef()
+                    Toast.makeText(this, "Referencia: ${r[0].second}. Se aplica en el próximo ciclo.", Toast.LENGTH_LONG).show() }
+                r.isEmpty() -> Toast.makeText(this, "No hay ninguna estación que coincida con «$q»", Toast.LENGTH_LONG).show()
+                else -> Toast.makeText(this, "Varias coinciden, concreta: " + r.take(5).joinToString("; ") { "${it.first} (${it.second})" }, Toast.LENGTH_LONG).show()
+            }
+        })
+        col.addView(boton("Volver a automática", null) { Config.setEstacionFija(this, null); refrescarRef()
+            Toast.makeText(this, "Referencia automática", Toast.LENGTH_SHORT).show() })
+
         col.addView(texto("Consulta cada (minutos):", 15f, true))
         val intervalo = EditText(this)
         intervalo.inputType = InputType.TYPE_CLASS_NUMBER
@@ -627,8 +650,9 @@ class MainActivity : Activity() {
         irEstado.text = "Buscando la capa IR en EUMETSAT…"
         Thread {
             val (capa, msg) = MapaIr.detectarCapa(this)
+            val prueba = if (capa != null) MapaIr.sonda(capa) else ""
             runOnUiThread {
-                irEstado.text = msg
+                irEstado.text = if (prueba.isEmpty()) msg else "$msg\n$prueba"
                 if (capa == null || !MapaIr.visible(this)) return@runOnUiThread
                 irOverlay?.let { mapa.overlays.remove(it) }
                 irOverlay = MapaIr.crearOverlay(this, capa, irOpacidad).also { mapa.overlays.add(0, it) }

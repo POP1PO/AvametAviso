@@ -6,7 +6,7 @@ import java.util.concurrent.Callable
 import java.util.concurrent.Executors
 
 /** Un ciclo completo: planificar -> descargar -> analizar (repetido mientras `faltan`) -> peligro. Sin estado de pantalla. */
-class Monitor(ctx: Context) {
+class Monitor(private val ctx: Context) {
     private val coords: Map<String, Map<String, Any?>>
     private val aeropuertos: Map<String, Map<String, Any?>>
     private var referenciaId: String? = null
@@ -34,7 +34,7 @@ class Monitor(ctx: Context) {
         var descargas = 0
         Estado.log("Ciclo en ${fmt(lat, 4)}, ${fmt(lon, 4)}")
 
-        val plan = planificar(lat, lon, coords, aeropuertos, referenciaId)
+        val plan = planificar(lat, lon, coords, aeropuertos, referenciaId, fijaId = Config.estacionFija(ctx))
         Estado.log("Plan: ${(plan["radio"] as List<*>).size} estaciones en radio, ${(plan["aeropuertos"] as List<*>).size} aeropuertos")
         val ref = plan["referencia"] as? Map<String, Any?>
         if (ref != null) referenciaId = ref["id"] as String

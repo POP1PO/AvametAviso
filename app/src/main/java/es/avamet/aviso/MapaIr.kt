@@ -16,11 +16,21 @@ import org.osmdroid.views.overlay.TilesOverlay
  * No necesita ordenador ni claves. NO verificado contra el servidor real (ver core/Wms.kt).
  */
 object MapaIr {
-    private class Fuente(nombre: String, private val capa: String) :
+    private class Fuente(nombre: String, private val capa: String, private val tiempo: String?) :
         OnlineTileSourceBase(nombre, 0, 19, 256, ".png", arrayOf(Wms.BASE)) {
         override fun getTileURLString(pMapTileIndex: Long): String =
-            Wms.urlTesela(capa, MapTileIndex.getZoom(pMapTileIndex), MapTileIndex.getX(pMapTileIndex), MapTileIndex.getY(pMapTileIndex))
+            Wms.urlTesela(capa, MapTileIndex.getZoom(pMapTileIndex), MapTileIndex.getX(pMapTileIndex), MapTileIndex.getY(pMapTileIndex), tiempo)
     }
+
+    /** Hora del último barrido publicado de la capa (hilo de fondo; ~7 kB). null si no se pudo saber. */
+    fun ultimoTiempo(capa: String): String? = try {
+        Wms.urlCapabilitiesCapa(capa)?.let { Wms.tiempoPorDefecto(Descargas.texto(it)) }
+    } catch (e: Exception) { null }
+
+    /** "20:00" en la hora del móvil a partir de "2026-11-03T19:00:00Z"; el texto tal cual si no se entiende. */
+    fun horaLocal(tiempo: String): String = try {
+        java.time.Instant.parse(tiempo).atZone(java.time.ZoneId.systemDefault()).toLocalTime().toString().take(5)
+    } catch (e: Exception) { tiempo }
 
     private fun prefs(c: Context) = c.getSharedPreferences("config", Context.MODE_PRIVATE)
     fun capaGuardada(c: Context): String = prefs(c).getString("capaIr", null) ?: Wms.CAPA_POR_DEFECTO
@@ -40,8 +50,8 @@ object MapaIr {
 
     /** Pide UNA tesela (z5, sobre el Mediterráneo occidental) y cuenta qué llega: código HTTP, tipo, tamaño y % de píxeles no transparentes.
      *  Hilo de fondo. Sirve para ver si EUMETSAT contesta algo útil (o un XML de error, p. ej. proyección no soportada). */
-    fun sonda(capa: String): String = try {
-        val url = Wms.urlTesela(capa, 5, 16, 12)
+    fun sonda(capa: String, tiempo: String?): String = try {
+        val url = Wms.urlTesela(capa, 5, 16, 12, tiempo)
         val c = java.net.URL(url).openConnection() as java.net.HttpURLConnection
         c.connectTimeout = 8000; c.readTimeout = 20000; c.setRequestProperty("User-Agent", Descargas.USER_AGENT)
         try {
@@ -60,12 +70,14 @@ object MapaIr {
         } finally { c.disconnect() }
     } catch (e: Exception) { "Tesela de prueba falló: ${Descargas.textoError(e)}" }
 
-    /** Overlay de teselas. El nombre del origen lleva la franja de 15 min para que la caché de osmdroid se renueve con cada barrido.
+    /** Overlay de teselas del barrido `tiempo`. El nombre del origen lleva ese barrido (o, sin él, la franja de 15 min) para que la
+     *  caché de osmdroid no mezcle imágenes de barridos distintos.
      *  El proveedor de teselas es propio (no el del mapa), así que hay que darle el «avisador» del mapa: sin él las teselas
      *  se descargan pero NADIE pide repintar y la capa no aparece hasta que el usuario mueve el mapa (lo hace igual
      *  MapView.setTileProvider con su propio proveedor). */
-    fun crearOverlay(c: Context, mapa: MapView, capa: String, opacidad: Int): TilesOverlay {
-        val fuente = Fuente("EUMETSAT_IR_${Wms.franjaCache(System.currentTimeMillis())}", capa)
+    fun crearOverlay(c: Context, mapa: MapView, capa: String, tiempo: String?, opacidad: Int): TilesOverlay {
+        val marca = tiempo?.filter { it.isLetterOrDigit() }?.takeIf { it.isNotEmpty() } ?: "f${Wms.franjaCache(System.currentTimeMillis())}"
+        val fuente = Fuente("EUMETSAT_IR_$marca", capa, tiempo)
         val proveedor = MapTileProviderBasic(c.applicationContext, fuente)
         proveedor.tileRequestCompleteHandlers.add(mapa.tileRequestCompleteHandler)
         val o = TilesOverlay(proveedor, c)

@@ -13290,9 +13290,9 @@
     "Lluvia en tu estación de referencia (Tuéjar)",
     "Lluvia a 8.6 km en Alpuente",
     "Lluvia a 9.6 km en CallesAlcotas",
-    "Lluvia a 10.3 km en CallesParque de Emergencias",
-    "Lluvia a 15.6 km en Aras de los Olmos",
-    "Lluvia a 25.0 km en UtielLa TorreCoop. S.Antonio"
+    "Lluvia a 10.3 km en CallesParque de Emergencias (aviso)",
+    "Lluvia a 15.6 km en Aras de los Olmos (aviso)",
+    "Lluvia a 25.0 km en UtielLa TorreCoop. S.Antonio (aviso)"
    ],
    "nivel": "PELIGRO"
   },
@@ -24673,11 +24673,11 @@
   },
   "esperado_peligro": {
    "motivos": [
-    "Lluvia a 15.2 km en PeníscolaGran Hotel Peñiscola",
-    "Lluvia a 15.6 km en TorreblancaTorrenostraPN el Prat",
-    "Lluvia a 23.0 km en les Coves de VinromàCasc antic"
+    "Lluvia a 15.2 km en PeníscolaGran Hotel Peñiscola (aviso)",
+    "Lluvia a 15.6 km en TorreblancaTorrenostraPN el Prat (aviso)",
+    "Lluvia a 23.0 km en les Coves de VinromàCasc antic (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "esperado_plan": {
    "aeropuertos": [
@@ -36673,16 +36673,16 @@
   },
   "esperado_peligro": {
    "motivos": [
-    "Lluvia a 14.4 km en VilamarxantAyuntamiento",
-    "Lluvia a 14.5 km en VilamarxantSan José",
-    "Lluvia a 15.0 km en Gestalgar",
-    "Lluvia a 18.6 km en Higueruelas",
-    "Lluvia a 18.9 km en l′ElianaBarranc de Mandor",
-    "Lluvia a 19.8 km en Sot de Chera",
-    "Lluvia a 24.7 km en CallesParque de Emergencias",
-    "Lluvia a 24.7 km en CallesAlcotas"
+    "Lluvia a 14.4 km en VilamarxantAyuntamiento (aviso)",
+    "Lluvia a 14.5 km en VilamarxantSan José (aviso)",
+    "Lluvia a 15.0 km en Gestalgar (aviso)",
+    "Lluvia a 18.6 km en Higueruelas (aviso)",
+    "Lluvia a 18.9 km en l′ElianaBarranc de Mandor (aviso)",
+    "Lluvia a 19.8 km en Sot de Chera (aviso)",
+    "Lluvia a 24.7 km en CallesParque de Emergencias (aviso)",
+    "Lluvia a 24.7 km en CallesAlcotas (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "esperado_plan": {
    "aeropuertos": [
@@ -49661,19 +49661,19 @@
    "motivos": [
     "Lluvia a 7.5 km en CarletCaseta del Banc",
     "Lluvia a 9.3 km en MontserratMasia Trinitat",
-    "Lluvia a 15.5 km en GuadassuarComplex de Valorització de Residus",
-    "Lluvia a 18.1 km en MacastreAyuntamiento",
-    "Lluvia a 18.4 km en MacastreCuatro Caminos",
-    "Lluvia a 18.6 km en Massalavés",
-    "Lluvia a 21.0 km en Buñol",
-    "Lluvia a 21.2 km en Cortes de PallásOtonel",
-    "Lluvia a 22.5 km en QuesaAyuntamiento",
-    "Lluvia a 22.6 km en Chiva",
-    "Lluvia a 22.7 km en Gavardala Travessa",
-    "Lluvia a 22.8 km en AldaiaAjuntament",
-    "Lluvia a 22.9 km en Benicull de Xúquer",
-    "Lluvia a 23.9 km en Antella",
-    "Lluvia a 24.3 km en XirivellaCentre Cívic"
+    "Lluvia a 15.5 km en GuadassuarComplex de Valorització de Residus (aviso)",
+    "Lluvia a 18.1 km en MacastreAyuntamiento (aviso)",
+    "Lluvia a 18.4 km en MacastreCuatro Caminos (aviso)",
+    "Lluvia a 18.6 km en Massalavés (aviso)",
+    "Lluvia a 21.0 km en Buñol (aviso)",
+    "Lluvia a 21.2 km en Cortes de PallásOtonel (aviso)",
+    "Lluvia a 22.5 km en QuesaAyuntamiento (aviso)",
+    "Lluvia a 22.6 km en Chiva (aviso)",
+    "Lluvia a 22.7 km en Gavardala Travessa (aviso)",
+    "Lluvia a 22.8 km en AldaiaAjuntament (aviso)",
+    "Lluvia a 22.9 km en Benicull de Xúquer (aviso)",
+    "Lluvia a 23.9 km en Antella (aviso)",
+    "Lluvia a 24.3 km en XirivellaCentre Cívic (aviso)"
    ],
    "nivel": "PELIGRO"
   },
@@ -62976,24 +62976,24 @@
   "esperado_peligro": {
    "motivos": [
     "Lluvia a 4.3 km en PuçolUrbanización Alfinach",
-    "Lluvia a 10.3 km en Quartell",
-    "Lluvia a 10.5 km en la Pobla de Farnals",
-    "Lluvia a 12.1 km en Albalat dels Sorellsla Lloma",
-    "Lluvia a 12.9 km en Bétera",
-    "Lluvia a 14.3 km en AlbuixechAyuntamiento",
-    "Lluvia a 14.8 km en Vinalesa",
-    "Lluvia a 17.4 km en Soneja",
-    "Lluvia a 18.0 km en PaternaCasas Verdes",
-    "Lluvia a 18.4 km en l′Eliana",
-    "Lluvia a 18.9 km en BurjassotÀ Punt",
-    "Lluvia a 19.2 km en l′Elianacentre",
-    "Lluvia a 20.6 km en PaternaEstación",
-    "Lluvia a 21.3 km en Llíria",
-    "Lluvia a 22.1 km en Quart de PobletIES Riu Túria",
-    "Lluvia a 22.6 km en Valèncial'Olivereta",
-    "Lluvia a 23.1 km en Castellnovo",
-    "Lluvia a 23.3 km en Moncofa",
-    "Lluvia a 23.7 km en ValènciaPenya-roja"
+    "Lluvia a 10.3 km en Quartell (aviso)",
+    "Lluvia a 10.5 km en la Pobla de Farnals (aviso)",
+    "Lluvia a 12.1 km en Albalat dels Sorellsla Lloma (aviso)",
+    "Lluvia a 12.9 km en Bétera (aviso)",
+    "Lluvia a 14.3 km en AlbuixechAyuntamiento (aviso)",
+    "Lluvia a 14.8 km en Vinalesa (aviso)",
+    "Lluvia a 17.4 km en Soneja (aviso)",
+    "Lluvia a 18.0 km en PaternaCasas Verdes (aviso)",
+    "Lluvia a 18.4 km en l′Eliana (aviso)",
+    "Lluvia a 18.9 km en BurjassotÀ Punt (aviso)",
+    "Lluvia a 19.2 km en l′Elianacentre (aviso)",
+    "Lluvia a 20.6 km en PaternaEstación (aviso)",
+    "Lluvia a 21.3 km en Llíria (aviso)",
+    "Lluvia a 22.1 km en Quart de PobletIES Riu Túria (aviso)",
+    "Lluvia a 22.6 km en Valèncial'Olivereta (aviso)",
+    "Lluvia a 23.1 km en Castellnovo (aviso)",
+    "Lluvia a 23.3 km en Moncofa (aviso)",
+    "Lluvia a 23.7 km en ValènciaPenya-roja (aviso)"
    ],
    "nivel": "PELIGRO"
   },
@@ -75362,13 +75362,13 @@
    "motivos": [
     "Lluvia a 1.6 km en RossellAjuntament",
     "Lluvia a 1.9 km en Rossellla Vila",
-    "Lluvia a 13.1 km en Traiguera",
-    "Lluvia a 16.1 km en CatíVenta de l'Aire",
-    "Lluvia a 16.9 km en Sant MateuMolins",
-    "Lluvia a 17.3 km en Sant MateuPla de Dalt",
-    "Lluvia a 17.6 km en Sant MateuFont Aigua Nova",
-    "Lluvia a 22.4 km en MorellaMas d'Agustino",
-    "Lluvia a 22.5 km en Catí"
+    "Lluvia a 13.1 km en Traiguera (aviso)",
+    "Lluvia a 16.1 km en CatíVenta de l'Aire (aviso)",
+    "Lluvia a 16.9 km en Sant MateuMolins (aviso)",
+    "Lluvia a 17.3 km en Sant MateuPla de Dalt (aviso)",
+    "Lluvia a 17.6 km en Sant MateuFont Aigua Nova (aviso)",
+    "Lluvia a 22.4 km en MorellaMas d'Agustino (aviso)",
+    "Lluvia a 22.5 km en Catí (aviso)"
    ],
    "nivel": "PELIGRO"
   },
@@ -88483,28 +88483,28 @@
     "Lluvia a 7.8 km en MontcadaCIDE (CSIC-UV-GVA)",
     "Lluvia a 7.9 km en la Pobla de Farnals",
     "Lluvia a 8.8 km en MassamagrellCentre Cultural",
-    "Lluvia a 11.5 km en Albalat dels Sorells",
-    "Lluvia a 12.4 km en Quartell",
-    "Lluvia a 14.7 km en Almàssera",
-    "Lluvia a 14.8 km en AlmenaraComunitat de Regants",
-    "Lluvia a 15.5 km en PaternaCasas Verdes",
-    "Lluvia a 16.3 km en Alboraia",
-    "Lluvia a 18.1 km en PaternaEstación",
-    "Lluvia a 18.3 km en la Pobla de Vallbona",
-    "Lluvia a 19.5 km en Manisesla Presa",
-    "Lluvia a 19.6 km en Quart de PobletIES Riu Túria",
-    "Lluvia a 19.8 km en Soneja",
-    "Lluvia a 19.9 km en Quart de PobletAjuntament",
-    "Lluvia a 20.0 km en Quart de PobletIES la Senda",
-    "Lluvia a 20.1 km en ValènciaCamins al Grau",
-    "Lluvia a 20.6 km en Xilxes",
-    "Lluvia a 20.7 km en BenaguasilEstil Masculí Eva",
-    "Lluvia a 20.9 km en Llíria",
-    "Lluvia a 20.9 km en ValènciaPatraix",
-    "Lluvia a 21.5 km en XirivellaAjuntament",
-    "Lluvia a 21.9 km en Riba-roja de Túria",
-    "Lluvia a 22.1 km en la Vall d′Uixó",
-    "Lluvia a 24.6 km en PicanyaIES Enric Valor",
+    "Lluvia a 11.5 km en Albalat dels Sorells (aviso)",
+    "Lluvia a 12.4 km en Quartell (aviso)",
+    "Lluvia a 14.7 km en Almàssera (aviso)",
+    "Lluvia a 14.8 km en AlmenaraComunitat de Regants (aviso)",
+    "Lluvia a 15.5 km en PaternaCasas Verdes (aviso)",
+    "Lluvia a 16.3 km en Alboraia (aviso)",
+    "Lluvia a 18.1 km en PaternaEstación (aviso)",
+    "Lluvia a 18.3 km en la Pobla de Vallbona (aviso)",
+    "Lluvia a 19.5 km en Manisesla Presa (aviso)",
+    "Lluvia a 19.6 km en Quart de PobletIES Riu Túria (aviso)",
+    "Lluvia a 19.8 km en Soneja (aviso)",
+    "Lluvia a 19.9 km en Quart de PobletAjuntament (aviso)",
+    "Lluvia a 20.0 km en Quart de PobletIES la Senda (aviso)",
+    "Lluvia a 20.1 km en ValènciaCamins al Grau (aviso)",
+    "Lluvia a 20.6 km en Xilxes (aviso)",
+    "Lluvia a 20.7 km en BenaguasilEstil Masculí Eva (aviso)",
+    "Lluvia a 20.9 km en Llíria (aviso)",
+    "Lluvia a 20.9 km en ValènciaPatraix (aviso)",
+    "Lluvia a 21.5 km en XirivellaAjuntament (aviso)",
+    "Lluvia a 21.9 km en Riba-roja de Túria (aviso)",
+    "Lluvia a 22.1 km en la Vall d′Uixó (aviso)",
+    "Lluvia a 24.6 km en PicanyaIES Enric Valor (aviso)",
     "Lluvia en Segart a 4.5 km. Llegada en ~19 min."
    ],
    "nivel": "PELIGRO"
@@ -100315,7 +100315,7 @@
   "esperado_peligro": {
    "motivos": [
     "Lluvia en tu estación de referencia (Monteagudo del CastilloEl Portero)",
-    "Lluvia a 20.8 km en Cañada de Benatanduz"
+    "Lluvia a 20.8 km en Cañada de Benatanduz (aviso)"
    ],
    "nivel": "PELIGRO"
   },
@@ -112022,13 +112022,13 @@
   "esperado_peligro": {
    "motivos": [
     "Lluvia en tu estación de referencia (Dos Aguas)",
-    "Lluvia a 15.5 km en BicorpEcomuseo",
-    "Lluvia a 16.1 km en Real",
-    "Lluvia a 16.5 km en Buñol",
-    "Lluvia a 22.3 km en MontserratMasia Trinitat",
-    "Lluvia a 22.4 km en NavarrésPlayamonte",
-    "Lluvia a 23.4 km en Chiva",
-    "Lluvia a 24.3 km en GuadassuarComplex de Valorització de Residus"
+    "Lluvia a 15.5 km en BicorpEcomuseo (aviso)",
+    "Lluvia a 16.1 km en Real (aviso)",
+    "Lluvia a 16.5 km en Buñol (aviso)",
+    "Lluvia a 22.3 km en MontserratMasia Trinitat (aviso)",
+    "Lluvia a 22.4 km en NavarrésPlayamonte (aviso)",
+    "Lluvia a 23.4 km en Chiva (aviso)",
+    "Lluvia a 24.3 km en GuadassuarComplex de Valorització de Residus (aviso)"
    ],
    "nivel": "PELIGRO"
   },
@@ -124166,19 +124166,19 @@
     "Lluvia en tu estación de referencia (ViverCooperativa)",
     "Lluvia a 7.5 km en AlturaAyuntamiento",
     "Lluvia a 8.5 km en Gaibiel",
-    "Lluvia a 10.8 km en Bejís",
-    "Lluvia a 12.0 km en Sacañet",
-    "Lluvia a 15.4 km en Soneja",
-    "Lluvia a 17.2 km en El ToroLavadero",
-    "Lluvia a 17.4 km en El ToroCalle Mayor",
-    "Lluvia a 18.2 km en El ToroHoya del Campillo",
-    "Lluvia a 20.7 km en Aín",
-    "Lluvia a 21.1 km en Cirat",
-    "Lluvia a 21.5 km en Olocau",
-    "Lluvia a 22.5 km en ChóvarAgua de Chóvar",
-    "Lluvia a 23.4 km en Eslida",
-    "Lluvia a 23.6 km en Casinos",
-    "Lluvia a 23.8 km en Puebla de Arenoso",
+    "Lluvia a 10.8 km en Bejís (aviso)",
+    "Lluvia a 12.0 km en Sacañet (aviso)",
+    "Lluvia a 15.4 km en Soneja (aviso)",
+    "Lluvia a 17.2 km en El ToroLavadero (aviso)",
+    "Lluvia a 17.4 km en El ToroCalle Mayor (aviso)",
+    "Lluvia a 18.2 km en El ToroHoya del Campillo (aviso)",
+    "Lluvia a 20.7 km en Aín (aviso)",
+    "Lluvia a 21.1 km en Cirat (aviso)",
+    "Lluvia a 21.5 km en Olocau (aviso)",
+    "Lluvia a 22.5 km en ChóvarAgua de Chóvar (aviso)",
+    "Lluvia a 23.4 km en Eslida (aviso)",
+    "Lluvia a 23.6 km en Casinos (aviso)",
+    "Lluvia a 23.8 km en Puebla de Arenoso (aviso)",
     "Lluvia en Gaibiel a 8.5 km. Llegada en ~24 min."
    ],
    "nivel": "PELIGRO"
@@ -136571,19 +136571,19 @@
     "Lluvia a 4.9 km en Catíl′Avellà",
     "Lluvia a 7.2 km en Tírig",
     "Lluvia a 8.0 km en Ares del Maestratla Vall de Catí",
-    "Lluvia a 11.0 km en XertEnroig",
-    "Lluvia a 11.8 km en Albocàsser",
-    "Lluvia a 11.9 km en Ares del Maestrat",
-    "Lluvia a 13.6 km en les Coves de VinromàMas del Tonto",
-    "Lluvia a 14.1 km en Sant MateuIES Maestrat",
-    "Lluvia a 14.1 km en Xertgranja El Turmell",
-    "Lluvia a 14.2 km en Sant MateuOest",
-    "Lluvia a 15.7 km en la SerratellaSant Joan Nepomucé",
-    "Lluvia a 16.7 km en la SerratellaAjuntament",
-    "Lluvia a 16.7 km en Sant MateuMolins",
-    "Lluvia a 18.4 km en la Serra d′en Galceranel Brusalet",
-    "Lluvia a 19.3 km en les Coves de VinromàCasc antic",
-    "Lluvia a 22.8 km en Cervera del Maestre",
+    "Lluvia a 11.0 km en XertEnroig (aviso)",
+    "Lluvia a 11.8 km en Albocàsser (aviso)",
+    "Lluvia a 11.9 km en Ares del Maestrat (aviso)",
+    "Lluvia a 13.6 km en les Coves de VinromàMas del Tonto (aviso)",
+    "Lluvia a 14.1 km en Sant MateuIES Maestrat (aviso)",
+    "Lluvia a 14.1 km en Xertgranja El Turmell (aviso)",
+    "Lluvia a 14.2 km en Sant MateuOest (aviso)",
+    "Lluvia a 15.7 km en la SerratellaSant Joan Nepomucé (aviso)",
+    "Lluvia a 16.7 km en la SerratellaAjuntament (aviso)",
+    "Lluvia a 16.7 km en Sant MateuMolins (aviso)",
+    "Lluvia a 18.4 km en la Serra d′en Galceranel Brusalet (aviso)",
+    "Lluvia a 19.3 km en les Coves de VinromàCasc antic (aviso)",
+    "Lluvia a 22.8 km en Cervera del Maestre (aviso)",
     "Lluvia en XertEnroig a 11.0 km. Llegada en ~29 min."
    ],
    "nivel": "PELIGRO"
@@ -149406,16 +149406,16 @@
     "Lluvia a 5.8 km en Castelló de la PlanaIES Francesc Ribalta",
     "Lluvia a 8.2 km en Benicàssimlas Villas",
     "Lluvia a 9.8 km en Vila-realles Solaes",
-    "Lluvia a 11.4 km en BurrianaPlatja del Grau",
-    "Lluvia a 12.0 km en BenicàssimHotel Voramar",
-    "Lluvia a 15.1 km en CabanesMas del Corretger",
-    "Lluvia a 19.3 km en Vilafamésel Pla",
-    "Lluvia a 21.0 km en OndaMiralcamp",
-    "Lluvia a 22.4 km en OndaPenyes Aragoneses",
-    "Lluvia a 23.4 km en l′AlcoraMuseu de la Ceràmica",
-    "Lluvia a 23.7 km en l′AlcoraTossal de les Foies",
-    "Lluvia a 24.2 km en Cabanesla Ribera",
-    "Lluvia a 24.8 km en la Vall d′AlbaIES la Vall d'Alba",
+    "Lluvia a 11.4 km en BurrianaPlatja del Grau (aviso)",
+    "Lluvia a 12.0 km en BenicàssimHotel Voramar (aviso)",
+    "Lluvia a 15.1 km en CabanesMas del Corretger (aviso)",
+    "Lluvia a 19.3 km en Vilafamésel Pla (aviso)",
+    "Lluvia a 21.0 km en OndaMiralcamp (aviso)",
+    "Lluvia a 22.4 km en OndaPenyes Aragoneses (aviso)",
+    "Lluvia a 23.4 km en l′AlcoraMuseu de la Ceràmica (aviso)",
+    "Lluvia a 23.7 km en l′AlcoraTossal de les Foies (aviso)",
+    "Lluvia a 24.2 km en Cabanesla Ribera (aviso)",
+    "Lluvia a 24.8 km en la Vall d′AlbaIES la Vall d'Alba (aviso)",
     "Lluvia en Castelló de la Planala Fileta a 4.3 km. Llegada en ~7 min."
    ],
    "nivel": "PELIGRO"
@@ -161393,11 +161393,11 @@
   },
   "esperado_peligro": {
    "motivos": [
-    "Lluvia a 21.1 km en Chulilla",
-    "Lluvia a 21.5 km en Requenacentro",
-    "Lluvia a 21.8 km en RequenaSan José"
+    "Lluvia a 21.1 km en Chulilla (aviso)",
+    "Lluvia a 21.5 km en Requenacentro (aviso)",
+    "Lluvia a 21.8 km en RequenaSan José (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "esperado_plan": {
    "aeropuertos": [

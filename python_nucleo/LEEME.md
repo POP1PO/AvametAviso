@@ -30,4 +30,4 @@ Es bastante carga multiplicada por cada usuario: conviene contactar con AVAMET a
 - `python tests/test_nucleo.py` — unitarias (15).
 - `python tests/test_paridad.py` — núcleo == backend de escritorio (necesita `../lote3`, o `AVISO_BACKEND=ruta`).
 - `python tests/test_vectores.py` — vectores dorados (`vectores/*.json`). Kotlin debe pasar los mismos.
-- `python generar_vectores.py` — regenera los vectores.
+- `python generar_vectores.py` — regenera los vectores (con `AVISO_BACKEND=../lote3`). **Después copia `vectores/*.json` a `app/src/test/resources/`**: las pruebas Kotlin de GitHub Actions leen esa copia.

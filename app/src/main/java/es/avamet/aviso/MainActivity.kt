@@ -633,7 +633,7 @@ class MainActivity : Activity() {
         fun aplicar(on: Boolean) {
             detalle.forEach { it.visibility = if (on) View.VISIBLE else View.GONE }
             MapaIr.setVisible(this, on)
-            if (on) activarIr() else { irOverlay?.let { mapa.overlays.remove(it) }; irOverlay = null; mapa.invalidate() }
+            if (on) activarIr() else { MapaIr.quitar(mapa, irOverlay); irOverlay = null; mapa.invalidate() }
         }
         chk.setOnCheckedChangeListener { _, on -> aplicar(on) }
         barra.setOnSeekBarChangeListener(object : android.widget.SeekBar.OnSeekBarChangeListener {
@@ -654,8 +654,8 @@ class MainActivity : Activity() {
             runOnUiThread {
                 irEstado.text = if (prueba.isEmpty()) msg else "$msg\n$prueba"
                 if (capa == null || !MapaIr.visible(this)) return@runOnUiThread
-                irOverlay?.let { mapa.overlays.remove(it) }
-                irOverlay = MapaIr.crearOverlay(this, capa, irOpacidad).also { mapa.overlays.add(0, it) }
+                MapaIr.quitar(mapa, irOverlay)
+                irOverlay = MapaIr.crearOverlay(this, mapa, capa, irOpacidad).also { mapa.overlays.add(0, it) }
                 mapa.invalidate()
             }
         }.start()
@@ -708,8 +708,8 @@ class MainActivity : Activity() {
     override fun onResume() {
         super.onResume(); mapa.onResume(); Estado.escuchar(oyente); refrescar()
         if (irOverlay != null) {                    // renueva la capa IR (nuevo barrido cada 15 min) sin volver a pedir GetCapabilities
-            mapa.overlays.remove(irOverlay)
-            irOverlay = MapaIr.crearOverlay(this, MapaIr.capaGuardada(this), irOpacidad).also { mapa.overlays.add(0, it) }
+            MapaIr.quitar(mapa, irOverlay)
+            irOverlay = MapaIr.crearOverlay(this, mapa, MapaIr.capaGuardada(this), irOpacidad).also { mapa.overlays.add(0, it) }
             mapa.invalidate()
         }
     }

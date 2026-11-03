@@ -28,7 +28,8 @@ class WmsTest {
 
     @Test fun urlDeTesela() {
         val u = Wms.urlTesela("msg_fes:ir108", 0, 0, 0)
-        assertTrue(u.startsWith("https://view.eumetsat.int/geoserver/wms?service=WMS&version=1.3.0&request=GetMap&layers=msg_fes:ir108"))
+        assertTrue(u.startsWith("https://view.eumetsat.int/geoserver/msg_fes/ir108/wms?service=WMS&version=1.3.0&request=GetMap&layers=ir108&styles="))
+        assertTrue(Wms.urlTesela("ir108", 0, 0, 0).startsWith("https://view.eumetsat.int/geoserver/wms?service=WMS&version=1.3.0&request=GetMap&layers=ir108&"))
         assertTrue("crs=EPSG:3857" in u && "width=256&height=256" in u && "transparent=true" in u && "format=image/png" in u)
         assertTrue("bbox=-2.0037508342789244E7,-2.0037508342789244E7,2.0037508342789244E7,2.0037508342789244E7" in u)
     }

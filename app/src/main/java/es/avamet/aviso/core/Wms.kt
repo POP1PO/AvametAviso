@@ -47,7 +47,11 @@ object Wms {
      *  y el mapa sale cortado en bandas. Con un time explícito todas las teselas son del mismo barrido. */
     fun urlTesela(capa: String, z: Int, x: Int, y: Int, tiempo: String? = null): String {
         val b = bboxTesela(z, x, y)
-        return "$BASE?service=WMS&version=1.3.0&request=GetMap&layers=$capa&styles=&crs=EPSG:3857" +
+        // Comprobado el 3-nov-2026 (20:40 UTC): el WMS global con time devuelve HTTP 500 a toda petición; el servicio virtual de la
+        // capa (/geoserver/espacio/nombre/wms, layers=nombre) devuelve 200 con la imagen correcta, con time y sin él.
+        val partes = capa.trim().split(":")
+        val (servicio, nombre) = if (partes.size == 2 && partes.none { it.isBlank() }) "$RAIZ/${partes[0]}/${partes[1]}/wms" to partes[1] else BASE to capa
+        return "$servicio?service=WMS&version=1.3.0&request=GetMap&layers=$nombre&styles=&crs=EPSG:3857" +
             "&bbox=${b[0]},${b[1]},${b[2]},${b[3]}&width=256&height=256&format=image/png&transparent=true" +
             (if (tiempo.isNullOrBlank()) "" else "&time=${tiempo.trim()}")
     }

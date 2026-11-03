@@ -8,8 +8,8 @@ package es.avamet.aviso.core
  *   si res["faltan"] no está vacío: descargar esas estaciones, añadirlas a `lecturas` y repetir analizar() con el seguimiento devuelto.
  */
 fun planificar(lat: Double, lon: Double, coords: Map<String, Map<String, Any?>>, aeropuertos: Map<String, Map<String, Any?>>,
-               actualId: String? = null, aj: Ajustes = Ajustes()): Dict {
-    val ref = elegirReferencia(lat, lon, coords, actualId, aj.histeresisReferenciaKm)
+               actualId: String? = null, aj: Ajustes = Ajustes(), fijaId: String? = null): Dict {
+    val ref = elegirReferencia(lat, lon, coords, actualId, aj.histeresisReferenciaKm, fijaId)
         ?: return dict("lat" to lat, "lon" to lon, "referencia" to null, "radio" to ArrayList<Any?>(), "aeropuertos" to ArrayList<Any?>(),
             "descargar_estaciones" to ArrayList<Any?>(), "descargar_icaos" to ArrayList<Any?>())
     val rid = ref.first

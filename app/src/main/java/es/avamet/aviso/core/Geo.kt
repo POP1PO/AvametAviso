@@ -65,7 +65,12 @@ fun aeropuertosEnRadio(lat: Double, lon: Double, aeropuertos: Map<String, Map<St
 }
 
 /** (id, distancia) de la estación de referencia, con histéresis. */
-fun elegirReferencia(lat: Double, lon: Double, coords: Map<String, Map<String, Any?>>, actualId: String?, histeresisKm: Double): Pair<String, Double>? {
+fun elegirReferencia(lat: Double, lon: Double, coords: Map<String, Map<String, Any?>>, actualId: String?, histeresisKm: Double,
+                     fijaId: String? = null): Pair<String, Double>? {
+    if (!fijaId.isNullOrEmpty() && coords.containsKey(fijaId)) {          // elección manual del usuario: manda siempre
+        val f = coords[fijaId]!!
+        return Pair(fijaId, haversineKm(lat, lon, f["lat"].dbl(), f["lon"].dbl()))
+    }
     val cerca = estacionMasCercana(lat, lon, coords) ?: return null
     if (actualId != null && coords.containsKey(actualId) && actualId != cerca.first) {
         val a = coords[actualId]!!

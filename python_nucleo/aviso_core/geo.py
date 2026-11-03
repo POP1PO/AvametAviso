@@ -61,9 +61,13 @@ def aeropuertos_en_radio(lat: float, lon: float, aeropuertos: dict, radio_km: fl
     return res
 
 
-def elegir_referencia(lat: float, lon: float, coords: dict, actual_id: str | None = None, histeresis_km: float = 1.0):
+def elegir_referencia(lat: float, lon: float, coords: dict, actual_id: str | None = None, histeresis_km: float = 1.0,
+                      fija_id: str | None = None):
     """Estación de referencia para una posición. Si ya hay una (`actual_id`) y sigue a menos de `histeresis_km` más lejos que la
-    más cercana, se mantiene (evita que salte de una a otra al caminar entre dos). Devuelve (id, distancia_km) o None."""
+    más cercana, se mantiene (evita que salte de una a otra al caminar entre dos). Si `fija_id` es una estación conocida, es SIEMPRE la
+    referencia (elección manual del usuario). Devuelve (id, distancia_km) o None."""
+    if fija_id and fija_id in coords:
+        return fija_id, haversine_km(lat, lon, coords[fija_id]["lat"], coords[fija_id]["lon"])
     cerca = estacion_mas_cercana(lat, lon, coords)
     if cerca is None:
         return None

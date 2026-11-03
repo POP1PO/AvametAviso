@@ -33,6 +33,30 @@ class WmsTest {
         assertTrue("bbox=-2.0037508342789244E7,-2.0037508342789244E7,2.0037508342789244E7,2.0037508342789244E7" in u)
     }
 
+    @Test fun urlDeTeselaConTiempo() {
+        val u = Wms.urlTesela("msg_fes:ir108", 7, 63, 48, "2026-11-03T19:00:00Z")
+        assertTrue(u.endsWith("transparent=true&time=2026-11-03T19:00:00Z"))
+        assertTrue("time=" !in Wms.urlTesela("msg_fes:ir108", 7, 63, 48))
+        assertTrue("time=" !in Wms.urlTesela("msg_fes:ir108", 7, 63, 48, " "))
+    }
+
+    @Test fun capabilitiesDeUnaSolaCapa() {
+        assertEquals("https://view.eumetsat.int/geoserver/msg_fes/ir108/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+            Wms.urlCapabilitiesCapa("msg_fes:ir108"))
+        assertNull(Wms.urlCapabilitiesCapa("ir108")); assertNull(Wms.urlCapabilitiesCapa(":ir108")); assertNull(Wms.urlCapabilitiesCapa("a:b:c"))
+    }
+
+    @Test fun tiempoPorDefectoConLaRespuestaReal() {
+        // Fragmento literal de .../geoserver/msg_fes/ir108/wms?...GetCapabilities del 3-nov-2026
+        val real = """<Layer queryable="1" opaque="0"><Name>ir108</Name>
+            <Dimension name="time" default="2026-11-03T19:00:00Z" units="ISO8601" nearestValue="1">2020-09-01T00:00:00.000Z/2026-11-03T19:00:00.000Z/PT15M</Dimension>
+            <Style><Name>raster</Name></Style></Layer>"""
+        assertEquals("2026-11-03T19:00:00Z", Wms.tiempoPorDefecto(real))
+        assertEquals("X", Wms.tiempoPorDefecto("""<Dimension name="elevation" default="0">0</Dimension><Dimension default="X" name="time">t</Dimension>"""))
+        assertNull(Wms.tiempoPorDefecto("<Layer><Name>a</Name></Layer>"))
+        assertNull(Wms.tiempoPorDefecto("""<Dimension name="time" units="ISO8601">t</Dimension>"""))
+    }
+
     private val XML = """<Capability><Layer><Name>mumi:worldcloudmap_ir108</Name><Layer><Name>msg_fes:rgb_fog</Name></Layer>
         <Layer><Name> msg_fes:ir108 </Name></Layer><Layer><Name>msg_fes:ir108</Name></Layer><Layer><Name>overlay:ir108_overlay</Name></Layer></Layer></Capability>"""
 

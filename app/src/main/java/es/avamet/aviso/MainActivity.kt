@@ -613,7 +613,12 @@ class MainActivity : Activity() {
     // ---------------------------------------------------------------- Capa «Nubes IR» (solo mostrar)
     private var irOverlay: org.osmdroid.views.overlay.TilesOverlay? = null
     private var irOpacidad = 60
+    private var irTiempo: String? = null          // barrido que muestra la capa (p. ej. "2026-11-03T19:00:00Z"); null = sin hora
     private lateinit var irEstado: TextView
+
+    private fun textoHoraIr(tiempo: String?): String =
+        if (tiempo != null) "Imagen de las ${MapaIr.horaLocal(tiempo)} (último barrido publicado)"
+        else "No se pudo saber la hora del último barrido: el servidor puede mezclar teselas antiguas"
 
     private fun construirControlIr(): View {
         val caja = LinearLayout(this)
@@ -650,12 +655,31 @@ class MainActivity : Activity() {
         irEstado.text = "Buscando la capa IR en EUMETSAT…"
         Thread {
             val (capa, msg) = MapaIr.detectarCapa(this)
-            val prueba = if (capa != null) MapaIr.sonda(capa) else ""
+            val tiempo = capa?.let { MapaIr.ultimoTiempo(it) }
+            val prueba = if (capa != null) MapaIr.sonda(capa, tiempo) else ""
             runOnUiThread {
-                irEstado.text = if (prueba.isEmpty()) msg else "$msg\n$prueba"
+                irEstado.text = if (capa == null) msg else listOf(msg, textoHoraIr(tiempo), prueba).filter { it.isNotEmpty() }.joinToString("\n")
                 if (capa == null || !MapaIr.visible(this)) return@runOnUiThread
                 MapaIr.quitar(mapa, irOverlay)
-                irOverlay = MapaIr.crearOverlay(this, mapa, capa, irOpacidad).also { mapa.overlays.add(0, it) }
+                irTiempo = tiempo
+                irOverlay = MapaIr.crearOverlay(this, mapa, capa, tiempo, irOpacidad).also { mapa.overlays.add(0, it) }
+                mapa.invalidate()
+            }
+        }.start()
+    }
+
+    /** Al volver a la app: pregunta solo la hora del último barrido (~7 kB) y renueva la capa si hay imagen nueva. */
+    private fun actualizarIr() {
+        val capa = MapaIr.capaGuardada(this)
+        Thread {
+            val tiempo = MapaIr.ultimoTiempo(capa)
+            runOnUiThread {
+                if (irOverlay == null || !MapaIr.visible(this)) return@runOnUiThread
+                if (tiempo != null && tiempo == irTiempo) return@runOnUiThread       // misma imagen: nada que hacer
+                MapaIr.quitar(mapa, irOverlay)
+                irTiempo = tiempo
+                irOverlay = MapaIr.crearOverlay(this, mapa, capa, tiempo, irOpacidad).also { mapa.overlays.add(0, it) }
+                irEstado.text = "Capa IR: $capa\n" + textoHoraIr(tiempo)
                 mapa.invalidate()
             }
         }.start()
@@ -707,11 +731,7 @@ class MainActivity : Activity() {
 
     override fun onResume() {
         super.onResume(); mapa.onResume(); Estado.escuchar(oyente); refrescar()
-        if (irOverlay != null) {                    // renueva la capa IR (nuevo barrido cada 15 min) sin volver a pedir GetCapabilities
-            MapaIr.quitar(mapa, irOverlay)
-            irOverlay = MapaIr.crearOverlay(this, mapa, MapaIr.capaGuardada(this), irOpacidad).also { mapa.overlays.add(0, it) }
-            mapa.invalidate()
-        }
+        if (irOverlay != null) actualizarIr()       // renueva la capa IR si EUMETSAT ha publicado otro barrido (cada 15 min)
     }
     override fun onPause() { Estado.dejarDeEscuchar(oyente); mapa.onPause(); super.onPause() }
 }

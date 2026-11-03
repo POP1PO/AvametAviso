@@ -193,7 +193,10 @@ class MainActivity : Activity() {
         mapa.setMultiTouchControls(true)
         mapa.controller.setZoom(10.0)
         mapa.controller.setCenter(GeoPoint(39.99, -0.05))
-        paginas.add(mapa)
+        val pagMapa = FrameLayout(this)
+        pagMapa.addView(mapa, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
+        pagMapa.addView(construirControlIr(), FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP or Gravity.END).also { it.setMargins(dp(8), dp(8), dp(8), 0) })
+        paginas.add(pagMapa)
 
         // --- Estaciones / Aeropuertos ---
         txtEstaciones = texto("")
@@ -584,9 +587,60 @@ class MainActivity : Activity() {
         }
     }
 
+    // ---------------------------------------------------------------- Capa «Nubes IR» (solo mostrar)
+    private var irOverlay: org.osmdroid.views.overlay.TilesOverlay? = null
+    private var irOpacidad = 60
+    private lateinit var irEstado: TextView
+
+    private fun construirControlIr(): View {
+        val caja = LinearLayout(this)
+        caja.orientation = LinearLayout.VERTICAL
+        caja.setPadding(dp(10), dp(8), dp(10), dp(8))
+        caja.background = fondo(0xE6161B22.toInt(), BORDE)
+        val chk = android.widget.CheckBox(this)
+        chk.text = "🛰️ Nubes IR (satélite)"
+        chk.setTextColor(TEXTO)
+        chk.isChecked = MapaIr.visible(this)
+        val barra = android.widget.SeekBar(this)
+        barra.max = 100; barra.progress = irOpacidad
+        irEstado = texto("", 11f, false, APAGADO)
+        irEstado.text = "Imagen de EUMETSAT, solo informativa (no entra en las alarmas)."
+        caja.addView(chk); caja.addView(barra); caja.addView(irEstado)
+        val detalle = listOf<View>(barra, irEstado)
+        fun aplicar(on: Boolean) {
+            detalle.forEach { it.visibility = if (on) View.VISIBLE else View.GONE }
+            MapaIr.setVisible(this, on)
+            if (on) activarIr() else { irOverlay?.let { mapa.overlays.remove(it) }; irOverlay = null; mapa.invalidate() }
+        }
+        chk.setOnCheckedChangeListener { _, on -> aplicar(on) }
+        barra.setOnSeekBarChangeListener(object : android.widget.SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(sb: android.widget.SeekBar?, v: Int, fromUser: Boolean) { irOpacidad = v.coerceIn(10, 100); irOverlay?.let { MapaIr.ajustarOpacidad(it, irOpacidad); mapa.invalidate() } }
+            override fun onStartTrackingTouch(sb: android.widget.SeekBar?) {}
+            override fun onStopTrackingTouch(sb: android.widget.SeekBar?) {}
+        })
+        detalle.forEach { it.visibility = if (chk.isChecked) View.VISIBLE else View.GONE }
+        if (chk.isChecked) mapa.post { activarIr() }
+        return caja
+    }
+
+    private fun activarIr() {
+        irEstado.text = "Buscando la capa IR en EUMETSAT…"
+        Thread {
+            val (capa, msg) = MapaIr.detectarCapa(this)
+            runOnUiThread {
+                irEstado.text = msg
+                if (capa == null || !MapaIr.visible(this)) return@runOnUiThread
+                irOverlay?.let { mapa.overlays.remove(it) }
+                irOverlay = MapaIr.crearOverlay(this, capa, irOpacidad).also { mapa.overlays.add(0, it) }
+                mapa.invalidate()
+            }
+        }.start()
+    }
+
     private fun dibujarMapa(r: Resultado) {
         val ov = mapa.overlays
         ov.clear()
+        irOverlay?.let { ov.add(0, it) }          // clear() quita también la capa IR: se vuelve a poner debajo de los marcadores
         val a = r.analisis
         val mov = a["movimiento"] as Map<*, *>
 
@@ -627,7 +681,14 @@ class MainActivity : Activity() {
         mapa.invalidate()
     }
 
-    override fun onResume() { super.onResume(); mapa.onResume(); Estado.escuchar(oyente); refrescar() }
+    override fun onResume() {
+        super.onResume(); mapa.onResume(); Estado.escuchar(oyente); refrescar()
+        if (irOverlay != null) {                    // renueva la capa IR (nuevo barrido cada 15 min) sin volver a pedir GetCapabilities
+            mapa.overlays.remove(irOverlay)
+            irOverlay = MapaIr.crearOverlay(this, MapaIr.capaGuardada(this), irOpacidad).also { mapa.overlays.add(0, it) }
+            mapa.invalidate()
+        }
+    }
     override fun onPause() { Estado.dejarDeEscuchar(oyente); mapa.onPause(); super.onPause() }
 }
 

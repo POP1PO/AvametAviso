@@ -8,6 +8,7 @@ import es.avamet.aviso.core.Wms
 import org.osmdroid.tileprovider.MapTileProviderBasic
 import org.osmdroid.tileprovider.tilesource.OnlineTileSourceBase
 import org.osmdroid.util.MapTileIndex
+import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.TilesOverlay
 
 /**
@@ -59,14 +60,26 @@ object MapaIr {
         } finally { c.disconnect() }
     } catch (e: Exception) { "Tesela de prueba falló: ${Descargas.textoError(e)}" }
 
-    /** Overlay de teselas. El nombre del origen lleva la franja de 15 min para que la caché de osmdroid se renueve con cada barrido. */
-    fun crearOverlay(c: Context, capa: String, opacidad: Int): TilesOverlay {
+    /** Overlay de teselas. El nombre del origen lleva la franja de 15 min para que la caché de osmdroid se renueve con cada barrido.
+     *  El proveedor de teselas es propio (no el del mapa), así que hay que darle el «avisador» del mapa: sin él las teselas
+     *  se descargan pero NADIE pide repintar y la capa no aparece hasta que el usuario mueve el mapa (lo hace igual
+     *  MapView.setTileProvider con su propio proveedor). */
+    fun crearOverlay(c: Context, mapa: MapView, capa: String, opacidad: Int): TilesOverlay {
         val fuente = Fuente("EUMETSAT_IR_${Wms.franjaCache(System.currentTimeMillis())}", capa)
-        val o = TilesOverlay(MapTileProviderBasic(c.applicationContext, fuente), c)
+        val proveedor = MapTileProviderBasic(c.applicationContext, fuente)
+        proveedor.tileRequestCompleteHandlers.add(mapa.tileRequestCompleteHandler)
+        val o = TilesOverlay(proveedor, c)
         o.loadingBackgroundColor = Color.TRANSPARENT
         o.loadingLineColor = Color.TRANSPARENT
         ajustarOpacidad(o, opacidad)
         return o
+    }
+
+    /** Quita la capa del mapa y para su proveedor (hilos de descarga y caché en memoria). Quitarla de la lista no lo hace. */
+    fun quitar(mapa: MapView, o: TilesOverlay?) {
+        if (o == null) return
+        mapa.overlays.remove(o)
+        o.onDetach(mapa)
     }
 
     fun ajustarOpacidad(o: TilesOverlay, porcentaje: Int) {

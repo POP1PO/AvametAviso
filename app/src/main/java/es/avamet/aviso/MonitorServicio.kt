@@ -145,6 +145,9 @@ class MonitorServicio : Service() {
                     (if (r.errores.isNotEmpty()) "\n⚠️ " + r.errores.first() else "")
                 actualizarNotificacion(txt)
                 if (r.nivel == "PELIGRO" && nivelPrevio != "PELIGRO") Alarma.disparar(this, r.motivos)
+                // Lluvia entre 10 y 25 km: aviso (notificación normal, sin alarma). A menos de 10 km pasa a PELIGRO y suena la alarma.
+                if (r.nivel == "VIGILANCIA" && nivelPrevio == "SEGURO" && r.motivos.any { it.startsWith("Lluvia") })
+                    Alarma.aviso(this, "🌧️ Lluvia cerca", r.motivos.joinToString("\n"))
                 if (r.nivel != "PELIGRO" && nivelPrevio == "PELIGRO") Alarma.quitarAlarma(this)
                 nivelPrevio = r.nivel
             }

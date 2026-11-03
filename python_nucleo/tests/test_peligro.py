@@ -17,9 +17,20 @@ def test_niveles():
     assert evaluar_peligro({"referencia": ref("50 km/h N", estado="CONGELADA")})["nivel"] == "SEGURO"   # dato no fiable: no se usa
 
 def test_lluvia_y_eta():
-    r = evaluar_peligro({"referencia": ref(), "lluvia_ahora": [{"nombre": "X", "distancia_km": 12.0, "es_referencia": False}]})
-    assert r["nivel"] == "PELIGRO" and "12.0 km" in r["motivos"][0]
-    assert evaluar_peligro({"referencia": ref(), "lluvia_ahora": [{"nombre": "X", "distancia_km": 30.0, "es_referencia": False}]})["nivel"] == "SEGURO"
+    def ll(d, es_ref=False): return {"nombre": "X", "distancia_km": d, "es_referencia": es_ref}
+    # a 10 km o menos: ALARMA (PELIGRO); entre 10 y 25 km: AVISO (VIGILANCIA, no suena); más lejos: nada
+    r = evaluar_peligro({"referencia": ref(), "lluvia_ahora": [ll(7.5)]})
+    assert r["nivel"] == "PELIGRO" and "7.5 km" in r["motivos"][0]
+    assert evaluar_peligro({"referencia": ref(), "lluvia_ahora": [ll(10.0)]})["nivel"] == "PELIGRO"
+    r = evaluar_peligro({"referencia": ref(), "lluvia_ahora": [ll(12.0)]})
+    assert r["nivel"] == "VIGILANCIA" and "12.0 km" in r["motivos"][0] and "aviso" in r["motivos"][0]
+    assert evaluar_peligro({"referencia": ref(), "lluvia_ahora": [ll(25.0)]})["nivel"] == "VIGILANCIA"
+    assert evaluar_peligro({"referencia": ref(), "lluvia_ahora": [ll(30.0)]})["nivel"] == "SEGURO"
+    assert evaluar_peligro({"referencia": ref(), "lluvia_ahora": [ll(0.0, True)]})["nivel"] == "PELIGRO"      # tu estación: siempre PELIGRO
+    # el aviso lejano nunca rebaja un PELIGRO, sea cual sea el orden
+    assert evaluar_peligro({"referencia": ref(), "lluvia_ahora": [ll(20.0), ll(5.0)]})["nivel"] == "PELIGRO"
+    assert evaluar_peligro({"referencia": ref(), "lluvia_ahora": [ll(5.0), ll(20.0)]})["nivel"] == "PELIGRO"
+    assert evaluar_peligro({"referencia": ref("50 km/h N"), "lluvia_ahora": [ll(20.0)]})["nivel"] == "PELIGRO"   # viento fuerte + aviso
     assert evaluar_peligro({"alertas_predictivas": ["Lluvia en X a 5 km. Llegada en ~29 min."]})["nivel"] == "PELIGRO"
     assert evaluar_peligro({"alertas_predictivas": ["Lluvia en X a 5 km. Llegada en ~30 min."]})["nivel"] == "SEGURO"
 

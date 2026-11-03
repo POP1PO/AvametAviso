@@ -16,7 +16,8 @@ AJUSTES = {
     "HISTERESIS_REFERENCIA_KM": 1.0,  # no cambiar de estación de referencia por menos de esto
     "UMBRAL_VIENTO_KMH": 40, "UMBRAL_VIENTO_MAX_KMH": 45,           # viento sostenido / racha => VIGILANCIA (como el escritorio)
     "UMBRAL_VIENTO_PELIGRO_KMH": 45, "UMBRAL_RACHA_PELIGRO_KMH": 55,  # => PELIGRO (como el escritorio)
-    "RADIO_LLUVIA_PELIGRO_KM": 25.0,  # lluvia reciente en una estación a menos de esto => PELIGRO (escritorio: todo el radio)
+    "RADIO_LLUVIA_PELIGRO_KM": 10.0,  # lluvia reciente en una estación a menos de esto => PELIGRO (suena la alarma). SOLO MÓVIL (el escritorio usa todo el radio)
+    "RADIO_LLUVIA_AVISO_KM": 25.0,    # lluvia reciente entre PELIGRO_KM y esto => VIGILANCIA con aviso (sin alarma). SOLO MÓVIL
     "ETA_PELIGRO_MIN": 30,            # aviso predictivo (CONFIRMADO o de estación) que llega en menos de esto => PELIGRO. SOLO MÓVIL
     "ZONA_HORARIA": "Europe/Madrid",  # hora local de la "Fecha lectura" de AVAMET
 }

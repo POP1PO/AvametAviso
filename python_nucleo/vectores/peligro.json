@@ -2,9 +2,9 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 23.0 km en E0"
+    "Lluvia a 23.0 km en E0 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -204,7 +204,7 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 11.1 km en E0",
+    "Lluvia a 11.1 km en E0 (aviso)",
     "Lluvia en tu estación de referencia (E1)"
    ],
    "nivel": "PELIGRO"
@@ -315,10 +315,10 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 19.3 km en E0",
-    "Lluvia a 23.3 km en E1"
+    "Lluvia a 19.3 km en E0 (aviso)",
+    "Lluvia a 23.3 km en E1 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -416,7 +416,7 @@
   "esperado": {
    "motivos": [
     "Lluvia en tu estación de referencia (E0)",
-    "Lluvia a 16.8 km en E1"
+    "Lluvia a 16.8 km en E1 (aviso)"
    ],
    "nivel": "PELIGRO"
   },
@@ -540,10 +540,10 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 11.7 km en E0",
-    "Lluvia a 21.4 km en E1"
+    "Lluvia a 11.7 km en E0 (aviso)",
+    "Lluvia a 21.4 km en E1 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -635,7 +635,7 @@
   "esperado": {
    "motivos": [
     "Lluvia a 10.0 km en E0",
-    "Lluvia a 14.0 km en E1"
+    "Lluvia a 14.0 km en E1 (aviso)"
    ],
    "nivel": "PELIGRO"
   },
@@ -733,9 +733,9 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 17.6 km en E0"
+    "Lluvia a 17.6 km en E0 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [
@@ -813,9 +813,9 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 17.9 km en E0"
+    "Lluvia a 17.9 km en E0 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -837,9 +837,9 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 22.5 km en E1"
+    "Lluvia a 22.5 km en E1 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -926,9 +926,9 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 15.6 km en E0"
+    "Lluvia a 15.6 km en E0 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -958,9 +958,9 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 21.1 km en E0"
+    "Lluvia a 21.1 km en E0 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -1213,7 +1213,7 @@
   "esperado": {
    "motivos": [
     "Lluvia a 4.0 km en E0",
-    "Lluvia a 16.5 km en E1"
+    "Lluvia a 16.5 km en E1 (aviso)"
    ],
    "nivel": "PELIGRO"
   },
@@ -1262,10 +1262,10 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 24.2 km en E0",
-    "Lluvia a 12.7 km en E1"
+    "Lluvia a 24.2 km en E0 (aviso)",
+    "Lluvia a 12.7 km en E1 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -1292,10 +1292,10 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 21.3 km en E0",
-    "Lluvia a 12.5 km en E1"
+    "Lluvia a 21.3 km en E0 (aviso)",
+    "Lluvia a 12.5 km en E1 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -1600,10 +1600,10 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 13.3 km en E0",
-    "Lluvia a 23.1 km en E1"
+    "Lluvia a 13.3 km en E0 (aviso)",
+    "Lluvia a 23.1 km en E1 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],
@@ -1749,9 +1749,9 @@
  {
   "esperado": {
    "motivos": [
-    "Lluvia a 22.7 km en E1"
+    "Lluvia a 22.7 km en E1 (aviso)"
    ],
-   "nivel": "PELIGRO"
+   "nivel": "VIGILANCIA"
   },
   "res": {
    "alertas_predictivas": [],

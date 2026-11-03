@@ -19,7 +19,8 @@ data class Ajustes(
     val umbralVientoMaxKmh: Double = 45.0,
     val umbralVientoPeligroKmh: Double = 45.0,
     val umbralRachaPeligroKmh: Double = 55.0,
-    val radioLluviaPeligroKm: Double = 25.0,
+    val radioLluviaPeligroKm: Double = 10.0,     // lluvia en una estación a ≤ esto => PELIGRO (suena la alarma)
+    val radioLluviaAvisoKm: Double = 25.0,       // lluvia entre peligro y esto => VIGILANCIA con aviso (sin alarma)
     val etaPeligroMin: Int = 30,
     val zonaHoraria: String = "Europe/Madrid",
 )

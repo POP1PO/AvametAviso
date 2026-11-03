@@ -63,3 +63,8 @@ Si el sistema mata el servicio, el vigilante (WorkManager, ~15 min) avisa «La v
 - `app/src/main/java/es/avamet/aviso/core` — cálculo (puro, probado con vectores).
 - `app/src/main/java/es/avamet/aviso` — servicio, descargas, alarma, pantallas.
 - `python_nucleo` — núcleo Python de referencia, pruebas y generador de vectores (`LEEME.md`). Los vectores se copian a `app/src/test/resources`.
+
+## Capa «Nubes IR» en el mapa (solo mostrar)
+Casilla en la pestaña Mapa. Descarga teselas WMS públicas de EUMETView (Meteosat IR 10.8 µm) directamente en el móvil: sin ordenador y sin claves.
+No entra en alarmas ni en el veredicto. Es una imagen ya coloreada (no da temperaturas). **No verificado contra el servidor real**: la capa IR se
+detecta leyendo GetCapabilities (`core/Wms.kt`, `MapaIr.kt`) y la proyección EPSG:3857 es una suposición habitual de GeoServer.

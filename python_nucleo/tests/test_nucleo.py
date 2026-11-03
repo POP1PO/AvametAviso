@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from aviso_core import geo, parseo, movimiento, estacion, radar, motor, cargar_coordenadas, cargar_aeropuertos
+from aviso_core import geo, parseo, movimiento, estacion, radar, motor, evaluar_peligro, cargar_coordenadas, cargar_aeropuertos
 from aviso_core.ajustes import AJUSTES
 
 AHORA = 1_800_000_030.0     # 30 s dentro del minuto: la "Fecha lectura" va al minuto
@@ -167,6 +167,39 @@ def test_datos_reales_cargan():
     p = motor.planificar(39.988, -0.051, c, a)
     assert p["referencia"]["distancia_km"] < 5 and p["descargar_estaciones"][0] == p["referencia"]["id"]
     assert {"LECH", "LEVC"} <= {x["icao"] for x in p["aeropuertos"]}
+
+
+def test_lluvia_de_estacion_vecina_aviso_y_alarma():
+    """Caso real (3-nov-2026, Les Coves de Vinromà): llovía en Mas del Tonto (c05m050e03, a 7,5 km de Carrer Nou, c05m050e01) y la
+    app no avisó porque solo descargaba la referencia y las estaciones 'del camino de las nubes'. Regla: ≤10 km alarma, 10-25 km aviso."""
+    c = cargar_coordenadas(); a = cargar_aeropuertos()
+    e01, e03 = "c05m050e01", "c05m050e03"
+    plan = motor.planificar(c[e01]["lat"], c[e01]["lon"], c, a)
+    assert plan["referencia"]["id"] == e01
+    radio = {x["id"]: x["distancia_km"] for x in plan["radio"]}
+    assert e03 in radio and e03 in plan["descargar_estaciones"] and abs(radio[e03] - 7.5) < 0.1
+    # la app debe bajar TODO el radio, las cercanas primero
+    assert plan["descargar_estaciones"][1:] == [x["id"] for x in sorted(plan["radio"], key=lambda x: x["distancia_km"])]
+
+    def ciclo(lecturas, ahora, seg):
+        return motor.analizar(plan, lecturas, {}, seg, ahora, c)
+
+    def lect(ahora, **ll): return {k: lectura(60, v, ahora=ahora) for k, v in ll.items()}
+    # Mas del Tonto sube 0,4 mm entre dos ciclos de 5 min -> PELIGRO (7,5 km <= 10 km)
+    r1 = ciclo(lect(AHORA, **{e01: "0.0", e03: "0.0"}), AHORA, {})
+    r2 = ciclo(lect(AHORA + 300, **{e01: "0.0", e03: "0.4"}), AHORA + 300, r1["seguimiento"])
+    assert [x["id"] for x in r2["lluvia_ahora"]] == [e03]
+    p = evaluar_peligro(r2)
+    assert p["nivel"] == "PELIGRO" and "7.5 km" in p["motivos"][0], p
+    # Con lo que bajaba la app ANTES (solo la referencia) la lluvia vecina no se veía
+    r3 = ciclo({e01: lectura(60, "0.0", ahora=AHORA + 300)}, AHORA + 300, {})
+    assert r3["lluvia_ahora"] == [] and evaluar_peligro(r3)["nivel"] == "SEGURO"
+    # Una estación entre 10 y 25 km da AVISO (VIGILANCIA), sin alarma
+    lejana = next(i for i, d in radio.items() if 11 < d < 24)
+    r1 = ciclo(lect(AHORA, **{e01: "0.0", lejana: "0.0"}), AHORA, {})
+    r2 = ciclo(lect(AHORA + 300, **{e01: "0.0", lejana: "0.5"}), AHORA + 300, r1["seguimiento"])
+    p = evaluar_peligro(r2)
+    assert p["nivel"] == "VIGILANCIA" and "(aviso)" in p["motivos"][0], p
 
 
 if __name__ == "__main__":

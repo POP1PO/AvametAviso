@@ -12,7 +12,7 @@ class Monitor(ctx: Context) {
     private var referenciaId: String? = null
     private var seguimiento: Map<String, Any?> = emptyMap()
     private val cacheMetar = HashMap<String, Pair<Long, Map<String, Any?>>>()      // icao -> (ms de descarga, datos)
-    private val pool = Executors.newFixedThreadPool(4)
+    private val pool = Executors.newFixedThreadPool(8)
 
     init {
         fun leer(n: String) = ctx.assets.open(n).use { it.readBytes().toString(Charsets.UTF_8) }
@@ -70,6 +70,24 @@ class Monitor(ctx: Context) {
             Estado.log("Referencia ${ref["nombre"]}: " + (err?.let { "ERROR $it" } ?: "OK") + " (${seg(t0)})")
         }
 
+        // Estaciones del radio (≤25 km), las más cercanas primero: sin ellas no se ve la lluvia a distancia
+        // (aviso a 25 km, alarma a 10 km). Antes solo se bajaban las "del camino de las nubes" y una estación vecina con lluvia
+        // podía pasar inadvertida.
+        val delRadio = estacionesDelRadio(plan, lecturas.keys)
+        if (delRadio.isNotEmpty()) {
+            descargas += delRadio.size
+            val t0 = System.nanoTime()
+            Estado.log("Radio: descargando ${delRadio.size} estaciones…")
+            val futuros = pool.invokeAll(delRadio.map { id -> Callable { Pair(id, Descargas.estacion(id)) } }, 60, java.util.concurrent.TimeUnit.SECONDS)
+            var bien = 0
+            delRadio.forEachIndexed { i, id ->
+                val f = futuros[i]
+                if (f.isCancelled) lecturas[id] = dict("Error" to "Tiempo de espera agotado")
+                else { lecturas[id] = f.get().second; if (!lecturas[id]!!.containsKey("Error")) bien++ }
+            }
+            Estado.log("Radio: $bien/${delRadio.size} OK (${seg(t0)})")
+        }
+
         fun armar(res: Dict): Resultado {
             val peligro = evaluarPeligro(res)
             return Resultado(ahoraMs, lat, lon, res, peligro, HashMap(cacheMetar), ArrayList(errores), descargas)
@@ -100,8 +118,10 @@ class Monitor(ctx: Context) {
             res = analizar(plan, lecturas, metarCalculo, res["seguimiento"].d(), ahora, coords)
             vueltas++
         }
-        val fallos = lecturas.filter { it.value.containsKey("Error") && it.key != referenciaId }.size
-        if (fallos > 0) errores.add("AVAMET: $fallos estación(es) del camino de las nubes no respondieron")
+        // Con ~80 estaciones en el radio siempre falla alguna: solo es un problema (y bloquea el "datos fiables") si no responde ni la mitad.
+        val otras = lecturas.filter { it.key != referenciaId }
+        val fallos = otras.count { it.value.containsKey("Error") }
+        if (fallos > 0 && fallos * 2 > otras.size) errores.add("AVAMET: $fallos de ${otras.size} estaciones no respondieron")
         seguimiento = res["seguimiento"].d()
         val r = armar(res)
         Estado.log("Ciclo terminado: ${r.nivel}, ${descargas} peticiones")

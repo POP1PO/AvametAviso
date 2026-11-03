@@ -28,6 +28,9 @@ fun evaluarPeligro(res: Map<String, Any?>, aj: Ajustes = Ajustes()): Dict {
             motivos.add("Lluvia en tu estación de referencia (${r["nombre"]})"); nivel = "PELIGRO"
         } else if (r["distancia_km"].dbl() <= aj.radioLluviaPeligroKm) {
             motivos.add("Lluvia a ${fmt(r["distancia_km"].dbl(), 1)} km en ${r["nombre"]}"); nivel = "PELIGRO"
+        } else if (r["distancia_km"].dbl() <= aj.radioLluviaAvisoKm) {
+            motivos.add("Lluvia a ${fmt(r["distancia_km"].dbl(), 1)} km en ${r["nombre"]} (aviso)")
+            if (nivel == "SEGURO") nivel = "VIGILANCIA"
         }
     }
     for (a in (res["alertas_predictivas"] as? List<Any?>) ?: emptyList()) {

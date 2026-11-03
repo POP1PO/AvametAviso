@@ -1,7 +1,7 @@
 """Nivel de peligro para la app móvil. Reglas del escritorio (alertas.evaluar / cond_viento) + una propia del móvil (ETA).
 
 nivel: SEGURO | VIGILANCIA | PELIGRO.   Diferencias con el escritorio (intencionadas): no hay retención del viento ni vigilancia por
-humedad; y un aviso predictivo que llega en menos de ETA_PELIGRO_MIN minutos también es PELIGRO (el móvil no tiene sensor propio)."""
+humedad; la lluvia en una estación vecina da AVISO (VIGILANCIA) entre 10 y 25 km y PELIGRO a menos de 10 km; y un aviso predictivo que llega en menos de ETA_PELIGRO_MIN minutos también es PELIGRO (el móvil no tiene sensor propio)."""
 import re
 
 from . import parseo
@@ -39,6 +39,10 @@ def evaluar_peligro(res: dict, aj: dict | None = None) -> dict:
         elif r["distancia_km"] <= aj["RADIO_LLUVIA_PELIGRO_KM"]:
             motivos.append(f"Lluvia a {r['distancia_km']:.1f} km en {r['nombre']}")
             nivel = "PELIGRO"
+        elif r["distancia_km"] <= aj["RADIO_LLUVIA_AVISO_KM"]:
+            motivos.append(f"Lluvia a {r['distancia_km']:.1f} km en {r['nombre']} (aviso)")
+            if nivel == "SEGURO":
+                nivel = "VIGILANCIA"
     for a in res.get("alertas_predictivas", []):
         m = re.search(r"Llegada en ~(\d+) min", a)
         if m and int(m.group(1)) < aj["ETA_PELIGRO_MIN"]:

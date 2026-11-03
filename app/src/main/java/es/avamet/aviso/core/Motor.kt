@@ -30,6 +30,15 @@ fun planificar(lat: Double, lon: Double, coords: Map<String, Map<String, Any?>>,
     )
 }
 
+/** Estaciones del radio que hay que descargar en cada ciclo (además de la referencia): TODAS, las más cercanas primero.
+ *  `analizar` solo ve la lluvia de las estaciones de las que hay lectura: si aquí faltara alguna, la lluvia a 25 km (aviso)
+ *  o a 10 km (alarma) pasaría inadvertida. `yaDescargadas` = ids de las que ya se tienen en este ciclo. */
+fun estacionesDelRadio(plan: Map<String, Any?>, yaDescargadas: Set<String> = emptySet()): List<String> =
+    ((plan["radio"] as? List<*>) ?: emptyList<Any?>()).map { it.d() }
+        .sortedBy { it["distancia_km"].dbl() }
+        .map { it["id"] as String }
+        .filter { it !in yaDescargadas }
+
 private fun resumenEstacion(est: Map<String, Any?>, datos: Map<String, Any?>?, seg: Map<String, Any?>, ahora: Double, aj: Ajustes): Dict {
     val out = dict("id" to est["id"], "nombre" to est["nombre"], "lat" to est["lat"], "lon" to est["lon"], "distancia_km" to est["distancia_km"])
     if (datos == null || datos.isEmpty() || datos.containsKey("Error")) {

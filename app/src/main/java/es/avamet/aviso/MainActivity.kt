@@ -762,10 +762,23 @@ class MainActivity : Activity() {
         irBotonAnim.isAllCaps = false
         irBotonAnim.setOnClickListener { if (irAnimOn) irDetenerAnimacion() else irIniciarAnimacion() }
         val irAtribucion = texto("© EUMETSAT Meteosat data ${java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)} · Meteosat IR 10,8 µm", 11f, false, APAGADO)
-        caja.addView(chk); caja.addView(barra); caja.addView(irBotonAnim); caja.addView(irEstado); caja.addView(irAtribucion)
+        // Minimizar el panel NO apaga la capa: solo oculta los controles (la casilla sigue mandando sobre la imagen).
+        var panelAbierto = try { getSharedPreferences("config", MODE_PRIVATE).getBoolean("panel_ir_abierto", true) } catch (_: Exception) { true }
+        val plegar = texto("", 16f, true, TEXTO); plegar.setPadding(dp(14), 0, dp(4), 0)
+        val cabecera = LinearLayout(this); cabecera.orientation = LinearLayout.HORIZONTAL; cabecera.gravity = Gravity.CENTER_VERTICAL
+        cabecera.addView(chk); cabecera.addView(plegar)
+        caja.addView(cabecera); caja.addView(barra); caja.addView(irBotonAnim); caja.addView(irEstado); caja.addView(irAtribucion)
         val detalle = listOf<View>(barra, irBotonAnim, irEstado, irAtribucion)
+        fun mostrarDetalle() {
+            plegar.text = if (panelAbierto) "▾" else "▸"
+            detalle.forEach { it.visibility = if (chk.isChecked && panelAbierto) View.VISIBLE else View.GONE }
+        }
+        plegar.setOnClickListener {
+            panelAbierto = !panelAbierto; mostrarDetalle()
+            try { getSharedPreferences("config", MODE_PRIVATE).edit().putBoolean("panel_ir_abierto", panelAbierto).apply() } catch (_: Exception) {}
+        }
         fun aplicar(on: Boolean) {
-            detalle.forEach { it.visibility = if (on) View.VISIBLE else View.GONE }
+            mostrarDetalle()
             MapaIr.setVisible(this, on)
             if (on) activarIr() else { irDetenerAnimacion(); MapaIr.quitar(mapa, irOverlay); irOverlay = null; mapa.invalidate() }
         }
@@ -775,7 +788,7 @@ class MainActivity : Activity() {
             override fun onStartTrackingTouch(sb: android.widget.SeekBar?) {}
             override fun onStopTrackingTouch(sb: android.widget.SeekBar?) {}
         })
-        detalle.forEach { it.visibility = if (chk.isChecked) View.VISIBLE else View.GONE }
+        mostrarDetalle()
         if (chk.isChecked) mapa.post { activarIr() }
         return caja
     }

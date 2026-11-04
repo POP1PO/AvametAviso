@@ -721,8 +721,9 @@ class MainActivity : Activity() {
         irBotonAnim.text = "▶ Animar nubes (últimas 2 h)"
         irBotonAnim.isAllCaps = false
         irBotonAnim.setOnClickListener { if (irAnimOn) irDetenerAnimacion() else irIniciarAnimacion() }
-        caja.addView(chk); caja.addView(barra); caja.addView(irBotonAnim); caja.addView(irEstado)
-        val detalle = listOf<View>(barra, irBotonAnim, irEstado)
+        val irAtribucion = texto("© EUMETSAT Meteosat data ${java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)} · Meteosat IR 10,8 µm", 11f, false, APAGADO)
+        caja.addView(chk); caja.addView(barra); caja.addView(irBotonAnim); caja.addView(irEstado); caja.addView(irAtribucion)
+        val detalle = listOf<View>(barra, irBotonAnim, irEstado, irAtribucion)
         fun aplicar(on: Boolean) {
             detalle.forEach { it.visibility = if (on) View.VISIBLE else View.GONE }
             MapaIr.setVisible(this, on)

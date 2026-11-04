@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
+import es.avamet.aviso.core.origenDeNubes
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -141,7 +142,7 @@ class MonitorServicio : Service() {
                 val estadoRef = ((r.analisis["referencia"] as? Map<*, *>)?.get("estado") as? Map<*, *>)?.get("estado")
                 if (estadoRef == "ACTIVA" && r.errores.isEmpty()) ultimoOk = r.ahoraMs
                 val mov = r.analisis["movimiento"] as Map<*, *>
-                val txt = (if (r.datosFiables || r.nivel == "PELIGRO") r.nivel else "SIN DATOS FIABLES") + " · nubes hacia ${mov["direccion_destino"]} ${mov["velocidad_kmh"]} km/h · ${hora(r.ahoraMs)}" +
+                val txt = (if (r.datosFiables || r.nivel == "PELIGRO") r.nivel else "SIN DATOS FIABLES") + " · nubes del ${(mov["grados_destino"] as? Number)?.let { origenDeNubes(it.toDouble()).second } ?: "?"} ${mov["velocidad_kmh"]} km/h · ${hora(r.ahoraMs)}" +
                     (if (r.errores.isNotEmpty()) "\n⚠️ " + r.errores.first() else "")
                 actualizarNotificacion(txt)
                 if (r.nivel == "PELIGRO" && nivelPrevio != "PELIGRO") Alarma.disparar(this, r.motivos)

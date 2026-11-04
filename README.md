@@ -24,7 +24,7 @@ No incluye Telegram, servidor HTTP, N.I.N.A./Alpaca/Boltwood ni base de datos.
 4. Si falla: abre el paso rojo, copia el log y pásamelo.
 
 ### Firma (recomendado antes de repartir el APK)
-Sin clave propia, GitHub genera una clave de depuración distinta en cada ejecución: cada versión nueva obliga a desinstalar la anterior.
+Sin clave propia se usa la clave PÚBLICA fija de `app/firma/aviso.jks`: las versiones nuevas se instalan encima de la anterior (el número de versión sube solo en cada compilación), pero cualquiera podría firmar una app con esa clave. Para repartir a más gente, usa una clave propia:
 Crea una clave una sola vez (en tu PC, con Java instalado):
 
     keytool -genkeypair -v -keystore clave.jks -alias aviso -keyalg RSA -keysize 2048 -validity 10000

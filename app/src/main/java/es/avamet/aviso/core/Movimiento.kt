@@ -4,6 +4,12 @@ import kotlin.math.*
 
 val ROSA = listOf("N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSO", "SO", "OSO", "O", "ONO", "NO", "NNO")
 
+/** Desde DÓNDE vienen las nubes a partir de hacia dónde van (grados_destino): (grados 0..359, nombre de la rosa). 163° -> 343° NNO. */
+fun origenDeNubes(gradosDestino: Double): Pair<Int, String> {
+    val g = ((gradosDestino + 180.0) % 360.0 + 360.0) % 360.0
+    return Math.round(g).toInt().let { if (it == 360) 0 else it } to ROSA[((g + 11.25) / 22.5).toInt() % 16]
+}
+
 private val DIR_A_GRADOS: Map<String, Double> = run {
     val m = LinkedHashMap<String, Double>()
     ROSA.forEachIndexed { i, n -> m[n] = i * 22.5 }

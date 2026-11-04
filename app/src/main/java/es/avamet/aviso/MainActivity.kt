@@ -454,9 +454,16 @@ class MainActivity : Activity() {
         filaMov.addView(brujula, LinearLayout.LayoutParams(dp(110), dp(110)))
         val col = LinearLayout(this)
         col.orientation = LinearLayout.VERTICAL
-        col.addView(texto("${mov["direccion_destino"] ?: "—"} · ${grados?.let { fmt(it, 0) + "°" } ?: "?"}", 22f, true))
-        col.addView(texto("${mov["velocidad_kmh"] ?: "?"} km/h · ${mov["categoria"] ?: "?"}", 14f, false, APAGADO))
-        col.addView(texto("Hacia dónde se desplazan", 11f, false, APAGADO))
+        if (grados != null) {
+            val (gO, nO) = origenDeNubes(grados)
+            col.addView(texto("VIENEN DEL $nO · $gO°", 20f, true))
+            col.addView(texto("Se mueven hacia el ${mov["direccion_destino"] ?: "—"} (${fmt(grados, 0)}°)", 13f, false))
+            col.addView(texto("${mov["velocidad_kmh"] ?: "?"} km/h · ${mov["categoria"] ?: "?"}", 14f, false, APAGADO))
+            col.addView(texto("El norte (N) está siempre arriba. La flecha entra desde el lado por el que llegan las nubes.", 11f, false, APAGADO))
+        } else {
+            col.addView(texto("Dirección desconocida", 20f, true))
+            col.addView(texto("No hay viento suficiente para estimar de dónde vienen las nubes.", 12f, false, APAGADO))
+        }
         filaMov.addView(col)
         cMov.addView(filaMov)
         contResumen.addView(cMov)
@@ -793,7 +800,8 @@ class MainActivity : Activity() {
 }
 
 
-/** Brújula: flecha hacia donde se mueven las nubes (0° = norte). */
+/** Brújula con el NORTE SIEMPRE ARRIBA. La flecha entra desde el borde por el que LLEGAN las nubes (su origen) hacia el centro,
+ *  que eres tú. `grados` = hacia dónde van las nubes (0° = norte); el origen es el opuesto (+180°). */
 class BrujulaView(ctx: Context, private val grados: Double?, private val acento: Int) : View(ctx) {
     private val p = Paint(Paint.ANTI_ALIAS_FLAG)
     override fun onDraw(c: Canvas) {
@@ -801,26 +809,37 @@ class BrujulaView(ctx: Context, private val grados: Double?, private val acento:
         val cx = w / 2; val cy = h / 2; val r = minOf(w, h) / 2 - 6f
         p.style = Paint.Style.FILL; p.color = 0xFF1C2128.toInt(); c.drawCircle(cx, cy, r, p)
         p.style = Paint.Style.STROKE; p.strokeWidth = 3f; p.color = 0xFF30363D.toInt(); c.drawCircle(cx, cy, r, p)
-        p.style = Paint.Style.FILL; p.color = 0xFF8B949E.toInt(); p.textSize = r * 0.28f; p.textAlign = Paint.Align.CENTER
-        c.drawText("N", cx, cy - r + p.textSize + 2f, p)
+        // Norte: triángulo y letra en rojo y más grande; S, E, O en gris
+        p.style = Paint.Style.FILL; p.color = 0xFFF85149.toInt()
+        val tri = Path(); tri.moveTo(cx, cy - r + 2f); tri.lineTo(cx - r * 0.1f, cy - r * 0.78f); tri.lineTo(cx + r * 0.1f, cy - r * 0.78f); tri.close()
+        c.drawPath(tri, p)
+        p.textAlign = Paint.Align.CENTER; p.isFakeBoldText = true; p.textSize = r * 0.34f
+        c.drawText("N", cx, cy - r + p.textSize + r * 0.2f, p)
+        p.isFakeBoldText = false; p.color = 0xFF8B949E.toInt(); p.textSize = r * 0.26f
         c.drawText("S", cx, cy + r - 6f, p)
         c.drawText("E", cx + r - p.textSize * 0.5f, cy + p.textSize * 0.35f, p)
         c.drawText("O", cx - r + p.textSize * 0.5f, cy + p.textSize * 0.35f, p)
         if (grados == null) return
+        val color = if (acento == 0xFF8B949E.toInt()) 0xFF58A6FF.toInt() else acento
+        // El dibujo se hace con el origen de las nubes ARRIBA y se gira ese ángulo: la cola queda en el borde de donde vienen
+        // y la punta apunta al centro.
         c.save()
-        c.rotate(grados.toFloat(), cx, cy)
-        val flecha = Path()
-        val largo = r * 0.62f; val ancho = r * 0.22f
-        flecha.moveTo(cx, cy - largo)
-        flecha.lineTo(cx + ancho, cy)
-        flecha.lineTo(cx + ancho * 0.35f, cy)
-        flecha.lineTo(cx + ancho * 0.35f, cy + largo * 0.7f)
-        flecha.lineTo(cx - ancho * 0.35f, cy + largo * 0.7f)
-        flecha.lineTo(cx - ancho * 0.35f, cy)
-        flecha.lineTo(cx - ancho, cy)
-        flecha.close()
-        p.style = Paint.Style.FILL; p.color = if (acento == 0xFF8B949E.toInt()) 0xFF58A6FF.toInt() else acento
-        c.drawPath(flecha, p)
+        c.rotate(((grados + 180.0) % 360.0).toFloat(), cx, cy)
+        p.style = Paint.Style.STROKE; p.strokeWidth = r * 0.12f; p.strokeCap = Paint.Cap.ROUND; p.color = color
+        c.drawLine(cx, cy - r * 0.62f, cx, cy - r * 0.12f, p)
+        p.style = Paint.Style.FILL
+        val punta = Path()
+        punta.moveTo(cx, cy + r * 0.02f)
+        punta.lineTo(cx - r * 0.22f, cy - r * 0.34f)
+        punta.lineTo(cx + r * 0.22f, cy - r * 0.34f)
+        punta.close()
+        c.drawPath(punta, p)
         c.restore()
+        // Marca del origen (nube) en el borde, sin girar para que se lea bien
+        val a = Math.toRadians((grados + 180.0) % 360.0)
+        val mx = cx + (sin(a) * r * 0.8).toFloat(); val my = cy - (cos(a) * r * 0.8).toFloat()
+        p.color = 0xFF0D1117.toInt(); c.drawCircle(mx, my, r * 0.2f, p)
+        p.color = color; p.textAlign = Paint.Align.CENTER; p.textSize = r * 0.3f
+        c.drawText("☁", mx, my + p.textSize * 0.33f, p)
     }
 }

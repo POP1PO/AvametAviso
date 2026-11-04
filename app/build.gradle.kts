@@ -11,8 +11,10 @@ android {
         applicationId = "es.avamet.aviso"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "0.1.0"
+        // En GitHub Actions el número de ejecución sube en cada compilación: así Android acepta el APK nuevo como actualización
+        // (misma firma + versionCode mayor) y no hace falta desinstalar la app anterior.
+        versionCode = System.getenv("GITHUB_RUN_NUMBER")?.toIntOrNull() ?: 1
+        versionName = "0.1." + (System.getenv("GITHUB_RUN_NUMBER") ?: "0")
     }
 
     // Firma. Con secretos KEYSTORE_* en GitHub se usa tu clave privada. Si no, se usa la clave PÚBLICA de app/firma/aviso.jks:

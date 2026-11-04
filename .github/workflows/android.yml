@@ -53,7 +53,7 @@ jobs:
             echo "KEYSTORE_FILE=$RUNNER_TEMP/clave.jks" >> "$GITHUB_ENV"
             echo "Firmando con la clave propia"
           else
-            echo "::warning::Sin KEYSTORE_BASE64: el APK se firma con la clave de depuración (cambia en cada ejecución; las actualizaciones obligarán a desinstalar la anterior)."
+            echo "::warning::Sin KEYSTORE_BASE64: el APK se firma con la clave pública fija de app/firma/aviso.jks (las actualizaciones se instalan encima, pero cualquiera podría firmar una app con esa clave)."
           fi
 
       - name: Compilar APK

@@ -196,6 +196,7 @@ class MainActivity : Activity() {
         val pagMapa = FrameLayout(this)
         pagMapa.addView(mapa, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
         pagMapa.addView(construirControlIr(), FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP or Gravity.END).also { it.setMargins(dp(8), dp(8), dp(8), 0) })
+        pagMapa.addView(construirLeyenda(), FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.BOTTOM or Gravity.START).also { it.setMargins(dp(8), 0, 0, dp(8)) })
         paginas.add(pagMapa)
 
         // --- Estaciones / Aeropuertos ---
@@ -703,6 +704,45 @@ class MainActivity : Activity() {
     private fun textoHoraIr(tiempo: String?): String =
         if (tiempo != null) "Imagen de las ${MapaIr.horaLocal(tiempo)} (último barrido publicado)"
         else "No se pudo saber la hora del último barrido: el servidor puede mezclar teselas antiguas"
+
+    /** Leyenda del mapa (colores de estaciones, aeropuertos y flechas), plegable con un toque en su título. */
+    private fun construirLeyenda(): View {
+        val caja = LinearLayout(this)
+        caja.orientation = LinearLayout.VERTICAL
+        caja.setPadding(dp(10), dp(6), dp(10), dp(6))
+        caja.background = fondo(0xE6161B22.toInt(), BORDE)
+        val titulo = texto("", 12f, true, TEXTO)
+        val cuerpo = LinearLayout(this)
+        cuerpo.orientation = LinearLayout.VERTICAL
+        fun fila(simbolo: String, color: Int, t: String) {
+            val f = LinearLayout(this); f.orientation = LinearLayout.HORIZONTAL
+            val sm = texto(simbolo, 13f, true, color); sm.minWidth = dp(26)
+            f.addView(sm); f.addView(texto(t, 11f, false, TEXTO)); cuerpo.addView(f)
+        }
+        cuerpo.addView(texto("Estaciones", 11f, true, APAGADO))
+        fila("●", Color.parseColor("#2E7D32"), "Con datos al día")
+        fila("●", Color.parseColor("#EF6C00"), "Sin publicar (dato congelado)")
+        fila("●", Color.LTGRAY, "Sin lectura")
+        fila("●", Color.RED, "Lluvia reciente")
+        cuerpo.addView(texto("Aeropuertos", 11f, true, APAGADO))
+        fila("●", Color.parseColor("#1565C0"), "METAR sin fenómenos")
+        fila("●", Color.parseColor("#6A1B9A"), "METAR con fenómenos")
+        cuerpo.addView(texto("Flechas", 11f, true, APAGADO))
+        fila("━", Color.RED, "Lluvia que viene hacia ti")
+        fila("━", Color.parseColor("#6A1B9A"), "Aviso de aeropuerto sin confirmar")
+        fila("━", Color.parseColor("#0D47A1"), "Dirección general de las nubes")
+        fila("●", Color.BLACK, "Tu posición")
+        fun pintar(abierta: Boolean) {
+            titulo.text = if (abierta) "Leyenda  ▾" else "Leyenda  ▸"
+            cuerpo.visibility = if (abierta) View.VISIBLE else View.GONE
+            try { getSharedPreferences("config", MODE_PRIVATE).edit().putBoolean("leyenda_abierta", abierta).apply() } catch (_: Exception) {}
+        }
+        var abierta = try { getSharedPreferences("config", MODE_PRIVATE).getBoolean("leyenda_abierta", true) } catch (_: Exception) { true }
+        titulo.setOnClickListener { abierta = !abierta; pintar(abierta) }
+        caja.addView(titulo); caja.addView(cuerpo)
+        pintar(abierta)
+        return caja
+    }
 
     private fun construirControlIr(): View {
         val caja = LinearLayout(this)

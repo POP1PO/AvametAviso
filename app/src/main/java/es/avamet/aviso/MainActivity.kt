@@ -275,7 +275,17 @@ class MainActivity : Activity() {
                 r.size == 1 -> { Config.setEstacionFija(this, r[0].first); refrescarRef()
                     Toast.makeText(this, "Referencia: ${r[0].second}. Se aplica en el próximo ciclo.", Toast.LENGTH_LONG).show() }
                 r.isEmpty() -> Toast.makeText(this, "No hay ninguna estación que coincida con «$q»", Toast.LENGTH_LONG).show()
-                else -> Toast.makeText(this, "Varias coinciden, concreta: " + r.take(5).joinToString("; ") { "${it.first} (${it.second})" }, Toast.LENGTH_LONG).show()
+                else -> {
+                    val lista = r.take(60)
+                    android.app.AlertDialog.Builder(this)
+                        .setTitle("${r.size} estaciones coinciden con «$q»" + if (r.size > lista.size) " (primeras ${lista.size})" else "")
+                        .setItems(lista.map { "${it.second}  ·  ${it.first}" }.toTypedArray()) { _, i ->
+                            Config.setEstacionFija(this, lista[i].first); refrescarRef()
+                            Toast.makeText(this, "Referencia: ${lista[i].second}. Se aplica en el próximo ciclo.", Toast.LENGTH_LONG).show()
+                        }
+                        .setNegativeButton("Cancelar", null)
+                        .show()
+                }
             }
         })
         col.addView(boton("Volver a automática", null) { Config.setEstacionFija(this, null); refrescarRef()

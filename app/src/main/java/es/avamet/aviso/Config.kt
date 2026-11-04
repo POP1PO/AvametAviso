@@ -25,4 +25,8 @@ object Config {
     /** Estación de referencia elegida a mano (id de AVAMET); null = automática (la más cercana a tu posición). */
     fun estacionFija(c: Context): String? = p(c).getString("estacionFija", null)?.takeIf { it.isNotEmpty() }
     fun setEstacionFija(c: Context, id: String?) = p(c).edit().putString("estacionFija", id ?: "").apply()
+
+    /** Tema de la app: "claro", "oscuro" o "rojo" (nocturno). */
+    fun tema(c: Context): String = p(c).getString("tema", "oscuro") ?: "oscuro"
+    fun setTema(c: Context, t: String) = p(c).edit().putString("tema", t).apply()
 }

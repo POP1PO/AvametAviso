@@ -55,17 +55,17 @@ class MainActivity : Activity() {
     private fun dp(v: Int) = (v * resources.displayMetrics.density).toInt()
 
     // Paleta del programa de escritorio (tema oscuro)
-    private val BG = 0xFF0D1117.toInt()
-    private val PANEL = 0xFF161B22.toInt()
-    private val PANEL2 = 0xFF1C2128.toInt()
-    private val BORDE = 0xFF30363D.toInt()
-    private val TEXTO = 0xFFE6EDF3.toInt()
-    private val APAGADO = 0xFF8B949E.toInt()
-    private val VERDE = 0xFF2EA043.toInt()
-    private val AMBAR = 0xFFD29922.toInt()
-    private val ROJO = 0xFFDA3633.toInt()
-    private val AZUL = 0xFF58A6FF.toInt()
-    private val MORADO = 0xFFA371F7.toInt()
+    private val BG get() = Paleta.bg
+    private val PANEL get() = Paleta.panel
+    private val PANEL2 get() = Paleta.panel2
+    private val BORDE get() = Paleta.borde
+    private val TEXTO get() = Paleta.texto
+    private val APAGADO get() = Paleta.apagado
+    private val VERDE get() = Paleta.verde
+    private val AMBAR get() = Paleta.ambar
+    private val ROJO get() = Paleta.rojo
+    private val AZUL get() = Paleta.azul
+    private val MORADO get() = Paleta.morado
 
     private fun texto(t: String, tam: Float = 15f, negrita: Boolean = false, color: Int = TEXTO): TextView {
         val v = TextView(this)
@@ -89,7 +89,7 @@ class MainActivity : Activity() {
         val b = Button(this)
         b.text = t
         b.isAllCaps = false
-        b.setTextColor(if (acento != null) Color.WHITE else TEXTO)
+        b.setTextColor(if (acento != null) Paleta.sobre else TEXTO)
         b.background = fondo(acento ?: PANEL2, acento ?: BORDE)
         b.setOnClickListener { f() }
         return b
@@ -136,7 +136,7 @@ class MainActivity : Activity() {
     }
 
     private fun etiqueta(t: String, color: Int): TextView {
-        val v = texto(t, 12f, true, Color.WHITE)
+        val v = texto(t, 12f, true, Paleta.sobre)
         v.background = fondo(color, color, 12)
         v.setPadding(dp(10), dp(3), dp(10), dp(3))
         return v
@@ -153,6 +153,7 @@ class MainActivity : Activity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Paleta.aplicar(Config.tema(this))
         super.onCreate(savedInstanceState)
         val cfg = Configuration.getInstance()
         cfg.load(this, getSharedPreferences("osmdroid", Context.MODE_PRIVATE))
@@ -165,7 +166,7 @@ class MainActivity : Activity() {
         raiz.setBackgroundColor(BG)
 
         cabecera = texto("AVAMET Aviso", 18f, true)
-        cabecera.setTextColor(Color.WHITE)
+        cabecera.setTextColor(Paleta.sobre)
         cabecera.setBackgroundColor(APAGADO)
         cabecera.setPadding(dp(12), dp(28), dp(12), dp(12))
         raiz.addView(cabecera, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
@@ -191,6 +192,7 @@ class MainActivity : Activity() {
         mapa = MapView(this)
         mapa.setTileSource(TileSourceFactory.MAPNIK)
         mapa.setMultiTouchControls(true)
+        if (Paleta.esRojo) mapa.overlayManager.tilesOverlay.setColorFilter(android.graphics.ColorMatrixColorFilter(Paleta.matriz(1f)))
         mapa.controller.setZoom(10.0)
         mapa.controller.setCenter(GeoPoint(39.99, -0.05))
         val pagMapa = FrameLayout(this)
@@ -227,6 +229,7 @@ class MainActivity : Activity() {
         }
         raiz.addView(barra)
         setContentView(raiz)
+        window.statusBarColor = APAGADO; window.navigationBarColor = BG
         mostrar(0)
     }
 
@@ -258,6 +261,18 @@ class MainActivity : Activity() {
         val col = LinearLayout(this)
         col.orientation = LinearLayout.VERTICAL
         col.setPadding(dp(8), dp(8), dp(8), dp(8))
+
+        col.addView(texto("Tema", 15f, true))
+        val temas = android.widget.RadioGroup(this); temas.orientation = android.widget.RadioGroup.HORIZONTAL
+        for ((id, nombre) in listOf(Paleta.CLARO to "☀️ Claro", Paleta.OSCURO to "🌙 Oscuro", Paleta.ROJO to "🔴 Nocturno (rojo)")) {
+            val rb = android.widget.RadioButton(this); rb.text = nombre; rb.setTextColor(TEXTO); rb.id = View.generateViewId(); rb.tag = id
+            rb.isChecked = Paleta.modo == id; temas.addView(rb)
+        }
+        temas.setOnCheckedChangeListener { g, idSel ->
+            val nuevo = g.findViewById<View>(idSel)?.tag as? String ?: return@setOnCheckedChangeListener
+            if (nuevo != Paleta.modo) { Config.setTema(this, nuevo); recreate() }
+        }
+        col.addView(temas)
 
         col.addView(texto("Estación de referencia", 15f, true))
         val refTxt = texto("", 13f, false, APAGADO)
@@ -401,7 +416,7 @@ class MainActivity : Activity() {
             !Estado.activo -> Pair(APAGADO, "Vigilancia detenida")
             r == null -> Pair(APAGADO, "Vigilando… (esperando primer resultado)")
             r.nivel == "PELIGRO" -> Pair(ROJO, "⚠️ PELIGRO")
-            !r.datosFiables -> Pair(0xFFEF6C00.toInt(), "⚠️ SIN DATOS FIABLES")
+            !r.datosFiables -> Pair(Paleta.naranja, "⚠️ SIN DATOS FIABLES")
             r.nivel == "VIGILANCIA" -> Pair(AMBAR, "VIGILANCIA")
             else -> Pair(VERDE, "SEGURO")
         }
@@ -430,11 +445,11 @@ class MainActivity : Activity() {
         val fila = LinearLayout(this)
         fila.orientation = LinearLayout.HORIZONTAL
         fila.gravity = Gravity.CENTER_VERTICAL
-        fila.addView(etiqueta(nivelFinal, if (!r.datosFiables) 0xFFEF6C00.toInt() else colorNivel(r.nivel)))
+        fila.addView(etiqueta(nivelFinal, if (!r.datosFiables) Paleta.naranja else colorNivel(r.nivel)))
         fila.addView(texto("Actualizado ${hora(r.ahoraMs)}", 12f, false, APAGADO))
         cEstado.addView(fila)
         cEstado.addView(texto("Posición ${fmt(r.lat, 4)}, ${fmt(r.lon, 4)}", 12f, false, APAGADO))
-        for (m in r.motivos) cEstado.addView(texto("• $m", 14f, false, if (r.nivel == "PELIGRO") 0xFFFF7B72.toInt() else TEXTO))
+        for (m in r.motivos) cEstado.addView(texto("• $m", 14f, false, if (r.nivel == "PELIGRO") Paleta.textoAlerta else TEXTO))
         val aviso = a["aviso_estacion"] as String
         if (aviso.isNotEmpty()) cEstado.addView(texto(aviso, 13f, false, AMBAR))
         contResumen.addView(cEstado)
@@ -449,7 +464,7 @@ class MainActivity : Activity() {
             if (d != null) {
                 fun v(k: String) = (d[k] ?: "?").toString()
                 c.addView(azulejos(listOf(
-                    Triple("Temperatura", v("Temperatura"), 0xFFFFA657.toInt()),
+                    Triple("Temperatura", v("Temperatura"), Paleta.temp),
                     Triple("Humedad", v("Humedad"), AZUL),
                     Triple("Presión", v("Presión"), TEXTO),
                     Triple("Viento", v("Viento"), VERDE),
@@ -458,7 +473,7 @@ class MainActivity : Activity() {
                 )))
             }
             val ok = est["estado"] == "ACTIVA"
-            c.addView(etiqueta("Lectura: ${est["estado"]}${if (est["edad_min"] != null) " · hace ${est["edad_min"]} min" else ""}", if (ok) VERDE else 0xFFEF6C00.toInt()))
+            c.addView(etiqueta("Lectura: ${est["estado"]}${if (est["edad_min"] != null) " · hace ${est["edad_min"]} min" else ""}", if (ok) VERDE else Paleta.naranja))
             contResumen.addView(c)
         }
 
@@ -524,8 +539,8 @@ class MainActivity : Activity() {
         // Radar: solo si hay avisos predictivos
         val pred = a["alertas_predictivas"].l()
         if (pred.isNotEmpty()) {
-            val c = tarjeta("Radar · nubes en camino", ROJO, 0xFF2A1215.toInt())
-            for (x in pred) c.addView(texto("⚠️ $x", 14f, true, 0xFFFF7B72.toInt()))
+            val c = tarjeta("Radar · nubes en camino", ROJO, Paleta.fondoAlerta)
+            for (x in pred) c.addView(texto("⚠️ $x", 14f, true, Paleta.textoAlerta))
             contResumen.addView(c)
         }
 
@@ -612,7 +627,7 @@ class MainActivity : Activity() {
         val g = GradientDrawable()
         g.shape = GradientDrawable.OVAL
         g.setColor(color)
-        g.setStroke(2, Color.WHITE)
+        g.setStroke(2, if (Paleta.esRojo) Paleta.apagado else Color.WHITE)
         g.setSize(dp(tam), dp(tam))
         return g
     }
@@ -620,14 +635,15 @@ class MainActivity : Activity() {
     private fun marca(lat: Double, lon: Double, titulo: String, color: Int, tam: Int, detalle: String = ""): Marker {
         val m = Marker(mapa)
         m.position = GeoPoint(lat, lon)
-        m.icon = circulo(color, tam)
+        m.icon = circulo(Paleta.mapa(color), tam)
         m.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
         m.title = titulo
         m.snippet = detalle
         return m
     }
 
-    private fun linea(color: Int, ancho: Float, vararg p: GeoPoint): Polyline {
+    private fun linea(color0: Int, ancho: Float, vararg p: GeoPoint): Polyline {
+        val color = Paleta.mapa(color0)
         val l = Polyline(mapa)
         l.setPoints(p.toList())
         l.outlinePaint.color = color
@@ -710,13 +726,13 @@ class MainActivity : Activity() {
         val caja = LinearLayout(this)
         caja.orientation = LinearLayout.VERTICAL
         caja.setPadding(dp(10), dp(6), dp(10), dp(6))
-        caja.background = fondo(0xE6161B22.toInt(), BORDE)
+        caja.background = fondo(Paleta.panelMapa, BORDE)
         val titulo = texto("", 12f, true, TEXTO)
         val cuerpo = LinearLayout(this)
         cuerpo.orientation = LinearLayout.VERTICAL
         fun fila(simbolo: String, color: Int, t: String) {
             val f = LinearLayout(this); f.orientation = LinearLayout.HORIZONTAL
-            val sm = texto(simbolo, 13f, true, color); sm.minWidth = dp(26)
+            val sm = texto(simbolo, 13f, true, Paleta.mapa(color)); sm.minWidth = dp(26)
             f.addView(sm); f.addView(texto(t, 11f, false, TEXTO)); cuerpo.addView(f)
         }
         cuerpo.addView(texto("Estaciones", 11f, true, APAGADO))
@@ -748,7 +764,7 @@ class MainActivity : Activity() {
         val caja = LinearLayout(this)
         caja.orientation = LinearLayout.VERTICAL
         caja.setPadding(dp(10), dp(8), dp(10), dp(8))
-        caja.background = fondo(0xE6161B22.toInt(), BORDE)
+        caja.background = fondo(Paleta.panelMapa, BORDE)
         val chk = android.widget.CheckBox(this)
         chk.text = "🛰️ Nubes IR (satélite)"
         chk.setTextColor(TEXTO)
@@ -966,28 +982,28 @@ class BrujulaView(ctx: Context, private val grados: Double?, private val acento:
         val w = width.toFloat(); val h = height.toFloat()
         val cx = w / 2; val cy = h / 2; val r = minOf(w, h) / 2 - 6f
         val giro = -(rumboMovil ?: 0f)             // el dial gira al contrario que el móvil: la N queda en el norte real
-        p.style = Paint.Style.FILL; p.color = 0xFF1C2128.toInt(); c.drawCircle(cx, cy, r, p)
-        p.style = Paint.Style.STROKE; p.strokeWidth = 3f; p.color = 0xFF30363D.toInt(); c.drawCircle(cx, cy, r, p)
+        p.style = Paint.Style.FILL; p.color = Paleta.panel2; c.drawCircle(cx, cy, r, p)
+        p.style = Paint.Style.STROKE; p.strokeWidth = 3f; p.color = Paleta.borde; c.drawCircle(cx, cy, r, p)
         // Dial (N, E, S, O) girado
         c.save(); c.rotate(giro, cx, cy)
-        p.style = Paint.Style.FILL; p.color = 0xFFF85149.toInt()
+        p.style = Paint.Style.FILL; p.color = if (Paleta.esRojo) Paleta.textoAlerta else 0xFFF85149.toInt()
         val tri = Path(); tri.moveTo(cx, cy - r + 2f); tri.lineTo(cx - r * 0.1f, cy - r * 0.78f); tri.lineTo(cx + r * 0.1f, cy - r * 0.78f); tri.close()
         c.drawPath(tri, p)
         p.textAlign = Paint.Align.CENTER; p.isFakeBoldText = true; p.textSize = r * 0.34f
         c.drawText("N", cx, cy - r + p.textSize + r * 0.2f, p)
-        p.isFakeBoldText = false; p.color = 0xFF8B949E.toInt(); p.textSize = r * 0.26f
+        p.isFakeBoldText = false; p.color = Paleta.apagado; p.textSize = r * 0.26f
         c.drawText("S", cx, cy + r - 6f, p)
         c.drawText("E", cx + r - p.textSize * 0.5f, cy + p.textSize * 0.35f, p)
         c.drawText("O", cx - r + p.textSize * 0.5f, cy + p.textSize * 0.35f, p)
         c.restore()
         // Marca fija: hacia donde apunta la parte de arriba del móvil
         if (rumboMovil != null) {
-            p.color = 0xFFC9D1D9.toInt(); p.style = Paint.Style.FILL
+            p.color = Paleta.texto; p.style = Paint.Style.FILL
             val t = Path(); t.moveTo(cx, cy - r - 4f); t.lineTo(cx - r * 0.07f, cy - r + r * 0.07f); t.lineTo(cx + r * 0.07f, cy - r + r * 0.07f); t.close()
             c.drawPath(t, p)
         }
         if (grados == null) return
-        val color = if (acento == 0xFF8B949E.toInt()) 0xFF58A6FF.toInt() else acento
+        val color = if (acento == Paleta.apagado) Paleta.azul else acento
         // Flecha hacia el ORIGEN de las nubes (norte real + 180° del destino), girada con el dial
         c.save(); c.rotate(((grados + 180.0) % 360.0).toFloat() + giro, cx, cy)
         p.style = Paint.Style.STROKE; p.strokeWidth = r * 0.12f; p.strokeCap = Paint.Cap.ROUND; p.color = color
@@ -1000,7 +1016,7 @@ class BrujulaView(ctx: Context, private val grados: Double?, private val acento:
         // Nube en el borde, en la dirección de donde vienen (sin girar para que se lea bien)
         val ang = Math.toRadians(((grados + 180.0) % 360.0) + giro)
         val mx = cx + (sin(ang) * r * 0.82).toFloat(); val my = cy - (cos(ang) * r * 0.82).toFloat()
-        p.color = 0xFF0D1117.toInt(); c.drawCircle(mx, my, r * 0.19f, p)
+        p.color = Paleta.bg; c.drawCircle(mx, my, r * 0.19f, p)
         p.color = color; p.textAlign = Paint.Align.CENTER; p.textSize = r * 0.28f
         c.drawText("☁", mx, my + p.textSize * 0.33f, p)
     }

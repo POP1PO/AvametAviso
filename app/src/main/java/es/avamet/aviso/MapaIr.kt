@@ -102,7 +102,6 @@ object MapaIr {
     }
 
     fun ajustarOpacidad(o: TilesOverlay, porcentaje: Int) {
-        val m = ColorMatrix(); m.setScale(1f, 1f, 1f, porcentaje.coerceIn(10, 100) / 100f)
-        o.setColorFilter(ColorMatrixColorFilter(m))
+        o.setColorFilter(ColorMatrixColorFilter(Paleta.matriz(porcentaje.coerceIn(10, 100) / 100f)))
     }
 }

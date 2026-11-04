@@ -76,9 +76,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           cp app/build/outputs/apk/release/app-release.apk AvametAviso.apk
-          gh release delete ultima --yes --cleanup-tag || true
-          gh release create ultima AvametAviso.apk --title "Última versión (nº $GITHUB_RUN_NUMBER)" --target "$GITHUB_SHA" \
-            --notes "APK generado automáticamente por GitHub Actions (commit $GITHUB_SHA). versionCode=$GITHUB_RUN_NUMBER"
+          # La API de GitHub devuelve a veces 5xx de forma pasajera: se reintenta (borrar + crear) hasta 5 veces.
+          for intento in 1 2 3 4 5; do
+            gh release delete ultima --yes --cleanup-tag || true
+            if gh release create ultima AvametAviso.apk --title "Última versión (nº $GITHUB_RUN_NUMBER)" --target "$GITHUB_SHA" \
+                 --notes "APK generado automáticamente por GitHub Actions (commit $GITHUB_SHA). versionCode=$GITHUB_RUN_NUMBER"; then
+              exit 0
+            fi
+            echo "Intento $intento fallido; reintentando en 20 s"; sleep 20
+          done
+          exit 1
 
       - uses: actions/upload-artifact@v4
         if: failure()

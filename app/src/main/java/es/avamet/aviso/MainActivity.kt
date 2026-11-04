@@ -459,7 +459,7 @@ class MainActivity : Activity() {
             col.addView(texto("VIENEN DEL $nO · $gO°", 20f, true))
             col.addView(texto("Se mueven hacia el ${mov["direccion_destino"] ?: "—"} (${fmt(grados, 0)}°)", 13f, false))
             col.addView(texto("${mov["velocidad_kmh"] ?: "?"} km/h · ${mov["categoria"] ?: "?"}", 14f, false, APAGADO))
-            col.addView(texto("El norte (N) está siempre arriba. La flecha entra desde el lado por el que llegan las nubes.", 11f, false, APAGADO))
+            col.addView(texto("Con el móvil plano, la N roja señala el norte real y la flecha con la nube señala de dónde vienen. (Si no gira, tu móvil no tiene brújula: el norte queda arriba.)", 11f, false, APAGADO))
         } else {
             col.addView(texto("Dirección desconocida", 20f, true))
             col.addView(texto("No hay viento suficiente para estimar de dónde vienen las nubes.", 12f, false, APAGADO))
@@ -800,16 +800,43 @@ class MainActivity : Activity() {
 }
 
 
-/** Brújula con el NORTE SIEMPRE ARRIBA. La flecha entra desde el borde por el que LLEGAN las nubes (su origen) hacia el centro,
- *  que eres tú. `grados` = hacia dónde van las nubes (0° = norte); el origen es el opuesto (+180°). */
-class BrujulaView(ctx: Context, private val grados: Double?, private val acento: Int) : View(ctx) {
+/** Brújula REAL: usa el sensor de orientación del móvil para que la N roja señale siempre el norte verdadero (sea cual sea hacia
+ *  dónde gires el móvil) y la flecha señale DE DÓNDE VIENEN las nubes en el mundo real. `grados` = hacia dónde van las nubes
+ *  (0° = norte); el origen es el opuesto (+180°). Si el móvil no tiene sensor, el norte queda arriba. */
+class BrujulaView(ctx: Context, private val grados: Double?, private val acento: Int) : View(ctx), android.hardware.SensorEventListener {
     private val p = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var rumboMovil: Float? = null          // hacia dónde mira el móvil, en grados desde el norte (null = sin sensor)
+    private val matriz = FloatArray(9); private val remap = FloatArray(9); private val orient = FloatArray(3)
+
+    private fun gestor() = context.getSystemService(Context.SENSOR_SERVICE) as? android.hardware.SensorManager
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        val g = gestor() ?: return
+        g.getDefaultSensor(android.hardware.Sensor.TYPE_ROTATION_VECTOR)?.let { g.registerListener(this, it, android.hardware.SensorManager.SENSOR_DELAY_UI) }
+    }
+    override fun onDetachedFromWindow() { gestor()?.unregisterListener(this); super.onDetachedFromWindow() }
+    override fun onAccuracyChanged(s: android.hardware.Sensor?, a: Int) {}
+    override fun onSensorChanged(e: android.hardware.SensorEvent) {
+        android.hardware.SensorManager.getRotationMatrixFromVector(matriz, e.values)
+        // Móvil plano (como una brújula): azimut directo. Móvil en vertical: se usa la dirección a la que apunta la parte de atrás.
+        val vertical = kotlin.math.abs(matriz[8]) < 0.6f
+        val m = if (vertical) { android.hardware.SensorManager.remapCoordinateSystem(matriz, android.hardware.SensorManager.AXIS_X, android.hardware.SensorManager.AXIS_Z, remap); remap } else matriz
+        android.hardware.SensorManager.getOrientation(m, orient)
+        val nuevo = ((Math.toDegrees(orient[0].toDouble()) + 360.0) % 360.0).toFloat()
+        val viejo = rumboMovil
+        // suavizado (por el camino corto, para que no dé saltos al pasar de 359° a 0°)
+        rumboMovil = if (viejo == null) nuevo else (viejo + ((nuevo - viejo + 540f) % 360f - 180f) * 0.25f + 360f) % 360f
+        invalidate()
+    }
+
     override fun onDraw(c: Canvas) {
         val w = width.toFloat(); val h = height.toFloat()
         val cx = w / 2; val cy = h / 2; val r = minOf(w, h) / 2 - 6f
+        val giro = -(rumboMovil ?: 0f)             // el dial gira al contrario que el móvil: la N queda en el norte real
         p.style = Paint.Style.FILL; p.color = 0xFF1C2128.toInt(); c.drawCircle(cx, cy, r, p)
         p.style = Paint.Style.STROKE; p.strokeWidth = 3f; p.color = 0xFF30363D.toInt(); c.drawCircle(cx, cy, r, p)
-        // Norte: triángulo y letra en rojo y más grande; S, E, O en gris
+        // Dial (N, E, S, O) girado
+        c.save(); c.rotate(giro, cx, cy)
         p.style = Paint.Style.FILL; p.color = 0xFFF85149.toInt()
         val tri = Path(); tri.moveTo(cx, cy - r + 2f); tri.lineTo(cx - r * 0.1f, cy - r * 0.78f); tri.lineTo(cx + r * 0.1f, cy - r * 0.78f); tri.close()
         c.drawPath(tri, p)
@@ -819,27 +846,29 @@ class BrujulaView(ctx: Context, private val grados: Double?, private val acento:
         c.drawText("S", cx, cy + r - 6f, p)
         c.drawText("E", cx + r - p.textSize * 0.5f, cy + p.textSize * 0.35f, p)
         c.drawText("O", cx - r + p.textSize * 0.5f, cy + p.textSize * 0.35f, p)
+        c.restore()
+        // Marca fija: hacia donde apunta la parte de arriba del móvil
+        if (rumboMovil != null) {
+            p.color = 0xFFC9D1D9.toInt(); p.style = Paint.Style.FILL
+            val t = Path(); t.moveTo(cx, cy - r - 4f); t.lineTo(cx - r * 0.07f, cy - r + r * 0.07f); t.lineTo(cx + r * 0.07f, cy - r + r * 0.07f); t.close()
+            c.drawPath(t, p)
+        }
         if (grados == null) return
         val color = if (acento == 0xFF8B949E.toInt()) 0xFF58A6FF.toInt() else acento
-        // El dibujo se hace con el origen de las nubes ARRIBA y se gira ese ángulo: la cola queda en el borde de donde vienen
-        // y la punta apunta al centro.
-        c.save()
-        c.rotate(((grados + 180.0) % 360.0).toFloat(), cx, cy)
+        // Flecha hacia el ORIGEN de las nubes (norte real + 180° del destino), girada con el dial
+        c.save(); c.rotate(((grados + 180.0) % 360.0).toFloat() + giro, cx, cy)
         p.style = Paint.Style.STROKE; p.strokeWidth = r * 0.12f; p.strokeCap = Paint.Cap.ROUND; p.color = color
-        c.drawLine(cx, cy - r * 0.62f, cx, cy - r * 0.12f, p)
+        c.drawLine(cx, cy + r * 0.05f, cx, cy - r * 0.4f, p)
         p.style = Paint.Style.FILL
         val punta = Path()
-        punta.moveTo(cx, cy + r * 0.02f)
-        punta.lineTo(cx - r * 0.22f, cy - r * 0.34f)
-        punta.lineTo(cx + r * 0.22f, cy - r * 0.34f)
-        punta.close()
+        punta.moveTo(cx, cy - r * 0.62f); punta.lineTo(cx - r * 0.22f, cy - r * 0.3f); punta.lineTo(cx + r * 0.22f, cy - r * 0.3f); punta.close()
         c.drawPath(punta, p)
         c.restore()
-        // Marca del origen (nube) en el borde, sin girar para que se lea bien
-        val a = Math.toRadians((grados + 180.0) % 360.0)
-        val mx = cx + (sin(a) * r * 0.8).toFloat(); val my = cy - (cos(a) * r * 0.8).toFloat()
-        p.color = 0xFF0D1117.toInt(); c.drawCircle(mx, my, r * 0.2f, p)
-        p.color = color; p.textAlign = Paint.Align.CENTER; p.textSize = r * 0.3f
+        // Nube en el borde, en la dirección de donde vienen (sin girar para que se lea bien)
+        val ang = Math.toRadians(((grados + 180.0) % 360.0) + giro)
+        val mx = cx + (sin(ang) * r * 0.82).toFloat(); val my = cy - (cos(ang) * r * 0.82).toFloat()
+        p.color = 0xFF0D1117.toInt(); c.drawCircle(mx, my, r * 0.19f, p)
+        p.color = color; p.textAlign = Paint.Align.CENTER; p.textSize = r * 0.28f
         c.drawText("☁", mx, my + p.textSize * 0.33f, p)
     }
 }

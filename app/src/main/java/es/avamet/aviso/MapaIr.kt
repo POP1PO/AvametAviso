@@ -94,6 +94,13 @@ object MapaIr {
         o.onDetach(mapa)
     }
 
+    /** Deja la capa totalmente transparente SIN quitarla: osmdroid sigue pidiendo sus teselas al dibujarla (así la animación
+     *  las tiene ya cargadas cuando le toca). */
+    fun ocultar(o: TilesOverlay) {
+        val m = ColorMatrix(); m.setScale(1f, 1f, 1f, 0f)
+        o.setColorFilter(ColorMatrixColorFilter(m))
+    }
+
     fun ajustarOpacidad(o: TilesOverlay, porcentaje: Int) {
         val m = ColorMatrix(); m.setScale(1f, 1f, 1f, porcentaje.coerceIn(10, 100) / 100f)
         o.setColorFilter(ColorMatrixColorFilter(m))

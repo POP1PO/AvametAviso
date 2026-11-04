@@ -615,6 +615,55 @@ class MainActivity : Activity() {
     private var irOpacidad = 60
     private var irTiempo: String? = null          // barrido que muestra la capa (p. ej. "2026-11-03T19:00:00Z"); null = sin hora
     private lateinit var irEstado: TextView
+    private lateinit var irBotonAnim: android.widget.Button
+    private var irAnim: List<org.osmdroid.views.overlay.TilesOverlay> = emptyList()     // una capa por barrido mientras dura la animación
+    private var irAnimIdx = 0
+    private var irAnimOn = false
+    private val irHandler = android.os.Handler(android.os.Looper.getMainLooper())
+    private val irPaso = object : Runnable {
+        override fun run() {
+            if (!irAnimOn || irAnim.isEmpty()) return
+            irMostrarFotograma(irAnimIdx)
+            val ultimo = irAnimIdx == irAnim.size - 1
+            irAnimIdx = if (ultimo) 0 else irAnimIdx + 1
+            irHandler.postDelayed(this, if (ultimo) 1800L else 650L)          // pausa más larga en la imagen más reciente
+        }
+    }
+
+    private fun irMostrarFotograma(i: Int) {
+        irAnim.forEachIndexed { k, o -> if (k == i) MapaIr.ajustarOpacidad(o, irOpacidad) else MapaIr.ocultar(o) }
+        val horas = Wms.fotogramas(irTiempo)
+        irEstado.text = "Animación de las últimas ${horas.size / 4} h: imagen de las ${horas.getOrNull(i)?.let { MapaIr.horaLocal(it) } ?: "?"}"
+        mapa.invalidate()
+    }
+
+    /** Pone en marcha la animación: una capa por barrido (todas dibujadas a la vez pero transparentes salvo la que toca). */
+    private fun irIniciarAnimacion() {
+        val capa = MapaIr.capaGuardada(this)
+        val horas = Wms.fotogramas(irTiempo)
+        if (irOverlay == null || horas.size < 2) { irEstado.text = "Aún no hay imagen para animar: espera a que cargue la capa."; return }
+        irDetenerAnimacion()
+        MapaIr.ocultar(irOverlay!!)
+        irAnim = horas.map { t -> MapaIr.crearOverlay(this, mapa, capa, t, irOpacidad).also { MapaIr.ocultar(it); mapa.overlays.add(0, it) } }
+        irAnimOn = true; irAnimIdx = 0
+        irBotonAnim.text = "⏸ Parar animación"
+        irHandler.post(irPaso)
+    }
+
+    /** Para la animación, quita sus capas y vuelve a la imagen más reciente. */
+    private fun irDetenerAnimacion() {
+        val estabaActiva = irAnimOn || irAnim.isNotEmpty()
+        irAnimOn = false
+        irHandler.removeCallbacks(irPaso)
+        irAnim.forEach { MapaIr.quitar(mapa, it) }
+        irAnim = emptyList()
+        if (::irBotonAnim.isInitialized) irBotonAnim.text = "▶ Animar nubes (últimas 2 h)"
+        if (estabaActiva) {
+            irOverlay?.let { MapaIr.ajustarOpacidad(it, irOpacidad) }
+            if (::irEstado.isInitialized) irEstado.text = "Capa IR: ${MapaIr.capaGuardada(this)}\n" + textoHoraIr(irTiempo)
+            mapa.invalidate()
+        }
+    }
 
     private fun textoHoraIr(tiempo: String?): String =
         if (tiempo != null) "Imagen de las ${MapaIr.horaLocal(tiempo)} (último barrido publicado)"
@@ -633,16 +682,20 @@ class MainActivity : Activity() {
         barra.max = 100; barra.progress = irOpacidad
         irEstado = texto("", 11f, false, APAGADO)
         irEstado.text = "Imagen de EUMETSAT, solo informativa (no entra en las alarmas)."
-        caja.addView(chk); caja.addView(barra); caja.addView(irEstado)
-        val detalle = listOf<View>(barra, irEstado)
+        irBotonAnim = android.widget.Button(this)
+        irBotonAnim.text = "▶ Animar nubes (últimas 2 h)"
+        irBotonAnim.isAllCaps = false
+        irBotonAnim.setOnClickListener { if (irAnimOn) irDetenerAnimacion() else irIniciarAnimacion() }
+        caja.addView(chk); caja.addView(barra); caja.addView(irBotonAnim); caja.addView(irEstado)
+        val detalle = listOf<View>(barra, irBotonAnim, irEstado)
         fun aplicar(on: Boolean) {
             detalle.forEach { it.visibility = if (on) View.VISIBLE else View.GONE }
             MapaIr.setVisible(this, on)
-            if (on) activarIr() else { MapaIr.quitar(mapa, irOverlay); irOverlay = null; mapa.invalidate() }
+            if (on) activarIr() else { irDetenerAnimacion(); MapaIr.quitar(mapa, irOverlay); irOverlay = null; mapa.invalidate() }
         }
         chk.setOnCheckedChangeListener { _, on -> aplicar(on) }
         barra.setOnSeekBarChangeListener(object : android.widget.SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(sb: android.widget.SeekBar?, v: Int, fromUser: Boolean) { irOpacidad = v.coerceIn(10, 100); irOverlay?.let { MapaIr.ajustarOpacidad(it, irOpacidad); mapa.invalidate() } }
+            override fun onProgressChanged(sb: android.widget.SeekBar?, v: Int, fromUser: Boolean) { irOpacidad = v.coerceIn(10, 100); if (irAnimOn) irMostrarFotograma(maxOf(0, if (irAnimIdx == 0) irAnim.size - 1 else irAnimIdx - 1)) else irOverlay?.let { MapaIr.ajustarOpacidad(it, irOpacidad); mapa.invalidate() } }
             override fun onStartTrackingTouch(sb: android.widget.SeekBar?) {}
             override fun onStopTrackingTouch(sb: android.widget.SeekBar?) {}
         })
@@ -660,6 +713,7 @@ class MainActivity : Activity() {
             runOnUiThread {
                 irEstado.text = if (capa == null) msg else listOf(msg, textoHoraIr(tiempo), prueba).filter { it.isNotEmpty() }.joinToString("\n")
                 if (capa == null || !MapaIr.visible(this)) return@runOnUiThread
+                irDetenerAnimacion()
                 MapaIr.quitar(mapa, irOverlay)
                 irTiempo = tiempo
                 irOverlay = MapaIr.crearOverlay(this, mapa, capa, tiempo, irOpacidad).also { mapa.overlays.add(0, it) }
@@ -676,6 +730,7 @@ class MainActivity : Activity() {
             runOnUiThread {
                 if (irOverlay == null || !MapaIr.visible(this)) return@runOnUiThread
                 if (tiempo != null && tiempo == irTiempo) return@runOnUiThread       // misma imagen: nada que hacer
+                irDetenerAnimacion()
                 MapaIr.quitar(mapa, irOverlay)
                 irTiempo = tiempo
                 irOverlay = MapaIr.crearOverlay(this, mapa, capa, tiempo, irOpacidad).also { mapa.overlays.add(0, it) }
@@ -689,6 +744,7 @@ class MainActivity : Activity() {
         val ov = mapa.overlays
         ov.clear()
         irOverlay?.let { ov.add(0, it) }          // clear() quita también la capa IR: se vuelve a poner debajo de los marcadores
+        irAnim.forEach { ov.add(0, it) }          // ...y las de la animación, si está en marcha
         val a = r.analisis
         val mov = a["movimiento"] as Map<*, *>
 
@@ -733,7 +789,7 @@ class MainActivity : Activity() {
         super.onResume(); mapa.onResume(); Estado.escuchar(oyente); refrescar()
         if (irOverlay != null) actualizarIr()       // renueva la capa IR si EUMETSAT ha publicado otro barrido (cada 15 min)
     }
-    override fun onPause() { Estado.dejarDeEscuchar(oyente); mapa.onPause(); super.onPause() }
+    override fun onPause() { irDetenerAnimacion(); Estado.dejarDeEscuchar(oyente); mapa.onPause(); super.onPause() }
 }
 
 

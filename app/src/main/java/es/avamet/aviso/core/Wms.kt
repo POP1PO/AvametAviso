@@ -72,6 +72,14 @@ object Wms {
             ?: ir.firstOrNull()
     }
 
+    /** Horas de los últimos `n` barridos (cada 15 min), del más antiguo al más nuevo, acabando en `tiempo`
+     *  ("2026-11-03T19:00:00Z"). Comprobado el 4-nov-2026: el servicio de la capa da una imagen distinta para cada barrido de las
+     *  últimas 6 h como mínimo. Lista vacía si `tiempo` no se entiende. */
+    fun fotogramas(tiempo: String?, n: Int = 8): List<String> {
+        val fin = try { java.time.Instant.parse((tiempo ?: "").trim()) } catch (e: Exception) { return emptyList() }
+        return (maxOf(1, n) - 1 downTo 0).map { fin.minusSeconds(it * 15 * 60L).toString() }          // ISO_INSTANT: "2026-11-03T19:00:00Z"
+    }
+
     /** Ventana de 15 min (cadencia de SEVIRI) para renovar la caché de teselas. */
     fun franjaCache(ahoraMs: Long): Long = ahoraMs / (15 * 60_000L)
 

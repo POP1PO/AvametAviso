@@ -41,6 +41,14 @@ class WmsTest {
         assertTrue("time=" !in Wms.urlTesela("msg_fes:ir108", 7, 63, 48, " "))
     }
 
+    @Test fun fotogramasDeLaAnimacion() {
+        assertEquals(listOf("2026-11-03T23:30:00Z", "2026-11-03T23:45:00Z", "2026-11-04T00:00:00Z", "2026-11-04T00:15:00Z"),
+            Wms.fotogramas("2026-11-04T00:15:00Z", 4))                       // cruza la medianoche
+        assertEquals(listOf("2026-11-04T00:15:00Z"), Wms.fotogramas("2026-11-04T00:15:00Z", 1))
+        assertEquals(8, Wms.fotogramas("2026-11-04T00:15:00Z").size)
+        assertTrue(Wms.fotogramas(null).isEmpty() && Wms.fotogramas("basura").isEmpty())
+    }
+
     @Test fun capabilitiesDeUnaSolaCapa() {
         assertEquals("https://view.eumetsat.int/geoserver/msg_fes/ir108/wms?service=WMS&version=1.3.0&request=GetCapabilities",
             Wms.urlCapabilitiesCapa("msg_fes:ir108"))

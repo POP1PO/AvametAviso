@@ -458,7 +458,7 @@ class MainActivity : Activity() {
         filaMov.orientation = LinearLayout.HORIZONTAL
         filaMov.gravity = Gravity.CENTER_VERTICAL
         val grados = (mov["grados_destino"] as? Number)?.toDouble()
-        val brujula = BrujulaView(this, grados, color)
+        val brujula = BrujulaView(this, grados, color, r.lat, r.lon)
         filaMov.addView(brujula, LinearLayout.LayoutParams(dp(110), dp(110)))
         val col = LinearLayout(this)
         col.orientation = LinearLayout.VERTICAL
@@ -467,7 +467,17 @@ class MainActivity : Activity() {
             col.addView(texto("VIENEN DEL $nO · $gO°", 20f, true))
             col.addView(texto("Se mueven hacia el ${mov["direccion_destino"] ?: "—"} (${fmt(grados, 0)}°)", 13f, false))
             col.addView(texto("${mov["velocidad_kmh"] ?: "?"} km/h · ${mov["categoria"] ?: "?"}", 14f, false, APAGADO))
-            col.addView(texto("Con el móvil plano, la N roja señala el norte (según la brújula del móvil, sin corregir la declinación magnética, de unos pocos grados) y la flecha con la nube señala de dónde vienen. Si no gira, tu móvil no tiene brújula: el norte queda arriba.", 11f, false, APAGADO))
+            col.addView(texto("Con el móvil plano, la N roja señala el norte (norte verdadero: se corrige la declinación magnética de tu zona) y la flecha con la nube señala de dónde vienen. Si no gira, tu móvil no tiene brújula: el norte queda arriba.", 11f, false, APAGADO))
+            val calib = texto("", 12f, true, AMBAR)
+            brujula.alCambiarPrecision = { nivel ->
+                calib.text = when {
+                    nivel >= 3 -> "✔ Brújula calibrada"
+                    nivel == 2 -> "Brújula: precisión media. Para afinar, mueve el móvil dibujando un 8 en el aire."
+                    else -> "⚠ Brújula SIN CALIBRAR: mueve el móvil dibujando un 8 en el aire varias veces; hasta entonces el norte puede salir desviado."
+                }
+                calib.setTextColor(if (nivel >= 3) VERDE else AMBAR)
+            }
+            col.addView(calib)
         } else {
             col.addView(texto("Dirección desconocida", 20f, true))
             col.addView(texto("No hay viento suficiente para estimar de dónde vienen las nubes.", 12f, false, APAGADO))
@@ -855,8 +865,13 @@ class MainActivity : Activity() {
 /** Brújula REAL: usa el sensor de orientación del móvil para que la N roja señale siempre el norte verdadero (sea cual sea hacia
  *  dónde gires el móvil) y la flecha señale DE DÓNDE VIENEN las nubes en el mundo real. `grados` = hacia dónde van las nubes
  *  (0° = norte); el origen es el opuesto (+180°). Si el móvil no tiene sensor, el norte queda arriba. */
-class BrujulaView(ctx: Context, private val grados: Double?, private val acento: Int) : View(ctx), android.hardware.SensorEventListener {
+class BrujulaView(ctx: Context, private val grados: Double?, private val acento: Int, lat: Double = 0.0, lon: Double = 0.0) : View(ctx), android.hardware.SensorEventListener {
     private val p = Paint(Paint.ANTI_ALIAS_FLAG)
+    /** Declinación magnética del lugar (grados, + al este): el sensor da el norte MAGNÉTICO y se pasa al verdadero sumándola. */
+    private val declinacion: Float = try { android.hardware.GeomagneticField(lat.toFloat(), lon.toFloat(), 0f, System.currentTimeMillis()).declination } catch (e: Exception) { 0f }
+    /** Se llama con la precisión del sensor (0 = no fiable ... 3 = alta) cada vez que cambia. */
+    var alCambiarPrecision: ((Int) -> Unit)? = null
+    private var precision = -1
     private var rumboMovil: Float? = null          // hacia dónde mira el móvil, en grados desde el norte (null = sin sensor)
     private val matriz = FloatArray(9); private val remap = FloatArray(9); private val orient = FloatArray(3)
 
@@ -867,14 +882,16 @@ class BrujulaView(ctx: Context, private val grados: Double?, private val acento:
         g.getDefaultSensor(android.hardware.Sensor.TYPE_ROTATION_VECTOR)?.let { g.registerListener(this, it, android.hardware.SensorManager.SENSOR_DELAY_UI) }
     }
     override fun onDetachedFromWindow() { gestor()?.unregisterListener(this); super.onDetachedFromWindow() }
-    override fun onAccuracyChanged(s: android.hardware.Sensor?, a: Int) {}
+    override fun onAccuracyChanged(s: android.hardware.Sensor?, a: Int) { avisarPrecision(a) }
+    private fun avisarPrecision(a: Int) { if (a != precision) { precision = a; alCambiarPrecision?.invoke(a) } }
     override fun onSensorChanged(e: android.hardware.SensorEvent) {
+        avisarPrecision(e.accuracy)
         android.hardware.SensorManager.getRotationMatrixFromVector(matriz, e.values)
         // Móvil plano (como una brújula): azimut directo. Móvil en vertical: se usa la dirección a la que apunta la parte de atrás.
         val vertical = kotlin.math.abs(matriz[8]) < 0.6f
         val m = if (vertical) { android.hardware.SensorManager.remapCoordinateSystem(matriz, android.hardware.SensorManager.AXIS_X, android.hardware.SensorManager.AXIS_Z, remap); remap } else matriz
         android.hardware.SensorManager.getOrientation(m, orient)
-        val nuevo = ((Math.toDegrees(orient[0].toDouble()) + 360.0) % 360.0).toFloat()
+        val nuevo = ((Math.toDegrees(orient[0].toDouble()) + declinacion + 360.0) % 360.0).toFloat()
         val viejo = rumboMovil
         // suavizado (por el camino corto, para que no dé saltos al pasar de 359° a 0°)
         rumboMovil = if (viejo == null) nuevo else (viejo + ((nuevo - viejo + 540f) % 360f - 180f) * 0.25f + 360f) % 360f

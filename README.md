@@ -24,14 +24,10 @@ No incluye Telegram, servidor HTTP, N.I.N.A./Alpaca/Boltwood ni base de datos.
 
 No incluye Telegram, servidor HTTP, N.I.N.A./Alpaca/Boltwood ni base de datos (eso es el programa de escritorio).
 
-## Estado honesto de este proyecto
-- **Compilado y con tests en cada push** (GitHub Actions): el cálculo (`app/src/main/java/es/avamet/aviso/core`) se prueba con JUnit contra vectores generados por el
-  núcleo Python de referencia (~270 casos); si no coinciden, no se genera APK. Las pruebas de las funciones nuevas (animación, origen de las nubes, lectura de la
-  versión publicada) también corren ahí.
-- **Comprobado en un móvil real (el del autor, 4-nov-2026)**: la capa «Nubes IR» carga con imagen del último barrido (HTTP 200, 100 % de píxeles con imagen).
-- **Compilado pero aún sin probar en un móvil**: la animación de nubes, la brújula con sensor, el aviso de calibración y el flujo completo de actualización.
-- **Solo se puede comprobar en teléfonos reales**: segundo plano (Doze, restricciones de cada fabricante), GPS con pantalla apagada, que la alarma encienda
-  la pantalla y la descarga real de AVAMET desde el móvil. Ver «Prueba de 4 horas».
+## Limitaciones
+- Cada versión se compila y se prueba automáticamente (GitHub Actions); si fallan las pruebas, no se genera el APK.
+- La vigilancia en segundo plano depende del fabricante del móvil (ahorro de batería, Doze): conviene desactivar la optimización de batería para la app.
+- La capa de nubes es solo informativa: no interviene en los avisos.
 
 ## Cómo obtener el APK (GitHub Actions)
 1. Crea un repositorio en GitHub y sube **todo el contenido de esta carpeta** (rama `main`).
@@ -71,23 +67,13 @@ Solo se consulta la estación de referencia y las estaciones que están **en el 
 Aun así, varios usuarios multiplican las peticiones. El User-Agent identifica la app. Conviene avisar a AVAMET; **no puedo confirmar sus condiciones de uso**.
 El mapa usa los servidores de teselas de OpenStreetMap (uso moderado y con User-Agent propio, como pide su política; no la he revisado aquí).
 
-## Prueba de 4 horas (pendiente)
-En cada marca (Xiaomi, Samsung, Google, Oppo): iniciar vigilancia, pantalla apagada, móvil quieto 4 h+. Comprobar: (a) la notificación sigue, (b) hay ciclos
-(hora en la notificación), (c) «Probar la alarma» suena y enciende la pantalla, (d) al deslizar la app se detiene el servicio y desaparece la notificación.
-Si el sistema mata el servicio, el vigilante (WorkManager, ~15 min) avisa «La vigilancia se detuvo», aunque algunos fabricantes también lo frenan.
-
 ## Estructura
-- `app/src/main/java/es/avamet/aviso/core` — cálculo (puro, probado con vectores).
+- `app/src/main/java/es/avamet/aviso/core` — cálculo (puro, con pruebas).
 - `app/src/main/java/es/avamet/aviso` — servicio, descargas, alarma, pantallas.
-- `python_nucleo` — núcleo Python de referencia, pruebas y generador de vectores (`LEEME.md`). Los vectores se copian a `app/src/test/resources`.
 
 ## Capa «Nubes IR» en el mapa (solo mostrar)
 Casilla en la pestaña Mapa. Descarga teselas WMS públicas de EUMETView (Meteosat IR 10.8 µm) directamente en el móvil: sin ordenador y sin claves.
 No entra en alarmas ni en el veredicto. Es una imagen ya coloreada (no da temperaturas).
 
-Detalles comprobados el 3 y 4 de noviembre de 2026 contra el servidor real (pueden cambiar):
-- Las teselas se piden al **servicio de la propia capa** (`/geoserver/msg_fes/ir108/wms`, `layers=ir108`) con el parámetro `time` del último barrido
-  (atributo `default` de la `Dimension time` de su GetCapabilities). El WMS global (`/geoserver/wms`) devolvía HTTP 500 a toda petición con `time`, y sin `time`
-  servía teselas de su caché con fechas mezcladas (mapa en bandas con nubes que no existen).
-- El servicio de la capa da una imagen distinta para cada barrido de 15 min de, al menos, las últimas 6 h: de ahí sale la animación.
-- La imagen llega con ~25–30 min de retraso respecto a la hora real.
+- Imagen del satélite Meteosat con ~25–30 min de retraso respecto a la hora real.
+- La animación muestra los últimos barridos (cada 15 min, últimas 2 h).

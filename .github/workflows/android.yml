@@ -77,6 +77,13 @@ jobs:
         run: |
           cp app/build/outputs/apk/release/app-release.apk AvametAviso.apk
           # La API de GitHub devuelve a veces 5xx de forma pasajera: se reintenta (borrar + crear) hasta 5 veces.
+          # Copia permanente de cada versión (v<nº>): conserva su contador de descargas (la release «ultima» se recrea cada vez y el suyo vuelve a 0).
+          for intento in 1 2 3 4 5; do
+            gh release view "v$GITHUB_RUN_NUMBER" >/dev/null 2>&1 && break
+            gh release create "v$GITHUB_RUN_NUMBER" AvametAviso.apk --title "Versión nº $GITHUB_RUN_NUMBER" --target "$GITHUB_SHA" --latest=false \
+              --notes "Copia archivada de la versión nº $GITHUB_RUN_NUMBER (commit $GITHUB_SHA)." && break
+            sleep 20
+          done
           for intento in 1 2 3 4 5; do
             gh release delete ultima --yes --cleanup-tag || true
             if gh release create ultima AvametAviso.apk --title "Última versión (nº $GITHUB_RUN_NUMBER)" --target "$GITHUB_SHA" \

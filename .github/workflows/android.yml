@@ -77,8 +77,8 @@ jobs:
         run: |
           cp app/build/outputs/apk/release/app-release.apk AvametAviso.apk
           gh release delete ultima --yes --cleanup-tag || true
-          gh release create ultima AvametAviso.apk --title "Última versión" --target "$GITHUB_SHA" \
-            --notes "APK generado automáticamente por GitHub Actions (commit $GITHUB_SHA)."
+          gh release create ultima AvametAviso.apk --title "Última versión (nº $GITHUB_RUN_NUMBER)" --target "$GITHUB_SHA" \
+            --notes "APK generado automáticamente por GitHub Actions (commit $GITHUB_SHA). versionCode=$GITHUB_RUN_NUMBER"
 
       - uses: actions/upload-artifact@v4
         if: failure()

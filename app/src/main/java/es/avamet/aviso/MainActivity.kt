@@ -324,6 +324,14 @@ class MainActivity : Activity() {
             catch (e: Exception) { abrirAjustesApp() }
         })
 
+        // --- Actualizaciones desde GitHub ---
+        col.addView(texto("Actualizaciones", 15f, true))
+        val actTxt = texto("Versión instalada: ${Actualizador.nombreVersion(this)} (nº ${Actualizador.versionInstalada(this)}). " +
+            "La app mira sola si hay una nueva al abrirla (como mucho cada 6 h). Android pide confirmar la instalación con un toque; " +
+            "se instala encima de la anterior, sin borrar nada.", 12f, false, APAGADO)
+        col.addView(actTxt)
+        col.addView(boton("Buscar actualización ahora") { buscarActualizacion(true, actTxt) })
+
         col.addView(texto("Datos: AVAMET (avamet.org) y METAR de aviationweather.gov. El mapa es de OpenStreetMap. " +
             "Esta app es una ayuda: no sustituye a un sensor de lluvia propio.", 12f))
         return col
@@ -459,7 +467,7 @@ class MainActivity : Activity() {
             col.addView(texto("VIENEN DEL $nO · $gO°", 20f, true))
             col.addView(texto("Se mueven hacia el ${mov["direccion_destino"] ?: "—"} (${fmt(grados, 0)}°)", 13f, false))
             col.addView(texto("${mov["velocidad_kmh"] ?: "?"} km/h · ${mov["categoria"] ?: "?"}", 14f, false, APAGADO))
-            col.addView(texto("Con el móvil plano, la N roja señala el norte real y la flecha con la nube señala de dónde vienen. (Si no gira, tu móvil no tiene brújula: el norte queda arriba.)", 11f, false, APAGADO))
+            col.addView(texto("Con el móvil plano, la N roja señala el norte (según la brújula del móvil, sin corregir la declinación magnética, de unos pocos grados) y la flecha con la nube señala de dónde vienen. Si no gira, tu móvil no tiene brújula: el norte queda arriba.", 11f, false, APAGADO))
         } else {
             col.addView(texto("Dirección desconocida", 20f, true))
             col.addView(texto("No hay viento suficiente para estimar de dónde vienen las nubes.", 12f, false, APAGADO))
@@ -792,9 +800,53 @@ class MainActivity : Activity() {
         mapa.invalidate()
     }
 
+    // ---------------------------------------------------------------- Actualizaciones
+    private var avisoVersionMostrado = 0L
+
+    /** Mira en GitHub si hay una versión más nueva. `manual`: el usuario lo pidió (siempre se contesta); si no, solo se avisa si hay nueva. */
+    private fun buscarActualizacion(manual: Boolean, estado: TextView? = null) {
+        if (manual) estado?.text = "Buscando en GitHub…"
+        Thread {
+            val res = try { Result.success(Actualizador.buscar(this)) } catch (e: Exception) { Result.failure<es.avamet.aviso.core.VersionPublicada?>(e) }
+            if (res.isSuccess) Actualizador.marcarConsulta(this)
+            runOnUiThread {
+                if (isFinishing) return@runOnUiThread
+                val nueva = res.getOrNull()
+                when {
+                    res.isFailure -> if (manual) estado?.text = "No se pudo consultar GitHub (${(res.exceptionOrNull() as? Exception)?.let { Descargas.textoError(it) } ?: "error"})."
+                    nueva == null -> if (manual) estado?.text = "Ya tienes la última versión (nº ${Actualizador.versionInstalada(this)})."
+                    manual || nueva.codigo != avisoVersionMostrado -> {
+                        avisoVersionMostrado = nueva.codigo
+                        android.app.AlertDialog.Builder(this)
+                            .setTitle("Hay una versión nueva (nº ${nueva.codigo})")
+                            .setMessage("Tienes la nº ${Actualizador.versionInstalada(this)}. Se descargará (~3 MB) y Android te pedirá confirmar la instalación; tus ajustes se conservan.")
+                            .setPositiveButton("Descargar e instalar") { _, _ -> descargarEInstalar(nueva, estado) }
+                            .setNegativeButton("Ahora no", null).show()
+                    }
+                }
+            }
+        }.start()
+    }
+
+    private fun descargarEInstalar(v: es.avamet.aviso.core.VersionPublicada, estado: TextView?) {
+        Toast.makeText(this, "Descargando la versión nº ${v.codigo}…", Toast.LENGTH_SHORT).show()
+        estado?.text = "Descargando la versión nº ${v.codigo}…"
+        Thread {
+            val res = try { Result.success(Actualizador.descargar(this, v)) } catch (e: Exception) { Result.failure<java.io.File>(e) }
+            runOnUiThread {
+                if (isFinishing) return@runOnUiThread
+                val apk = res.getOrNull()
+                if (apk == null) { val m = "No se pudo descargar la actualización (${(res.exceptionOrNull() as? Exception)?.let { Descargas.textoError(it) } ?: "error"})."; estado?.text = m; Toast.makeText(this, m, Toast.LENGTH_LONG).show() }
+                else try { val m = Actualizador.instalar(this, apk); estado?.text = m; Toast.makeText(this, m, Toast.LENGTH_LONG).show() }
+                catch (e: Exception) { estado?.text = "No se pudo abrir el instalador: ${e.message}" }
+            }
+        }.start()
+    }
+
     override fun onResume() {
         super.onResume(); mapa.onResume(); Estado.escuchar(oyente); refrescar()
         if (irOverlay != null) actualizarIr()       // renueva la capa IR si EUMETSAT ha publicado otro barrido (cada 15 min)
+        if (Actualizador.tocaConsultar(this)) buscarActualizacion(false)
     }
     override fun onPause() { irDetenerAnimacion(); Estado.dejarDeEscuchar(oyente); mapa.onPause(); super.onPause() }
 }

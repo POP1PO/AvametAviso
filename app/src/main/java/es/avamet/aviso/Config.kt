@@ -6,8 +6,9 @@ import android.content.Context
 object Config {
     private fun p(c: Context) = c.getSharedPreferences("config", Context.MODE_PRIVATE)
 
-    fun intervaloMin(c: Context): Int = p(c).getInt("intervaloMin", 5).coerceIn(1, 60)
-    fun setIntervaloMin(c: Context, v: Int) = p(c).edit().putInt("intervaloMin", v.coerceIn(1, 60)).apply()
+    /** 1..15 min: con más de ~30 min entre consultas la app pierde la lectura anterior y no puede ver que el pluviómetro sube. */
+    fun intervaloMin(c: Context): Int = p(c).getInt("intervaloMin", 5).coerceIn(1, 15)
+    fun setIntervaloMin(c: Context, v: Int) = p(c).edit().putInt("intervaloMin", v.coerceIn(1, 15)).apply()
 
     fun alarmaSonido(c: Context): Boolean = p(c).getBoolean("alarmaSonido", true)
     fun setAlarmaSonido(c: Context, v: Boolean) = p(c).edit().putBoolean("alarmaSonido", v).apply()

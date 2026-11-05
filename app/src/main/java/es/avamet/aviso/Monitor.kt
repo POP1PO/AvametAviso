@@ -89,7 +89,7 @@ class Monitor(private val ctx: Context) {
         }
 
         fun armar(res: Dict): Resultado {
-            val peligro = evaluarPeligro(res)
+            val peligro = ampliarConAeropuertos(res, evaluarPeligro(res))
             return Resultado(ahoraMs, lat, lon, res, peligro, HashMap(cacheMetar), ArrayList(errores), descargas)
         }
 

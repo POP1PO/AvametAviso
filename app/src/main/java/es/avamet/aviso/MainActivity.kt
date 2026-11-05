@@ -307,7 +307,7 @@ class MainActivity : Activity() {
         col.addView(boton("Volver a automática", null) { Config.setEstacionFija(this, null); refrescarRef()
             Toast.makeText(this, "Referencia automática", Toast.LENGTH_SHORT).show() })
 
-        col.addView(texto("Consulta cada (minutos):", 15f, true))
+        col.addView(texto("Consulta cada (minutos, de 1 a 15):", 15f, true))
         val intervalo = EditText(this)
         intervalo.inputType = InputType.TYPE_CLASS_NUMBER
         intervalo.setText(Config.intervaloMin(this).toString())
@@ -318,7 +318,7 @@ class MainActivity : Activity() {
             if (v == null) Toast.makeText(this, "Número no válido", Toast.LENGTH_SHORT).show()
             else {
                 Config.setIntervaloMin(this, v)
-                Toast.makeText(this, "Guardado: ${Config.intervaloMin(this)} min. Se aplica al volver a iniciar la vigilancia.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Guardado: ${Config.intervaloMin(this)} min (máximo 15, para no perder la lluvia). Se aplica al volver a iniciar la vigilancia.", Toast.LENGTH_LONG).show()
             }
         })
 

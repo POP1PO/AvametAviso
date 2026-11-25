@@ -30,4 +30,8 @@ object Config {
     /** Tema de la app: "claro", "oscuro" o "rojo" (nocturno). */
     fun tema(c: Context): String = p(c).getString("tema", "oscuro") ?: "oscuro"
     fun setTema(c: Context, t: String) = p(c).edit().putString("tema", t).apply()
+
+    /** Clave de AEMET OpenData (opcional). Se guarda solo en el almacenamiento privado de la app y no se muestra nunca. */
+    fun aemetClave(c: Context): String = p(c).getString("aemetClave", "") ?: ""
+    fun setAemetClave(c: Context, v: String) = p(c).edit().putString("aemetClave", v.trim()).apply()
 }

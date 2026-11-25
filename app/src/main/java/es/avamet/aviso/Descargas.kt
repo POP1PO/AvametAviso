@@ -17,8 +17,8 @@ object Descargas {
     private val hilos = java.util.concurrent.Executors.newCachedThreadPool { r -> Thread(r).also { it.isDaemon = true } }
 
     /** Cada descarga tiene un tope DURO de 25 s (un DNS o un TLS colgado no respeta los timeouts de la conexión). */
-    private fun descargar(url: String, lecturaMs: Int = 12_000): String {
-        val f = hilos.submit(java.util.concurrent.Callable { descargarDirecto(url, lecturaMs) })
+    private fun descargar(url: String, lecturaMs: Int = 12_000, cabeceras: Map<String, String> = emptyMap()): String {
+        val f = hilos.submit(java.util.concurrent.Callable { descargarDirecto(url, lecturaMs, cabeceras) })
         try {
             return f.get(lecturaMs / 1000L + 15, java.util.concurrent.TimeUnit.SECONDS)
         } catch (e: java.util.concurrent.TimeoutException) {
@@ -34,12 +34,16 @@ object Descargas {
     /** Descarga genérica de texto (la usa Cielo para 7Timer). */
     fun texto(url: String): String = descargar(url, 15_000)
 
-    private fun descargarDirecto(url: String, lecturaMs: Int): String {
+    /** Igual que [texto] pero con cabeceras HTTP propias (la usa AEMET: la clave va en la cabecera, nunca en la URL). */
+    fun textoConCabeceras(url: String, cabeceras: Map<String, String>): String = descargar(url, 25_000, cabeceras)
+
+    private fun descargarDirecto(url: String, lecturaMs: Int, cabeceras: Map<String, String> = emptyMap()): String {
         val c = URL(url).openConnection() as HttpURLConnection
         try {
             c.connectTimeout = 8_000
             c.readTimeout = lecturaMs
             c.setRequestProperty("User-Agent", USER_AGENT)
+            for ((k, v) in cabeceras) c.setRequestProperty(k, v)
             val code = c.responseCode
             if (code == 204) return ""
             if (code !in 200..299) throw java.io.IOException("HTTP $code")

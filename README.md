@@ -82,6 +82,7 @@ No entra en alarmas ni en el veredicto. Es una imagen ya coloreada (no da temper
 - La capa «Nubes IR» muestra imágenes del visor público EUMETView de EUMETSAT (Meteosat IR 10,8 µm). La app solo las muestra: no guarda ni redistribuye los datos numéricos, y no se usan en los avisos.
 - Atribución: «© EUMETSAT Meteosat data» (año en curso), visible en la app junto a la capa.
 - Condiciones de EUMETSAT: [Data Policy](https://www-cdn.eumetsat.int/files/2026-01/45173%20-%20Data_Policy.pdf) y [registro y licencias](https://user.eumetsat.int/resources/user-guides/data-registration-and-licensing). Si redistribuyes la app o la usas en un servicio comercial, revisa esas condiciones.
+- AEMET (opcional): con tu propia clave gratuita de AEMET OpenData (caduca a los 3 meses) se muestran las estaciones oficiales cercanas. Datos © AEMET, solo informativos y fuera de los avisos; la app no está respaldada por AEMET. Condiciones: https://www.aemet.es/es/nota_legal
 - Los datos de estaciones proceden de AVAMET y los METAR de aviationweather.gov, con sus propias condiciones.
 
 ---

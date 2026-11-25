@@ -51,6 +51,9 @@ class MainActivity : Activity() {
     @Volatile private var seeing: Cielo.Seeing? = null
     @Volatile private var seeingError: String? = null
     @Volatile private var seeingIntentoMs = 0L
+    @Volatile private var aemetEst: List<Aemet.Estacion>? = null
+    @Volatile private var aemetError: String? = null
+    @Volatile private var aemetIntentoMs = 0L
 
     private fun dp(v: Int) = (v * resources.displayMetrics.density).toInt()
 
@@ -322,6 +325,23 @@ class MainActivity : Activity() {
             }
         })
 
+        col.addView(texto("Clave de AEMET OpenData (opcional)", 15f, true))
+        col.addView(texto("Muestra las estaciones oficiales de AEMET cercanas en el Resumen. Pídela gratis en opendata.aemet.es (cada persona la suya; caduca a los 3 meses). No la compartas.", 12f, false, APAGADO))
+        val claveEt = EditText(this)
+        claveEt.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+        claveEt.hint = if (Config.aemetClave(this).isNotBlank()) "•••••••• (ya guardada)" else "Pega aquí tu clave"
+        claveEt.setTextColor(TEXTO)
+        col.addView(claveEt)
+        col.addView(boton("Guardar clave de AEMET", null) {
+            val v = claveEt.text.toString().trim()
+            if (v.isEmpty()) Toast.makeText(this, "No has escrito ninguna clave", Toast.LENGTH_SHORT).show()
+            else if (!Aemet.claveValida(v)) Toast.makeText(this, "La clave no tiene un formato válido: cópiala completa del correo de AEMET", Toast.LENGTH_LONG).show()
+            else { Config.setAemetClave(this, v); aemetIntentoMs = 0L; aemetEst = null; aemetError = null; claveEt.setText(""); claveEt.hint = "•••••••• (ya guardada)"
+                Toast.makeText(this, "Clave guardada. Aparecerá en el Resumen.", Toast.LENGTH_LONG).show() }
+        })
+        col.addView(boton("Borrar clave de AEMET", null) { Config.setAemetClave(this, ""); aemetEst = null; aemetError = null; claveEt.hint = "Pega aquí tu clave"
+            Toast.makeText(this, "Clave borrada", Toast.LENGTH_SHORT).show() })
+
         val sonido = CheckBox(this)
         sonido.text = "Alarma con sonido (se puede silenciar)"
         sonido.isChecked = Config.alarmaSonido(this)
@@ -535,6 +555,34 @@ class MainActivity : Activity() {
         if (sg != null) for (x in sg.lineas) cCielo.addView(texto(x, 13f, false, if (x.startsWith("Pronóstico externo")) APAGADO else TEXTO))
         else cCielo.addView(texto(seeingError?.let { "No disponible ($it)" } ?: "Consultando 7Timer…", 13f, false, APAGADO))
         contResumen.addView(cCielo)
+
+        // AEMET (opcional): estaciones oficiales cercanas; solo si el usuario puso su clave. Cada 10 min como máximo (reintento a los 2 min)
+        val claveAemet = Config.aemetClave(this)
+        if (claveAemet.isNotBlank()) {
+            val ahoraA = System.currentTimeMillis()
+            if (ahoraA - aemetIntentoMs > 10 * 60_000L) {
+                aemetIntentoMs = ahoraA
+                val la = r.lat; val lo = r.lon
+                Thread {
+                    try { aemetEst = Aemet.consultar(claveAemet, la, lo); aemetError = null }
+                    catch (e: Aemet.ErrorAemet) { aemetError = e.message; aemetIntentoMs = System.currentTimeMillis() - 8 * 60_000L }
+                    catch (e: Throwable) { aemetError = "Error inesperado (${e.javaClass.simpleName})"; aemetIntentoMs = System.currentTimeMillis() - 8 * 60_000L }
+                    runOnUiThread { try { refrescar() } catch (_: Throwable) { } }
+                }.also { it.isDaemon = true }.start()
+            }
+            val cAemet = tarjeta("Estaciones oficiales de AEMET (cerca)", BORDE)
+            val lista = aemetEst
+            if (lista != null && lista.isNotEmpty()) {
+                for (e in lista) {
+                    fun v(x: Double?, u: String) = if (x == null) "—" else "$x$u"
+                    cAemet.addView(texto("${e.nombre} · ${e.km} km · ${e.fintUtc.replace('T', ' ').take(16)} UTC", 13f, true, TEXTO))
+                    cAemet.addView(texto("Lluvia ${v(e.lluviaMm, " mm")} · ${v(e.tempC, " °C")} · HR ${v(e.humedad, " %")} · viento ${v(e.vientoKmh, " km/h")}", 13f, false, TEXTO))
+                }
+            } else if (lista != null) cAemet.addView(texto("No hay estaciones de AEMET con datos a menos de 60 km", 13f, false, APAGADO))
+            else cAemet.addView(texto(aemetError?.let { "No disponible ($it)" } ?: "Consultando AEMET…", 13f, false, APAGADO))
+            cAemet.addView(texto(Aemet.ATRIBUCION, 11f, false, APAGADO))
+            contResumen.addView(cAemet)
+        }
 
         // Radar: solo si hay avisos predictivos
         val pred = a["alertas_predictivas"].l()
